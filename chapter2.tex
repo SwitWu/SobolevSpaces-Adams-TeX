@@ -1,0 +1,1415 @@
+\chapter[The Lebesgue Spaces $L^p(\Omega)$]%
+  {The Lebesgue Spaces \boldmath{$L^p(\Omega)$}}
+
+
+\section{Definition and Basic Properties}
+
+\begin{para}[The Space \boldmath{$L^p(\Omega)$}]
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ and let $p$ be a positive
+  real number. We denote by $L^p(\Omega)$ the class of all measurable
+  functions $u$ defined on $\Omega$ for which
+  \begin{equation}\label{eq:2.1}
+    \int_{\Omega} |u(x)|^p dx < \infty.
+  \end{equation}
+  We identify in $L^p(\Omega)$ functions that are equal almost everywhere in $\Omega$; the elements of $L^p(\Omega)$ are thus equivalence classes of measurable functions satisfying (1), two functions being equivalent if they are equal a.e. in $\Omega$. For convenience, we ignore this distinction, and write $u \in L^p(\Omega)$ if $u$ satisfies (1), and $u=0$ in $L^p(\Omega)$ if $u(x)=0$ a.e. in $\Omega$. Evidently $c u \in L^p(\Omega)$ if $u \in L^p(\Omega)$ and $c \in \mathbb{C}$. To confirm that $L^p(\Omega)$ is a vector space we must show that if $u, v \in L^p(\Omega)$, then $u+v \in L^p(\Omega)$. This is an immediate consequence of the following inequality, which will also prove useful later on.
+\end{para}
+
+
+\begin{lemma}
+  If $1 \leq p<\infty$ and $a, b \geq 0$, then
+  \begin{equation}\label{eq:2.2}
+    (a+b)^p \leq 2^{p-1}\left(a^p+b^p\right) .
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  If $p=1$, then (2) is an obvious equality. For $p>1$, the function $t^p$ is convex on $[0, \infty)$; that is, its graph lies below the chord line joining the points
+  $\left(a, a^p\right)$ and $\left(b, b^p\right)$. Thus
+  \[
+  \left(\frac{a+b}{2}\right)^p \leq \frac{a^p+b^p}{2}
+  \]
+  from which (2) follows at once.
+  If $u, v \in L^p(\Omega)$, then integrating
+  \[
+  |u(x)+v(x)|^p \leq(|u(x)|+|v(x)|)^p \leq 2^{p-1}\left(|u(x)|^p+|v(x)|^p\right)
+  \]
+  over $\Omega$ confirms that $u+v \in L^p(\Omega)$.
+\end{proof}
+
+\begin{para}[The $\bm{L_p}$ Norm]
+  We shall verify presently that the functional $\|\cdot\|_p$ defined by
+  \[
+  \|u\|_p=\left(\int_{\Omega} \mid u(x)^p d x\right)^{1 / p}
+  \]
+  is a norm on $L^p(\Omega)$ provided $1 \leq p<\infty$. (It is not a norm if $0<p<1$.) In arguments where confusion of domains may occur, we use $\|\cdot\|_{p, \Omega}$ in place of $\|\cdot\|_p$. It is clear that $\|u\|_p \geq 0$ and $\|u\|_p=0$ if and only if $u=0$ in $L^p(\Omega)$. Moreover,
+  \[
+  \|c u\|_p=|c|\|u\|_p, \quad c \in \mathbb{C} .
+  \]
+  Thus we will have shown that $\|\cdot\|_p$ is a norm on $L^p(\Omega)$ once we have verified the
+  triangle inequality
+  \[
+  \|u+v\|_p \leq\|u\|_p+\|v\|_p
+  \]
+  which is known as Minkowski's inequality. We verify it in Paragraph 2.8 below, for which we first require Hölder's inequality.
+\end{para}
+
+\begin{theorem}[Hölder's Inequality]
+  Let $1<p<\infty$ and let $p^{\prime}$ denote the conjugate exponent defined by
+  \[
+  p^{\prime}=\frac{p}{p-1}, \quad \text { that is } \quad \frac{1}{p}+\frac{1}{p^{\prime}}=1
+  \]
+  which also satisfies $1<p^{\prime}<1$. If $u \in L^p(\Omega)$ and $v \in L^{p^{\prime}}(\Omega)$, then $u v \in L^1(\Omega)$, and
+  \begin{equation}\label{eq:2.3}
+    \int_{\Omega}|u(x) v(x)| d x \leq\|u\|_p\|v\|_{p^{\prime}}
+  \end{equation}
+  Equality holds if and only if $|u(x)|^p$ and $|v(x)|^{p^{\prime}}$ are proportional a.e. in $\Omega$.
+\end{theorem}
+
+\begin{proof}
+  Let $a, b>0$ and let $A=\ln \left(a^p\right)$ and $B=\ln \left(b^{p^{\prime}}\right)$. Since the exponential function is strictly convex, $\exp \left((A / p)+\left(B / p^{\prime}\right)\right) \leq(1 / p) \exp A+\left(1 / p^{\prime}\right) \exp B$, with equality only if $A=B$. Hence
+  \[
+  a b \leq\left(a^p / p\right)+\left(b^{p^{\prime}} / p^{\prime}\right)
+  \]
+  with equality occurring if and only if $a^p=b^{p^{\prime}}$. If either $\|u\|_p=0$ or $\|v\|_{p^{\prime}}=0$, then $u(x) v(x)=0$ a.e. in $\Omega$, and (3) is satisfied. Otherwise we can substitute $a=|u(x)| /\|u\|_p$ and $b=|v(x)| /\|v\|_{p^{\prime}}$ in the above inequality and integrate over $\Omega$ to obtain (3).
+\end{proof}
+
+\begin{corollary}
+  If $p>0, q>0$ and $r>0$ satisfy $(1 / p)+(1 / q)=1 / r$, and if $u \in L^p(\Omega)$ and $v \in L^q(\Omega)$, then $u v \in L^r(\Omega)$ and $\|u v\|_r \leq\|u\|_p\|v\|_q$. To see this, we can apply Hölder's inequality to $|u|^r|v|^r$ with exponents $p / r$ and $q / r=(p / r)^{\prime}$
+\end{corollary}
+
+\begin{corollary}
+  Hölder's inequality can be extended to products of more than two functions. Suppose $u=\prod_{j=1}^N u_j$ where $u_j \in L^{p_j}(\Omega), 1 \leq j \leq N$, where $p_j>0$. If $\sum_{j=1}^N\left(1 / p_j\right)=1 / q$, then $u \in L^q(\Omega)$ and $\|u\|_q \leq \prod_{j=1}^N\left\|u_j\right\|_{p_j}$. This follows from the previous corollary by induction on $N$.
+\end{corollary}
+
+\begin{lemma}[A Converse of Hölder's Inequality]
+  A measurable function $u$ belongs to $L^p(\Omega)$ if and only if
+  \begin{equation}\label{eq:2.4}
+    \sup \left\{\int_{\Omega}|u(x)| v(x) d x: v(x) \geq 0 \text { on } \Omega,\|v\|_{p^{\prime}} \leq 1\right\}
+  \end{equation}
+  is finite, and then that supremum equals $\|u\|_p$.
+\end{lemma}
+
+\begin{proof}
+  This is obvious if $\|u\|_p=0$. If $0<\|u\|_p<\infty$, then for nonnegative $v$ with $\|v\|_{p^{\prime}} \leq 1$ we have, by Hölder's inequality,
+  \[
+  \int_{\Omega}|u(x)| v(x) d x \leq\|u\|_p\|v\|_{p^{\prime}} \leq\|u\|_p
+  \]
+  and equality holds if $v=\left(|u| /\|u\|_p\right)^{p / p^{\prime}}$, for which $\|v\|_{p^{\prime}}=1$.
+  Conversely, if $\|u\|_p=\infty$ we can find an increasing sequence $s_j$ of nontrivial simple functions satisfying $0 \leq s_j(x) \leq|u(x)|$ on $\Omega$ for which $\left\|s_j\right\|_p \rightarrow \infty$. If $v_j=\left(\left|s_j\right| /\left\|s_j\right\|_p\right)^{p / p^{\prime}}$, then
+  \[
+  \int_{\Omega}|u(x)| v_j(x) d x \geq \int_{\Omega} s_j(x) v_j(x) d x=\left\|s_j\right\|_p
+  \]
+  so the supremum (4) must be infinite.
+\end{proof}
+
+
+\begin{theorem}[Minkowski's Inequality]
+  If $1 \leq p<\infty$, then
+  \begin{equation}\label{eq:2.5}
+    \|u+v\|_p \leq\|u\|_p+\|v\|_p
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  Inequality (5) certainly holds if $p=1$ since
+  \[
+  \int_{\Omega}|u(x)+v(x)| d x \leq \int_{\Omega}|u(x)| d x+\int_{\Omega}|v(x)| d x
+  \]
+  For $1<p<\infty$ observe that for $w \geq 0,\|w\|_{p^{\prime}} \leq 1$ we have, by Hölder's inequality,
+  \[
+  \begin{aligned}
+  \int_{\Omega}(|u(x)|+|v(x)|) w(x) d x & \leq \int_{\Omega}|u(x)| w(x) d x+\int_{\Omega}|v(x)| w(x) d x \\
+  & \leq\|u\|_p+\|v\|_p,
+  \end{aligned}
+  \]
+  whence $\|u+v\|_p \leq\|u\|_p+\|v\|_p$ follows by Lemma~2.7.
+\end{proof}
+
+\begin{theorem}[Minkowski's Inequality for Integrals]
+  Let $1 \leq p<\infty$. Suppose that $f$ is measurable on $\mathbb{R}^m \times \mathbb{R}^n$, 
+  that $f(\cdot, y) \in L^p\left(\mathbb{R}^m\right)$ for almost all $y \in \mathbb{R}^n$,
+  and that the function $y \rightarrow\|f(\cdot, y)\|_{p, \mathbb{R}^m}$ belongs to $L^1(\mathbb{R}^n)$. Then the function $x \rightarrow \int_{\mathbb{R}^n} f(x, y) d y$ belongs to $L^p\left(\mathbb{R}^m\right)$ and
+  \[
+  \left(\int_{\mathbb{R}^m}\left|\int_{\mathbb{R}^n} f(x, y) d y\right|^p d x\right)^{1 / p} \leq \int_{\mathbb{R}^n}\left(\int_{\mathbb{R}^m}|f(x, y)|^p d x\right)^{1 / p} d y
+  \]
+  That is,
+  \[
+  \left\|\int_{\mathbb{R}^n} f(\cdot, y) d y\right\|_{p, \mathbb{R}^m} \leq \int_{\mathbb{R}^n}\|f(\cdot, y)\|_{p, \mathbb{R}^m} d y .
+  \]
+\end{theorem}
+
+\begin{proof}
+  Suppose initially that $f \geq 0$. When $p=1$, the inequalities above become equalities given in Fubini's theorem. When $p>1$, use a nonnegative function $\|w\|$ in the unit ball of $L^p(\Omega)$ as in Theorem 2.8. By Fubini's theorem and Hölder's inequality,
+  \[
+  \begin{aligned}
+  \int_{\mathbb{R}^m} \int_{\mathbb{R}^n} f(x, y) d y w(x) d x & =\int_{\mathbb{R}^{m+n}} f(x, y) w(x) d x d y \\
+  & \leq \int_{\mathbb{R}^n}\|w\|_{p^{\prime}, \mathbb{R}^m}\|f(\cdot, y)\|_{p, \mathbb{R}^m} d y \\
+  & \leq \int_{\mathbb{R}^n}\|f(\cdot, y)\|_{p, \mathbb{R}^m} d y
+  \end{aligned}
+  \]
+  This case now follows by Lemma 2.7. For a general function $f$ as above, split $f$ into real and imaginary parts and split these as differences of nonnegative functions satisfying the hypotheses. It follows that the function mapping $x$ to $\int_{R^n} f(x, y) d y$ belongs to $L^p\left(R^m\right)$. To get the norm estimate, replace $f$ by $|f|$.
+\end{proof}
+
+
+\begin{para}[The Space $\bm{L^{\infty}(\Omega)}$]
+  A function $u$ that is measurable on $\Omega$ is said to be essentially bounded on $\Omega$ if 
+  there is a constant $K$ such that $|u(x)| \leq K$ a.e. on $\Omega$. The greatest lower bound of 
+  such constants $K$ is called the essential supremum of $|u|$ on $\Omega$, and is denoted by
+  $\esssup_{x \in \Omega}|u(x)|$. We denote by $L^{\infty}(\Omega)$ the vector space of all functions $u$ that are essentially bounded on $\Omega$, functions being once again identified if they are equal a.e. on $\Omega$. It is easily checked that the functional $\|\cdot\|_{\infty}$ defined by
+  \[
+  \|u\|_{\infty}=\operatorname{ess} \sup _{x \in \Omega}|u(x)|
+  \]
+  is a norm on $L^{\infty}(\Omega)$. Moreover, Hölder's inequality (3) and its corollaries extend to cover the two cases $p=1, p^{\prime}=\infty$ and $p=\infty, p^{\prime}=1$.
+\end{para}
+
+\begin{theorem}[An Interpolation Inequality]
+  Let $1 \leq p<q<r$, so that
+  \[
+  \frac{1}{q}=\frac{\theta}{p}+\frac{1-\theta}{r}
+  \]
+  for some $\theta$ satisfying $0<\theta<1$. If $u \in L^p(\Omega) \cap L^r(\Omega)$, then $u \in L^q(\Omega)$ and
+  \[
+  \|u\|_q \leq\|u\|_p^\theta\|u\|_r^{1-\theta}
+  \]
+\end{theorem}
+
+\begin{proof}
+  Let $s=p /(\theta q)$. Then $s \geq 1$ and $s^{\prime}=s /(s-1)=r /((1-\theta) q)$ if $r<\infty$. In this case, by Hölder's inequality
+  \[
+  \begin{aligned}
+  \|u\|_q^q & =\int_O|u(x)|^{\theta q}|u(x)|^{(1-\theta) q} d x \\
+  & \leq\left(\int_{\Omega}|u(x)|^{\theta q s} d x\right)^{1 / s}\left(\int_{\Omega}|u(x)|^{(1-\theta) q s^{\prime}} d x\right)^{1 / s^{\prime}}=\|u\|_p^{\theta q}\|u\|_r^{(1-\theta) q}
+  \end{aligned}
+  \]
+  and the result follows at once. The proof if $r=\infty$ is similar.
+\end{proof}
+
+The following two theorems establish reverse forms of Hölder's and Minkowski's inequalities for the case $0<p<1$. The latter inequality, which indicates that $\|\cdot\|_p$ is not a norm in this case, will be used to prove the Clarkson inequalities in Theorem 2.38.
+
+\begin{theorem}[A Reverse Hölder Inequality]
+  Let $0<p<1$, so that $p^{\prime}=p /(p-1)<0$. If $f \in L^p(\Omega)$ and
+  \[
+  0<\int_{\Omega}|g(x)|^{p^{\prime}} d x<\infty,
+  \]
+  then
+  \begin{equation}\label{eq:2.6}
+    \int_{\Omega}|f(x) g(x)| d x \geq\left(\int_{\Omega}|f(x)|^p d x\right)^{1 / p}\left(\int_{\Omega}|g(x)|^{p^{\prime}} d x\right)^{1 / p^{\prime}}.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  We can assume $f g \in L^1(\Omega)$; otherwise the left side of (6) is infinite. Let $\phi=|g|^{-p}$ and $\psi=|f g|^p$ so that $\phi \psi=|f|^p$. Then $\psi \in L^q(\Omega)$, where $q=1 / p>1$, and since $p^{\prime}=-p q^{\prime}$ where $q^{\prime}=q /(q-1)$, we have $\phi \in L^{q^{\prime}}(\Omega)$. By the direct form of Hölder's inequality (3) we have
+  \[
+  \begin{aligned}
+  \int_{\Omega}|f(x)|^p d x & =\int_{\Omega} \phi(x) \psi(x) d x \leq\|\psi\|_q\|\phi\|_{q^{\prime}} \\
+  & =\left(\int_{\Omega}|f(x) g(x)| d x\right)^p\left(\int_{\Omega}|g(x)|^{p^{\prime}} d x\right)^{1-p} .
+  \end{aligned}
+  \]
+  Taking $p$ th roots and dividing by the last factor on the right side we obtain (6).
+\end{proof}
+
+
+\begin{theorem}[A Reverse Minkowski Inequality]
+  Let $0<p<1$. If $u, v \in L^p(\Omega)$, then
+  \begin{equation}\label{eq:2.7}
+    \||u|+|v|\|_p \geq\|u\|_p+\|v\|_p .
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  In $u=v=0$ in $L^p(\Omega)$, then the right side of (7) is zero. Otherwise, the left side is greater than zero and we can apply the reverse Hölder inequality (6) to obtain
+  \[
+  \begin{aligned}
+  \||u|+|v|\|_p^p & =\int_{\Omega}(|u(x)|+|v(x)|)^{p-1}(|u(x)|+|v(x)|) d x \\
+  & \geq\left(\int_{\Omega}(|u(x)|+|v(x)|)^p d x\right)^{1 / p^{\prime}}\left(\|u\|_p+\|v\|_p\right) \\
+  & =\||u|+\mid v\|_p^{p / p^{\prime}}\left(\|u\|_p+\|v\|_p\right)
+  \end{aligned}
+  \]
+  and (7) follows by cancellation.
+\end{proof}
+
+Here is a useful imbedding theorem for $L^p$ spaces over domains with finite volume.
+
+\begin{theorem}[An Imbedding Theorem for $\bm{L^p}$ Spaces]
+  Suppose that $\operatorname{vol}(\Omega)=\int_{\Omega} 1 d x<\infty$ and $1 \leq p \leq q \leq \infty$. If $u \in L^q(\Omega)$, then $u \in L^p(\Omega)$ and
+  \begin{equation}\label{eq:2.8}
+    \|u\|_p \leq(\operatorname{vol}(\Omega))^{(1 / p)-(1 / q)}\|u\|_q
+  \end{equation}
+  Hence
+  \begin{equation}\label{eq:2.9}
+    L^q(\Omega) \rightarrow L^p(\Omega)
+  \end{equation}
+  If $u \in L^{\infty}(\Omega)$, then
+  \begin{equation}\label{eq:2.10}
+    \lim _{p \rightarrow \infty}\|u\|_p=\|u\|_{\infty}
+  \end{equation}
+  Finally, if $u \in L^p(\Omega)$ for $1 \leq p<\infty$ and if there exists a constant $K$ such that for all such $p$
+  \begin{equation}\label{eq:2.11}
+    \|u\|_p \leq K,
+  \end{equation}
+  then $u\in L^\infty(\Omega)$ and
+  \begin{equation}\label{eq:2.12}
+    \|u\|_\infty \leq K.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  If $p=q$ or $q=\infty$, (8) and (9) are trivial. If $1 \leq p<q<\infty$ and $u \in L^q(\Omega)$, Hölder's inequality gives
+  \[
+  \int_{\Omega}|u(x)|^p d x \leq\left(\int_{\Omega}|u(x)|^q d x\right)^{p / q}\left(\int_{\Omega} 1 d x\right)^{1-(p / q)}
+  \]
+  from which (8) and (9) follow immediately. If $u \in L^{\infty}(\Omega)$, we obtain from (8)
+  \begin{equation}\label{eq:2.13}
+    \limsup_{p\rightarrow \infty}\|u\|_p \leq\|u\|_{\infty}
+  \end{equation}
+  On the other hand, for any $\epsilon>0$ there exists a set $A \subset \Omega$ having positive measure $\mu(A)$ such that
+  \[
+  |u(x)| \geq\|u\|_{\infty}-\epsilon \quad \text { if } x \in A .
+  \]
+  Hence
+  \[
+  \left.\int_{\Omega}\left|u(x)^p d x \geq \int_A\right| u(x)\right|^p d x \geq \mu(A)\left(\|u\|_{\infty}-\epsilon\right)^p .
+  \]
+  It follows that $\|u\|_p \geq(\mu(A))^{1 / p}\left(\|u\|_{\infty}-\epsilon\right)$, whence
+  \begin{equation}\label{eq:2.14}
+    \liminf_{p \rightarrow \infty}\|u\|_p \geq\|u\|_{\infty}
+  \end{equation}
+  Equation (10) now follows from (13) and (14).
+  
+  Now suppose (11) holds for $1 \leq p<\infty$. If $u \notin L^{\infty}(\Omega)$ or else if (12) does not hold, then we can find a constant $K_1>K$ and a set $A \subset \Omega$ with $\mu(A)>0$ such that for $x \in A,|u(x)| \geq K_1$. The same argument used to obtain (14) now shows that
+  \[
+  \liminf _{p \rightarrow \infty}\|u\|_p \geq K_1
+  \]
+  which contradicts (11).
+\end{proof}
+
+\begin{corollary}
+  $L^p(\Omega) \subset L_{\mathrm{loc}}^1(\Omega)$ for $1 \leq p \leq \infty$ and any domain $\Omega$.
+\end{corollary}
+
+
+\section[Completeness of $L^p(\Omega)$]{Completeness of $\bm{L^p(\Omega)}$}
+
+\begin{theorem}
+  $L^p(\Omega)$ is a Banach space if $1 \leq p \leq \infty$.
+\end{theorem}
+
+\begin{proof}
+  First assume $1 \leq p<\infty$ and let $\left\{u_n\right\}$ be a Cauchy sequence in $L^p(\Omega)$. There is a subsequence $\left\{u_{n_j}\right\}$ of $\left\{u_n\right\}$ such that
+  \[
+  \left\|u_{n_{j+1}}-u_{n_j}\right\|_p \leq \frac{1}{2^j}, \quad j=1,2, \ldots
+  \]
+  Let $v_m(x)=\sum_{j=1}^m\left|u_{n_{j+1}}(x)-u_{n_j}(x)\right|$. Then
+  \[
+  \left\|v_m\right\|_p \leq \sum_{j=1}^m \frac{1}{2^j}<1, \quad m=1,2, \ldots
+  \]
+  Putting $v(x)=\lim _{m \rightarrow \infty} v_m(x)$, which may be infinite for some $x$, we obtain by the Monotone Convergence Theorem 1.48
+  \[
+  \int_{\Omega}|v(x)|^p d x=\lim _{m \rightarrow \infty} \int_{\Omega}\left|v_m(x)\right|^p d x \leq 1 .
+  \]
+  Hence $v(x)<\infty$ a.e. on $\Omega$ and the series
+  \begin{equation}\label{eq:2.15}
+  u_{n_1}(x)+\sum_{j=1}^{\infty}\left(u_{n_{j+1}}(x)-u_{n_j}(x)\right)
+  \end{equation}
+  converges to a limit $u(x)$ a.e. on $\Omega$ by Theorem 1.50. Let $u(x)=0$ wherever it is undefined by (15). Since (15) telescopes, we have
+  \[
+  \lim _{m \rightarrow \infty} u_{n_m}(x)=u(x) \quad \text { a.e. in } \Omega.
+  \]
+  For any $\epsilon>0$ there exists $N$ such that if $m, n \geq N$, then $\left\|u_m-u_n\right\|_p<\epsilon$. Hence, by Fatou's lemma 1.49
+  \[
+  \begin{aligned}
+  \int_{\Omega}\left|u(x)-u_n(x)\right|^p d x & =\int_{\Omega} \lim _{j \rightarrow \infty}\left|u_{n_j}(x)-u_n(x)\right|^p d x \\
+  & \leq \liminf _{j \rightarrow \infty} \int_{\Omega}\left|u_{n_j}(x)-u_n(x)\right|^p d x \leq \epsilon^p
+  \end{aligned}
+  \]
+  if $n \geq N$. Thus $u=\left(u-u_n\right)+u_n \in L^p(\Omega)$ and $\left\|u-u_n\right\|_p \rightarrow 0$ as $n \rightarrow \infty$. Therefore $L^p(\Omega)$ is complete and so is a Banach space.
+  Finally, if $\left\{u_n\right\}$ is a Cauchy sequence in $L^{\infty}(\Omega)$, then there exists a set $A \subset \Omega$ having measure zero such that if $x \notin A$, then for every $n, m=1,2, \ldots$
+  \[
+  \left|u_n(x)\right| \leq\left\|u_n\right\|_{\infty}, \quad\left|u_n(x)-u_m(x)\right| \leq\left\|u_n-u_m\right\|_{\infty} .
+  \]
+  Therefore, $\left\{u_n\right\}$ converges uniformly on $\Omega-A$ to a bounded function $u$. Setting $u=0$ for $x \in A$, we have $u \in L^{\infty}(\Omega)$ and $\left\|u_n-u\right\|_{\infty} \rightarrow 0$ as $n \rightarrow \infty$. Thus $L^{\infty}(\Omega)$ is also complete and a Banach space.
+\end{proof}
+
+\begin{corollary}
+  If $1 \leq p \leq \infty$, each Cauchy sequence in $L^p(\Omega)$ has a subsequence converging pointwise almost everywhere on $\Omega$.
+\end{corollary}
+
+
+\begin{corollary}
+  $L^2(\Omega)$ is a Hilbert space with respect to the inner product
+  \[
+  (u, v)=\int_{\Omega} u(x) \overline{v(x)} d x .
+  \]
+  Hölder's inequality for $L^2(\Omega)$ is just the well-known Schwarz inequality
+  \[
+  |(u, v)| \leq\|u\|_2\|v\|_2 .
+  \]
+\end{corollary}
+
+
+\section{Approximation by Continuous Functions}
+
+\begin{theorem}
+  $C_0(\Omega)$ is dense in $L^p(\Omega)$ if $1 \leq p<\infty$.
+\end{theorem}
+
+\begin{proof}
+  Any $u \in L^p(\Omega)$ can be written in the form $u=u_1-u_2+i\left(u_3-u_4\right)$ where, for $1 \leq j \leq 4, u_j \in L^p(\Omega)$ is real-valued and nonnegative. Thus it is sufficient to prove that if $\epsilon>0$ and $u \in L^p(\Omega)$ is real-valued and nonnegative then there exists $\phi \in C_0(\Omega)$ such that $\|\phi-u\|_p<\epsilon$. By Theorem 1.44 for such a function $u$ there exists a monotonically increasing sequence $\left\{s_n\right\}$ of nonnegative simple functions converging pointwise to $u$ on $\Omega$. Since $0 \leq s_n(x) \leq u(x)$, we have $s_n \in L^p(\Omega)$ and since $\left(u(x)-s_n(x)\right)^p \leq(u(x))^p$, we have $s_n \rightarrow u$ in $L^p(\Omega)$ by the Dominated Convergence Theorem 1.50. Thus there exists an $s \in\left\{s_n\right\}$ such
+  that $\|u-s\|_p<\epsilon / 2$. Since $s$ is simple and $p<\infty$ the support of $s$ has finite volume. We can also assume that $s(x)=0$ if $x \in \Omega^c$. By Lusin's Theorem 1.42(f) there exists $\phi \in C_0(\mathbb{R}^n)$ such that
+  \[
+  |\phi(x)| \leq\|s\|_{\infty} \quad \text { for all } x \in \mathbb{R}^n
+  \]
+  and
+  \[
+  \operatorname{vol}\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)<\left(\frac{\epsilon}{4\|s\|_{\infty}}\right)^p
+  \]
+  By Theorem 2.14
+  \[
+  \begin{aligned}
+  \|s-\phi\|_p & \leq\|s-\phi\|_{\infty}\left(\operatorname{vol}\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)\right)^{1 / p} \\
+  & <2\|s\|_{\infty}\left(\frac{\epsilon}{4\|s\|_{\infty}}\right)=\frac{\epsilon}{2}
+  \end{aligned}
+  \]
+  It follows that $\|u-\phi\|_p<\epsilon$
+\end{proof}
+
+\begin{para}
+  The above proof shows that the set of simple functions in $L^p(\Omega)$ is dense in $L^p(\Omega)$ for $1 \leq p<\infty$. That this is also true for $L^{\infty}(\Omega)$ is a direct consequence of Theorem 1.44.
+\end{para}
+
+
+\begin{theorem}
+  $L^p(\Omega)$ is separable if $1 \leq p<\infty$.
+\end{theorem}
+
+\begin{proof}
+  For $m=1,2, \ldots$ let
+  \[
+  \Omega_m=\{x \in \Omega:|x| \leq m \quad \text { and } \operatorname{dist}(x, \operatorname{bdry}(\Omega)) \geq 1 / m\}
+  \]
+  Then $\Omega_m$ is a compact subset of $\Omega$. Let $P$ be the set of all polynomials on $\mathbb{R}^n$ having rational-complex coefficients, and let $P_m=\left\{\chi_m f: f \in P\right\}$ where $\chi_m$ is the characteristic function of $\Omega_m$. As shown in Paragraph 1.32, $P_m$ is dense in $C\left(\Omega_m\right)$. Moreover, $\bigcup_{m=1}^{\infty} P_m$ is countable.
+  
+  If $u \in L^p(\Omega)$ and $\epsilon>0$, there exists $\phi \in C_0(\Omega)$ such that $\|u-\phi\|_p<\epsilon / 2$. If $1 / m<\operatorname{dist}(\operatorname{supp}(\phi)$, bdry $(\Omega))$, then there exists $f$ in the set $P_m$ such that $\|\phi-f\|_{\infty}<(\epsilon / 2)\left(\operatorname{vol}\left(\Omega_m\right)\right)^{-1 / p}$. It follows that
+  \[
+  \|\phi-f\|_p \leq\|\phi-f\|_{\infty}\left(\operatorname{vol}\left(\Omega_m\right)\right)^{1 / p}<\epsilon / 2
+  \]
+  and so $\|u-f\|_p<\epsilon$. Thus the countable set $\bigcup_{m=1}^{\infty} P_m$ is dense in $L^p(\Omega)$ and $L^p(\Omega)$ is separable.
+\end{proof}
+
+\begin{para}
+  $C_B^0(\Omega)$ is a proper closed subset of $L^{\infty}(\Omega)$ and so is not dense in that space. Therefore, neither are $C_0(\Omega)$ or $C_0^{\infty}(\Omega)$. In fact, $L^{\infty}(\Omega)$ is not separable.
+\end{para}
+
+
+\section{Convolutions and Young's Theorem}
+
+
+\begin{para}[The Convolution Product]
+  It is often useful to form a non-pointwise product of two functions that smooth out irregularities of each of them to produce a function better behaved locally than either factor alone. One such product is the convolution $u * v$ of two functions $u$ and $v$ defined by
+  \begin{equation}\label{eq:2.16}
+    u * v(x)=\int_{\mathbb{R}^n} u(x-y) v(y) d y
+  \end{equation}
+  when the integral exists. For instance, if $u \in L^p(\mathbb{R}^n)$ and $v \in L^{p^{\prime}}(\mathbb{R}^n)$, then the integral (16) converges absolutely by Hölder's inequality, and we have $|u * v(x)| \leq\|u\|_p\|v\|_{p^{\prime}}$ for all values of $x$. Moreover, $u * v$ is uniformly continuous in these cases. To see this, observe first that if $u \in L^p(\mathbb{R}^n)$ and $v \in C_0(\mathbb{R}^n)$, then applying Hölder's inequality to the convolution of $u$ with differences between $v$ and translates of $v$ shows that $u * v$ is uniformly continuous. When $1 \leq p^{\prime}<\infty$ a general function $v$ in $L^{p^{\prime}}(\mathbb{R}^n)$ is the $L^{p^{\prime}}$-norm limit of a sequence, $\left\{v_j\right\}$ say, of functions in $C_0(\mathbb{R}^n)$; then $u * v$ is the $L^{\infty}$-norm limit of the sequence $\left\{u * v_j\right\}$, and so is still uniformly continuous. In any event, the change of variable $y=x-z$ shows that $u * v=v * u$. Thus $u * v$ is also uniformly continuous when $u \in L^1(\mathbb{R}^n)$ and $v \in L^{\infty}(\mathbb{R}^n)$.
+\end{para}
+
+
+\begin{theorem}[Young's Theorem]
+  Let $p, q, r \geq 1$ and suppose that $(1 / p)+(1 / q)+(1 / r)=2$. Then
+  \[
+  \left|\int_{\mathbb{R}^n}(u * v)(x) w(x) d x\right| \leq\|u\|_p\|v\|_q\|w\|_r
+  \]
+  holds for all $u \in L^p(\mathbb{R}^n)$,
+  $v \in L^q(\mathbb{R}^n)$, $w \in L^r(\mathbb{R}^n)$.
+\end{theorem}
+
+\begin{proof}
+  For now, we prove this estimate when $u \in C_0(\mathbb{R}^n)$,
+  and we explain in the proof of the Corollary below how to deal with more general functions $u$. 
+  This special case is the one we use in applications of convolution.
+  The function mapping $(x, y)$ to $u(x-y)$ is then jointly continuous
+  on $\mathbb{R}^n \times \mathbb{R}^n$, and hence is a measurable function
+  on $\mathbb{R}^n \times \mathbb{R}^n$. This justifies the use of Fubini's theorem below.
+  First observe that
+  \[
+  \frac{1}{p^{\prime}}+\frac{1}{q^{\prime}}+\frac{1}{r^{\prime}}
+    = 3 - \frac{1}{p} - \frac{1}{q} - \frac{1}{r} = 1,
+  \]
+  so the functions
+  \[
+  \begin{aligned}
+  U(x, y) & = |v(y)|^{q / p^{\prime}}|w(x)|^{r / p^{\prime}} \\
+  V(x, y) & = |u(x-y)|^{p / q^{\prime}}|w(x)|^{r / q^{\prime}} \\
+  W(x, y) & = |u(x-y)|^{p / r^{\prime}}|v(y)|^{q / r^{\prime}}
+  \end{aligned}
+  \]
+  satisfy $(U V W)(x, y)=u(x-y) v(y) w(x)$. Moreover,
+  \[
+  \begin{aligned}
+  \|V\|_{q^{\prime}} & =\left(\int_{\mathbb{R}^n}|w(x)|^r d x \int_{\mathbb{R}^n}|u(x-y)|^p d y\right)^{1 / q^{\prime}} \\
+  & =\left(\int_{\mathbb{R}^n}|w(x)|^r d x \int_{\mathbb{R}^n}|u(z)|^p d z\right)^{1 / q^{\prime}}=\|u\|_p^{p / q^{\prime}}\|w\|_r^{r / q^{\prime}}
+  \end{aligned}
+  \]
+  and similarly $\|U\|_{p^{\prime}}=\|v\|_q^{q / p^{\prime}}\|w\|_r^{r / p^{\prime}}$ and $\|W\|_{r^{\prime}}=\|u\|_p^{p / r^{\prime}}\|v\|_q^{q / r^{\prime}}$. Combining these results, we have, by the three-function form of Hölder's inequality,
+  \[
+  \begin{aligned}
+  \left|\int_{\mathbb{R}^n}(u * v)(x) w(x) d x\right| & \leq \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} \mid u(x-y \| v(y \| w(x) \mid d y d x \\
+  & =\int_{\mathbb{R}^n} \int_{\mathbb{R}^n} U(x, y) V(x, y) W(x, y) d y d x \\
+  & \leq\|U\|_{p^{\prime}}\|V\|_{q^{\prime}}\|W\|_{r^{\prime}}=\|u\|_p\|v\|_q\|w\|_r.
+  \end{aligned}
+  \]
+  We remark that (17) holds with a constant $K=K(p, q, r, n)<1$ included on the right side. The best (smallest) constant is
+  \[
+  K(p, q, r, n) = \left(\frac{p^{1 / p} q^{1 / q} r^{1 / r}}{\left(p^{\prime}\right)^{1 / p^{\prime}}\left(q^{\prime}\right)^{1 / q^{\prime}}\left(r^{\prime}\right)^{1 / r^{\prime}}}\right)^{n / 2}.
+  \]
+  See [LL] for a proof of this.
+\end{proof}
+
+
+\begin{corollary}
+  If $(1 / p)+(1 / q)=1+(1 / r)$, and if $u \in L^p(\mathbb{R}^n)$ and $v \in L^q(\mathbb{R}^n)$, then $u * v \in L^r(\mathbb{R}^n)$, and
+  \[
+  \|u * v\|_r \leq K\left(p, q, r^{\prime}, n\right)\|u\|_p\|v\|_q \leq\|u\|_p\|v\|_q .
+  \]
+  This is known as Young's inequality for convolution. It also implies Young's Theorem. When $u \in C_0(\mathbb{R}^n)$, it follows from Lemma 2.7 and the case of inequality (17) proved above, with $r^{\prime}$ in place of $r$.
+\end{corollary}
+
+\begin{para}[Proof of the General Case of Corollary 2.25 and Theorem 2.24]
+  We remove the restriction $u \in C_0(\mathbb{R}^n)$ from the above Corollary and therefore from Young's Theorem itself. We can assume that $p$ and $q$ are both finite, since the only other pairs satisfying the hypotheses are $(p, q)=(1, \infty)$ and $(\infty, 1)$, and these were covered before the statement of the theorem.
+  
+  Fix a simple function $v$ in $L^q(\mathbb{R}^n)$, and regard the functions $u$ as running through the subspace $C_0(\mathbb{R}^n)$ of $L^p(\mathbb{R}^n)$. Then convolution with $v$ is a bounded operator, $T_v$ say, from this dense subspace of $L^p(\mathbb{R}^n)$ to $L^r(\mathbb{R}^n)$, and the norm of $T_v$ is at most $\|v\|_q$. By the norm density of $C_0(\mathbb{R}^n)$ in $L^p(\mathbb{R}^n)$, the operator $T_v$ extends uniquely to one with the same norm mapping all of $L^p(\mathbb{R}^n)$ to $L^r(\mathbb{R}^n)$.
+  Given $u$ in $L^p(\mathbb{R}^n)$, find a sequence $\{u_j\}$ in $C_0(\mathbb{R}^n)$ converging in $L^p$ norm to $u$. Then $T_v(u_j)$ converges in $L^r$ norm to $T_v(u)$. Pass to a subsequence, if necessary,
+  to also get almost-everywhere convergence of $T_v(u_j)$ to $T_v(u)$. Since the simple function $v$ also belongs to $L^{p^{\prime}}$, the integrals (16) defining $u * v$ and $u_j * v$ all converge absolutely, and
+  \[
+  u * v(x)=\lim _{j \rightarrow \infty}\left(u_j * v(x)\right) \quad \text { for all } x \in R^n
+  \]
+  So $T_v(u)(x)$ agrees almost everywhere with $u * v(x)$ as given in (16), and hence $\|u * v\|_r \leq\|u\|_p\|v\|_q$ when $u$ is any function in $L^p(\mathbb{R}^n)$ and $v$ is any simple function in $L^q(\mathbb{R}^n)$
+  
+  We complete the proof with an argument passing from simple functions $v$ to general functions in $L^q(\mathbb{R}^n)$. For any fixed $u$ in $L^p(\mathbb{R}^n)$ convolution with $u$ defines an operator, $S_u$ say, with norm at most $\|u\|_p$, from the subspace of simple functions in $L^q(\mathbb{R}^n)$ to $L^r(\mathbb{R}^n)$. By the density of that subspace, the operator $S_u$ extends uniquely to one with the same norm mapping all of $L^q(\mathbb{R}^n)$ to $L^r(\mathbb{R}^n)$.
+  To relate this extended operator $S_u$ to formula (16), it suffices to deal with the case where the functions $u$ and $v$ are both nonnegative. Pick an increasing sequence $\left\{v_j\right\}$ of nonnegative simple functions converging in $L^q$ norm to $v$. Then the sequence $\left\{u * v_j\right\}$ converges in $L^r$ norm to $S_u(v)$. Again pass to a subsequence
+  that converges almost everywhere to $S_u(v)$. Since the function $u$ is nonnegative, the product sequence $\left\{u * v_j(x)\right\}$ increases for each $x$. So it either diverges to $\infty$ or converges to a finite value for $u * v(x)$. From the a.e. convergence above, the latter must happen for almost all $x$, and $\|u * v\|_r=\left\|S_u(v)\right\|_r \leq\|u\|_p\|v\|_q$ as required.
+\end{para}
+
+\begin{para}[The Space $\bm{\ell^p}$]
+  It is sometimes useful to classify sequences of real or complex numbers according to their degree of summability. We denote by $\ell^p$ the set of doubly infinite sequences $a=\left\{a_i\right\}_{i=-\infty}^{\infty}$ for which
+  \[
+  \left\|a ; \ell^p\right\|= \begin{cases}\left(\sum_{i=-\infty}^{\infty}\left|a_i\right|^p\right)^{1 / p} & \text { if } 0<p<\infty \\ \sup _{-\infty<i<\infty}\left|a_i\right| & \text { if } p=\infty\end{cases}
+  \]
+  is finite. Evidently, $\left\|a ; \ell^p\right\|=\|f\|_p$ where $f$ is the function defined on $\mathbb{R}$ by $f(t)=a_i$ for $i \leq t<i+1,-\infty<i<\infty$.
+  
+  If $1 \leq p \leq \infty$, then $\ell^p$ is a Banach space with norm $\left\|\cdot ; \ell^p\right\|$. Singly infinite sequences such as $\left\{a_i\right\}_{i=0}^{\infty}$ or even finite sequences such as $\left\{a_i\right\}_{i=m}^n$ can be regarded as defined for $-\infty<i<\infty$ with all $a_i=0$ for $i$ outside the appropriate interval, and as such they determine subspaces of of $\ell^p$.
+\end{para}
+
+Hölder's inequality, Minkowski's inequality, and Young's inequality follow for the spaces $\ell^p$ by the same methods used for $L^p(\mathbb{R})$. Specifically, suppose that $a=\left\{a_i\right\}_{i=-\infty}^{\infty}$ and $b=\left\{b_i\right\}_{i=-\infty}^{\infty}$.
+\begin{enumerate}[label = (\alph*)]
+  \item If $a \in \ell^p$ and $b \in \ell^q$, then $a b=\left\{a_i b_i\right\}_{i=-\infty}^{\infty} \in \ell^r$ where $r$ satisfies $(1 / r)=(1 / p)+(1 / q)$, and
+  \[
+  \left\|a b ; \ell^r\right\| \leq\left\|a ; \ell^p\right\|\left\|b ; \ell^q\right\| . \quad \text { (Hölder's Inequality) }
+  \]
+  \item If $a, b \in \ell^p$, then
+  \[
+  \left\|a+b ; \ell^p\right\| \leq\left\|a ; \ell^p\right\|+\left\|b ; \ell^p\right\| . \quad \text { (Minkowski's Inequality) }
+  \]
+  \item If $a \in \ell^p$ and $b \in \ell^q$ where $(1 / p)+(1 / q) \geq 1$, then the series $(a * b)_i$ defined by
+  \[
+  (a * b)_i=\sum_{j=-\infty}^{\infty} a_{i-j} b_j, \quad(-\infty<i<\infty)
+  \]
+  converges absolutely. Moreover, the sequence $a * b$, called the convolution of $a$ and $b$, belongs to $\ell^r$, where $1+(1 / r)=(1 / p)+(1 / q)$, and
+  \[
+  \left\|a * b ; \ell^r\right\| \leq\left\|a ; \ell^p\right\|\left\|b ; \ell^q\right\| . \quad \text { (Young's Inequality) }
+  \]
+\end{enumerate}
+
+Note, however, that the $\ell^p$ spaces imbed into one another in the reverse order to the imbeddings of the spaces $L^p(\Omega)$ where $\Omega$ has finite volume. (See Theorem 2.14.) If $0<p \leq q \leq \infty$, then
+\[
+\ell^p \rightarrow \ell^q, \quad \text { and } \quad\left\|a ; \ell^q\right\| \leq\left\|a ; \ell^p\right\| .
+\]
+The latter inequality is obvious if $q=\infty$ and follows for other $q \geq p$ from summing the inequality
+\[
+\left|a_i\right|^q=\left|a_i\right|^p\left|a_i\right|^{q-p} \leq\left|a_i\right|^p\left\|a ; \ell^{\infty}\right\|^{q-p} \leq\left|a_i\right|^p\left\|a ; \ell^p\right\|^{q-p} .
+\]
+
+
+\section{Mollifiers and Approximation by Smooth Functions}
+
+\begin{para}[Mollifiers]
+  Let $J$ be a nonnegative, real-valued function belonging to $C_0^{\infty}(\mathbb{R}^n)$ and having the properties
+  \begin{enumerate}[label = (\roman*)]
+    \item $J(x)=0$ if $|x| \geq 1$, and
+    \item $\int_{\mathbb{R}^n} J(x) d x=1$.
+  \end{enumerate}
+  For example, we may take
+  \[
+  J(x)= \begin{cases}k \exp \left[-1 /\left(1-|x|^2\right)\right] & \text { if }|x|<1 \\ 0 & \text { if }|x| \geq 1\end{cases}
+  \]
+  where $k>0$ is chosen so that condition (ii) is satisfied. If $\epsilon>0$, the function $J_\epsilon(x)=\epsilon^{-n} J(x / \epsilon)$ is nonnegative, belongs to $C_0^{\infty}(\mathbb{R}^n)$, and satisfies
+  \begin{enumerate}[label = (\roman*)]
+    \item $J_\epsilon(x)=0$ if $|x| \geq \epsilon$, and
+    \item $\int_{\mathbb{R}^n} J_\epsilon(x) d x=1$.
+  \end{enumerate}
+  $J_\epsilon$ is called a mollifier and the convolution
+  \[
+  J_\epsilon * u(x)=\int_{\mathbb{R}^n} J_\epsilon(x-y) u(y) d y
+  \]
+  defined for functions $u$ for which the right side of (18) makes sense, is called
+  a mollification or regularization of $u$. The following theorem summarizes some properties of mollification.
+\end{para}
+
+\begin{theorem}[Properties of Mollification]
+  Let $u$ be a function which is defined on $\mathbb{R}^n$ and vanishes identically outside $\Omega$.
+  \begin{enumerate}[label = (\alph*)]
+    \item If $u \in L_{\text {loc }}^1(\mathbb{R}^n)$, then $J_\epsilon * u \in C^{\infty}(\mathbb{R}^n)$.
+    \item If $u \in L_{\mathrm{loc}}^1(\Omega)$ and $\operatorname{supp}(u) \Subset \Omega$, then $J_\epsilon * u \in C_0^{\infty}(\Omega)$ provided
+    \[
+    \epsilon<\operatorname{dist}(\operatorname{supp}(u), \operatorname{bdry}(\Omega))
+    \]
+    \item If $u \in L^p(\Omega)$ where $1 \leq p<\infty$, then $J_\epsilon * u \in L^p(\Omega)$. Also
+    \[
+    \left\|J_\epsilon * u\right\|_p \leq\|u\|_p \quad \text { and } \quad \lim _{\epsilon \rightarrow 0+}\left\|J_\epsilon * u-u\right\|_p=0
+    \]
+    \item If $u \in C(\Omega)$ and if $G \Subset \Omega$, then $\lim _{\epsilon \rightarrow 0+} J_\epsilon * u(x)=u(x)$ uniformly on $G$.
+    \item If $u \in C(\bar{\Omega})$, then $\lim _{\epsilon \rightarrow 0+} J_\epsilon * u(x)=u(x)$ uniformly on $\Omega$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  Since $J_\epsilon(x-y)$ is an infinitely differentiable function of $x$ and vanishes if $|y-x| \geq \epsilon$, and since for every multi-index $\alpha$ we have
+  \[
+  D^\alpha\left(J_\epsilon * u\right)(x)=\int_{\mathbb{R}^n} D_x^\alpha J_\epsilon(x-y) u(y) d y,
+  \]
+  conclusions (a) and (b) are valid.
+  If $u \in L^p(\Omega)$ where $1<p<\infty$, then by Hölder's inequality (3),
+  \[
+  \begin{aligned}
+  \left|J_\epsilon * u(x)\right| & =\left|\int_{\mathbb{R}^n} J_\epsilon(x-y) u(y) d y\right| \\
+  & \leq\left(\int_{\mathbb{R}^n} J_\epsilon(x-y) d y\right)^{1 / p^{\prime}}\left(\int_{\mathbb{R}^n} J_\epsilon(x-y)|u(y)|^p d y\right)^{1 / p} \\
+  & =\left(\int_{\mathbb{R}^n} J_\epsilon(x-y)|u(y)|^p d y\right)^{1 / p} .
+  \end{aligned}
+  \]
+  Hence by Fubini's Theorem 1.54
+  \[
+  \begin{aligned}
+  \int_{\Omega}\left|J_\epsilon * u(x)\right|^p d x & \leq \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} J_\epsilon(x-y)|u(y)|^p d y d x \\
+  & =\int_{\mathbb{R}^n}|u(y)|^p d y \int_{\mathbb{R}^n} J_\epsilon(x-y) d x=\|u\|_p^p .
+  \end{aligned}
+  \]
+  For $p=1$ this inequality follows directly from (18).
+  Now let $\eta>0$ be given. By Theorem 2.19 there exists $\phi \in C_0(\Omega)$ such that $\|u-\phi\|_p<\eta / 3$. Thus also $\left\|J_\epsilon * u-J_\epsilon * \phi\right\|_p<\eta / 3$. Now
+  \[
+  \begin{aligned}
+  \left|J_\epsilon * \phi(x)-\phi(x)\right| & =\left|\int_{\mathbb{R}^n} J_\epsilon(x-y)(\phi(y)-\phi(x)) d u\right| \\
+  & \leq \sup _{|y-x|<\epsilon}|\phi(y)-\phi(x)| .
+  \end{aligned}
+  \]
+  Since $\phi$ is uniformly continuous on $\Omega$, the right side of (20) tends to zero as $\epsilon \rightarrow 0+$. Since $\operatorname{supp}(\phi)$ is compact, we can ensure that $\left\|J_\epsilon * \phi-\phi\right\|_p<\eta / 3$
+  by choosing $\epsilon$ sufficiently small. For such $\epsilon$ we have $\left\|J_\epsilon * u-u\right\|_p<\eta$ and (c) follows.
+  
+  The proofs of (d) and (e) may be obtained by replacing $\phi$ by $u$ in inequality (20).
+\end{proof}
+
+\begin{corollary}
+  $C_0^{\infty}(\Omega)$ is dense in $L^p(\Omega)$ if $1 \leq p<\infty$.
+\end{corollary}
+
+This is an immediate consequence of conclusions (b) and (e) of the theorem and Theorem 2.19.
+
+
+\section[Precompact Sets in $L^p(\Omega)$]{Precompact Sets in $\bm{L^p(\Omega)}$}
+
+
+\begin{para}
+  The following theorem plays a role in the study of $L^p$ spaces similar to that played by the Arzela-Ascoli Theorem 1.33 in the study of spaces of continuous functions. If $u$ is a function defined a.e. on $\Omega \subset \mathbb{R}^n$, let $\tilde{u}$ denote the zero extension of $u$ outside $\Omega$ :
+  \[
+  \tilde{u} =
+  \begin{cases}
+    u(x) & \text { if } x \in \Omega, \\ 
+    0 & \text { if } x \in \mathbb{R}^n-\Omega.
+  \end{cases}
+  \]
+\end{para}
+
+\begin{theorem}
+  Let $1 \leq p<\infty$. A bounded subset $K \subset L^p(\Omega)$ is precompact in $L^p(\Omega)$ if and only if for every number $\epsilon>0$ there exists a number $\delta>0$ and a subset $G \Subset \Omega$ such that for every $u \in K$ and $h \in \mathbb{R}^n$ with $|h|<\delta$ both of the following inequalities hold:
+  \[
+  \begin{array}{r}
+  \int_{\Omega}|\tilde{u}(x+h)-\tilde{u}(x)|^p d x<\epsilon^p, \\
+  \int_{\Omega-\bar{G}}|u(x)|^p d x<\epsilon^p .
+  \end{array}
+  \]
+\end{theorem}
+
+\begin{proof}
+  Let $T_h u$ denote the translate of $u$ by $h$ :
+  \[
+  T_h u(x)=u(x+h)
+  \]
+  First we assume that $K$ is precompact in $L^p(\Omega)$. Let $\epsilon>0$ be given. Since $K$ has a finite $\epsilon / 6$-net (Theorem 1.19), and since $C_0(\Omega)$ is dense in $L^p(\Omega)$ (Theorem 2.19), there exists a finite set $S$ of continuous functions having compact support in $\Omega$, such that for each $u \in K$ there exists $\phi \in S$ satisfying $\|u-\phi\|_p<\epsilon / 3$. Let $G$ be the union of the supports of the finitely many functions in $S$. Then $G \Subset \Omega$ and inequality (22) follows immediately. To prove inequality (21) choose a closed ball $\overline{B_r}$ of radius $r$ centred at the origin and containing $G$. Note that $\left(T_h \phi-\phi\right)(x)=\phi(x+h)-\phi(x)$ is uniformly continuous and vanishes outside $B_{r+1}$ provided $|h|<1$. Hence
+  \[
+  \lim _{|h| \rightarrow 0} \int_{\mathbb{R}^n}\left|T_h \phi(x)-\phi(x)\right|^p d x=0
+  \]
+  the convergence being uniform for $\phi \in S$. For $|h|$ sufficiently small, we have $\left\|T_h \phi-\phi\right\|_p<\epsilon / 3$. If $\phi \in S$ satisfies $\|u-\phi\|_p<\epsilon / 3$, then also $\left\|T_h \tilde{u}-T_h \phi\right\|_p<\epsilon / 3$. Hence we have for $|h|$ sufficiently small (independent of $u \in K)$
+  \[
+  \left\|T_h \tilde{u}-\tilde{u}\right\|_p \leq\left\|T_h \tilde{u}-T_h \phi\right\|_p+\left\|T_h \phi-\phi\right\|_p+\|\phi-u\|_p<\epsilon
+  \]
+  and (21) follows. (This argument shows that translation is continuous in $L^p(\mathbb{R}^n)$.)
+  It is sufficient to prove the converse for the special case $\Omega=\mathbb{R}^n$, as it follows for general $\Omega$ from its application in this special case to the set $\tilde{K}=\{\tilde{u}: u \in K\}$.
+  Let $\epsilon>0$ be given and choose $G \Subset \mathbb{R}^n$ such that for all $u \in K$
+  \[
+  \int_{\mathbb{R}^n-\bar{G}}|u(x)|^p d x<\frac{\epsilon}{3} .
+  \]
+  For any $\eta>0$ the function $J_\eta * u$ defined as in (18) belongs to $C^{\infty}(\mathbb{R}^n)$ and in particular to $C(\bar{G})$. If $\phi \in C_0(\mathbb{R}^n)$, then by Hölder's inequality,
+  \[
+  \begin{aligned}
+  \left|J_\eta * \phi(x)-\phi(x)\right|^p & =\left|\int_{\mathbb{R}^n} J_\eta(y)(\phi(x-y)-\phi(x)) d y\right|^p \\
+  & \leq \int_{B_\eta} J_\eta(y)\left|T_{-y} \phi(x)-\phi(x)\right|^p d y
+  \end{aligned}
+  \]
+  Hence
+  \[
+  \left\|J_\eta * \phi-\phi\right\|_p \leq \sup _{h \in B_\eta}\left\|T_h \phi-\phi\right\|_p
+  \]
+  If $u \in L^p(\mathbb{R}^n)$, let $\left\{\phi_j\right\}$ be a sequence in $C_0(\mathbb{R}^n)$ converging to $u$ in $L^p$ norm. By $2.29(\mathrm{c}),\left\{J_\eta * \phi_j\right\}$ is a Cauchy sequence converging to $J_\eta * u$ in $L^p(\mathbb{R}^n)$. Since also $T_h \phi_j \rightarrow T_h u$ in $L^p(\mathbb{R}^n)$, we have
+  \[
+  \left\|J_\eta * u-u\right\|_p \leq \sup _{h \in B_\eta}\left\|T_h u-u\right\|_p
+  \]
+  Now (21) implies that $\lim _{|h| \rightarrow 0}\left\|T_h u-u\right\|_p=0$ uniformly for $u \in K$. Hence $\lim _{\eta \rightarrow 0}\left\|J_\eta * u-u\right\|_p=0$ uniformly for $u \in K$. Fix $\eta>0$ so that
+  \[
+  \int_{\bar{G}}\left|J_\eta * u(x)-u(x)\right|^p d x<\frac{\epsilon}{3 \cdot 2^{p-1}}
+  \]
+  for all $u \in K$.
+  We show that $\left\{J_\eta * u: u \in K\right\}$ satisfies the conditions of the Arzela-Ascoli Theorem~1.33 on $\bar{G}$ and hence is precompact in $C(\bar{G})$. By (19) we have
+  \[
+  \left|J_\eta * u(x)\right| \leq\left(\sup _{y \in \mathbb{R}^n} J_\eta(y)\right)^{1 / p}\|u\|_p
+  \]
+  which is bounded uniformly for $x \in \mathbb{R}^n$ and $u \in K$ since $K$ is bounded in $L^p(\mathbb{R}^n)$ and $\eta$ is fixed. Similarly,
+  \[
+  \left|J_\eta * u(x+h)-J_\eta * u(x)\right| \leq\left(\sup _{y \in \mathbb{R}^n} J_\eta(y)\right)^{1 / p}\left\|T_h u-u\right\|_p
+  \]
+  and so $\lim _{|h| \rightarrow 0} J_\eta * u(x+h)=J_\eta * u(x)$ uniformly for $x \in \mathbb{R}^n$ and $u \in K$. Thus $\left\{J_\eta * u: u \in K\right\}$ is precompact in $C(\bar{G})$, and by Theorem 1.19 there exists a finite set $\left\{\psi_1, \ldots, \psi_m\right\}$ of functions in $C(\bar{G})$ such that if $u \in K$, then for some $j$, $1 \leq j \leq m$, and all $x \in \bar{G}$ we have
+  \[
+  \left|\psi_j(x)-J_\eta * u(x)\right|<\frac{\epsilon}{3 \cdot 2^{p-1} \cdot \operatorname{vol}(\bar{G})}
+  \]
+  This, together with (23), (24), and the inequality $(|a|+|b|)^p \leq 2^{p-1}\left(|a|^p+|b|^p\right)$ of Lemma~2.2, implies that
+  \[
+  \begin{aligned}
+  & \int_{\mathbb{R}^n}\left|u(x)-\tilde{\psi}_j(x)\right|^p d x=\int_{\mathbb{R}^n-\bar{G}}|u(x)|^p d x+\int_{\bar{G}}\left|u(x)-\psi_j(x)\right|^p d x \\
+  &<\frac{\epsilon}{3}+2^{p-1} \int_{\bar{G}}\left(\left|u(x)-J_\eta * u(x)\right|^p+\left|J_\eta * u(x)-\psi_j(x)\right|^p\right) d x \\
+  &<\frac{\epsilon}{3}+2^{p-1}\left(\frac{\epsilon}{3 \cdot 2^{p-1}}+\frac{\epsilon}{3 \cdot 2^{p-1} \cdot \operatorname{vol}(\bar{G})} \operatorname{vol}(\bar{G})\right)=\epsilon
+  \end{aligned}
+  \]
+  Hence $K$ has a finite $\epsilon$-net in $L^p(\mathbb{R}^n)$ and is precompact there by Theorem 1.19.
+\end{proof}
+
+
+\begin{theorem}
+  Let $1 \leq p<\infty$ and let $K \subset L^p(\Omega)$. Suppose there exists a sequence $\left\{\Omega_j\right\}$ of subdomains of $\Omega$ having the following properties:
+  \begin{enumerate}[label = (\roman*)]
+    \item $\Omega_j \subset \Omega_{j+1}$ for each $j$.
+    \item The set of restrictions to $\Omega_j$ of the functions in $K$ is precompact in $L^p\left(\Omega_j\right)$ for each $j$.
+    \item For every $\epsilon>0$ there exists $j$ such that
+    \[
+    \int_{\Omega-\Omega_j}|u(x)|^p d x<\epsilon \quad \text { for every } u \in K.
+    \]
+  \end{enumerate}
+  Then $K$ is precompact in $L^p(\Omega)$.
+\end{theorem}
+
+\begin{proof}
+  Let $\left\{u_n\right\}$ be a sequence in $K$.
+  By (ii) there exists a subsequence $\left\{u_n^{(1)}\right\}$ whose restrictions
+  of $\Omega_1$ converge in $L^p\left(\Omega_1\right)$.
+  Having selected $\left\{u_n^{(1)}\right\}$, $\ldots$, $\left\{u_n^{(k)}\right\}$,
+  we may select a subsequence $\left\{u_n^{(k+1)}\right\}$ of $\left\{u_n^{(k)}\right\}$
+  whose restrictions to $\Omega_{k+1}$ converge in $L^p\left(\Omega_{k+1}\right)$.
+  The restrictions of $\left\{u_n^{(k+1)}\right\}$ to $\Omega_j$ also converge
+  in $L^p\left(\Omega_j\right)$ for $1 \leq j \leq k$ by (i).
+  
+  Let $v_n=u_n^{(n)}$ for $n=1,2, \ldots$ Clearly $\left\{v_n\right\}$ is a subsequence
+  of $\left\{u_n\right\}$. Given $\epsilon>0$, (iii) assures us that there exists $j$ such that
+  \[
+  \int_{\Omega-\Omega_j}\left|v_n(x)-v_m(x)\right|^p d x<\frac{\epsilon}{2}
+  \]
+  for all $n, m=1,2, \ldots$ Except for the first $j-1$ terms, $\left\{v_n\right\}$
+  is a subsequence of $\left\{u_n^{(j)}\right\}$, so its restrictions to $\Omega_j$
+  form a Cauchy sequence in $L^p\left(\Omega_j\right)$. Thus for $n, m$ sufficiently large,
+  \[
+  \int_{\Omega_j}\left|v_n(x)-v_m(x)\right|^p d x<\frac{\epsilon}{2}
+  \]
+  and
+  \[
+  \int_{\Omega}\left|v_n(x)-v_m(x)\right|^p d x<\epsilon
+  \]
+  Thus $\left\{v_n\right\}$ is a Cauchy sequence in $L^p(\Omega)$ and so converges there.
+  Hence $K$ is precompact in $L^p(\Omega)$.
+\end{proof}
+
+
+\section{Uniform Convexity}
+
+\setcounter{para}{33}
+
+\begin{para}
+  As noted previously, the parallelogram law in an inner product space guarantees
+  the uniform convexity of the corresponding norm on that space.
+  This applies to $L^2(\Omega)$. Now we will develop certain inequalities due to 
+  Clarkson [Clk] that generalize the parallelogram law and verify the 
+  uniform convexity of $L^p(\Omega)$ for $1 < p < \infty$.
+\end{para}
+
+We begin by preparing three technical lemmas needed for the proof.
+
+\begin{lemma}
+  If $0<s<1$, then $f(t) = (1-s^t)/t$ is a decreasing function of $t>0$.
+\end{lemma}
+
+\begin{proof}
+  $f'(t) = (1/t^2)\bigl(g(s^t)-1\bigr)$ where $g(r) = r - r\ln r$.
+  Since $0<s'<1$ and since $g'(r) = -\ln r \geq 0$ for $0<r\leq 1$,
+  it follows that $g(s^t) < g(1) = 1$ where $f'(t)<0$.
+\end{proof}
+
+
+\begin{lemma}\label{lemma:2.36}
+  If $1<p\leq 2$ and $0\leq t\leq 1$, then
+  \begin{equation}\label{eq:2.25}
+    \biggl(\frac{1+t}{2}\biggr)^{p'} + \biggl(\frac{1-t}{2}\biggr)^{p'}
+    \leq \biggl(\frac12 + \frac12 t^p\biggr)^{1/(p-1)},
+  \end{equation}
+  where $p' = p/(p-1)$ is the exponent conjugate to $p$.
+\end{lemma}
+
+\begin{proof}
+  Since equality holds in \eqref{eq:2.25} if either $p=2$
+  or $t=0$ or $t=1$, we may assume that $1<p<2$ and that $0<t<1$.
+  Under the transformation $t = (1-s)/(1+s)$, which maps $0<t<1$
+  onto $1>s>0$, \eqref{eq:2.25} reduces to the equivalent form
+  \begin{equation}\label{eq:2.26}
+    \frac12 \bigl((1+s)^p + (1-s)^p\bigr) - (1+s^{p'})^{p-1} \geq 0.
+  \end{equation}
+  The power series expansion of the left side of \eqref{eq:2.26} takes the form
+  \begin{align*}
+    \frac12 \sum_{k=0}^{\infty} & \binom{p}{k} s^k 
+      + \frac12 \sum_{k=0}^{\infty} \binom{p}{k} (-s)^k
+      - \sum_{k=0}^{\infty} \binom{p-1}{k} s^{p'k} \\
+      & = \sum_{k=0}^{\infty} \binom{p}{2k} s^{2k}
+        - \sum_{k=0}^{\infty} \binom{p-1}{k} s^{p'k} \\
+      & = \sum_{k=1}^{\infty} \biggl[\binom{p}{2k} s^{2k}
+          - \binom{p-1}{2k-1} s^{p'(2k-1)} - \binom{p-1}{2k} s^{2p'k}\biggr], 
+  \end{align*}
+  where
+  \[\binom{p}{0} = 1\qquad\text{and}\qquad\binom{p}{k}
+    = \frac{p(p-1)(p-2)\cdots (p-k+1)}{k!},\quad k\geq 1.\]
+    The latter series certainly converges for $0 \leq s<1$.
+  We prove (26) by showing that each term of the series is positive for $0<s<1$.
+  The $k$th term (in square brackets above) can be written in the form
+  $$
+  \begin{aligned}
+  & \frac{p(p-1)(2-p)(3-p) \cdots(2 k-1-p)}{(2 k) !} s^{2 k} \\
+  & -\frac{(p-1)(2-p) \cdots(2 k-1-p)}{(2 k-1) !} s^{p^{\prime}(2 k-1)}+\frac{(p-1)(2-p) \cdots(2 k-p)}{(2 k) !} s^{2 k p^{\prime}} \\
+  & =\frac{(2-p) \cdots(2 k-p)}{(2 k-1) !} s^{2 k}\left[\frac{p(p-1)}{2 k(2 k-p)}-\frac{p-1}{2 k-p} s^{p^{\prime}(2 k-1)-2 k}+\frac{p-1}{2 k} s^{2 k p^{\prime}-2 k}\right] \\
+  & =\frac{(2-p) \cdots(2 k-p)}{(2 k-1) !} s^{2 k}\left[\frac{1-s^{(2 k-p) /(p-1)}}{(2 k-p) /(p-1)}-\frac{1-s^{2 k /(p-1)}}{2 k /(p-1)}\right] .
+  \end{aligned}
+  $$
+  The first factor is positive since $p<2$; the factor in the square brackets is positive 
+  by Lemma 2.35 since $0 < (2k-p)/(p-1)< 2k/(p-1)$. Thus (26) and hence (25) is established.
+\end{proof}
+
+
+\begin{lemma}\label{lemma:2.37}
+  Let $z,w\in\mathbb{C}$. If $1<p\leq 2$ and $p' = p/(p-1)$, then
+  \begin{equation}\label{eq:2.27}
+    \biggl|\frac{z+w}{2}\biggr|^{p'} + \biggl|\frac{z-w}{2}\biggr|^{p'}
+    \leq \biggl(\frac12 |z|^p + \frac12 |w|^p\biggr)^{1/(p-1)}.
+  \end{equation}
+  If $2\leq p<\infty$, then
+  \begin{equation}
+    \biggl|\frac{z+w}{2}\biggr|^p + \biggl|\frac{z-w}{2}\biggr|^p
+    \leq \frac12 |z|^p + \frac12 |w|^p.
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  Since \eqref{eq:2.27} obviously holds if $z=0$ or $w=0$ and is symmetric in $z$ and $w$,
+  we can assume that $|z| \geq |w| > 0$.
+  If $w/z = re^{i\theta}$ where $0\leq r\leq 1$ and $0\leq\theta<2\pi$,
+  then \eqref{eq:2.27} can be rewritten in the form
+  \begin{equation}\label{eq:2.29}
+  \left|\frac{1+r e^{i \theta}}{2}\right|^{p^{\prime}}
+  + \left|\frac{1-r e^{i \theta}}{2}\right|^{p^{\prime}}
+  \leq \left(\frac{1}{2}+\frac{1}{2} r^p\right)^{1 /(p-1)}.
+  \end{equation}
+  If $\theta=0$, then \eqref{eq:2.29} is just the result of Lemma \ref{lemma:2.36}.
+  We complete the proof of \eqref{eq:2.29} by showing that for fixed $r, 0<r\leq 1$,
+  the function
+  \[f(\theta) = \left|1 + re^{i \theta}\right|^{p^{\prime}}
+    + \left|1 - re^{i\theta}\right|^{p^{\prime}}\]
+  has a maximum value for $0 \leq \theta < 2\pi$ at $\theta=0$. Since
+  \[
+  f(\theta) = \left(1+r^2+2r\cos\theta\right)^{p^{\prime} / 2}
+    + \left(1+r^2-2r\cos\theta\right)^{p^{\prime} / 2},
+  \]
+  satisfies $f(2\pi-\theta) = f(\pi-\theta) = f(\theta)$,
+  we need consider $f$ only on the interval $0 \leq\theta\leq\pi / 2$.
+  Since $p^{\prime}\geq 2$, on that interval
+  \[
+  f^{\prime}(\theta) = -p^{\prime} r \sin\theta
+    \left[\left(1+r^2+2 r \cos \theta\right)^{\left(p^{\prime} / 2\right)-1}
+      - \left(1+r^2-2 r \cos \theta\right)^{\left(p^{\prime} / 2\right)-1}\right]\leq 0 .
+  \]
+  Thus the maximum value of $f$ does indeed occur at $\theta=0$ and \eqref{eq:2.29},
+  and therefore also \eqref{eq:2.27}, is proved.
+
+  If $2 \leq p<\infty$, then $1 < p^{\prime} \leq 2$,
+  and we have by interchanging $p$ and $p^{\prime}$ in \eqref{eq:2.27}
+  and using Lemma $2.2$,
+  \begin{align*}
+  \left|\frac{z+w}{2}\right|^p+\left|\frac{z-w}{2}\right|^p 
+  & \leq\left(\frac{1}{2}|z|^{p^{\prime}}+\frac{1}{2}|w|^{p^{\prime}}\right)^{1 /\left(p^{\prime}-1\right)} \\
+  & = \left(\frac{1}{2}|z|^{p^{\prime}}+\frac{1}{2}|w|^{p^{\prime}}\right)^{p/p^{\prime}} \\
+  & \leq 2^{\left(p / p^{\prime}\right)-1}
+    \left[\left(\frac{1}{2}\right)^{p / p^{\prime}}|z|^p
+      + \left(\frac{1}{2}\right)^{p / p^{\prime}}|w|^p\right] \\
+  & = \frac{1}{2}|z|^p+\frac{1}{2}|w|^p,
+  \end{align*}
+  so that \eqref{eq:2.28} is also proved.
+\end{proof}
+
+
+\begin{theorem}[Clarkson's Inequalities]\label{thm:2.38}
+  Let $u,v\in L^p(\Omega)$. For $1<p<\infty$ let $p' = p/(p-1)$.
+  If $2\leq p<\infty$, then
+  \begin{align}
+    \left\|\frac{u+v}{2}\right\|_p^p+\left\|\frac{u-v}{2}\right\|_p^p
+    & \leq \frac{1}{2}\|u\|_p^p+\frac{1}{2}\|v\|_p^p, \label{eq:2.30} \\
+    \left\|\frac{u+v}{2}\right\|_p^{p^{\prime}}+\left\|\frac{u-v}{2}\right\|_p^{p^{\prime}} 
+    & \geq\left(\frac{1}{2}\|u\|_p^p+\frac{1}{2}\|v\|_p^p\right)^{p^{\prime}-1}. \label{eq:2.31}
+  \end{align}
+  If $1<p \leq 2$, then
+  \begin{align}
+    \left\|\frac{u+v}{2}\right\|_p^{p^{\prime}}+\left\|\frac{u-v}{2}\right\|_p^{p^{\prime}} 
+    & \leq\left(\frac{1}{2}\|u\|_p^p+\frac{1}{2}\|v\|_p^p\right)^{p^{\prime}-1}, \label{eq:2.32} \\
+    \left\|\frac{u+v}{2}\right\|_p^p+\left\|\frac{u-v}{2}\right\|_p^p 
+    & \geq \frac{1}{2}\|u\|_p^p+\frac{1}{2}\|v\|_p^p. \label{eq:2.33}
+  \end{align}
+\end{theorem}
+
+\begin{proof}
+  For $2\leq p<\infty$, \eqref{eq:2.30} is obtained by using $z=u(x)$ and $w=v(x)$ 
+  in \eqref{eq:2.28} and integrating over $\Omega$.
+  To prove \eqref{eq:2.32} for $1<p \leq 2$ we first note that
+  $\bigl\||u|^{p^{\prime}}\bigr\|_{p-1}=\|u\|_p^{p^{\prime}}$ for any $u \in L^p(\Omega)$. 
+  Using the reverse Minkowski inequality (7) corresponding to the exponent $p-1<1$,
+  and \eqref{eq:2.27} with $z=u(x)$ and $w = v(x)$, we obtain
+  \begin{align*}
+    \biggl\|\frac{u+v}{2}\biggr\|_p^{p'}
+    + \biggl\|\frac{u-v}{2}\biggr\|_p^{p'}
+    & = \biggl\| \biggl|\frac{u+v}{2}\biggr|^{p'} \biggr\|_{p-1}
+      + \biggl\| \biggl|\frac{u-v}{2}\biggr|^{p'} \biggr\|_{p-1} \\
+    & \leq \biggl[\int_{\Omega} \biggl(\biggl|\frac{u(x)+v(x)}{2}\biggr|^{p'}
+        + \biggl|\frac{u(x)-v(x)}{2}\biggr|^{p'}\biggr)^{p-1} \d x\biggr]^{1/(p-1)} \\
+    & \leq \biggl[\int_\Omega \biggl(\frac12 |u(x)|^p + \frac12 |v(x)|^p\biggr) \d x\biggr]^{p'-1} \\
+    & = \biggl(\frac12 \|u\|_p^p + \frac12 \|v\|_p^p\biggr)^{p'-1}
+  \end{align*}
+  which is \eqref{eq:2.32}.
+
+  Inequality \eqref{eq:2.31} is proved for $2\leq p<\infty$ by the same method
+  used to prove \eqref{eq:2.32} except that the direct Minkowski inequality (5),
+  corresponding to $p-1\geq 1$, is used in place of the reverse inequality,
+  and in place of \eqref{eq:2.27} is used the inequality
+  \[\biggl(\biggl|\frac{\xi+\eta}{2}\biggr|^{p'}
+    + \biggl|\frac{\xi-\eta}{2}\biggr|^{p'}\biggr)^{p-1}
+    \geq \frac12 |\xi|^p + \frac12 |\eta|^p,\]
+  which is obtained from \eqref{eq:2.27} by replacing $p$ by $p'$,
+  $z$ by $\xi+\eta$, and $w$ by $\xi-\eta$.
+  Finally, \eqref{eq:2.33} can be obtained from a similar revision of \eqref{eq:2.28}.
+
+  We remark that if $p=2$, all four Clarkson inequalities reduce to the
+  parallelogram law
+  \[\|u+v\|_2^2 + \|u-v\|_2^2 = 2\|u\|_2^2 + 2\|v\|_2^2. \qedhere\]
+\end{proof}
+
+
+\begin{theorem}\label{thm:2.39}
+  If $1<p<\infty$, then $L^p(\Omega)$ is uniformly convex.
+\end{theorem}
+
+\begin{proof}
+  Let $u,v\in L^p(\Omega)$ satisfy $\|u\|_p = \|v\|_p = 1$ and $\|u-v\|_p\geq\varepsilon$
+  where $0<\varepsilon<2$. If $2\leq p<\infty$, then \eqref{2:30} implies that
+  \[\biggl\|\frac{u+v}{2}\biggr\|_p^p \leq 1 - \frac{\varepsilon^p}{2^p}.\]
+  If $1<p\leq 2$, then \eqref{eq:2.32} implies that 
+  \[\biggl\|\frac{u+v}{2}\biggr\|_p^{p'} \leq 1 - \frac{\varepsilon^{p'}}{2^{p'}}.\]
+  In either case there exists $\delta = \delta(\varepsilon) > 0$
+  such that $\|(u+v)/2\|_p \leq 1-\delta$.
+\end{proof}
+
+See [BKC] for sharper information on $L^p$ geometry.
+
+\begin{corollary}\label{cor:2.40}
+  $L^p(\Omega)$ is reflexive if $1<p<\infty$.
+\end{corollary}
+This is a consequence of uniform convexity via Theorem 1.21.
+We will give a direct proof after calculating the normed dual of $L^p(\Omega)$.
+
+
+\section[The Normed Dual of $L^p(\Omega)$]{The Normed Dual of $\bm{L^p(\Omega)}$}
+
+
+\begin{para}[Linear Functionals]
+  Let $1 \leq p \leq \infty$ and let $p^{\prime}$ be the exponent conjugate to $p$.
+  Each element $v \in L^{p^{\prime}}(\Omega)$ defines a linear functional
+  $L_v$ on $L^p(\Omega)$ via
+  \[
+  L_v(u)=\int_{\Omega} u(x) v(x) d x, \quad u \in L^p(\Omega)
+  \]
+  By Hölder's inequality $\left|L_v(u)\right| \leq\|u\|_p\|v\|_{p^{\prime}}$, so that $L_v \in\left[L^p(\Omega)\right]^{\prime}$ and
+  \[
+  \left\|L_v ;\left[L^p(\Omega)\right]^{\prime}\right\| \leq\|v\|_{p^{\prime}}
+  \]
+  Equality must hold above. If $1<p \leq \infty$, let $u(x)=|v(x)|^{p^{\prime}-2} \overline{v(x)}$ if $v(x) \neq 0$ and $u(x)=0$ otherwise. Then $u \in L^p(\Omega)$ and $L_v(u)=\|u\|_p\|v\|_{p^{\prime}}$.
+  Now suppose $p=1$ so $p^{\prime}=\infty$. If $\|v\|_{p^{\prime}}=0$, let $u(x)=0$. Otherwise let $0<\epsilon<\|v\|_{\infty}$ and let $A$ be a measurable subset of $\Omega$ such that $0<\mu(A)<\infty$
+  and $|v(x)|>\|v\|_{\infty}-\epsilon$ on $A$. Let $u(x)=\overline{v(x)} /|v(x)|$ on $A$ and $u(x)=0$ elsewhere. Then $u \in L^1(\Omega)$ and $L_v(u) \geq\|u\|_1\left(\|v\|_{\infty}-\epsilon\right)$. Thus we have shown that
+  \[
+  \left\|L_v ;\left[L^p(\Omega)\right]^{\prime}\right\|=\|v\|_{p^{\prime}}
+  \]
+  so that the operator $\mathcal{L}$ mapping $v$ to $L_v$ is an isometric isomorphism of $L^{p^{\prime}}(\Omega)$ onto a subspace of $\left[L^p(\Omega)\right]^{\prime}$.
+\end{para}
+
+
+\begin{para}
+  It is natural to ask if the range if the isomorphism $\mathcal{L}$ is all of $\left[L^p(\Omega)\right]^{\prime}$. That is, is every continuous linear functional on $L^p(\Omega)$ of the form $L_v$ for some $v \in L^{p^{\prime}}(\Omega)$ ? We will show that such is the case if $1 \leq p<\infty$. For $p=2$, this is an immediate consequence of the Riesz Representation Theorem 1.12 for Hilbert spaces. For general $p$ a direct proof can be based on the Radon-Nikodym Theorem 1.52 (see [Ru2] or Theorem 8.19). We will give a more elementary proof based on a variational argument and uniform convexity. We will use a limiting argument to obtain the case $p=1$ from the case $p>1$.
+\end{para}
+
+
+\begin{lemma}
+  Let $1<p<\infty$. If $L \in\left[L^p(\Omega)\right]^{\prime}$, and $\left\|L ;\left[L^p(\Omega)\right]^{\prime}\right\|=1$, then there exists a unique $w \in L^p(\Omega)$ such that $\|w\|_p=L(w)=1$. Dually, if $w \in L^p(\Omega)$ is given and $\|w\|_p=1$, then there exists a unique $L \in\left[L^p(\Omega)\right]^{\prime}$ such that $\left\|L ;\left[L^p(\Omega)\right]^{\prime}\right\|=L(w)=1$.
+\end{lemma}
+
+\begin{proof}
+  First assume that $L \in\left[L^p(\Omega)\right]^{\prime}$ is given and $\left\|L ;\left[L^p(\Omega)\right]^{\prime}\right\|=1$. Then there exists a sequence $\left\{w_n\right\} \in L^p(\Omega)$ satisfying $\left\|w_n\right\|_p=1$ and such that $\lim _{n \rightarrow \infty}\left|L\left(w_n\right)\right|=1$. We may assume that $\left|L\left(w_n\right)\right|>1 / 2$ for each $n$, and, replacing $w_n$ by a suitable multiple of $w_n$ by a complex number of unit modulus, that $L\left(w_n\right)$ is real and positive. Let $\epsilon>0$. By the definition of uniform convexity, there exists a positive number $\delta>0$ such that if $u$ and $v$ belong to the unit ball of $L^p(\Omega)$ and if $\|(u+v) / 2\|_p>1-\delta$, then $\|u-v\|_p<\epsilon$. On the other hand, there exist an integer $N$ such that $L\left(w_n\right)>1-\delta$ for all $n>N$. When $m>N$ also, we have that $L\left(\left(w_m+w_n\right) / 2\right)>1-\delta$, and then $\left\|w_m-w_n\right\|_p<\epsilon$. Therefore $\left\{w_n\right\}$ is a Cauchy sequence in $L^p(\Omega)$ and so converges to a limit $w$ in that space. Clearly, $\|w\|_p=1$ and $L(w)=\lim _{n \rightarrow \infty} L\left(w_n\right)=1$. For uniqueness, if there were two candidates $v$ and $w$, then the sequence $\{v, w, v, w, \ldots\}$ would have to converge, forcing $v=w$.
+  Now suppose $w \in L^p(\Omega)$ is given and $\|w\|_p=1$. As noted in Paragraph 2.41 the functional $L_v$ defined by
+  \begin{equation}\label{eq:2.35}
+    L_v(u)=\int_{\Omega} u(x) v(x) d x, \quad u \in L^p(\Omega),
+  \end{equation}
+  where
+  \begin{equation}\label{eq:2.36}
+    v(x)= \begin{cases}|w(x)|^{p-2} \overline{w(x)} & \text { if } w(x) \neq 0 \\ 0 & \text { otherwise }\end{cases}
+  \end{equation}
+  satisfies $L_v(w)=\|w\|_p^p=1$ and $\left\|L_v ;\left[L^p(\Omega)\right]^{\prime}\right\|=\|v\|_{p^{\prime}}=\|w\|_p^{p / p^{\prime}}=1$. It remains to be shown, therefore, that if $L_1, L_2 \in\left[L^p(\Omega)\right]^{\prime}$ satisfy $\left\|L_1\right\|=\left\|L_2\right\|=1$ and $L_1(w)=L_2(w)=1$, then $L_1=L_2$. Suppose not. Then there exists $u \in L^p(\Omega)$ such that $L_1(u) \neq L_2(u)$. Replacing $u$ by a suitable multiple of $u$, we may assume that $L_1(u)-L_2(u)=2$. Then replacing $u$ by its sum with a suitable multiple of $w$, we can arrange that $L_1(u)=1$ and $L_2(u)=-1$. If $t>0$, then $L(w+t u)=1+t$. Since $\left\|L_1\right\|=1$, therefore $\|w+t u\|_p \geq 1+t$. Similarly, $L_2(w-t u)=1+t$ and so $\|w-t u\|_p \geq 1+t$. If $1<p \leq 2$, Clarkson's inequality (33) gives
+  \[
+  \begin{aligned}
+  1+t^p\|u\|_p^p & =\left\|\frac{(w+t u)+(w-t u)}{2}\right\|_p^p+\left\|\frac{(w+t u)-(w-t u)}{2}\right\|_p^p \\
+  & \geq \frac{1}{2}\|w+t u\|_p^p+\frac{1}{2}\|w-t u\|_p^p \geq(1+t)^p,
+  \end{aligned}
+  \]
+  which is not possible for all $t>0$. Similarly, if $2 \leq p<\infty$,
+  Clarkson's inequality (31) gives
+  \[
+  \begin{aligned}
+  1+t^{p^{\prime}}\|u\|_p^{p^{\prime}} & =\left\|\frac{(w+t u)+(w-t u)}{2}\right\|_p^{p^{\prime}}+\left\|\frac{(w+t u)-(w-t u)}{2}\right\|_p^{p^{\prime}} \\
+  & \geq\left(\frac{1}{2}\|w+t u\|_p^p+\frac{1}{2}\|w-t u\|_p^p\right)^{p^{\prime}-1} \geq(1+t)^{p^{\prime}}
+  \end{aligned}
+  \]
+  which is also not possible for all $t>0$. Thus no such $u$ can exist, and $L_1=L_2$.
+  2.44 THEOREM (The Riesz Representation Theorem for $L^p(\Omega)$ ) Let $1<p<\infty$ and let $L \in\left[L^p(\Omega)\right]^{\prime}$. Then there exists $v \in L^{p^{\prime}}(\Omega)$ such that for all $u \in L^p(\Omega)$
+  \[
+  L(u)=L_v(u)=\int_{\Omega} u(x) v(x) d x
+  \]
+  Moreover, $\|v\|_{p^{\prime}}=\left\|L ;\left[L^p(\Omega)\right]^{\prime}\right\|$. Thus $\left[L^p(\Omega)\right]^{\prime} \cong L^{p^{\prime}}(\Omega) ;\left[L^p(\Omega)\right]^{\prime}$ is isometrically isomorphic to $L^{p^{\prime}}(\Omega)$.
+  Proof. If $L=0$ we may take $v=0$. Thus we can assume $L \neq 0$, and, without loss of generality, that $\left\|L ;\left[L^p(\Omega)\right]^{\prime}\right\|=1$. By Lemma 2.43 there exists $w \in L^p(\Omega)$ with $\|w\|_p=1$ such that $L(w)=1$. Let $v$ be given by (36). Then $L_v$, defined by (35), satisfies $\left\|L_v ;\left[L^p(\Omega)\right]^{\prime}\right\|=1$ and $L_v(w)=1$. By Lemma 2.43 again, we have $L=L_v$. Since $\|v\|_{p^{\prime}}=1$, the proof is complete.
+\end{proof}
+
+
+\begin{theorem}[The Riesz Representation Theorem for $\bm{L^1(\Omega)}$]
+  Let $L \in\left[L^1(\Omega)\right]^{\prime}$. Then there exists $v \in L^{\infty}(\Omega)$ such that for all $u \in L^1(\Omega)$
+  \[
+  L(u)=\int_{\Omega} u(x) v(x) d x
+  \]
+  and $\|v\|_{\infty}=\left\|L ;\left[L^1(\Omega)\right]^{\prime}\right\|$. Thus $\left[L^1(\Omega)\right]^{\prime} \cong L^{\infty}(\Omega)$.
+\end{theorem}
+
+\begin{proof}
+  Once again we assume that $L \neq 0$ and $\left\|L ;\left[L^1(\Omega)\right]^{\prime}\right\|=1$. Let us suppose, for the moment, that $\Omega$ has finite volume. If $1<p<\infty$, then by Theorem 2.14 we have $L^p(\Omega) \subset L^1(\Omega)$ and
+  \[
+  |L(u)| \leq\|u\|_1 \leq(\operatorname{vol}(\Omega))^{1-(1 / p)}\|u\|_p
+  \]
+  for any $u \in L^p(\Omega)$. Hence $L \in\left[L^p(\Omega)\right]^{\prime}$ and by Theorem 2.44 there exists $v_p \in L^{p^{\prime}}(\Omega)$ such that
+  \[
+  L(u)=\int_{\Omega} u(x) v_p(x) d x, \quad u \in L^p(\Omega)
+  \]
+  and
+  \[
+  \left\|v_p\right\|_{p^{\prime}} \leq(\operatorname{vol}(\Omega))^{1-(1 / p)} \text {. }
+  \]
+  Since $C_0^{\infty}(\Omega)$ is dense in $L^p(\Omega)$ for $1<p<\infty$, and since for any $p, q$ satisfying $1<p, q<\infty$ and any $\phi \in C_0^{\infty}(\Omega)$ we have
+  \[
+  \int_{\Omega} \phi(x) v_p(x) d x=L(\phi)=\int_{\Omega} \phi(x) v_q(x) d x
+  \]
+  it follows that $v_p=v_q$ a.e. on $\Omega$. Hence we may replace $v_p$ in (37) with a function $v$ belonging to $L^p(\Omega)$ for each $p, 1<p<\infty$, and satisfying, following (38)
+  \[
+  \|v\|_{p^{\prime}} \leq(\operatorname{vol}(\Omega))^{1-(1 / p)}=(\operatorname{vol}(\Omega))^{1 / p^{\prime}}
+  \]
+  It follows by Theorem 2.14 again that $v \in L^{\infty}(\Omega)$ and
+  \[
+  \|v\|_{\infty} \leq \lim _{p^{\prime} \rightarrow \infty}(\operatorname{vol}(\Omega))^{1 / p^{\prime}}=1
+  \]
+  The argument of Paragraph 2.41 shows that there must be equality in (39).
+  Even if $\Omega$ does not have finite volume, we can still write $\Omega=\bigcup_{j=1}^{\infty} G_j$, where $G_j=\{x \in \Omega: j-1 \leq|x|<j\}$ has finite volume. The sets $G_j$ are mutually disjoint. Let $\chi_j$ be the characteristic function of $G_j$. If $u_j \in L^1\left(G_j\right)$, let $\tilde{u}_j$ denote the zero extension of $u_j$ outside $G_j$. Let $L_j\left(u_j\right)=L\left(\tilde{u}_j\right)$. Then $L_j \in\left[L^1\left(G_j\right)\right]^{\prime}$ and $\left\|L_j ;\left[L^1\left(G_j\right)\right]^{\prime}\right\| \leq 1$. By the finite volume case considered above, there exists $v_j \in L^{\infty}\left(G_j\right)$ such that $\left\|v_j\right\|_{\infty, G_j} \leq 1$ and
+  \[
+  L_j\left(u_j\right)=\int_{G_j} u_j(x) v_j(x) d x=\int_{\Omega} \tilde{u}_j(x) v(x) d x,
+  \]
+  where $v(x)=v_j(x)$ for $x \in G_j, j=1,2, \ldots$, so that $\|v\|_{\infty} \leq 1$. If $u \in L^1(\Omega)$ we put $u=\sum_{j=1}^{\infty} \chi_j u$; the series is norm convergent in $L^1(\Omega)$ by dominated convergence. Since
+  \[
+  L\left(\sum_{j=1}^k \chi_j u\right)=\sum_{j=1}^k L_j\left(\chi_j u\right)=\int_{\Omega} \sum_{j=1}^k \chi_j(x) u(x) v(x) d x
+  \]
+  we obtain, passing to the limit by dominated convergence,
+  \[
+  L(u)=\int_{\Omega} u(x) v(x) d x
+  \]
+  It then follows, as in the finite volume case, that $\|v\|_{\infty}=1$.
+\end{proof}
+
+
+\begin{theorem}[Reflexivity of $\bm{L^p(\Omega)}$]
+  $L^p(\Omega)$ is reflexive if and only if $1<p<\infty$
+\end{theorem}
+
+\begin{proof}
+  Let $X=L^p(\Omega)$, where $1<p<\infty$. Since $X^{\prime} \cong L^{p^{\prime}}(\Omega)$, we have
+  \[
+  X^{\prime \prime} \cong\left[L^{p^{\prime}}(\Omega)\right]^{\prime} \cong L^p(\Omega)
+  \]
+  That is, for every element $w \in X^{\prime \prime}$ there exists $u \in L^p(\Omega)=X$ such that $w(v)=v(u)=J u(v)$ for all $v \in X^{\prime}$, where $J$ is the natural isometric isomorphism of $x$ into $X^{\prime \prime}$. (See Paragraph 1.14.) Since the range of $J$ is therefore all of $X^{\prime \prime}, X$ is reflexive.
+\end{proof}
+
+Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorphic to $L^{\infty}(\Omega)$ is not separable, neither $L^1(\Omega)$ nor $L^{\infty}(\Omega)$ can be reflexive.
+
+\begin{para}
+  The Riesz Representation Theorem cannot hold for the space $L^{\infty}(\Omega)$ in a form analogous to Theorem 2.44 , for if so, then the argument of Theorem 2.46 would show that $L^1(\Omega)$ was reflexive. The dual of $L^{\infty}(\Omega)$ is larger than $L^1(\Omega)$. It may be identified with a space of absolutely continuous, finitely additive set functions of bounded total variation on $\Omega$. See, for example, [Y, p 118] for details.
+\end{para}
+
+
+\section[Mixed-Norm $L^p$ Spaces]{Mixed-Norm $\bm{L^p}$ Spaces}
+
+\begin{para}
+  It is sometimes useful to consider $L^p$ type norms of functions on $\mathbb{R}^n$ involving different exponents in different coordinate directions. Given a measurable function $u$ on $\mathbb{R}^n$ and an index vector $\mathbf{p}=\left(p_1, \ldots, p_n\right)$ where $0<p_i \leq \infty$ for $1 \leq i \leq n$, we can calculate the number $\|u\|_{\mathbf{p}}$ by calculating first the $L^{p_1}$-norm of $u\left(x_1, x_2, \ldots, x_n\right)$ with respect to the variable $x_1$, and then the $L^{p_2}$-norm of the result with respect to the variable $x_2$, and so on, finishing with the $L^{p_n}$-norm with respect to $x_n$ :
+  \[
+  \|u\|_{\mathbf{p}}=\|\cdots\|\|u\|_{L^{p_1}\left(d x_1\right)}\left\|_{L^{p_2\left(d x_2\right)}} \cdots\right\|_{L^{p_n}\left(d x_n\right)}
+  \]
+  where
+  \[
+  \|f\|_{L^q(d t)}= \begin{cases}{\left[\int_{-\infty}^{\infty}|f(\ldots, t, \ldots)|^q d t\right]^{1 / q}} & \text { if } 0<q<\infty \\ \underset{t}{\operatorname{ess} \sup |f(\ldots, t, \ldots)|} & \text { if } q=\infty .\end{cases}
+  \]
+  Of course, $\|\cdot\|_{L^q(d t)}$ is not a norm unless $q \geq 1$. For instance, if all the numbers $p_i$ are finite, then
+  \[
+  \|u\|_{\mathbf{p}}=\left[\int_{-\infty}^{\infty} \ldots\left[\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}\left|u\left(x_1, \ldots, x_n\right)\right|^{p_1} d x_1\right]^{p_2 / p_1} d x_2\right]^{p_3 / p_2} d x_3 \cdots d x_n\right]^{1 / p}
+  \]
+  We will denote by $L^{\mathbf{p}}=L^{\mathbf{p}}\left(\mathbb{R}^n\right)$ the set of (equivalence classes of almost everywhere equal) functions $u$ for which $\|u\|_{\mathbf{p}}<\infty$; this is a Banach space with norm $\|\cdot\|_{\mathbf{p}}$ if all $p_i \geq 1$. The standard reference for information on these mixed-norm spaces is [BP]. All that we require about mixed norms in this book are two elementary results, a version of Hölder's inequality, and an inequality concerning the effect on mixed norms of permuting the order in which the $L^{p_i}$-norms are calculated.
+\end{para}
+
+\begin{para}[Hölder's Inequality for Mixed Norms]
+  Let $0<p_i \leq \infty$ and let $0<q_i \leq \infty$ for $1 \leq i \leq n$. If $u \in L^{\mathbf{p}}$ and $v \in L^{\mathbf{q}}$, then $u v \in L^{\mathbf{r}}$ where
+  \[
+  \frac{1}{r_i}=\frac{1}{p_i}+\frac{1}{q_i}, \quad 1 \leq i \leq n
+  \]
+  and we have Hölder's inequality:
+  \[
+  \|u v\|_{\mathbf{r}} \leq\|u\|_{\mathbf{p}}\|v\|_{\mathbf{q}}
+  \]
+  This inequality can be proved by simply applying the (scalar) version of Hölder's inequality given in Corollary 2.5 one variable at a time. As in Corollary 2.5, $p_i$ and $q_i$ are allowed to be less than 1 in this form of Hölder's inequality. The $n$ equations (40) are usually summarized with the convenient abuse of notation
+  \[
+  \frac{1}{\mathbf{r}}=\frac{1}{\mathbf{p}}+\frac{1}{\mathbf{q}}
+  \]
+  The above form of Hölder's inequality can be iterated to provide a version for a product of $k$ functions:
+  \[
+  \left\|\prod_{j=1}^k u_j\right\|_{\mathbf{r}} \leq \prod_{j=1}^k\left\|u_j\right\|_{\mathbf{p}_j} \quad \text { where } \quad \frac{1}{\mathbf{r}}=\sum_{j=1}^k \frac{1}{\mathbf{p}_j} .
+  \]
+\end{para}
+
+
+\begin{para}[Permuted Mixed Norms]
+  The definition of $\|u\|_{\mathbf{p}}$ requires the successive $L^{p_i}$-norms to be calculated in the order of appearance of the variables in the argument of $u$. This order can be changed by permuting the arguments and associated indices. If $\sigma$ is a permutation of the set $\{1,2, \ldots, n\}$, denote $\sigma x=\left(x_{\sigma(1)}, x_{\sigma(2)}, \ldots, x_{\sigma(n)}\right)$, and let $\sigma \mathbf{p}$ be defined similarly. Let $\sigma u$ be defined by $\sigma u(\sigma x)=u(x)$, that is, $\sigma u(x)=u\left(\sigma^{-1} x\right)$. Then $\|\sigma u\|_{\sigma \mathbf{p}}$ is called a permuted mixed norm of $u$. For example, if $n=2$ and $\sigma\{1,2\}=\{2,1\}$, then
+  \[
+  \begin{aligned}
+  \|u\|_{\mathbf{p}} & =\left[\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}\left|u\left(x_1, x_2\right)\right|^{p_1} d x_1\right]^{p_2 / p_1} d x_2\right]^{1 / p_2} \\
+  \|\sigma u\|_{\sigma \mathbf{p}} & =\left[\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}\left|u\left(x_1, x_2\right)\right|^{p_2} d x_2\right]^{p_1 / p_2} d x_1\right]^{1 / p_1} .
+  \end{aligned}
+  \]
+  Note that $\|u\|_{\mathbf{p}}$ and $\|\sigma u\|_{\sigma \mathbf{p}}$ involve the same $L^{p_i \text {-norms with respect to the same }}$ variables; only the order of evaluation of those norms has been changed. The question of comparing the sizes of these mixed norms naturally arises.
+\end{para}
+
+
+\begin{theorem}[The Permutation Inequality for Mixed Norms]
+  Given an index vector $\mathbf{p}$, let $\sigma_*$ and $\sigma^*$ be permutations of $\{1,2, \ldots, n\}$ having components in nondecreasing order and nonincreasing order respectively:
+  \[
+  p_{\sigma_*(1)} \leq p_{\sigma_*(2)} \leq \cdots \leq p_{\sigma_*(n)}
+  \]
+  \[
+  p_{\sigma^*(1)} \geq p_{\sigma^*(2)} \geq \cdots \geq p_{\sigma^*(n)} .
+  \]
+  Then for any permutation $\sigma$ of $\{1,2, \ldots, n\}$ and any function $u$ we have
+  \[
+  \left\|\sigma_* u\right\|_{\sigma_* \mathbf{p}} \leq\|\sigma u\|_{\sigma \mathbf{p}} \leq\left\|\sigma^* u\right\|_{\sigma^* \mathbf{p}}
+  \]
+\end{theorem}
+
+\begin{proof}
+  Since any permutation can be decomposed into a product of special permutations each of which transposes two adjacent elements and leaves the rest unmoved, proving the inequality reduces to demonstrating the special case: if $p_1 \leq p_2<\infty$, then
+  \[
+  \left[\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}|u|^{p_1} d x_1\right]^{p_2 / p_1} d x_2\right]^{1 / p_2} \leq\left[\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}|u|^{p_2} d x_2\right]^{p_1 / p_2} d x_1\right]^{1 / p_1} .
+  \]
+  But this is just a version of Minkowski's inequality for integrals (Theorem 2.9), namely
+  \[
+  \left\|\int_{-\infty}^{\infty}\left|v\left(x_1, x_2\right)\right| d x_1\right\|_{L^r\left(d x_2\right)} \leq \int_{-\infty}^{\infty}\left\|v\left(x_1, \cdot\right)\right\|_{L^r\left(d x_2\right)} d x_1
+  \]
+  applied to $v=|u|^{p_1}$ with $r=p_2 / p_1$. The case where $p_2=\infty$ is easier.
+\end{proof}
+
+
+\begin{remark}
+  Similar permutation inequalities hold for mixed norm $\ell^p$ spaces and for hybrid mixtures of $\ell^p$ and $L^q$ norms. We will use such inequalities in Chapter 7.
+\end{remark}
+
+
+\section{The Marcinkiewicz Interpolation Theorem}
+
+
+\begin{para}[Distribution Functions]
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ and $u$ be a measurable function defined on $\Omega$. For $t \geq 0$, let
+  \[
+  \Omega_{u, t}=\{x \in \Omega:|u(x)|>t\} .
+  \]
+  We define the distribution function of $u$ to be
+  \[
+  \delta_u(t)=\mu\left(\Omega_{u, t}\right)
+  \]
+  where $\mu$ is the Lebesgue measure on $\mathbb{R}^n$. Evidently $\delta_u$ is nonincreasing for $t \geq 0$ and if $|u(x)| \leq|v(x)|$ a.e. on $\Omega$, then $\delta_u(t) \leq \delta_v(t)$ for $t \geq 0$.
+  Since $|u(x)|>t$ implies $|u(x)|>t+(1 / k)$ for some integer $k>0$, we have $\Omega_{u, t}=\bigcup_{k=1}^{\infty} \Omega_{u, t+(1 / k)}$ and it follows that $\delta_u$ is right continuous on the interval $[0, \infty)$. Similarly, if $|u(x)|$ is an increasing limit of $\left\{\left|u_j(x)\right|\right\}$ at each $x$, then $|u(x)|>t$ implies $\left|u_j(x)\right|>t$ for some $j$ and so $\Omega_{u, t}=\bigcup_{j=1}^{\infty} \Omega_{u_j, t}$. Hence
+  $\lim _{j \rightarrow \infty} \delta_{u_j}(t)=\delta_u(t)$
+  If $|u(x)+v(x)|>t$, then either $|u(x)|>t / 2$ or $|v(x)|>t / 2$ (or both), so that $\Omega_{u+v, t} \subset \Omega_{u, t / 2} \cup \Omega_{v, t / 2}$ and hence
+  \[
+  \delta_{u+v}(t) \leq \delta_u(t / 2)+\delta_v(t / 2)
+  \]
+  Now suppose $u \in L^p(\Omega)$ for some $p$ satisfying $0<p<\infty$. For $t>0$ we have
+  \[
+  \|u\|_p^p=\int_{\Omega}|u(x)|^p d x \geq \int_{\Omega_{u, t}}|u(x)|^p d x \geq t^p \mu\left(\Omega_{u, t}\right)
+  \]
+  from which we obtain Chebyshev's inequality
+  \[
+  \delta_u(t)=\mu\left(\Omega_{u, t}\right) \leq t^{-p}\|u\|_p^p
+  \]
+\end{para}
+
+
+\begin{lemma}
+  If $0<p<\infty$, then
+  \begin{equation}\label{eq:2.43}
+    \|u\|_p^p=\int_{\Omega} \cdot|u(x)|^p d x=p \int_0^{\infty} t^{p-1} \delta_u(t) d t.  
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  First suppose $|u|$ is a simple function, say
+  \[
+  |u(x)|=a_j \quad \text { on } \quad A_j \subset \Omega, \quad 1 \leq j \leq k,
+  \]
+  where $0<a_1<a_2<\cdots<a_k$ and $A_i \cap A_j$ is empty for $i \neq j$. Then
+  \[
+  \delta_u(t)= \begin{cases}\sum_{i=1}^k \mu\left(A_i\right) & \text { if } t<a_1 \\ \sum_{i=j}^k \mu\left(A_i\right) & \text { if } a_{j-1} \leq t<a_j, \quad(2 \leq j \leq k) \\ 0 & \text { if } t \geq a_k .\end{cases}
+  \]
+  Therefore,
+  \[
+  \begin{aligned}
+  p \int_0^{\infty} t^{p-1} \delta_u(t) d t & =p\left(\int_0^{a_1}+\sum_{j=2}^k \int_{a_{j-1}}^{a_j}+\int_{a_k}^{\infty}\right) t^{p-1} \delta_u(t) d t \\
+  & =a_1^p \sum_{j=1}^k \mu\left(A_j\right)+\sum_{j=2}^k\left(a_j^p-a_{j-1}^p\right) \sum_{i=j}^k \mu\left(A_i\right) \\
+  & =\sum_{j=1}^k a_j^p \mu\left(A_j\right)=\|u\|_p^p,
+  \end{aligned}
+  \]
+  so (43) holds for simple functions. By Theorem 1.44 , if $u$ is measurable, then $|u|$ is a limit of a monotonically increasing sequence of measurable simple functions. Equation (43) now follows by monotone convergence.
+\end{proof}
+
+
+\begin{para}[Weak $\bm{L^p}$ Spaces]
+  If $u$ is a measurable function on $\Omega$, let
+  \[
+  [u]_p=[u]_{p, \Omega}=\left(\sup _{t>0} t^p \delta_u(t)\right)^{1 / p}
+  \]
+  We define the space weak- $L^p(\Omega)$ as follows:
+  \[
+  \text { weak- } L^p(\Omega)=\left\{u:[u]_p<\infty\right\}
+  \]
+  It is easily checked that $[c u]_p=|c|[u]_p$ for complex $c$, but $[\cdot]_p$ is not a norm on weak- $L^p(\Omega)$ because it does not satisfy the triangle inequality. However, by (41)
+  \[
+  \begin{aligned}
+  {[u+v]_p } & =\left(\sup _{t>0} t^p \delta_{u+v}(t)\right)^{1 / p} \\
+  & \leq\left(2^p \sup _{t>0}\left(\frac{t}{2}\right)^p \delta_u(t / 2)+2^p \sup _{t>0}\left(\frac{t}{2}\right)^p \delta_v(t / 2)\right)^{1 / p} \\
+  & =2\left([u]_p+[v]_p\right)
+  \end{aligned}
+  \]
+  so weak- $L^p(\Omega)$ is a vector space and the "open balls" $B_r(u)=\left\{v \in\right.$ weak- $L^p(\Omega)$ : $\left.[v-u]_p<r\right\}$ do generate a topology on weak- $L^p(\Omega)$ with respect to which weak- $L^p(\Omega)$ is a topological vector space. A functional [.] with the properties of a norm except that the triangle inequality is replaced with a weaker version of the form $[u+v] \leq K([u]+[v])$ for some constant $K>1$ is called a quasi-norm.
+  Chebyshev's inequality (42) shows that $[u]_p \leq\|u\|_p$ so that $L^p(\Omega) \subset$ weak- $L^p(\Omega)$. The inclusion is strict since, if $x_0 \in \Omega$ it is easily shown that $u(x)=\left|x-x_0\right|^{-n / p}$ belongs to weak- $L^p(\Omega)$ but not to $L^p(\Omega)$.
+\end{para}
+
+\begin{para}[Strong and Weak Type Operators]
+  A operator $F$ mapping a vector space $X$ of measurable functions into another such space $Y$ is called sublinear if, for all $u, v \in X$ and scalars $c$
+  \[
+  \begin{aligned}
+  |F(u+v)| & \leq|F(u)|+|F(v)|, \quad \text { and } \\
+  |T(c u)| & =|c||T(u)| .
+  \end{aligned}
+  \]
+  A linear operator from $X$ into $Y$ is certainly sublinear. We will be especially concerned with operators from $L^p$ spaces on a domain $\Omega$ in $\mathbb{R}^n$ into $L^q\left(\Omega^{\prime}\right)$ or weak- $L^q\left(\Omega^{\prime}\right)$ where $\Omega^{\prime}$ is a domain in $\mathbb{R}^k$ with $k$ not necessarily equal to $n$.
+  We distinguish two important classes of sublinear operators:
+  \begin{enumerate}[label = (\alph*)]
+    \item $F$ is of strong type $(p, q)$, where $1 \leq p \leq \infty$ and $1 \leq q \leq \infty$, if $F$ maps $L^p(\Omega)$ into $L^q\left(\Omega^{\prime}\right)$ and there exists a constant $K$ such that for all $u \in L^p(\Omega)$
+    \[
+    \|F(u)\|_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}
+    \]
+    \item $F$ is of weak type $(p, q)$, where $1 \leq p \leq \infty$ and $1 \leq q<\infty$, if $F$ maps $L^p(\Omega)$ into weak- $L^q\left(\Omega^{\prime}\right)$ and there exists a constant $K$ such that for all $u \in L^p(\Omega)$
+    \[
+    [F(u)]_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}
+    \]
+    We also say that $F$ is of weak type $(p, \infty)$ if $F$ is of strong type $(p, \infty)$.
+  \end{enumerate}
+  Strong type $(p, q)$ implies weak type $(p, q)$ but not conversely unless $q=\infty$.
+\end{para}
+
+\begin{para}
+  The following theorem has its origins in the work of Marcinkiewicz [Mk] and was further developed by Zygmund [Z]. It is valid in more general contexts than stated here, but we only need it for operators between $L^p$ spaces on domains in $\mathbb{R}^n$ and only state it in this context. It will form one of the cornerstones on which our proof of the Sobolev imbedding theorem will rest. In that context it will only be used for linear operators.
+  
+  Because the Marcinkiewicz theorem involves an operator on a vector space containing two different $L^p$ spaces, say $X$ and $Y$, (over the same domain) it is convenient to consider its domain to be the sum of those spaces, that is the vector space consisting of sums $u+v$ where $u \in X$ and $v \in Y$.
+
+  There are numerous proofs of the Marcinkiewicz theorem in the literature. See, for example, $[\mathrm{St}]$ and [SW]. Our proof is based on Folland $\left[\mathrm{Fo}_{\mathrm{O}}\right]$.
+\end{para}
+
+
+\begin{theorem}[The Marcinkiewicz Interpolation Theorem]
+  Let $1 \leq p_1 \leq q_1<\infty$ and $1 \leq p_2 \leq q_2 \leq \infty$, with $q_1<q_2$. Suppose the numbers $p$ and $q$ satisfy
+  \[
+  \frac{1}{p}=\frac{1-\theta}{p_1}+\frac{\theta}{p_2}, \quad \frac{1}{q}=\frac{1-\theta}{q_1}+\frac{\theta}{q_2}
+  \]
+  where $0<\theta<1$. Let $\Omega$ and $\Omega^{\prime}$ be domains in $\mathbb{R}^n$ and $\mathbb{R}^k$, respectively; $k$ may or may not be equal to $n$. Let $F$ be a sublinear operator from $L^{p_1}(\Omega)+L^{p_2}(\Omega)$ into the space of measurable functions on $\Omega^{\prime}$. If $F$ is of weak type $\left(p_1, q_1\right)$ and also of weak type $\left(p_2, q_2\right)$, then $F$ is of strong type $(p, q)$. That is, if
+  \[
+  [F(u)]_{q_j, \Omega^{\prime}} \leq K_j\|u\|_{p_j, \Omega}, \quad j=1,2
+  \]
+  then
+  \[
+  \|F(u)\|_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}
+  \]
+  where the constant $K$ depends only on $p, p_1, q_1, p_2, q_2, K_1$, and $K_2$.
+\end{theorem}
+
+\begin{proof}
+  First consider the case where $q_1<q<q_2<\infty$ so that $p_1$ and $p_2$ are necessarily both finite. The conditions satisfied by $p$ and $q$ imply that $(1 / p, 1 / q)$ is an interior point of the line segment joining $\left(p_1^{-1}, q_1^{-1}\right)$ and $\left(p_2^{-1}, q_2^{-1}\right)$ in the $(p, q)$-plane. Let $c$ be the extended real number equal to $q / p$ times the slope of
+  that line segment;
+  \[
+  c=\frac{p_1\left(q_1-q\right)}{q_1\left(p_1-p\right)}=\frac{p_2\left(q_2-q\right)}{q_2\left(p_2-p\right)}
+  \]
+  Given any $T>0$, a measurable function $u$ on $\Omega$ can be written as a sum of a "small" part $u_{S, T}$ and a "big" part $u_{B, T}$ defined as follows:
+  \[
+  \begin{aligned}
+  & u_{S, T}(x)= \begin{cases}u(x) & \text { if }|u(x)| \leq T \\
+  T \frac{u(x)}{|u(x)|} & \text { if }|u(x)|>T,\end{cases} \\
+  & u_{B, T}(x)=u(x)-u_{S, T}(x)= \begin{cases}0 & \text { if }|u(x)| \leq T \\
+  u(x)\left(1-\frac{T}{|u(x)|}\right) & \text { if }|u(x)|>T .\end{cases}
+  \end{aligned}
+  \]
+  Since $\left|u_{S, T}(x)\right| \leq T$ and $\left|u_{B, T}(x)\right|=\max \{0,|u(x)|-T\}$ for all $x \in \Omega$, the distribution functions of $u_{S, T}$ and $u_{B, T}$ are given by
+  \[
+  \begin{aligned}
+  & \delta_{u_{S, T}}(t)= \begin{cases}\delta_u(t) & \text { if } t<T \\
+  0 & \text { if } t \geq T,\end{cases} \\
+  & \delta_{u_{B, T}}(t)=\delta_u(t+T) .
+  \end{aligned}
+  \]
+  It follows, using (43), that
+  \[
+  \begin{aligned}
+  \int_{\Omega}\left|u_{S, T}(x)\right|^{p_2} d x & =p_2 \int_0^{\infty} t^{p_2-1} \delta_{u_{S, T}}(t) d t=p_2 \int_0^T t^{p_2-1} \delta_u(t) d t \\
+  \int_{\Omega}\left|u_{B, T}(x)\right|^{p_1} d x & =p_1 \int_0^{\infty} t^{p_1-1} \delta_{u_{B, T}}(t) d t=p_1 \int_0^{\infty} t^{p_1-1} \delta_u(t+T) d t \\
+  & =p_1 \int_T^{\infty}(t-T)^{p_1-1} \delta_u(t) d t \leq p_1 \int_T^{\infty} t^{p_1-1} \delta_u(t) d t
+  \end{aligned}
+  \]
+  Using (43) followed by the sublinearity of $F$ and inequality (41), we calculate
+  \[
+  \begin{aligned}
+  & \int_{\Omega^{\prime}}|F(u)(y)|^q d y=q \int_0^{\infty} t^{q-1} \delta_{F(u)}(t) d t \\
+  &=2^q q \int_0^{\infty} t^{q-1} \delta_{F(u)}(2 t) d t \\
+  & \leq 2^q q \int_0^{\infty} t^{q-1} \delta_{F\left(u_{S, T}\right)+F\left(u_{B, T}\right)}(2 t) d t \\
+  & \leq 2^q q \int_0^{\infty} t^{q-1} \delta_{F\left(u_{S, T}\right)}(t) d t+2^q q \int_0^{\infty} t^{q-1} \delta_{F\left(u_{B, T}\right)}(t) d t
+  \end{aligned}
+  \]
+  This inequality holds for any $T>0$; we can choose $T$ to depend on $t$ if we wish. In the following, let $T=t^c$ where $c$ is given by (44). For positive $s$, the definition of $[\cdot]_s$ implies that $\delta_v(t) \leq t^{-s}[v]_s^s$. Using this and the given estimate $[F(v)]_{q_2, \Omega^{\prime}} \leq K_2\|v\|_{p, \Omega}$ we obtain
+  \[
+  \begin{aligned}
+  \int_0^{\infty} t^{q-1} \delta_{F\left(u_{S . T}\right)}(t) d t & \leq \int_0^{\infty} t^{q-1-q_2}\left[F\left(u_{S, T}\right)\right]_{q_2}^{q_2} d t \\
+  & \leq \int_0^{\infty} t^{q-1-q_2}\left(K_2\left\|u_{S, T}\right\|_{p_2}\right)^{q_2} d t \\
+  & \leq K_2^{q_2} p_2^{q_2 / p_2} \int_0^{\infty} t^{q-1-q_2}\left[\int_0^{t^c} \tau^{p_2-1} \delta_u(\tau) d \tau\right]^{q_2 / p_2} d t \\
+  & =K_2^{q_2} p_2^{q_2 / p_2} I_2
+  \end{aligned}
+  \]
+  Since $q_2 \geq p_2$ we can estimate the latter iterated integral $I_2$ using Minkowski's
+  inequality for integrals, Theorem 2.9.
+  \[
+  \begin{aligned}
+  I_2 & =\int_0^{\infty}\left[\int_0^{t^c} t^{\left(q-1-q_2\right)\left(p_2 / q_2\right)} \tau^{p_2-1} \delta_u(\tau) d \tau\right]^{q_2 / p_2} d t \\
+  & \leq\left[\int_0^{\infty}\left(\int_{\tau^{1 / c}}^{\infty} t^{q-1-q_2}\left(\tau^{p_2-1} \delta_u(\tau)\right)^{q_2 / p_2} d t\right)^{p_2 / q_2} d \tau\right]^{q_2 / p_2} \\
+  & =\left[\int_0^{\infty} \tau^{p_2-1} \delta_u(\tau)\left(\int_{\tau^{1 / c}}^{\infty} t^{q-1-q_2} d t\right)^{p_2 / q_2} d \tau\right]^{q_2 / p_2} \\
+  & =\left[\frac{1}{q_2-q} \int_0^{\infty} \tau^{p_2-1+\left[\left(q-q_2\right) / c\right]\left(p_2 / q_2\right)} \delta_u(\tau) d \tau\right]^{q_2 / p_2} \\
+  & =\left(\frac{1}{q_2-q} \int_0^{\infty} \tau^{p-1} \delta_u(\tau) d \tau\right)^{q_2 / p_2}=\left(\frac{1}{p\left(q_2-q\right)}\|u\|_{p, \Omega}^p\right)^{q_2 / p_2}
+  \end{aligned}
+  \]
+  It follows that
+  \[
+  2^q q \int_0^{\infty} t^{q-1} \delta_{F\left(u_{S . T}\right)}(t) d t \leq 2^q q K_2^{q_2}\left(\frac{p_2}{p\left(q_2-q\right)}\|u\|_{p, \Omega}^p\right)^{q_2 / p_2}
+  \]
+  An entirely parallel argument using $q_1<q$ instead of $q_2>q$ shows that
+  \[
+  2^q q \int_0^{\infty} t^{q-1} \delta_{F\left(u_{B . T}\right)}(t) d t \leq 2^q q K_1^{q_1}\left(\frac{p_1}{p\left(q-q_1\right)}\|u\|_{p, \Omega}^p\right)^{q_1 / p_1}
+  \]
+  If $\|u\|_{p, \Omega}=1$, we therefore have
+  \[
+  \|F(u)\|_{q, \Omega^{\prime}} \leq K=2 q^{1 / q}\left[\left(\frac{p_2 K_2^{p_2}}{p\left(q_2-q\right)}\right)^{q_2 / p_2}+\left(\frac{p_1 K_1^{p_1}}{p\left(q-q_1\right)}\right)^{q_1 / p_1}\right]^{1 / q} .
+  \]
+  By the homogeneity of $F$, if $u \neq 0$ in $L^p(\Omega)$, then
+  \[
+  \begin{aligned}
+  \|F(u)\|_{q, \Omega^{\prime}} & =\left\|F\left(\|u\|_{p, \Omega} \frac{u}{\|u\|_{p, \Omega}}\right)\right\|_{q, \Omega^{\prime}} \\
+  & =\|u\|_{p, \Omega}\left\|F\left(\frac{u}{\|u\|_{p, \Omega}}\right)\right\|_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega} .
+  \end{aligned}
+  \]
+  
+  Now we examine the case where $q_2=\infty$. It is possible to choose $T$ (depending on $t$ ) in the above argument to ensure that $\delta_{F\left(u_{S . T}\right)}(t)=0$ for all $t>0$. If $p_2=\infty$, the appropriate choice is $T=t / K_2$ for then
+  \[
+  \left\|F\left(u_{S, T}\right)\right\|_{\infty, \Omega^{\prime}} \leq K_2\left\|u_{S, T}\right\|_{\infty, \Omega} \leq K_2 T=t
+  \]
+  
+  and $\delta_{F\left(u_{S . T}\right)}(t)=0$. If $p_2<\infty$, the appropriate choice is
+  \[
+  T=\left(\frac{t}{K_2\left(p_2\|u\|_{p, \Omega}^p / p\right)^{1 / p_2}}\right)^c
+  \]
+  where $c=p_2 /\left(p_2-p\right)$, the limit as $q_2 \rightarrow \infty$ of the value of $c$ used in the earlier part of this proof. For this choice of $T$,
+  \[
+  \begin{aligned}
+  \left\|F\left(u_{S, T}\right)\right\|_{\infty, \Omega^{\prime}}^{p_2} & \leq K_2^{p_2}\left\|u_{S, T}\right\|_{p_2}^{p_2}=K_2^{p_2} p_2 \int_0^T t^{p_2-1} \delta_{u_{S, T}}(t) d t \\
+  & \leq K_2^{p_2} p_2 T^{p_2-p} \int_0^T t^{p-1} \delta_u(t) d t \\
+  & \leq K_2^{p_2} p_2 T^{p_2-p} \int_0^{\infty} t^{p-1} \delta_u(t) d t \\
+  & =K_2^{p_2} p_2 T^{p_2-p}(1 / p)\|u\|_{p, \Omega}^p=t^{p_2},
+  \end{aligned}
+  \]
+  and again $\delta_{F\left(u_{S . r}\right)}(t)=0$. In either of these cases the first term in (45) is zero and an estimate similar to (47) holds for the second term provided $p_1<p_2$.
+  
+  If $q_2=\infty$ and $p_2<p_1<\infty$ we can instead assure that the second term in (45) is zero by choosing $T$ to force $\delta_{F\left(u_{B, t}\right)}(t)=0$ and obtain an estimate similar to (46) for the first term.
+  
+  There remains one case to be considered: $q_1<q<q_2=\infty, p_1=p=p_2<\infty$. In this case it follows directly from the definition of $[\cdot]_s$ that
+  \[
+  t^{q_1} \delta_{F(u)}(t) \leq[F(u)]_{q_1}^{q_1} \leq K_1^{q_1}\|u\|_{p, \Omega}^{q_1},
+  \]
+  and hence $\delta_{F(u)} \leq\left(K_1\|u\|_{p, \Omega} / t\right)^{q_1}$. On the other hand, $\delta_{F(u)}(t)=0$ if we have $t \geq T=K_2\|u\|_{p, \Omega} \geq\|F(u)\|_{\infty, \Omega^{\prime}}$. Thus
+  \[
+  \begin{aligned}
+  \|F(u)\|_{q, \Omega^{\prime}}^q & =q \int_0^{\infty} t^{q-1} \delta_{F(u)}(t) d t=q \int_0^T t^{q-1} \delta_{F(u)}(t) d t \\
+  & \leq q\left(K_1\|u\|_{p, \Omega}\right)^{q_1} \int_0^T t^{q-1-q_1} d t=K^q\|u\|_{p, \Omega}^{q_1},
+  \end{aligned}
+  \]
+  where $K$ is a finite constant because $q_1<q$. This completes the proof.
+\end{proof}

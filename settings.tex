@@ -1,0 +1,41 @@
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+% \usepackage{fontspec}
+% \setmainfont{Times}
+\usepackage[shortlabels]{enumitem}
+% \usepackage{newtxtext}
+% \usepackage[mtpcal,mtpscr,mtphrb,zswash,straightbraces]{mtpro2}
+\usepackage[normal]{fixdif}
+\usepackage{bm}
+
+\setlist{nosep}
+
+\newtheoremstyle{adams}
+                {3pt} % 上方间距
+                {3pt} % 下方间距
+                {} % 主体字体
+                {} % 缩进长度
+                {\bfseries} % 定理头字体
+                {} % 标点符号
+                {.5em} % 定理头后间距
+                {\thmnumber{#2}\thmname{ #1}\thmnote{ (#3)}} % 定理头格式指定
+\theoremstyle{adams}
+\newtheorem{para}{}[chapter]
+\newtheorem{theorem}[para]{Theorem}
+\newtheorem{lemma}[para]{Lemma}
+\newtheorem{corollary}[para]{Corollary}
+\newtheorem{example}[para]{EXAMPLE}
+\newtheorem{examples}[para]{EXAMPLES}
+\newtheorem{remark}[para]{REMARK}
+
+\renewcommand{\theequation}{\arabic{equation}}
+
+\newcommand{\closure}[1]{\overline{#1}}
+\newcommand{\loc}{\mathrm{loc}}
+
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\esssup}{ess\,sup}
+\DeclareMathOperator{\vol}{vol}
