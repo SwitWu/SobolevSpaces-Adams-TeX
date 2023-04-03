@@ -1,14 +1,15 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{amssymb}
+% \usepackage{amssymb}
 \usepackage{mathrsfs}
-% \usepackage{fontspec}
-% \setmainfont{Times}
+\usepackage{fontspec}
+\setmainfont{Times}
 \usepackage[shortlabels]{enumitem}
 % \usepackage{newtxtext}
-% \usepackage[mtpcal,mtpscr,mtphrb,zswash,straightbraces]{mtpro2}
+\usepackage[mtpcal,mtpscr,mtphrb,zswash,straightbraces]{mtpro2}
 \usepackage[normal]{fixdif}
 \usepackage{bm}
+\usepackage{hyperref}
 
 \setlist{nosep}
 
@@ -36,6 +37,7 @@
 \newcommand{\closure}[1]{\overline{#1}}
 \newcommand{\loc}{\mathrm{loc}}
 
+\DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\dist}{dist}

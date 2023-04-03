@@ -262,15 +262,15 @@ Here is a useful imbedding theorem for $L^p$ spaces over domains with finite vol
   \begin{equation}\label{eq:2.13}
     \limsup_{p\rightarrow \infty}\|u\|_p \leq\|u\|_{\infty}
   \end{equation}
-  On the other hand, for any $\epsilon>0$ there exists a set $A \subset \Omega$ having positive measure $\mu(A)$ such that
+  On the other hand, for any $\varepsilon>0$ there exists a set $A \subset \Omega$ having positive measure $\mu(A)$ such that
   \[
-  |u(x)| \geq\|u\|_{\infty}-\epsilon \quad \text { if } x \in A .
+  |u(x)| \geq\|u\|_{\infty}-\varepsilon \quad \text { if } x \in A .
   \]
   Hence
   \[
-  \left.\int_{\Omega}\left|u(x)^p d x \geq \int_A\right| u(x)\right|^p d x \geq \mu(A)\left(\|u\|_{\infty}-\epsilon\right)^p .
+  \left.\int_{\Omega}\left|u(x)^p d x \geq \int_A\right| u(x)\right|^p d x \geq \mu(A)\left(\|u\|_{\infty}-\varepsilon\right)^p .
   \]
-  It follows that $\|u\|_p \geq(\mu(A))^{1 / p}\left(\|u\|_{\infty}-\epsilon\right)$, whence
+  It follows that $\|u\|_p \geq(\mu(A))^{1 / p}\left(\|u\|_{\infty}-\varepsilon\right)$, whence
   \begin{equation}\label{eq:2.14}
     \liminf_{p \rightarrow \infty}\|u\|_p \geq\|u\|_{\infty}
   \end{equation}
@@ -315,11 +315,11 @@ Here is a useful imbedding theorem for $L^p$ spaces over domains with finite vol
   \[
   \lim _{m \rightarrow \infty} u_{n_m}(x)=u(x) \quad \text { a.e. in } \Omega.
   \]
-  For any $\epsilon>0$ there exists $N$ such that if $m, n \geq N$, then $\left\|u_m-u_n\right\|_p<\epsilon$. Hence, by Fatou's lemma 1.49
+  For any $\varepsilon>0$ there exists $N$ such that if $m, n \geq N$, then $\left\|u_m-u_n\right\|_p<\varepsilon$. Hence, by Fatou's lemma 1.49
   \[
   \begin{aligned}
   \int_{\Omega}\left|u(x)-u_n(x)\right|^p d x & =\int_{\Omega} \lim _{j \rightarrow \infty}\left|u_{n_j}(x)-u_n(x)\right|^p d x \\
-  & \leq \liminf _{j \rightarrow \infty} \int_{\Omega}\left|u_{n_j}(x)-u_n(x)\right|^p d x \leq \epsilon^p
+  & \leq \liminf _{j \rightarrow \infty} \int_{\Omega}\left|u_{n_j}(x)-u_n(x)\right|^p d x \leq \varepsilon^p
   \end{aligned}
   \]
   if $n \geq N$. Thus $u=\left(u-u_n\right)+u_n \in L^p(\Omega)$ and $\left\|u-u_n\right\|_p \rightarrow 0$ as $n \rightarrow \infty$. Therefore $L^p(\Omega)$ is complete and so is a Banach space.
@@ -354,23 +354,23 @@ Here is a useful imbedding theorem for $L^p$ spaces over domains with finite vol
 \end{theorem}
 
 \begin{proof}
-  Any $u \in L^p(\Omega)$ can be written in the form $u=u_1-u_2+i\left(u_3-u_4\right)$ where, for $1 \leq j \leq 4, u_j \in L^p(\Omega)$ is real-valued and nonnegative. Thus it is sufficient to prove that if $\epsilon>0$ and $u \in L^p(\Omega)$ is real-valued and nonnegative then there exists $\phi \in C_0(\Omega)$ such that $\|\phi-u\|_p<\epsilon$. By Theorem 1.44 for such a function $u$ there exists a monotonically increasing sequence $\left\{s_n\right\}$ of nonnegative simple functions converging pointwise to $u$ on $\Omega$. Since $0 \leq s_n(x) \leq u(x)$, we have $s_n \in L^p(\Omega)$ and since $\left(u(x)-s_n(x)\right)^p \leq(u(x))^p$, we have $s_n \rightarrow u$ in $L^p(\Omega)$ by the Dominated Convergence Theorem 1.50. Thus there exists an $s \in\left\{s_n\right\}$ such
-  that $\|u-s\|_p<\epsilon / 2$. Since $s$ is simple and $p<\infty$ the support of $s$ has finite volume. We can also assume that $s(x)=0$ if $x \in \Omega^c$. By Lusin's Theorem 1.42(f) there exists $\phi \in C_0(\mathbb{R}^n)$ such that
+  Any $u \in L^p(\Omega)$ can be written in the form $u=u_1-u_2+i\left(u_3-u_4\right)$ where, for $1 \leq j \leq 4, u_j \in L^p(\Omega)$ is real-valued and nonnegative. Thus it is sufficient to prove that if $\varepsilon>0$ and $u \in L^p(\Omega)$ is real-valued and nonnegative then there exists $\phi \in C_0(\Omega)$ such that $\|\phi-u\|_p<\varepsilon$. By Theorem 1.44 for such a function $u$ there exists a monotonically increasing sequence $\left\{s_n\right\}$ of nonnegative simple functions converging pointwise to $u$ on $\Omega$. Since $0 \leq s_n(x) \leq u(x)$, we have $s_n \in L^p(\Omega)$ and since $\left(u(x)-s_n(x)\right)^p \leq(u(x))^p$, we have $s_n \rightarrow u$ in $L^p(\Omega)$ by the Dominated Convergence Theorem 1.50. Thus there exists an $s \in\left\{s_n\right\}$ such
+  that $\|u-s\|_p<\varepsilon / 2$. Since $s$ is simple and $p<\infty$ the support of $s$ has finite volume. We can also assume that $s(x)=0$ if $x \in \Omega^c$. By Lusin's Theorem 1.42(f) there exists $\phi \in C_0(\mathbb{R}^n)$ such that
   \[
   |\phi(x)| \leq\|s\|_{\infty} \quad \text { for all } x \in \mathbb{R}^n
   \]
   and
   \[
-  \operatorname{vol}\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)<\left(\frac{\epsilon}{4\|s\|_{\infty}}\right)^p
+  \operatorname{vol}\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)<\left(\frac{\varepsilon}{4\|s\|_{\infty}}\right)^p
   \]
   By Theorem 2.14
   \[
   \begin{aligned}
   \|s-\phi\|_p & \leq\|s-\phi\|_{\infty}\left(\operatorname{vol}\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)\right)^{1 / p} \\
-  & <2\|s\|_{\infty}\left(\frac{\epsilon}{4\|s\|_{\infty}}\right)=\frac{\epsilon}{2}
+  & <2\|s\|_{\infty}\left(\frac{\varepsilon}{4\|s\|_{\infty}}\right)=\frac{\varepsilon}{2}
   \end{aligned}
   \]
-  It follows that $\|u-\phi\|_p<\epsilon$
+  It follows that $\|u-\phi\|_p<\varepsilon$
 \end{proof}
 
 \begin{para}
@@ -389,11 +389,11 @@ Here is a useful imbedding theorem for $L^p$ spaces over domains with finite vol
   \]
   Then $\Omega_m$ is a compact subset of $\Omega$. Let $P$ be the set of all polynomials on $\mathbb{R}^n$ having rational-complex coefficients, and let $P_m=\left\{\chi_m f: f \in P\right\}$ where $\chi_m$ is the characteristic function of $\Omega_m$. As shown in Paragraph 1.32, $P_m$ is dense in $C\left(\Omega_m\right)$. Moreover, $\bigcup_{m=1}^{\infty} P_m$ is countable.
   
-  If $u \in L^p(\Omega)$ and $\epsilon>0$, there exists $\phi \in C_0(\Omega)$ such that $\|u-\phi\|_p<\epsilon / 2$. If $1 / m<\operatorname{dist}(\operatorname{supp}(\phi)$, bdry $(\Omega))$, then there exists $f$ in the set $P_m$ such that $\|\phi-f\|_{\infty}<(\epsilon / 2)\left(\operatorname{vol}\left(\Omega_m\right)\right)^{-1 / p}$. It follows that
+  If $u \in L^p(\Omega)$ and $\varepsilon>0$, there exists $\phi \in C_0(\Omega)$ such that $\|u-\phi\|_p<\varepsilon / 2$. If $1 / m<\operatorname{dist}(\operatorname{supp}(\phi)$, bdry $(\Omega))$, then there exists $f$ in the set $P_m$ such that $\|\phi-f\|_{\infty}<(\varepsilon / 2)\left(\operatorname{vol}\left(\Omega_m\right)\right)^{-1 / p}$. It follows that
   \[
-  \|\phi-f\|_p \leq\|\phi-f\|_{\infty}\left(\operatorname{vol}\left(\Omega_m\right)\right)^{1 / p}<\epsilon / 2
+  \|\phi-f\|_p \leq\|\phi-f\|_{\infty}\left(\operatorname{vol}\left(\Omega_m\right)\right)^{1 / p}<\varepsilon / 2
   \]
-  and so $\|u-f\|_p<\epsilon$. Thus the countable set $\bigcup_{m=1}^{\infty} P_m$ is dense in $L^p(\Omega)$ and $L^p(\Omega)$ is separable.
+  and so $\|u-f\|_p<\varepsilon$. Thus the countable set $\bigcup_{m=1}^{\infty} P_m$ is dense in $L^p(\Omega)$ and $L^p(\Omega)$ is separable.
 \end{proof}
 
 \begin{para}
@@ -541,14 +541,14 @@ The latter inequality is obvious if $q=\infty$ and follows for other $q \geq p$ 
   \[
   J(x)= \begin{cases}k \exp \left[-1 /\left(1-|x|^2\right)\right] & \text { if }|x|<1 \\ 0 & \text { if }|x| \geq 1\end{cases}
   \]
-  where $k>0$ is chosen so that condition (ii) is satisfied. If $\epsilon>0$, the function $J_\epsilon(x)=\epsilon^{-n} J(x / \epsilon)$ is nonnegative, belongs to $C_0^{\infty}(\mathbb{R}^n)$, and satisfies
+  where $k>0$ is chosen so that condition (ii) is satisfied. If $\varepsilon>0$, the function $J_\varepsilon(x)=\varepsilon^{-n} J(x / \varepsilon)$ is nonnegative, belongs to $C_0^{\infty}(\mathbb{R}^n)$, and satisfies
   \begin{enumerate}[label = (\roman*)]
-    \item $J_\epsilon(x)=0$ if $|x| \geq \epsilon$, and
-    \item $\int_{\mathbb{R}^n} J_\epsilon(x) d x=1$.
+    \item $J_\varepsilon(x)=0$ if $|x| \geq \varepsilon$, and
+    \item $\int_{\mathbb{R}^n} J_\varepsilon(x) d x=1$.
   \end{enumerate}
-  $J_\epsilon$ is called a mollifier and the convolution
+  $J_\varepsilon$ is called a mollifier and the convolution
   \[
-  J_\epsilon * u(x)=\int_{\mathbb{R}^n} J_\epsilon(x-y) u(y) d y
+  J_\varepsilon * u(x)=\int_{\mathbb{R}^n} J_\varepsilon(x-y) u(y) d y
   \]
   defined for functions $u$ for which the right side of (18) makes sense, is called
   a mollification or regularization of $u$. The following theorem summarizes some properties of mollification.
@@ -557,51 +557,51 @@ The latter inequality is obvious if $q=\infty$ and follows for other $q \geq p$ 
 \begin{theorem}[Properties of Mollification]
   Let $u$ be a function which is defined on $\mathbb{R}^n$ and vanishes identically outside $\Omega$.
   \begin{enumerate}[label = (\alph*)]
-    \item If $u \in L_{\text {loc }}^1(\mathbb{R}^n)$, then $J_\epsilon * u \in C^{\infty}(\mathbb{R}^n)$.
-    \item If $u \in L_{\mathrm{loc}}^1(\Omega)$ and $\operatorname{supp}(u) \Subset \Omega$, then $J_\epsilon * u \in C_0^{\infty}(\Omega)$ provided
+    \item If $u \in L_{\text {loc }}^1(\mathbb{R}^n)$, then $J_\varepsilon * u \in C^{\infty}(\mathbb{R}^n)$.
+    \item If $u \in L_{\mathrm{loc}}^1(\Omega)$ and $\operatorname{supp}(u) \subset\subset \Omega$, then $J_\varepsilon * u \in C_0^{\infty}(\Omega)$ provided
     \[
-    \epsilon<\operatorname{dist}(\operatorname{supp}(u), \operatorname{bdry}(\Omega))
+    \varepsilon<\operatorname{dist}(\operatorname{supp}(u), \operatorname{bdry}(\Omega))
     \]
-    \item If $u \in L^p(\Omega)$ where $1 \leq p<\infty$, then $J_\epsilon * u \in L^p(\Omega)$. Also
+    \item If $u \in L^p(\Omega)$ where $1 \leq p<\infty$, then $J_\varepsilon * u \in L^p(\Omega)$. Also
     \[
-    \left\|J_\epsilon * u\right\|_p \leq\|u\|_p \quad \text { and } \quad \lim _{\epsilon \rightarrow 0+}\left\|J_\epsilon * u-u\right\|_p=0
+    \left\|J_\varepsilon * u\right\|_p \leq\|u\|_p \quad \text { and } \quad \lim _{\varepsilon \rightarrow 0+}\left\|J_\varepsilon * u-u\right\|_p=0
     \]
-    \item If $u \in C(\Omega)$ and if $G \Subset \Omega$, then $\lim _{\epsilon \rightarrow 0+} J_\epsilon * u(x)=u(x)$ uniformly on $G$.
-    \item If $u \in C(\bar{\Omega})$, then $\lim _{\epsilon \rightarrow 0+} J_\epsilon * u(x)=u(x)$ uniformly on $\Omega$.
+    \item If $u \in C(\Omega)$ and if $G \subset\subset \Omega$, then $\lim _{\varepsilon \rightarrow 0+} J_\varepsilon * u(x)=u(x)$ uniformly on $G$.
+    \item If $u \in C(\bar{\Omega})$, then $\lim _{\varepsilon \rightarrow 0+} J_\varepsilon * u(x)=u(x)$ uniformly on $\Omega$.
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-  Since $J_\epsilon(x-y)$ is an infinitely differentiable function of $x$ and vanishes if $|y-x| \geq \epsilon$, and since for every multi-index $\alpha$ we have
+  Since $J_\varepsilon(x-y)$ is an infinitely differentiable function of $x$ and vanishes if $|y-x| \geq \varepsilon$, and since for every multi-index $\alpha$ we have
   \[
-  D^\alpha\left(J_\epsilon * u\right)(x)=\int_{\mathbb{R}^n} D_x^\alpha J_\epsilon(x-y) u(y) d y,
+  D^\alpha\left(J_\varepsilon * u\right)(x)=\int_{\mathbb{R}^n} D_x^\alpha J_\varepsilon(x-y) u(y) d y,
   \]
   conclusions (a) and (b) are valid.
   If $u \in L^p(\Omega)$ where $1<p<\infty$, then by Hölder's inequality (3),
   \[
   \begin{aligned}
-  \left|J_\epsilon * u(x)\right| & =\left|\int_{\mathbb{R}^n} J_\epsilon(x-y) u(y) d y\right| \\
-  & \leq\left(\int_{\mathbb{R}^n} J_\epsilon(x-y) d y\right)^{1 / p^{\prime}}\left(\int_{\mathbb{R}^n} J_\epsilon(x-y)|u(y)|^p d y\right)^{1 / p} \\
-  & =\left(\int_{\mathbb{R}^n} J_\epsilon(x-y)|u(y)|^p d y\right)^{1 / p} .
+  \left|J_\varepsilon * u(x)\right| & =\left|\int_{\mathbb{R}^n} J_\varepsilon(x-y) u(y) d y\right| \\
+  & \leq\left(\int_{\mathbb{R}^n} J_\varepsilon(x-y) d y\right)^{1 / p^{\prime}}\left(\int_{\mathbb{R}^n} J_\varepsilon(x-y)|u(y)|^p d y\right)^{1 / p} \\
+  & =\left(\int_{\mathbb{R}^n} J_\varepsilon(x-y)|u(y)|^p d y\right)^{1 / p} .
   \end{aligned}
   \]
   Hence by Fubini's Theorem 1.54
   \[
   \begin{aligned}
-  \int_{\Omega}\left|J_\epsilon * u(x)\right|^p d x & \leq \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} J_\epsilon(x-y)|u(y)|^p d y d x \\
-  & =\int_{\mathbb{R}^n}|u(y)|^p d y \int_{\mathbb{R}^n} J_\epsilon(x-y) d x=\|u\|_p^p .
+  \int_{\Omega}\left|J_\varepsilon * u(x)\right|^p d x & \leq \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} J_\varepsilon(x-y)|u(y)|^p d y d x \\
+  & =\int_{\mathbb{R}^n}|u(y)|^p d y \int_{\mathbb{R}^n} J_\varepsilon(x-y) d x=\|u\|_p^p .
   \end{aligned}
   \]
   For $p=1$ this inequality follows directly from (18).
-  Now let $\eta>0$ be given. By Theorem 2.19 there exists $\phi \in C_0(\Omega)$ such that $\|u-\phi\|_p<\eta / 3$. Thus also $\left\|J_\epsilon * u-J_\epsilon * \phi\right\|_p<\eta / 3$. Now
+  Now let $\eta>0$ be given. By Theorem 2.19 there exists $\phi \in C_0(\Omega)$ such that $\|u-\phi\|_p<\eta / 3$. Thus also $\left\|J_\varepsilon * u-J_\varepsilon * \phi\right\|_p<\eta / 3$. Now
   \[
   \begin{aligned}
-  \left|J_\epsilon * \phi(x)-\phi(x)\right| & =\left|\int_{\mathbb{R}^n} J_\epsilon(x-y)(\phi(y)-\phi(x)) d u\right| \\
-  & \leq \sup _{|y-x|<\epsilon}|\phi(y)-\phi(x)| .
+  \left|J_\varepsilon * \phi(x)-\phi(x)\right| & =\left|\int_{\mathbb{R}^n} J_\varepsilon(x-y)(\phi(y)-\phi(x)) d u\right| \\
+  & \leq \sup _{|y-x|<\varepsilon}|\phi(y)-\phi(x)| .
   \end{aligned}
   \]
-  Since $\phi$ is uniformly continuous on $\Omega$, the right side of (20) tends to zero as $\epsilon \rightarrow 0+$. Since $\operatorname{supp}(\phi)$ is compact, we can ensure that $\left\|J_\epsilon * \phi-\phi\right\|_p<\eta / 3$
-  by choosing $\epsilon$ sufficiently small. For such $\epsilon$ we have $\left\|J_\epsilon * u-u\right\|_p<\eta$ and (c) follows.
+  Since $\phi$ is uniformly continuous on $\Omega$, the right side of (20) tends to zero as $\varepsilon \rightarrow 0+$. Since $\operatorname{supp}(\phi)$ is compact, we can ensure that $\left\|J_\varepsilon * \phi-\phi\right\|_p<\eta / 3$
+  by choosing $\varepsilon$ sufficiently small. For such $\varepsilon$ we have $\left\|J_\varepsilon * u-u\right\|_p<\eta$ and (c) follows.
   
   The proofs of (d) and (e) may be obtained by replacing $\phi$ by $u$ in inequality (20).
 \end{proof}
@@ -628,11 +628,11 @@ This is an immediate consequence of conclusions (b) and (e) of the theorem and T
 \end{para}
 
 \begin{theorem}
-  Let $1 \leq p<\infty$. A bounded subset $K \subset L^p(\Omega)$ is precompact in $L^p(\Omega)$ if and only if for every number $\epsilon>0$ there exists a number $\delta>0$ and a subset $G \Subset \Omega$ such that for every $u \in K$ and $h \in \mathbb{R}^n$ with $|h|<\delta$ both of the following inequalities hold:
+  Let $1 \leq p<\infty$. A bounded subset $K \subset L^p(\Omega)$ is precompact in $L^p(\Omega)$ if and only if for every number $\varepsilon>0$ there exists a number $\delta>0$ and a subset $G \subset\subset \Omega$ such that for every $u \in K$ and $h \in \mathbb{R}^n$ with $|h|<\delta$ both of the following inequalities hold:
   \[
   \begin{array}{r}
-  \int_{\Omega}|\tilde{u}(x+h)-\tilde{u}(x)|^p d x<\epsilon^p, \\
-  \int_{\Omega-\bar{G}}|u(x)|^p d x<\epsilon^p .
+  \int_{\Omega}|\tilde{u}(x+h)-\tilde{u}(x)|^p d x<\varepsilon^p, \\
+  \int_{\Omega-\bar{G}}|u(x)|^p d x<\varepsilon^p .
   \end{array}
   \]
 \end{theorem}
@@ -642,19 +642,19 @@ This is an immediate consequence of conclusions (b) and (e) of the theorem and T
   \[
   T_h u(x)=u(x+h)
   \]
-  First we assume that $K$ is precompact in $L^p(\Omega)$. Let $\epsilon>0$ be given. Since $K$ has a finite $\epsilon / 6$-net (Theorem 1.19), and since $C_0(\Omega)$ is dense in $L^p(\Omega)$ (Theorem 2.19), there exists a finite set $S$ of continuous functions having compact support in $\Omega$, such that for each $u \in K$ there exists $\phi \in S$ satisfying $\|u-\phi\|_p<\epsilon / 3$. Let $G$ be the union of the supports of the finitely many functions in $S$. Then $G \Subset \Omega$ and inequality (22) follows immediately. To prove inequality (21) choose a closed ball $\overline{B_r}$ of radius $r$ centred at the origin and containing $G$. Note that $\left(T_h \phi-\phi\right)(x)=\phi(x+h)-\phi(x)$ is uniformly continuous and vanishes outside $B_{r+1}$ provided $|h|<1$. Hence
+  First we assume that $K$ is precompact in $L^p(\Omega)$. Let $\varepsilon>0$ be given. Since $K$ has a finite $\varepsilon / 6$-net (Theorem 1.19), and since $C_0(\Omega)$ is dense in $L^p(\Omega)$ (Theorem 2.19), there exists a finite set $S$ of continuous functions having compact support in $\Omega$, such that for each $u \in K$ there exists $\phi \in S$ satisfying $\|u-\phi\|_p<\varepsilon / 3$. Let $G$ be the union of the supports of the finitely many functions in $S$. Then $G \subset\subset \Omega$ and inequality (22) follows immediately. To prove inequality (21) choose a closed ball $\overline{B_r}$ of radius $r$ centred at the origin and containing $G$. Note that $\left(T_h \phi-\phi\right)(x)=\phi(x+h)-\phi(x)$ is uniformly continuous and vanishes outside $B_{r+1}$ provided $|h|<1$. Hence
   \[
   \lim _{|h| \rightarrow 0} \int_{\mathbb{R}^n}\left|T_h \phi(x)-\phi(x)\right|^p d x=0
   \]
-  the convergence being uniform for $\phi \in S$. For $|h|$ sufficiently small, we have $\left\|T_h \phi-\phi\right\|_p<\epsilon / 3$. If $\phi \in S$ satisfies $\|u-\phi\|_p<\epsilon / 3$, then also $\left\|T_h \tilde{u}-T_h \phi\right\|_p<\epsilon / 3$. Hence we have for $|h|$ sufficiently small (independent of $u \in K)$
+  the convergence being uniform for $\phi \in S$. For $|h|$ sufficiently small, we have $\left\|T_h \phi-\phi\right\|_p<\varepsilon / 3$. If $\phi \in S$ satisfies $\|u-\phi\|_p<\varepsilon / 3$, then also $\left\|T_h \tilde{u}-T_h \phi\right\|_p<\varepsilon / 3$. Hence we have for $|h|$ sufficiently small (independent of $u \in K)$
   \[
-  \left\|T_h \tilde{u}-\tilde{u}\right\|_p \leq\left\|T_h \tilde{u}-T_h \phi\right\|_p+\left\|T_h \phi-\phi\right\|_p+\|\phi-u\|_p<\epsilon
+  \left\|T_h \tilde{u}-\tilde{u}\right\|_p \leq\left\|T_h \tilde{u}-T_h \phi\right\|_p+\left\|T_h \phi-\phi\right\|_p+\|\phi-u\|_p<\varepsilon
   \]
   and (21) follows. (This argument shows that translation is continuous in $L^p(\mathbb{R}^n)$.)
   It is sufficient to prove the converse for the special case $\Omega=\mathbb{R}^n$, as it follows for general $\Omega$ from its application in this special case to the set $\tilde{K}=\{\tilde{u}: u \in K\}$.
-  Let $\epsilon>0$ be given and choose $G \Subset \mathbb{R}^n$ such that for all $u \in K$
+  Let $\varepsilon>0$ be given and choose $G \subset\subset \mathbb{R}^n$ such that for all $u \in K$
   \[
-  \int_{\mathbb{R}^n-\bar{G}}|u(x)|^p d x<\frac{\epsilon}{3} .
+  \int_{\mathbb{R}^n-\bar{G}}|u(x)|^p d x<\frac{\varepsilon}{3} .
   \]
   For any $\eta>0$ the function $J_\eta * u$ defined as in (18) belongs to $C^{\infty}(\mathbb{R}^n)$ and in particular to $C(\bar{G})$. If $\phi \in C_0(\mathbb{R}^n)$, then by Hölder's inequality,
   \[
@@ -673,7 +673,7 @@ This is an immediate consequence of conclusions (b) and (e) of the theorem and T
   \]
   Now (21) implies that $\lim _{|h| \rightarrow 0}\left\|T_h u-u\right\|_p=0$ uniformly for $u \in K$. Hence $\lim _{\eta \rightarrow 0}\left\|J_\eta * u-u\right\|_p=0$ uniformly for $u \in K$. Fix $\eta>0$ so that
   \[
-  \int_{\bar{G}}\left|J_\eta * u(x)-u(x)\right|^p d x<\frac{\epsilon}{3 \cdot 2^{p-1}}
+  \int_{\bar{G}}\left|J_\eta * u(x)-u(x)\right|^p d x<\frac{\varepsilon}{3 \cdot 2^{p-1}}
   \]
   for all $u \in K$.
   We show that $\left\{J_\eta * u: u \in K\right\}$ satisfies the conditions of the Arzela-Ascoli Theorem~1.33 on $\bar{G}$ and hence is precompact in $C(\bar{G})$. By (19) we have
@@ -686,17 +686,17 @@ This is an immediate consequence of conclusions (b) and (e) of the theorem and T
   \]
   and so $\lim _{|h| \rightarrow 0} J_\eta * u(x+h)=J_\eta * u(x)$ uniformly for $x \in \mathbb{R}^n$ and $u \in K$. Thus $\left\{J_\eta * u: u \in K\right\}$ is precompact in $C(\bar{G})$, and by Theorem 1.19 there exists a finite set $\left\{\psi_1, \ldots, \psi_m\right\}$ of functions in $C(\bar{G})$ such that if $u \in K$, then for some $j$, $1 \leq j \leq m$, and all $x \in \bar{G}$ we have
   \[
-  \left|\psi_j(x)-J_\eta * u(x)\right|<\frac{\epsilon}{3 \cdot 2^{p-1} \cdot \operatorname{vol}(\bar{G})}
+  \left|\psi_j(x)-J_\eta * u(x)\right|<\frac{\varepsilon}{3 \cdot 2^{p-1} \cdot \operatorname{vol}(\bar{G})}
   \]
   This, together with (23), (24), and the inequality $(|a|+|b|)^p \leq 2^{p-1}\left(|a|^p+|b|^p\right)$ of Lemma~2.2, implies that
   \[
   \begin{aligned}
   & \int_{\mathbb{R}^n}\left|u(x)-\tilde{\psi}_j(x)\right|^p d x=\int_{\mathbb{R}^n-\bar{G}}|u(x)|^p d x+\int_{\bar{G}}\left|u(x)-\psi_j(x)\right|^p d x \\
-  &<\frac{\epsilon}{3}+2^{p-1} \int_{\bar{G}}\left(\left|u(x)-J_\eta * u(x)\right|^p+\left|J_\eta * u(x)-\psi_j(x)\right|^p\right) d x \\
-  &<\frac{\epsilon}{3}+2^{p-1}\left(\frac{\epsilon}{3 \cdot 2^{p-1}}+\frac{\epsilon}{3 \cdot 2^{p-1} \cdot \operatorname{vol}(\bar{G})} \operatorname{vol}(\bar{G})\right)=\epsilon
+  &<\frac{\varepsilon}{3}+2^{p-1} \int_{\bar{G}}\left(\left|u(x)-J_\eta * u(x)\right|^p+\left|J_\eta * u(x)-\psi_j(x)\right|^p\right) d x \\
+  &<\frac{\varepsilon}{3}+2^{p-1}\left(\frac{\varepsilon}{3 \cdot 2^{p-1}}+\frac{\varepsilon}{3 \cdot 2^{p-1} \cdot \operatorname{vol}(\bar{G})} \operatorname{vol}(\bar{G})\right)=\varepsilon
   \end{aligned}
   \]
-  Hence $K$ has a finite $\epsilon$-net in $L^p(\mathbb{R}^n)$ and is precompact there by Theorem 1.19.
+  Hence $K$ has a finite $\varepsilon$-net in $L^p(\mathbb{R}^n)$ and is precompact there by Theorem 1.19.
 \end{proof}
 
 
@@ -705,9 +705,9 @@ This is an immediate consequence of conclusions (b) and (e) of the theorem and T
   \begin{enumerate}[label = (\roman*)]
     \item $\Omega_j \subset \Omega_{j+1}$ for each $j$.
     \item The set of restrictions to $\Omega_j$ of the functions in $K$ is precompact in $L^p\left(\Omega_j\right)$ for each $j$.
-    \item For every $\epsilon>0$ there exists $j$ such that
+    \item For every $\varepsilon>0$ there exists $j$ such that
     \[
-    \int_{\Omega-\Omega_j}|u(x)|^p d x<\epsilon \quad \text { for every } u \in K.
+    \int_{\Omega-\Omega_j}|u(x)|^p d x<\varepsilon \quad \text { for every } u \in K.
     \]
   \end{enumerate}
   Then $K$ is precompact in $L^p(\Omega)$.
@@ -724,19 +724,19 @@ This is an immediate consequence of conclusions (b) and (e) of the theorem and T
   in $L^p\left(\Omega_j\right)$ for $1 \leq j \leq k$ by (i).
   
   Let $v_n=u_n^{(n)}$ for $n=1,2, \ldots$ Clearly $\left\{v_n\right\}$ is a subsequence
-  of $\left\{u_n\right\}$. Given $\epsilon>0$, (iii) assures us that there exists $j$ such that
+  of $\left\{u_n\right\}$. Given $\varepsilon>0$, (iii) assures us that there exists $j$ such that
   \[
-  \int_{\Omega-\Omega_j}\left|v_n(x)-v_m(x)\right|^p d x<\frac{\epsilon}{2}
+  \int_{\Omega-\Omega_j}\left|v_n(x)-v_m(x)\right|^p d x<\frac{\varepsilon}{2}
   \]
   for all $n, m=1,2, \ldots$ Except for the first $j-1$ terms, $\left\{v_n\right\}$
   is a subsequence of $\left\{u_n^{(j)}\right\}$, so its restrictions to $\Omega_j$
   form a Cauchy sequence in $L^p\left(\Omega_j\right)$. Thus for $n, m$ sufficiently large,
   \[
-  \int_{\Omega_j}\left|v_n(x)-v_m(x)\right|^p d x<\frac{\epsilon}{2}
+  \int_{\Omega_j}\left|v_n(x)-v_m(x)\right|^p d x<\frac{\varepsilon}{2}
   \]
   and
   \[
-  \int_{\Omega}\left|v_n(x)-v_m(x)\right|^p d x<\epsilon
+  \int_{\Omega}\left|v_n(x)-v_m(x)\right|^p d x<\varepsilon
   \]
   Thus $\left\{v_n\right\}$ is a Cauchy sequence in $L^p(\Omega)$ and so converges there.
   Hence $K$ is precompact in $L^p(\Omega)$.
@@ -966,8 +966,8 @@ We will give a direct proof after calculating the normed dual of $L^p(\Omega)$.
   \left\|L_v ;\left[L^p(\Omega)\right]^{\prime}\right\| \leq\|v\|_{p^{\prime}}
   \]
   Equality must hold above. If $1<p \leq \infty$, let $u(x)=|v(x)|^{p^{\prime}-2} \overline{v(x)}$ if $v(x) \neq 0$ and $u(x)=0$ otherwise. Then $u \in L^p(\Omega)$ and $L_v(u)=\|u\|_p\|v\|_{p^{\prime}}$.
-  Now suppose $p=1$ so $p^{\prime}=\infty$. If $\|v\|_{p^{\prime}}=0$, let $u(x)=0$. Otherwise let $0<\epsilon<\|v\|_{\infty}$ and let $A$ be a measurable subset of $\Omega$ such that $0<\mu(A)<\infty$
-  and $|v(x)|>\|v\|_{\infty}-\epsilon$ on $A$. Let $u(x)=\overline{v(x)} /|v(x)|$ on $A$ and $u(x)=0$ elsewhere. Then $u \in L^1(\Omega)$ and $L_v(u) \geq\|u\|_1\left(\|v\|_{\infty}-\epsilon\right)$. Thus we have shown that
+  Now suppose $p=1$ so $p^{\prime}=\infty$. If $\|v\|_{p^{\prime}}=0$, let $u(x)=0$. Otherwise let $0<\varepsilon<\|v\|_{\infty}$ and let $A$ be a measurable subset of $\Omega$ such that $0<\mu(A)<\infty$
+  and $|v(x)|>\|v\|_{\infty}-\varepsilon$ on $A$. Let $u(x)=\overline{v(x)} /|v(x)|$ on $A$ and $u(x)=0$ elsewhere. Then $u \in L^1(\Omega)$ and $L_v(u) \geq\|u\|_1\left(\|v\|_{\infty}-\varepsilon\right)$. Thus we have shown that
   \[
   \left\|L_v ;\left[L^p(\Omega)\right]^{\prime}\right\|=\|v\|_{p^{\prime}}
   \]
@@ -985,7 +985,7 @@ We will give a direct proof after calculating the normed dual of $L^p(\Omega)$.
 \end{lemma}
 
 \begin{proof}
-  First assume that $L \in\left[L^p(\Omega)\right]^{\prime}$ is given and $\left\|L ;\left[L^p(\Omega)\right]^{\prime}\right\|=1$. Then there exists a sequence $\left\{w_n\right\} \in L^p(\Omega)$ satisfying $\left\|w_n\right\|_p=1$ and such that $\lim _{n \rightarrow \infty}\left|L\left(w_n\right)\right|=1$. We may assume that $\left|L\left(w_n\right)\right|>1 / 2$ for each $n$, and, replacing $w_n$ by a suitable multiple of $w_n$ by a complex number of unit modulus, that $L\left(w_n\right)$ is real and positive. Let $\epsilon>0$. By the definition of uniform convexity, there exists a positive number $\delta>0$ such that if $u$ and $v$ belong to the unit ball of $L^p(\Omega)$ and if $\|(u+v) / 2\|_p>1-\delta$, then $\|u-v\|_p<\epsilon$. On the other hand, there exist an integer $N$ such that $L\left(w_n\right)>1-\delta$ for all $n>N$. When $m>N$ also, we have that $L\left(\left(w_m+w_n\right) / 2\right)>1-\delta$, and then $\left\|w_m-w_n\right\|_p<\epsilon$. Therefore $\left\{w_n\right\}$ is a Cauchy sequence in $L^p(\Omega)$ and so converges to a limit $w$ in that space. Clearly, $\|w\|_p=1$ and $L(w)=\lim _{n \rightarrow \infty} L\left(w_n\right)=1$. For uniqueness, if there were two candidates $v$ and $w$, then the sequence $\{v, w, v, w, \ldots\}$ would have to converge, forcing $v=w$.
+  First assume that $L \in\left[L^p(\Omega)\right]^{\prime}$ is given and $\left\|L ;\left[L^p(\Omega)\right]^{\prime}\right\|=1$. Then there exists a sequence $\left\{w_n\right\} \in L^p(\Omega)$ satisfying $\left\|w_n\right\|_p=1$ and such that $\lim _{n \rightarrow \infty}\left|L\left(w_n\right)\right|=1$. We may assume that $\left|L\left(w_n\right)\right|>1 / 2$ for each $n$, and, replacing $w_n$ by a suitable multiple of $w_n$ by a complex number of unit modulus, that $L\left(w_n\right)$ is real and positive. Let $\varepsilon>0$. By the definition of uniform convexity, there exists a positive number $\delta>0$ such that if $u$ and $v$ belong to the unit ball of $L^p(\Omega)$ and if $\|(u+v) / 2\|_p>1-\delta$, then $\|u-v\|_p<\varepsilon$. On the other hand, there exist an integer $N$ such that $L\left(w_n\right)>1-\delta$ for all $n>N$. When $m>N$ also, we have that $L\left(\left(w_m+w_n\right) / 2\right)>1-\delta$, and then $\left\|w_m-w_n\right\|_p<\varepsilon$. Therefore $\left\{w_n\right\}$ is a Cauchy sequence in $L^p(\Omega)$ and so converges to a limit $w$ in that space. Clearly, $\|w\|_p=1$ and $L(w)=\lim _{n \rightarrow \infty} L\left(w_n\right)=1$. For uniqueness, if there were two candidates $v$ and $w$, then the sequence $\{v, w, v, w, \ldots\}$ would have to converge, forcing $v=w$.
   Now suppose $w \in L^p(\Omega)$ is given and $\|w\|_p=1$. As noted in Paragraph 2.41 the functional $L_v$ defined by
   \begin{equation}\label{eq:2.35}
     L_v(u)=\int_{\Omega} u(x) v(x) d x, \quad u \in L^p(\Omega),

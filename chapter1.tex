@@ -337,19 +337,19 @@ A vector subspace $M$ of a normed space $X$ is itself a normed space under the n
 
 \begin{theorem}
   A set $A$ is precompact in a Banach space $X$ if and only if for every positive 
-  number $\epsilon$ there is a finite subset $N_\epsilon$ of points of $X$ such that
+  number $\varepsilon$ there is a finite subset $N_\varepsilon$ of points of $X$ such that
   \[
-  A \subset \bigcup_{y \in N_\epsilon} B_\epsilon(y) .
+  A \subset \bigcup_{y \in N_\varepsilon} B_\varepsilon(y) .
   \]
-  A set $N_\epsilon$ with this property is called a finite $\epsilon$-net for $A$.
+  A set $N_\varepsilon$ with this property is called a finite $\varepsilon$-net for $A$.
 \end{theorem}
 
 
 \begin{para}[Uniform Convexity]
   Any normed space is locally convex with respect to its norm topology.
-  The norm on $X$ is called uniformly convex if for every number $\epsilon$ 
-  satisfying $0<\epsilon \leq 2$, there exists a number $\delta(\epsilon)>0$ such 
-  that if $x, y \in X$ satisfy $\|x ; X\|=\|y ; X\|=1$ and $\|x-y ; X\| \geq \epsilon$, then $\|(x+y) / 2 ; X\| \leq$ $1-\delta(\epsilon)$.
+  The norm on $X$ is called uniformly convex if for every number $\varepsilon$ 
+  satisfying $0<\varepsilon \leq 2$, there exists a number $\delta(\varepsilon)>0$ such 
+  that if $x, y \in X$ satisfy $\|x ; X\|=\|y ; X\|=1$ and $\|x-y ; X\| \geq \varepsilon$, then $\|(x+y) / 2 ; X\| \leq$ $1-\delta(\varepsilon)$.
   The normed space $X$ itself is called "uniformly convex" in this case.
   It should be noted, however, that uniform convexity is a property of the norm $-X$ 
   may have another equivalent norm that is not uniformly convex. Any normable space 
@@ -498,7 +498,7 @@ The separability and uniform convexity of $X$ are readily deduced from the corre
   Let $\Omega$ be a bounded domain in $\mathbb{R}^n$. A subset $K$ of $C(\overline{\Omega})$ is precompact in $C(\overline{\Omega})$ if the following two conditions hold:
   \begin{enumerate}[(i)]
     \item There exists a constant $M$ such that $|\phi(x)| \leq M$ holds for every $\phi \in K$ and $x \in \Omega$.
-    \item For every $\epsilon>0$ there exists $\delta>0$ such that if $\phi \in K, x, y \in \Omega$, and $|x-y|<\delta$, then $|\phi(x)-\phi(y)|<\epsilon$.
+    \item For every $\varepsilon>0$ there exists $\delta>0$ such that if $\phi \in K, x, y \in \Omega$, and $|x-y|<\delta$, then $|\phi(x)-\phi(y)|<\varepsilon$.
   \end{enumerate}
 \end{theorem}
 The following is a straightforward imbedding theorem for the various continuous function spaces introduced above. It is a preview of the main attraction, the Sobolev imbedding theorem of Chapter~5.
@@ -682,10 +682,10 @@ There is a version of set theory where every subset of $\mathbb{R}^n$ is measura
       real-valued, then the composition $f \circ g$ defined by $f \circ g(x)=f(g(x))$ is 
       measurable.
     \item (\textbf{Lusin's Theorem}) If $f$ is measurable and $f(x)=0$ for $x \in A^c$ 
-      where $\mu(A)<\infty$, and if $\epsilon>0$, then there exists a function
+      where $\mu(A)<\infty$, and if $\varepsilon>0$, then there exists a function
       $g \in C_0\left(\mathbb{R}^n\right)$ such that
       $\sup _{x \in \mathbb{R}^n} g(x)\leq \sup_{x \in \mathbb{R}^n} f(x)$
-      and $\mu\left(\left\{x \in \mathbb{R}^n: f(x) \neq g(x)\right\}\right)<\epsilon$.
+      and $\mu\left(\left\{x \in \mathbb{R}^n: f(x) \neq g(x)\right\}\right)<\varepsilon$.
   \end{enumerate}
 \end{theorem}
 
@@ -848,7 +848,7 @@ The function $f$ is uniquely determined by $\lambda$ up to sets of measure zero.
 \begin{para}[Test Functions]
   Let $\Omega$ be a domain in $\mathbb{R}^n$. A sequence $\{\phi_j\}$ of functions belonging to $C_0^{\infty}(\Omega)$ is said to converge in the sense of the space $\mathscr{D}(\Omega)$ to the function $\phi \in C_0^{\infty}(\Omega)$ provided the following conditions are satisfied:
   \begin{enumerate}[label = (\roman*)]
-    \item there exists $K \Subset \Omega$ such that $\supp(\phi_j-\phi) \subset K$ for every $j$, and
+    \item there exists $K \subset\subset \Omega$ such that $\supp(\phi_j-\phi) \subset K$ for every $j$, and
     \item $\lim _{j \rightarrow \infty} D^\alpha \phi_j(x)=D^\alpha \phi(x)$ uniformly on $K$ for each multi-index $\alpha$.
   \end{enumerate}
   There is a locally convex topology on the vector space $C_0^{\infty}(\Omega)$ which respect to 
@@ -878,11 +878,11 @@ The function $f$ is uniquely determined by $\lambda$ up to sets of measure zero.
 
 
 \begin{para}[Locally Integrable Functions]
-  A function $u$ defined almost everywhere on $\Omega$ is said to be locally integrable on $\Omega$ provided $u \in L^1(U)$ for every open $U \Subset \Omega$. In this case we write $u \in L_{\text {loc }}^1(\Omega)$. Corresponding to every $u \in L_{\text {loc }}^1(\Omega)$ there is a distribution $T_u \in \mathscr{D}^{\prime}(\Omega)$ defined by
+  A function $u$ defined almost everywhere on $\Omega$ is said to be locally integrable on $\Omega$ provided $u \in L^1(U)$ for every open $U \subset\subset \Omega$. In this case we write $u \in L_{\text {loc }}^1(\Omega)$. Corresponding to every $u \in L_{\text {loc }}^1(\Omega)$ there is a distribution $T_u \in \mathscr{D}^{\prime}(\Omega)$ defined by
   \begin{equation}
     T_u(\phi)=\int_{\Omega} u(x) \phi(x) \d x, \quad \phi \in \mathscr{D}(\Omega).
   \end{equation}
-  Evidently $T_u$, thus defined, is a linear functional on $\mathscr{D}(\Omega)$. To see that it is continuous, suppose that $\phi_j \rightarrow \phi$ in $\mathscr{D}(\Omega)$. Then there exists $K \Subset \Omega$ such that $\supp\left(\phi_j-\phi\right) \subset K$ for all $j$. Thus
+  Evidently $T_u$, thus defined, is a linear functional on $\mathscr{D}(\Omega)$. To see that it is continuous, suppose that $\phi_j \rightarrow \phi$ in $\mathscr{D}(\Omega)$. Then there exists $K \subset\subset \Omega$ such that $\supp\left(\phi_j-\phi\right) \subset K$ for all $j$. Thus
   \[
   \left|T_u\left(\phi_j\right)-T_u(\phi)\right| \leq \sup _{x \in K}\left|\phi_j(x)-\phi(x)\right| \int_K|u(x)| \d x .
   \]
@@ -926,7 +926,7 @@ The function $f$ is uniquely determined by $\lambda$ up to sets of measure zero.
   \[
     \supp\left(D^\alpha\left(\phi_j-\phi\right)\right) \subset \supp\left(\phi_j-\phi\right) \subset K
   \]
-  for some $K \Subset \Omega$. Moreover,
+  for some $K \subset\subset \Omega$. Moreover,
   \[
   D^\beta\left(D^\alpha\left(\phi_j-\phi\right)\right)=D^{\beta+\alpha}\left(\phi_j-\phi\right)
   \]

@@ -762,7 +762,7 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
 
 
 \begin{para}
-  To prove Part II of Theorem 4.12 , we now assume that the domain $\Omega \subset \mathbb{R}^n$ satisfies the strong local Lipschitz condition defined in Paragraph 4.9 , and that $m p>n \geq(m-1) p$. We shall show that $W^{m \cdot p}(\Omega) \rightarrow C^{0, \lambda}(\bar{\Omega})$ where:
+  To prove Part II of Theorem 4.12 , we now assume that the domain $\Omega \subset \mathbb{R}^n$ satisfies the strong local Lipschitz condition defined in Paragraph 4.9 , and that $m p>n \geq(m-1) p$. We shall show that $W^{m, p}(\Omega) \rightarrow C^{0, \lambda}(\bar{\Omega})$ where:
   \begin{enumerate}[(i)]
     \item $0<\lambda \leq m-(n / p)$ if $n>(m-1) p$, or
     \item $0<\lambda<1$ if $n=(m-1) p$ and $p>1$, or
@@ -1091,7 +1091,7 @@ for $\Omega=\mathbb{R}^n$.
   \[
   \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p d x \leq K_{\alpha, \beta}\|u\|_{m, p, \Omega}^p\|v\|_{m, p, \Omega}^p
   \]
-  where $K_{\alpha, \beta}=K_{\alpha, \beta}(m, p, n, C)$. By the imbedding theorem there exists, for any $\beta$ with $|\beta| \leq m$, a constant $K(\beta)=K(\beta, m, p, n, C)$ such that for any $w \in W^{m \cdot p}(\Omega)$
+  where $K_{\alpha, \beta}=K_{\alpha, \beta}(m, p, n, C)$. By the imbedding theorem there exists, for any $\beta$ with $|\beta| \leq m$, a constant $K(\beta)=K(\beta, m, p, n, C)$ such that for any $w \in W^{m, p}(\Omega)$
   provided $(m-|\beta|) p \leq n$ and $p \leq r \leq n p /(n-[m-|\beta|] p)[$ or $p \leq r<\infty$ if $(m-|\beta|) p=n]$, or alternatively
   \[
   \left|D^\beta w(x)\right| \leq K(\beta)\|w\|_{m, p . \Omega} \quad \text { a.e. in } \Omega
@@ -1236,7 +1236,7 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
 
 
 \begin{theorem}
-  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$ having finite volume, and let $q>p$. Then $W^{m \cdot p}(\Omega)$ is not imbedded in $L^q(\Omega)$.
+  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$ having finite volume, and let $q>p$. Then $W^{m, p}(\Omega)$ is not imbedded in $L^q(\Omega)$.
 \end{theorem}
 
 \begin{proof}
@@ -1249,7 +1249,7 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
   \[
   \int_{r_k}^{\infty} A(\rho) d \rho=\frac{1}{2^k}=\int_{r_{k-1}}^{r_k} A(\rho) d \rho
   \]
-  Since $\Omega$ is unbounded, $r_k$ increases to infinity with $k$. Let $\Delta r_k=r_{k+1}-r_k$ and fix $\epsilon$ such that $0<\epsilon<[1 /(m p)]-[1 /(m q)]$. There must exist an increasing sequence $\left\{k_j\right\}_{j=1}^{\infty}$ such that $\Delta r_{k_j} \geq 2^{-\epsilon k_j}$, for otherwise $\Delta r_k<2^{-\epsilon k}$ for all but possibly finitely many values of $k$ and we would have $\sum_{k=0}^{\infty} \Delta r_k<\infty$, contradicting $\lim r_k=\infty$. For convenience we assume $k_1 \geq 1$ so $k_j \geq j$ for all $j$. Let $a_0=0$, $a_j=r_{k_j+1}$, and $b_j=r_{k_j}$. Note that $a_{j-1} \leq b_j<a_j$ and $a_j-b_j=\Delta r_{k_j} \geq 2^{-\epsilon k_j}$.
+  Since $\Omega$ is unbounded, $r_k$ increases to infinity with $k$. Let $\Delta r_k=r_{k+1}-r_k$ and fix $\varepsilon$ such that $0<\varepsilon<[1 /(m p)]-[1 /(m q)]$. There must exist an increasing sequence $\left\{k_j\right\}_{j=1}^{\infty}$ such that $\Delta r_{k_j} \geq 2^{-\varepsilon k_j}$, for otherwise $\Delta r_k<2^{-\varepsilon k}$ for all but possibly finitely many values of $k$ and we would have $\sum_{k=0}^{\infty} \Delta r_k<\infty$, contradicting $\lim r_k=\infty$. For convenience we assume $k_1 \geq 1$ so $k_j \geq j$ for all $j$. Let $a_0=0$, $a_j=r_{k_j+1}$, and $b_j=r_{k_j}$. Note that $a_{j-1} \leq b_j<a_j$ and $a_j-b_j=\Delta r_{k_j} \geq 2^{-\varepsilon k_j}$.
   Let $f$ be an infinitely differentiable function on $\mathbb{R}$ having the properties:
   \begin{enumerate}[(i)]
     \item $0 \leq f(t) \leq 1$ for all $t$,
@@ -1277,10 +1277,10 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
   \begin{aligned}
   \int_{\Omega_j}\left|\frac{d^\kappa u}{d \rho^\kappa}\right|^p d x & =\int_{b_j}^{a_j}\left|\frac{d^\kappa u}{d \rho^\kappa}\right|^p A(\rho) d \rho \\
   & \leq M^p 2^{k_j p / q}\left(a_j-b_j\right)^{-\kappa p} \int_{b_j}^{a_j} A(\rho) d \rho \\
-  & =\frac{M^p 2^{-k_j(1-p / q-\epsilon \kappa p)}}{2} \leq \frac{M^p 2^{-C j}}{2},
+  & =\frac{M^p 2^{-k_j(1-p / q-\varepsilon \kappa p)}}{2} \leq \frac{M^p 2^{-C j}}{2},
   \end{aligned}
   \]
-  where $C=1-p / q-\epsilon \kappa p>0$ because of the choice of $\epsilon$. Hence $D^\alpha u \in L^p(\Omega)$ for $|\alpha| \leq m$, that is, $u \in W^{m, p}(\Omega)$. However, $u \notin L^q(\Omega)$ because we have for each $j$,
+  where $C=1-p / q-\varepsilon \kappa p>0$ because of the choice of $\varepsilon$. Hence $D^\alpha u \in L^p(\Omega)$ for $|\alpha| \leq m$, that is, $u \in W^{m, p}(\Omega)$. However, $u \notin L^q(\Omega)$ because we have for each $j$,
   \[
   \begin{aligned}
   \int_{\Omega_j}|u(x)|^q d x & \geq 2^{k_{j-1}} \int_{a_{j-1}}^{a_j} A(\rho) d \rho \\
@@ -1307,11 +1307,15 @@ at its boundary point $x_0$ if for every real number $k$ we have
 \end{theorem}
 
 \begin{proof}
-  We construct $u \in W^{m \cdot p}(\Omega)$ which fails to belong to $L^q(\Omega)$ because it becomes unbounded too rapidly near $x_0$. Without loss of generality we may assume $x_0=0$, so that $r=|x|$. Let $\Omega^*=\left\{x /|x|^2: x \in \Omega,|x|<1\right\}$. Then $\Omega^*$ is unbounded and has finite volume by $(25)$, and
+  We construct $u \in W^{m, p}(\Omega)$ which fails to belong to $L^q(\Omega)$ because
+  it becomes unbounded too rapidly near $x_0$. Without loss of generality we may assume $x_0=0$, 
+  so that $r=|x|$. Let $\Omega^*=\left\{x /|x|^2: x \in \Omega,|x|<1\right\}$.
+  Then $\Omega^*$ is unbounded and has finite volume by $(25)$, and
   \[
   A\left(r, \Omega^*\right)=r^{2(n-1)} A(1 / r, \Omega)
   \]
-  Let $t$ satisfy $p<t<q$. By Theorem 4.46 there exists a function $\tilde{v} \in C^m(0, \infty)$ such that
+  Let $t$ satisfy $p<t<q$. By Theorem 4.46 there exists a
+  function $\tilde{v} \in C^m(0, \infty)$ such that
   (i) $\tilde{v}(r)=0$ if $0<r \leq 1$
   (ii) $\int_1^{\infty}\left|\tilde{v}^{(j)}\right|^t A\left(r, \Omega^*\right) d r<\infty$ if $0 \leq j \leq m$
   (iii) $\int_1^{\infty}|\tilde{v}(r)|^q A\left(r, \Omega^*\right) d r=\infty$.
@@ -1358,9 +1362,18 @@ at its boundary point $x_0$ if for every real number $k$ we have
 
 
 \begin{para}
-  Having proved that Theorem 4.12 fails completely for sufficiently irregular domains, we now propose to show that certain imbeddings of the types considered in that theorem do hold for less irregular domains that nevertheless fail to satisfy even the weak cone condition. Questions of this sort have been considered by many writers. The treatment here follows that in [A1].
+  Having proved that Theorem 4.12 fails completely for sufficiently irregular domains, we now 
+  propose to show that certain imbeddings of the types considered in that theorem do hold for 
+  less irregular domains that nevertheless fail to satisfy even the weak cone condition. 
+  Questions of this sort have been considered by many writers.
+  The treatment here follows that in [A1].
   
-  We consider domains $\Omega$ in $\mathbb{R}^n$ whose boundaries consist only of $(n-1)$-dimensional surfaces, and it is assumed that $\Omega$ lies on only one side of its boundary. For such domains we shall say, somewhat loosely, that $\Omega$ has a cusp at point $x_0$ on its boundary if no finite open cone of positive volume contained in $\Omega$ can have its vertex at $x_0$. The failure of a domain to have any cusps does not, of course, imply that it satisfies the cone condition.
+  We consider domains $\Omega$ in $\mathbb{R}^n$ whose boundaries consist only
+  of $(n-1)$-dimensional surfaces, and it is assumed that $\Omega$ lies on only one side of its 
+  boundary. For such domains we shall say, somewhat loosely, that $\Omega$ has a cusp at point 
+  $x_0$ on its boundary if no finite open cone of positive volume contained in $\Omega$ can have 
+  its vertex at $x_0$. The failure of a domain to have any cusps does not, of course,
+  imply that it satisfies the cone condition.
   
   We consider a family of special domains in $\mathbb{R}^n$ that we call standard cusps and that have cusps of power sharpness (less sharp than exponential sharpness).
 \end{para}
@@ -1374,7 +1387,12 @@ at its boundary point $x_0$ if for every real number $k$ we have
   & \left(x_1^2+\cdots+x_k^2\right)^{1 / \lambda}+x_{k+1}^2+\cdots+x_n^2<a^2
   \end{aligned}
   \]
-  where $a$ is the radius of the ball of unit volume in $\mathbb{R}^n$. Note that $a<1$. The cusp $Q_{k, \lambda}$ has axial plane spanned by the $x_k, \ldots, x_n$ axes, and verticial plane (cusp plane) spanned by $x_{k+2}, \ldots, x_n$. If $k=n-1$, the origin is the only vertex point of $Q_{k, \lambda}$. The outer boundary surface of $Q_{k, \lambda}$ corresponds to equality in (26) in order to simplify calculations later. A sphere or other suitable surface bounded and bounded away from the origin could be used instead.
+  where $a$ is the radius of the ball of unit volume in $\mathbb{R}^n$. Note that $a<1$.
+  The cusp $Q_{k, \lambda}$ has axial plane spanned by the $x_k, \ldots, x_n$ axes, and verticial 
+  plane (cusp plane) spanned by $x_{k+2}, \ldots, x_n$. If $k=n-1$, the origin is the only vertex 
+  point of $Q_{k, \lambda}$. The outer boundary surface of $Q_{k, \lambda}$ corresponds to 
+  equality in (26) in order to simplify calculations later. A sphere or other suitable surface 
+  bounded and bounded away from the origin could be used instead.
   
   Corresponding to the standard cusp $Q_{k, \lambda}$ we consider the associated standard cone $\mathcal{C}_k=Q_{k, 1}$ consisting of points $y=\left(y_1, \ldots, y_n\right)$ in $\mathbb{R}^n$ that satisfy the inequalities
   \[
@@ -1383,9 +1401,14 @@ at its boundary point $x_0$ if for every real number $k$ we have
   & y_1^2+\cdots+y_n^2<a^2 .
   \end{aligned}
   \]
-  Figure 3 illustrates the standard cusps $Q_{1.2}$ in $\mathbb{R}^2$, and $Q_{2.2}$ and $Q_{1.2}$ in $\mathbb{R}^3$, together with their associated standard cones. In $\mathbb{R}^3$ the cusp $Q_{2.2}$ has a single cusp point (vertex) at the origin, while $Q_{1.2}$ has a cusp line along the $x_3$-axis.
+  Figure~3 illustrates the standard cusps $Q_{1.2}$ in $\mathbb{R}^2$, and $Q_{2.2}$
+  and $Q_{1.2}$ in $\mathbb{R}^3$, together with their associated standard cones.
+  In $\mathbb{R}^3$ the cusp $Q_{2.2}$ has a single cusp point (vertex) at the origin,
+  while $Q_{1.2}$ has a cusp line along the $x_3$-axis.
   
-  It is convenient to adopt a system of generalized "cylindrical" coordinates in $\mathbb{R}^n$, $\left(r_k, \phi_1, \ldots, \phi_{k-1}, y_{k+1}, \ldots, y_n\right)$, so that $r_k \geq 0,-\pi \leq \phi_1 \leq \pi, 0 \leq \phi_2, \ldots$
+  It is convenient to adopt a system of generalized "cylindrical" coordinates
+  in $\mathbb{R}^n$, $\left(r_k, \phi_1, \ldots, \phi_{k-1}, y_{k+1}, \ldots, y_n\right)$,
+  so that $r_k \geq 0,-\pi \leq \phi_1 \leq \pi, 0 \leq \phi_2, \ldots$
   $\phi_{k-1} \leq \pi$, and
   \[
   \begin{aligned}
@@ -1421,20 +1444,28 @@ at its boundary point $x_0$ if for every real number $k$ we have
   \[
   \left|\frac{\partial\left(x_1, \ldots, x_n\right)}{\partial\left(y_1, \ldots, y_n\right)}\right|=\lambda r_k^{(\lambda-1) k}
   \]
-  We now state three theorems extending imbeddings of the types considered in Theorem 4.12 (except the trace imbeddings) to domains with boundary irregularities comparable to standard cusps. The proofs of these theorems will be given later in this chapter.
+  We now state three theorems extending imbeddings of the types considered in Theorem~4.12 
+  (except the trace imbeddings) to domains with boundary irregularities comparable to standard 
+  cusps. The proofs of these theorems will be given later in this chapter.
 \end{para}
 
 
 \begin{theorem}
-  Let $\Omega$ be a domain in $\mathbb{R}^n$ having the following property: There exists a family $\Gamma$ of open subsets of $\Omega$ such that
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ having the following property:
+  There exists a family $\Gamma$ of open subsets of $\Omega$ such that
   \begin{enumerate}[(i)]
     \item $\Omega=\bigcup_{G \in \Gamma} G$
-    \item $\Gamma$ has the finite intersection property, that is, there exists a positive integer $N$ such that any $N+1$ distinct sets in $\Gamma$ have empty intersection,
+    \item $\Gamma$ has the finite intersection property, that is, there exists a positive
+      integer $N$ such that any $N+1$ distinct sets in $\Gamma$ have empty intersection,
     \item at most one set $G \in \Gamma$ satisfies the cone condition,
-    \item there exist positive constants $v$ and $A$ such that for each $G \in \Gamma$ not satisfying the cone condition there exists a one-to-one function $\Psi=\left(\psi_1, \ldots, \psi_n\right)$ mapping $G$ onto a standard cusp $Q_{k, \lambda}$, where $(\lambda-1) k \leq \nu$, and such that for all $i, j,(1 \leq i, j \leq n)$, all $x \in G$, and all $y \in Q_{k, \lambda}$,
-    \[
-    \left|\frac{\partial \psi_j}{\partial x_i}\right| \leq A \quad \text { and } \quad\left|\frac{\partial\left(\psi^{-1}\right)_j}{\partial y_i}\right| \leq A
-    \]
+    \item there exist positive constants $v$ and $A$ such that for each $G \in \Gamma$
+      not satisfying the cone condition there exists a one-to-one
+      function $\Psi=\left(\psi_1, \ldots, \psi_n\right)$ mapping $G$ onto a standard
+      cusp $Q_{k, \lambda}$, where $(\lambda-1) k \leq \nu$, and such that for
+      all $i, j,(1 \leq i, j \leq n)$, all $x \in G$, and all $y \in Q_{k, \lambda}$,
+      \[
+      \left|\frac{\partial \psi_j}{\partial x_i}\right| \leq A \quad \text { and } \quad\left|\frac{\partial\left(\psi^{-1}\right)_j}{\partial y_i}\right| \leq A
+      \]
   \end{enumerate}
   If $v>m p-n$, then
   \[
@@ -1513,13 +1544,13 @@ We begin with some one-dimensional inequalities for functions continuously diffe
 \end{lemma}
 
 \begin{proof}
-  Let $\epsilon>0$ be given and fix $s$ in $(0, T / 2)$ small enough so that for any $t$, $0<t<s$, we have
+  Let $\varepsilon>0$ be given and fix $s$ in $(0, T / 2)$ small enough so that for any $t$, $0<t<s$, we have
   \[
-  \int_t^s\left|u^{\prime}(\tau)\right| \tau^\nu d \tau<\epsilon / 3
+  \int_t^s\left|u^{\prime}(\tau)\right| \tau^\nu d \tau<\varepsilon / 3
   \]
   Now there exists $\delta$ in $(0, s)$ such that
   \[
-  \delta^\nu\left|u^{\prime}(T / 2)\right|<\epsilon / 3 \quad \text { and } \quad(\delta / s)^\nu \int_s^{T / 2}\left|u^{\prime}(\tau)\right| \tau^\nu d \tau<\epsilon / 3
+  \delta^\nu\left|u^{\prime}(T / 2)\right|<\varepsilon / 3 \quad \text { and } \quad(\delta / s)^\nu \int_s^{T / 2}\left|u^{\prime}(\tau)\right| \tau^\nu d \tau<\varepsilon / 3
   \]
   If $0<t \leq \delta$, then
   \[
@@ -1527,7 +1558,7 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   \]
   so that
   \[
-  t^\nu|u(t)| \leq \delta^\nu|u(T / 2)|+\int_t^s\left|u^{\prime}(\tau)\right| \tau^\nu d \tau+(\delta / s)^\nu \int_s^{T / 2}\left|u^{\prime}(\tau)\right| \tau^\nu d \tau<\epsilon
+  t^\nu|u(t)| \leq \delta^\nu|u(T / 2)|+\int_t^s\left|u^{\prime}(\tau)\right| \tau^\nu d \tau+(\delta / s)^\nu \int_s^{T / 2}\left|u^{\prime}(\tau)\right| \tau^\nu d \tau<\varepsilon
   \]
   Hence $\lim _{t \rightarrow 0+}|u(t)| t^\nu=0$.
 \end{proof}
@@ -1631,35 +1662,437 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   \end{aligned}
   \]
 \end{lemma}
-Proof. Once again it is sufficient to establish (34) for $p=1$. Let $\mathcal{C}_{+}$be the set $\left\{x=(\rho, \phi): \phi_1 \geq 0\right\}$ and $\mathcal{C}_{-}$the set $\left\{x=(\rho, \phi): \phi_1 \leq 0\right\}$. Then $\mathcal{C}=\mathcal{C}_{+} \cup \mathcal{C}_{-}$. We prove (34) only for $\mathcal{C}_{+}$(which, however, we continue to call $\mathcal{C}$ ); a similar proof holds for $\mathcal{C}_{-}$, so that (34) holds for the given $\mathcal{C}$. Accordingly, assume $\mathcal{C}=\mathcal{C}_{+}$.
-For $k \leq m$ we may write (34) in the form (taking $p=1$ )
-\[
-\begin{aligned}
-\int_{\mathcal{C}}|u| & \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{m-1} \sin ^{\nu+j-1} \phi_j \prod_{j=m}^{n-1} \sin ^{\nu+j-2} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
-& \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-1} \phi_j \rho^{\nu+n-1} d \rho d \phi .
-\end{aligned}
-\]
-For $k>m \geq 2$ we may write (34) in the form
-\[
-\begin{aligned}
-\int_{\mathcal{C}}|u| & \prod_{j=2}^{m-1} \sin ^{j-1} \phi_j \prod_{j=m}^{k-1} \sin ^{j-2} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-2} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
-& \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-1} \phi_j \rho^{\nu+n-1} d \rho d \phi .
-\end{aligned}
-\]
-By virtue of the restrictions placed on $v, m$, and $k$ in the statement of the lemma, each of the two inequalities above is a special case of
-\[
-\begin{aligned}
-\int_{\mathcal{C}}|u| & \prod_{j=1}^{i-1} \sin ^{\mu_j} \phi_j \prod_{j=i}^{n-1} \sin ^{\mu_j-1} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
-& \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{\nu+n-1} d \rho d \phi
-\end{aligned}
-\]
-where $1 \leq i \leq n, \mu_j \geq 0$, and $\mu_j>0$ if $j \geq i$. We prove (35) by backwards induction on $i$. For $i=n,(35)$ is obtained by applying Lemma 4.58 to $u$ considered as a function of $\rho$ on $(0, a)$, and then integrating the remaining variables with the appropriate weights. Assume, therefore, that (35) has been proved for $i=k+1$ where $1 \leq k \leq n-1$. We prove it must also hold for $i=k$.
-If $\beta_k<\pi$, we have
-\[
-\sin \phi_k \leq \phi_k \leq K_1 \sin \phi_k, \quad 0 \leq \phi_k \leq \beta_k
-\]
-where $K_1=K_1\left(\beta_k\right)$. By Lemma 4.58, and since
-\[
-\left|\frac{\partial u}{\partial \phi_k}\right| \leq \rho|\operatorname{grad} u| \prod_{j=k+1}^{n-1} \sin \phi_j,
-\]
-we have
+
+\begin{proof}
+  Once again it is sufficient to establish (34) for $p=1$. Let $\mathcal{C}_{+}$be the set $\left\{x=(\rho, \phi): \phi_1 \geq 0\right\}$ and $\mathcal{C}_{-}$the set $\left\{x=(\rho, \phi): \phi_1 \leq 0\right\}$. Then $\mathcal{C}=\mathcal{C}_{+} \cup \mathcal{C}_{-}$. We prove (34) only for $\mathcal{C}_{+}$(which, however, we continue to call $\mathcal{C}$ ); a similar proof holds for $\mathcal{C}_{-}$, so that (34) holds for the given $\mathcal{C}$. Accordingly, assume $\mathcal{C}=\mathcal{C}_{+}$.
+  For $k \leq m$ we may write (34) in the form (taking $p=1$ )
+  \[
+  \begin{aligned}
+  \int_{\mathcal{C}}|u| & \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{m-1} \sin ^{\nu+j-1} \phi_j \prod_{j=m}^{n-1} \sin ^{\nu+j-2} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
+  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-1} \phi_j \rho^{\nu+n-1} d \rho d \phi .
+  \end{aligned}
+  \]
+  For $k>m \geq 2$ we may write (34) in the form
+  \[
+  \begin{aligned}
+  \int_{\mathcal{C}}|u| & \prod_{j=2}^{m-1} \sin ^{j-1} \phi_j \prod_{j=m}^{k-1} \sin ^{j-2} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-2} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
+  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-1} \phi_j \rho^{\nu+n-1} d \rho d \phi .
+  \end{aligned}
+  \]
+  By virtue of the restrictions placed on $v, m$, and $k$ in the statement of the lemma,
+  each of the two inequalities above is a special case of
+  \[
+  \begin{aligned}
+  \int_{\mathcal{C}}|u| & \prod_{j=1}^{i-1} \sin ^{\mu_j} \phi_j \prod_{j=i}^{n-1} \sin ^{\mu_j-1} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
+  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{\nu+n-1} d \rho d \phi
+  \end{aligned}
+  \]
+  where $1 \leq i \leq n, \mu_j \geq 0$, and $\mu_j>0$ if $j \geq i$.
+  We prove (35) by backwards induction on $i$. For $i=n,(35)$ is obtained by applying Lemma 4.58
+  to $u$ considered as a function of $\rho$ on $(0, a)$, and then integrating the remaining 
+  variables with the appropriate weights. Assume, therefore, that (35) has been proved for $i=k+1$ 
+  where $1 \leq k \leq n-1$. We prove it must also hold for $i=k$.
+  If $\beta_k<\pi$, we have
+  \[
+  \sin \phi_k \leq \phi_k \leq K_1 \sin \phi_k, \quad 0 \leq \phi_k \leq \beta_k
+  \]
+  where $K_1=K_1\left(\beta_k\right)$. By Lemma 4.58, and since
+  \[
+  \left|\frac{\partial u}{\partial \phi_k}\right| \leq \rho|\operatorname{grad} u| \prod_{j=k+1}^{n-1} \sin \phi_j,
+  \]
+  we have
+  \begin{align*}
+    & \int_0^{\beta_k} |u(\rho,\phi)| \sin^{\mu_k-1} \phi_k \d \phi_k \\
+    \leq & \int_0^{\beta_k} |u| \phi_k^{\mu_k-1} \d \phi_k \\
+    \leq & K_2 \int_0^{\beta_k} \biggl(|u| 
+      + |\grad u| \rho \prod_{j=k+1}^{n-1} \sin\phi_j\biggr) \phi_k^{\mu_k} \d \phi_k \\
+    \leq & \int_{0}^{\beta_k} \biggl(|u| 
+      + |\grad u| \rho \prod_{j=k+1}^{n-1} \sin\phi_j\biggr) \sin^{\mu_k} \phi_k \d \phi_k.
+  \end{align*}
+  Note that $K_2$, and hence $K_3$, depends on $\beta_k$ but may be chosen independent of $\mu_k$, and hence of $v$, under the conditions of the lemma. If $\beta_k=\pi$, we obtain (37) by writing $\int_0^\pi=\int_0^{\pi / 2}+\int_{\pi / 2}^\pi$ and using the inequalities
+  \[
+  \begin{array}{ll}
+  \sin \phi_k \leq \phi_k \leq(\pi / 2) \sin \phi_k & \text { if } \quad 0 \leq \phi_k \leq \pi / 2 \\
+  \sin \phi_k \leq \pi-\phi_k \leq(\pi / 2) \sin \phi_k & \text { if } \quad \pi / 2 \leq \phi_k \leq \pi
+  \end{array}
+  \]
+  We now obtain, using (37) and the induction hypothesis,
+  \[
+  \begin{aligned}
+  & \int_{\mathcal{C}}|u| \prod_{j=1}^{k-1} \sin ^{\mu_j} \phi_j \prod_{j=k}^{n-1} \sin ^{\mu_j-1} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
+  & \leq \int_0^a \rho^{\nu+n-2} d \rho \prod_{j=1}^{k-1} \int_0^{\beta_j} \sin ^{\mu_j} \phi_j d \phi_j \\
+  & \times \prod_{j=k+1}^{n-1} \int_0^{\beta_j} \sin ^{\mu_j-1} \phi_j d \phi_j \times \int_0^{\beta_k}|u| \sin ^{\mu_k-1} \phi_k d \phi_k \\
+  & \leq K_3 \int_{\mathcal{C}}|\operatorname{grad} u| \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{v+n-1} d \rho d \phi \\
+  &+K_3 \int_{\mathcal{C}}|u| \prod_{j=1}^k \sin ^{\mu_j} \phi_j \prod_{j=k+1}^{n-1} \sin ^{\mu_j-1} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
+  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+\mid \operatorname{grad}^{n \mid}\right) \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{\nu+n-1} d \rho d \phi
+  \end{aligned}
+  \]
+  This completes the induction establishing (35) and hence the lemma.
+\end{proof}
+
+The following lemma provides a weighted imbedding inequality for the $L^q$-norm of a function defined on a conical domain of the type (33) in terms of the $W^{m, p_{-}}$ norm, both norms being weighted with a power of distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proof of Theorem 4.51.
+
+
+\begin{lemma}
+  Let $\mathcal{C}$ be as specified by (33) and let $p \geq 1$ and $1 \leq k \leq n$. Suppose that $\max \{1-k, p-n\}<v_1<v_2<\infty$. Then there exists a constant
+  $K=K\left(k, n, p, v_1, v_2, \beta_1, \ldots, \beta_{n-1}\right)$, independent of $a$, such that for every $v$ satisfying $v_1 \leq v \leq v_2$ and every function $u \in C^1(\mathcal{C}) \cap C(\overline{\mathcal{C}})$ we have
+  \[
+  \begin{aligned}
+  & \left(\int_{\mathcal{C}}|u(x)|^q\left[r_k(x)\right]^\nu d x\right)^{1 / q} \\
+  & \quad \leq K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u(x)|^p+|\operatorname{grad} u(x)|^p\right)\left[r_k(x)\right]^\nu d x\right)^{1 / p}
+  \end{aligned}
+  \]
+  where $q=(v+n) p /(v+n-p)$.
+\end{lemma}
+
+\begin{proof}
+  Let $\delta=(v+n-1) p /(v+n-p)$, let $s=(\nu+n-1) / \nu$, and let $s^{\prime}=(v+n-1) /(n-1)$. We have by Hölder's inequality and Lemma 4.61 (the case $m=k)$
+  \[
+  \begin{aligned}
+  \int_{\mathcal{C}}|u(x)|^q\left[r_k(x)\right]^\nu d x \leq & \left(\int_{\mathcal{C}}|u|^\delta r_k^{\nu-1} d x\right)^{1 / s}\left(\int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n \nu /(n-1)} d x\right)^{1 / s^{\prime}} \\
+  \leq & K_1\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) r_k^\nu d x\right)^{1 / s} \\
+  & \times\left(\int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n v /(n-1)} d x\right)^{1 / s^{\prime}}
+  \end{aligned}
+  \]
+  In order to estimate the last integral above we adopt the notation
+  \[
+  \rho^*=\left(\phi_1, \ldots, \phi_{n-1}\right), \quad \phi_j^*=\left(\rho, \phi_1, \ldots, \hat{\phi}_j, \phi_{j+1}, \ldots, \phi_{n-1}\right), \quad 1 \leq j \leq n-1,
+  \]
+  where the caret denotes omission of a component. Let
+  \[
+  \begin{gathered}
+  \mathcal{C}_0^*=\left\{\rho^*:\left(\rho, \rho^*\right) \in \mathcal{C} \text { for } 0<\rho<a\right\} \\
+  \mathcal{C}_j^*=\left\{\phi_j^*:(\rho, \phi) \in \mathcal{C} \text { for } 0<\phi_j<\beta_j\right\}
+  \end{gathered}
+  \]
+  $\mathcal{C}_0^*$ and $\mathcal{C}_j^*,(1 \leq j \leq n-1)$, are domains in $\mathbb{R}^{n-1}$. We define functions $F_0$ on $\mathcal{C}_0^*$ and $F_j$ on $\mathcal{C}_j^*$ as follows:
+  \[
+  \begin{aligned}
+  \left(F_0\left(\rho^*\right)\right)^{n-1}= & \sup _{0<\rho<a}\left(|u|^\delta \rho^{v+n-1}\right) \prod_{i=k}^{n-1} \sin ^v \phi_i \prod_{i=2}^{n-1} \sin ^{i-1} \phi_i, \\
+  \left(F_j\left(\phi_j^*\right)\right)^{n-1}= & \left(\sup _{0<\phi_j<\beta_j}\left(|u|^\delta \sin ^{v+n-1} \phi_j\right)\right) \rho^{v+n-2} \\
+  & \times \prod_{i=k}^{n-1} \sin ^v \phi_i \prod_{i=2}^{j-1} \sin ^{i-1} \phi_i \prod_{i=j+1}^{n-1} \sin ^{i-2} \phi_i
+  \end{aligned}
+  \]
+  Then we have
+  \[
+  |u|^{n \delta /(n-1)} r_k^{n \nu /(n-1)} \rho^{n-1} \prod_{i=2}^{n-1} \sin ^{i-1} \phi_i \leq F_0\left(\rho^*\right) \prod_{j=1}^{n-1} F_j\left(\phi_j^*\right) .
+  \]
+  Applying the combinatorial lemma 4.23 with $k=n-1=\lambda$ we obtain
+  \[
+  \begin{aligned}
+  & \int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n \nu /(n-1)} d x \\
+  & \leq \int_{\mathcal{C}} F_0\left(\rho^*\right) \prod_{j=1}^{n-1} F_j\left(\phi_j^*\right) d \rho d \phi \\
+  & \leq\left(\int_{\mathcal{C}_0^*}\left(F_0\left(\rho^*\right)\right)^{n-1} d \phi \prod_{j=1}^{n-1} \int_{\mathcal{C}_j^*}\left(F_j\left(\phi_j^*\right)\right)^{n-1} d \rho d \hat{\phi}_j\right)^{1 /(n-1)}
+  \end{aligned}
+  \]
+  Now by Lemma 4.59, and since $|\partial u / \partial \rho| \leq|\operatorname{grad} u|$,
+  \[
+  \sup _{0<\rho<a}|u|^\delta \rho^{\nu+n-1} \leq K_2 \int_0^a|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \rho^{\nu+n-1} d \rho,
+  \]
+  where $K_2$ is independent of $v$ for $1-n<v_1 \leq v \leq v_2<\infty$. It follows that
+  \[
+  \int_{\mathcal{C}_0^*}\left(F_0\left(\rho^*\right)\right)^{n-1} d \phi \leq K_2 \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) r_k^\nu d x
+  \]
+  Similarly, by making use of (36) or (38) as in Lemma 4.61, we obtain from Lemma 4.59
+  \[
+  \begin{aligned}
+  & \sup _{0<\phi_j<\beta_j}|u|^\delta \sin ^{\nu+j-1} \phi_j \\
+  & \leq K_{2, j} \int_0^{\beta_j}|u|^{\delta-1}\left(|u|+\left|\frac{\partial u}{\partial \phi_j}\right|\right) \sin ^{\nu+j-1} \phi_j d \phi_j \\
+  & \leq K_{2, j} \int_0^{\beta_j}|u|^{\delta-1}\left(|u|+|\operatorname{grad} u| \rho \prod_{i=j+1}^{n-1} \sin \phi_i\right) \sin ^{v+j-1} \phi_j d \phi_j, \\
+  &
+  \end{aligned}
+  \]
+  since $\left|\partial u / \phi_j\right| \leq \rho \prod_{i=j+1}^{n-1} \sin \phi_i$. Hence
+  \[
+  \begin{aligned}
+  \int_{\mathcal{C}_j^*} & \left(F_j\left(\phi_j^*\right)\right)^{n-1} d \rho d \hat{\phi}_j \\
+  & \leq K_{2, j} \int_{\mathcal{C}}|\operatorname{grad} u \| u|^{\delta-1} r_k^\nu d x+K_{2, j} \int_{\mathcal{C}}|u|^\delta r_k^\nu r_{j+1}^{-1} d x \\
+  & \leq K_{3, j} \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) r_k^\nu d x,
+  \end{aligned}
+  \]
+  where we have used Lemma 4.61 again to obtain the last inequality. Note that the constants $K_{2, j}$ and $K_{3, j}$ can be chosen independent of $v$ for the values of $v$ allowed. Substitution of (42) and (43) into (41) and then into (40) leads to
+  \[
+  \begin{aligned}
+  \int_{\mathcal{C}}|u|^q r_k^\nu d x \leq & K_4\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) r_k^\nu d x\right)^{1 / s+n /\left((n-1) s^{\prime}\right)} \\
+  \leq & K_4\left(\left[\int_{\mathcal{C}}|u|^q r_k^\nu d x\right]^{(p-1) / p}\right. \\
+  & \left.\times\left[2^{p-1} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\operatorname{grad} u|^p\right) r_k^\nu d x\right]^{1 / p}\right)^{(\nu+n) /(\nu+n-1)}
+  \end{aligned}
+  \]
+  Since $(v+n-1) /(v+n)-(p-1) / p=1 / q$, inequality (39) follows by cancellation for, since $u$ is bounded on $\mathcal{C}$ and $v>1-n, \int_{\mathcal{C}}|u|^q r_k^\nu d x$ is finite.
+\end{proof}
+
+
+\begin{remarks}
+  \item The assumption that $u \in C(\overline{\mathcal{C}})$ was made only to ensure that the above cancellation was justified. In fact, the lemma holds for any $u \in C^1(\mathcal{C})$.
+  \item If $1-k<v_1<v_2<\infty$ and $v_1 \leq v \leq v_2$, where $p \geq v+n$, then (39) holds for any $q$ satisfying $1 \leq q<\infty$. It is sufficient to prove this for large $q$. If $q \geq(v+n) /(\nu+n-1)$, then $q=(\nu+n) s /(\nu+n-s)$ for some $s$ satisfying $1 \leq s<p$. Thus
+  \[
+  \begin{aligned}
+  & \left(\int_{\mathcal{C}}|u|^q r_k^v d x\right)^{s / q} \leq K \int_{\mathcal{C}}\left(\frac{1}{a^s}|u|^s+|\operatorname{grad} u|^s\right) r_k^\nu d x \\
+  & \quad \leq K\left(2^{(p-2) / s} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\operatorname{grad} u|^p\right) r_k^\nu d x\right)^{s / p}\left(\int_{\mathcal{C}} r_k^\nu d x\right)^{(p-s) / p}
+  \end{aligned}
+  \]
+  which yields (39) since the last factor is finite.
+  \item If $v=m$, a positive integer, then (39) can be obtained very simply as follows. Let $y=(x, z)=\left(x_1, \ldots, x_n, z_1, \ldots, z_m\right)$ denote a point in $\mathbb{R}^{n+m}$ and define $u^*(y)=u(x)$ for $x \in \mathcal{C}$. If
+  \[
+  \mathcal{C}^*=\left\{y \in \mathbb{R}^{n+m}: y=(x, z), x \in \mathcal{C}, 0<z_j<r_k(x), 1 \leq j \leq m\right\},
+  \]
+  then $\mathcal{C}^*$ satisfies the cone condition in $\mathbb{R}^{n+m}$, whence by Theorem 4.12 we have, putting $q=(n+m) p /(n+m-p)$,
+  \[
+  \begin{aligned}
+  \left(\int_{\mathcal{C}}|u|^q r_k^m d x\right)^{1 / q} & =\left(\int_{\mathcal{C}^*}\left|u^*(y)\right|^q d y\right)^{1 / q} \\
+  & \leq K\left(\int_{\mathcal{C}^*}\left(\frac{1}{a^p}\left|u^*(y)\right|^p+\left|\operatorname{grad} u^*(y)\right|^p\right) d y\right)^{1 / p} \\
+  & =K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\operatorname{grad} u|^p\right) r_k^m d x\right)^{1 / p}
+  \end{aligned}
+  \]
+  since $\left|\operatorname{grad} u^*(y)\right|=|\operatorname{grad} u(x)|, u^*$ being independent of $z$.
+  \item Suppose that $u \in C_0^{\infty}\left(\mathbb{R}^n\right)$, or, more generally, that
+  \[
+  \int_{\mathbb{R}^n}|u(x)|^p\left[r_k(x)\right]^v d x<\infty
+  \]
+  with $v$ as in the above lemma. If we take $\beta_i=\pi, 1 \leq i \leq n-1$, and let $a \rightarrow \infty$ in (39), we obtain
+  \[
+  \left(\int_{\mathbb{R}^n}|u(x)|^q\left[r_k(x)\right]^v d x\right)^{1 / q} \leq K\left(\int_{\mathbb{R}^n}|\operatorname{grad} u(x)|^p\left[r_k(x)\right]^v d x\right)^{1 / p} .
+  \]
+  This generalizes (the case $m=1$ of) Sobolev's inequality, Theorem 4.31.
+\end{remarks}
+
+As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain weighted analogs of the $L^{\infty}$ and Hölder imbedding inequalities provided by Theorem 4.12. It is convenient here to deal with arbitrary domains satisfying the cone condition rather than the special case $\mathcal{C}$ considered in the lemmas above. The following elementary result will be needed.
+
+
+\begin{lemma}
+  Let $z \in \mathbb{R}^k$ and let $\Omega$ be a domain of finite volume in $\mathbb{R}^k$. If $0 \leq v<k$, then
+  \[
+  \int_{\Omega}|x-z|^{-v} d x \leq \frac{K}{k-v}(\operatorname{vol}(\Omega))^{1-v / k}
+  \]
+  where the constant $K$ depends on $\nu$ and $k$, but not on $z$ or $\Omega$.
+\end{lemma}
+
+\begin{proof}
+  Let $B$ be the ball in $\mathbb{R}^k$ having centre $z$ and the same volume as $\Omega$. It is easily seen that the left side of the above inequality does not exceed $\int_B|x-z|^{-v} d x$, and that the inequality holds for $\Omega=B$
+\end{proof}
+
+
+\begin{lemma}
+  Let $\Omega \subset \mathbb{R}^n$ satisfy the cone condition. Let $1 \leq k \leq n$ and let $P$ be an $(n-k)$-dimensional plane in $\mathbb{R}^n$. Denote by $r(x)$ the distance from $x$ to $P$. If $0 \leq v<p-n$, then for all $u \in C^1(\Omega)$ we have
+  \[
+  \sup _{x \in \Omega}|u(x)| \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\operatorname{grad} u|^p\right)[r(x)]^\nu d x\right)^{1 / p}
+  \]
+  where the constant $K$ may depend on $v, n, p, k$, and the cone $C$ determining the cone condition for $\Omega$, but not on $u$.
+\end{lemma}
+
+\begin{proof}
+  Throughout this proof $A_i$ and $K_i$ will denote various constants depending on one or more of the parameters on which $K$ is allowed to depend above. It is
+  sufficient to prove that if $C$ is a finite cone contained in $\Omega$ having vertex at, say, the origin, then
+  \[
+  |u(0)| \leq K\left(\int_C\left(|u(x)|^p+|\operatorname{grad} u|^p\right)[r(x)]^v d x\right)^{1 / p}
+  \]
+  For $0 \leq j \leq n$, let $A_j$ denote the supremum of the Lebesgue $j$-dimensional measure of the projection of $C$ onto $\mathbb{R}^j$, taken over all $j$-dimensional subspaces $\mathbb{R}^j$ of $\mathbb{R}^n$. Writing $x=\left(x^{\prime}, x^{\prime \prime}\right)$ where $x^{\prime}=\left(x_1, \ldots, x_{n-k}\right)$ and $x^{\prime \prime}=\left(x_{n-k+1}, \ldots, x_n\right)$, we may assume, without loss of generality, that $P$ is orthogonal to the coordinate axes corresponding to the components of $x^{\prime \prime}$. Define
+  \[
+  \begin{aligned}
+  S & =\left\{x^{\prime} \in \mathbb{R}^{n-k}:\left(x^{\prime}, x^{\prime \prime}\right) \in C \text { for some } x^{\prime \prime} \in \mathbb{R}^k\right\}, \\
+  R\left(x^{\prime}\right) & =\left\{x^{\prime \prime} \in \mathbb{R}^k:\left(x^{\prime}, x^{\prime \prime}\right) \in C\right\} \quad \text { for each } x^{\prime} \in S .
+  \end{aligned}
+  \]
+  For $0 \leq t \leq 1$ we denote by $C_t$ the cone $\{t x: x \in C\}$ so that $C_t \subset C$ and $C_t=C$ if $t=1$. For $C_t$ we define the quantities $A_{t, j}, S_t$, and $R_t\left(x^{\prime}\right)$ analogously to the similar quantities defined for $C$. Clearly $A_{t, j}=t^j A_j$. If $x \in C$, we have
+  \[
+  u(x)=u(0)+\int_0^1 \frac{d}{d t} u(t x) d t
+  \]
+  so that
+  \[
+  |u(0)| \leq|u(x)|+|x| \int_0^1|\operatorname{grad} u(t x)| d t
+  \]
+  Setting $V=\operatorname{vol}(C)$ and $a=\sup _{x \in C}|x|$, and integrating the above inequality over $C$, we obtain
+  \[
+  \begin{aligned}
+  V|u(0)| & \leq \int_C|u(x)| d x+a \int_C \int_0^1|\operatorname{grad} u(t x)| d t d x \\
+  & =\int_C|u(x)| d x+a \int_0^1 t^{-n} d t \int_{C_t}|\operatorname{grad} u(x)| d x .
+  \end{aligned}
+  \]
+  Let $z$ denote the orthogonal projection of $x$ onto $P$. Then $r(x)=\left|x^{\prime \prime}-z^{\prime \prime}\right|$. Since $0 \leq v<p-n$, we have $p>1$, and so by the previous lemma
+  \[
+  \begin{aligned}
+  \int_{C_t}[r(x)]^{-v /(p-1)} d x & =\int_{S_t} d x^{\prime} \int_{R_t\left(x^{\prime}\right)}\left|x^{\prime \prime}-z^{\prime \prime}\right|^{-v /(p-1)} d x^{\prime \prime} \\
+  & \leq K_1 \int_{S_t}\left[A_{t, k}\right]^{1-v /(k(p-1))} d x^{\prime} \\
+  & \leq K_1\left[A_{t, k}\right]^{1-v /(k(p-1))}\left[A_{t, n-k}\right]=K_2 t^{n-v /(p-1)}
+  \end{aligned}
+  \]
+  It follows that
+  \[
+  \begin{aligned}
+  & \int_{C_t}|\operatorname{grad} u(x)| d x \\
+  & \quad \leq\left(\int_{C_t}|\operatorname{grad} u(x)|^p[r(x)]^\nu d x\right)^{1 / p}\left(\int_{C_t}[r(x)]^{-v /(p-1)} d x\right)^{1 / p^{\prime}} \\
+  & \quad \leq K_3 t^{n-(v+n) / p}\left(\int_{C_t}|\operatorname{grad} u(x)|^p[r(x)]^v d x\right)^{1 / p}
+  \end{aligned}
+  \]
+  Hence, since $v<p-n$,
+  \[
+  \int_0^1 t^{-n} d t \int_{C_t}|\operatorname{grad} u(x)| d x \leq K_4\left(\int_C|\operatorname{grad} u(x)|^p[r(x)]^v d x\right)^{1 / p}
+  \]
+  Similarly,
+  \[
+  \begin{aligned}
+  \int_C|u(x)| d x & \leq\left(\int_C|u(x)|^p[r(x)]^\nu d x\right)^{1 / p}\left(\int_C[r(x)]^{-\nu /(p-1)} d x\right)^{1 / p^{\prime}} \\
+  & \leq K_5\left(\int_C|u(x)|^p[r(x)]^\nu d x\right)^{1 / p}
+  \end{aligned}
+  \]
+  Inequality (45) now follows from (46), (48), and (49).
+\end{proof}
+
+
+\begin{lemma}
+  Suppose all the conditions of the previous lemma are satisfied and, in addition, $\Omega$ satisfies the strong local Lipschitz condition. Then for all $u \in C^1(\Omega)$ we have
+  \[
+  \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{|u(x)-u(y)|}{|x-y|^\mu} \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\operatorname{grad} u(x)|^p\right)[r(x)]^\nu d x\right)^{1 / p}
+  \]
+  where $\mu=1-(v+n) / p$ satisfies $0<\mu<1$, and $K$ is independent of $u$.
+\end{lemma}
+
+\begin{proof}
+  The proof is the same as that given for inequality (15) in Lemma 4.28 except that the inequality
+  \[
+  \int_{\Omega_{t \sigma}}|\operatorname{grad} u(z)| d z \leq K_1 t^{n-(\nu+n) / p}\left(|\operatorname{grad} u(z)|^p[r(z)]^\nu d z\right)^{1 / p}
+  \]
+  is used in (16) in place of the special case $v=0$ actually used there. Inequality (51) is obtained in the same way as (47) above.
+\end{proof}
+
+
+\section{Proofs of Theorems 4.51--4.53}
+
+
+\begin{lemma}
+  Let $\bar{v} \geq 0$. If $\bar{v}>p-n$, let $1 \leq q \leq(\bar{v}+n) /(\bar{v}+n-p)$; otherwise, let $1 \leq q<\infty$. There exists a constant $K=K(n, p, \bar{v})$ such that for every standard cusp $Q_{k, \lambda}$ (see Paragraph 4.50) for which $(\lambda-1) k \equiv v \leq \bar{v}$, and every $u \in C^1\left(Q_{k, \lambda}\right)$, we have
+  \[
+  \|u\|_{0, q, Q_{k, \lambda}} \leq K\|u\|_{1, p, Q_{k, \lambda}} .
+  \]
+\end{lemma}
+
+\begin{proof}
+  Since each $Q_{k, \lambda}$ has the segment property, it suffices to prove (52) for $u \in C^1\left(\overline{Q_{k, \lambda}}\right)$. We first do so for given $k$ and $\lambda$ and then show that $K$ may be chosen to be independent of these parameters.
+  First suppose $\bar{v}>p-n$. It suffices to prove (52) for
+  \[
+  q=(\bar{v}+n) /(\bar{v}+n-p)
+  \]
+  For $u \in C^1\left(\overline{Q_{k, \lambda}}\right)$ define $\tilde{u}(y)=u(x)$, where $y$ is related to $x$ by (27) and (28). Thus $\tilde{u} \in C^1\left(\mathcal{C}_k\right) \cap C\left(\overline{\mathcal{C}_k}\right)$, where $\mathcal{C}_k$ is the standard cone associated with $Q_{k, \lambda}$. By Lemma 4.62, and since $q \leq(\nu+n) p /(\nu+n-p)$, we have
+  \[
+  \begin{aligned}
+  \|u\|_{0, q, Q_{k, \lambda}} & =\left(\lambda \int_{\mathcal{C}_k}|\tilde{u}(y)|^q\left[r_k(y)\right]^v d y\right)^{1 / q} \\
+  & \leq K_1\left(\int_{\mathcal{C}_k}\left(|\tilde{u}(y)|^p+|\operatorname{grad} \tilde{u}(y)|^p\right)\left[r_k(y)\right]^v d y\right)^{1 / q} .
+  \end{aligned}
+  \]
+  Now $x_j=r_k^{\lambda-1} y_j$ if $1 \leq j \leq k$ and $x_j=y_j$ if $k+1 \leq j \leq n$. Since $r_k^2=y_1^2+\cdots+y_k^2$ we have
+  \[
+  \frac{\partial x_j}{\partial y_i}= \begin{cases}\delta_{i j} r_k^{\lambda-1}+(\lambda-1) r_k^{\lambda-3} y_i y_j & \text { if } 1 \leq i, j \leq k \\ \delta_{i j} & \text { otherwise },\end{cases}
+  \]
+  where $\delta_{i i}=1$ and $\delta_{i j}=0$ if $i \neq j$. Since $r_k(y) \leq 1$ on $\mathcal{C}_k$ it follows that
+  $|\operatorname{grad} \tilde{u}(y)| \leq K_2|\operatorname{grad} u(x)|$.
+  Hence (52) follows from (53) in this case. For $\bar{v} \leq p-n$ and arbitrary $q$ the proof is similar, being based on Remark 2 of Paragraph 4.63 .
+  In order to show that the constant $K$ in (52) can be chosen independent of $k$ and $\lambda$ provided $v=(\lambda-1) k \leq \bar{v}$, we note that it is sufficient to prove that there is a constant $\tilde{K}$ such that for any such $k, \lambda$ and all $v \in C^1\left(\mathcal{C}_k\right) \cap C\left(\overline{\mathcal{C}_k}\right)$ we have
+  \[
+  \begin{aligned}
+  & \left(\int_{\mathcal{C}_k}|v(y)|^q\left[r_k(y)\right]^\nu d y\right)^{1 / q} \\
+  & \quad \leq \tilde{K}\left(\int_{\mathcal{C}_k}\left(|v(y)|^p+|\operatorname{grad} v(y)|^p\right)\left[r_k(y)\right]^\nu d y\right)^{1 / p}
+  \end{aligned}
+  \]
+  In fact, it is sufficient to establish (54) with $\tilde{K}$ depending on $k$ as we can then use the maximum of $\tilde{K}(k)$ over the finitely many values of $k$ allowed. We distinguish three cases.
+  Case I $\bar{v}<p-n, 1 \leq q<\infty$. By Lemma 4.65 we have for $0 \leq v \leq \bar{v}$
+  \[
+  \sup _{y \in \mathcal{C}_k}|v(y)| \leq K(v)\left(\int_{\mathcal{C}_k}\left(|v(y)|^p+|\operatorname{grad} v(y)|^p\right)\left[r_k(y)\right]^\nu d y\right)^{1 / p}
+  \]
+  Since the integral on the right decreases as $\nu$ increases, we have $K(\nu) \leq K(\bar{\nu})$ and (54) now follows from (55) and the boundedness of $\mathcal{C}_k$.
+  
+  Case II $\bar{v}>p-n$. Again it is sufficient to deal with $q=(\bar{v}+n) p /(\bar{v}+n-p)$. From Lemma 4.62 we obtain
+  where $s=(\nu+n) p /(\nu+n-p) \geq q$ and $K_1$ is independent of $v$ for $p-n<v_0 \leq \bar{v}$. By Hölder's inequality, and since $r_k(y) \leq 1$ on $\mathcal{C}_k$, we have
+  \[
+  \left(\int_{\mathcal{C}_k}|v|^q r_k^\nu d y\right)^{1 / q} \leq\left(\int_{\mathcal{C}_k}|v|^s r_k^\nu d y\right)^{1 / s}\left(\operatorname{vol}\left(\mathcal{C}_k\right)\right)^{(s-q) / s q}
+  \]
+  so that if $v_0 \leq v \leq \bar{v}$, then (54) follows from (56).
+  If $p-n<0$, we can take $v_0=0$ and be done. Otherwise, $p \geq n \geq 2$. Fixing $v_0=(\bar{v}-n+p) / 2$, we can find $v_1$ such that $0 \leq v_1 \leq p-n$ (or $v_1=0$ if $p=n$ ) such that for $v_1 \leq v \leq v_0$ we have
+  \[
+  1 \leq t=\frac{(v+n)(\bar{v}+n) p}{(v+n)(\bar{v}+n)+(\bar{v}-v) p} \leq \frac{p}{1+\varepsilon_0}
+  \]
+  where $\varepsilon_0>0$ and depends only on $\bar{\nu}, n$, and $p$. Because of the latter inequality we may also assume $t-n<v_1$. Since $(v+n) t /(v+n-t)=q$ we have, again by Lemma 4.62 and Hölder's inequality,
+  \[
+  \begin{gathered}
+  \left(\int_{\mathcal{C}_k}|v|^q r_k^\nu d y\right)^{1 / q} \leq K_2\left(\int_{\mathcal{C}_k}\left(|v|^t+|\operatorname{grad} v|^t\right) r_k^\nu d y\right)^{1 / t} \\
+  2^{(p-t) / p t} K_2\left(\int_{\mathcal{C}_k}\left(|v|^p+|\operatorname{grad} v|^p\right) r_k^\nu d y\right)^{1 / p}\left(\operatorname{vol}\left(\mathcal{C}_k\right)\right)^{(p-t) / p t}
+  \end{gathered}
+  \]
+  where $K_2$ is independent of $v$ for $v_1 \leq v \leq v_0$.
+  In the case $v_1>0$ we can obtain a similar (uniform) estimate for $0 \leq v \leq v_1$ by the method of Case I. Combining this with (56) and (57), we prove (54) for this case.
+
+  Case III $\bar{v}=p-n, 1 \leq q<\infty$. Fix $s \geq \max \{q, n /(n-1)\}$ and let $t=(\nu+n) s /(\nu+n+s)$, so $s=(\nu+n) t /(\nu+n-t)$. Then $1 \leq t \leq p s /(p+s)<p$ for $0 \leq v \leq \bar{v}$. Hence we can select $v_1 \geq 0$ such that $t-n<v_1<p-n$. The rest of the proof is similar to Case II. This completes the proof of the lemma.
+\end{proof}
+
+
+\begin{para}[Proof of Theorem 4.51]
+  It is sufficient to prove only the special case $m=1$, for the general case then follows by induction on $m$. Let $q$ satisfy $p \leq q \leq(v+n) p /(v+n-p)$ if $v+n>p$, or $p \leq q<\infty$ otherwise. Clearly $q<n p /(n-p)$ if $n>p$ so in either case we have by Theorem 4.12
+  \[
+  \|u\|_{0, q, G} \leq K_1\|u\|_{1, p, G}
+  \]
+  for every $u \in C^1(\Omega)$ and that element $G$ of $\Gamma$ that satisfies the cone condition (if such a $G$ exists). If $G \in \Gamma$ does not satisfy the cone condition, and if $\Psi: G \rightarrow Q_{k, \lambda}$, where $(\lambda-1) k \leq v$, is the 1 -smooth mapping specified in the statement of the theorem. Then by Theorem 3.41 and Lemma 4.67
+  \[
+  \|u\|_{0, q, G} \leq K_2\left\|u \circ \Psi^{-1}\right\|_{0, q, Q_{k, \lambda}} \leq K_3\left\|u \circ \Psi^{-1}\right\|_{1, p, Q_{k, \lambda}} \leq K_4\|u\|_{1, p, G},
+  \]
+  where $K_4$ is independent of $G$. Thus, since $q / p \geq 1$,
+  \[
+  \begin{aligned}
+  \|u\|_{0, q, \Omega}^q & \leq \sum_{G \in \Gamma}\|u\|_{0, q, G}^q \leq K_5 \sum_{G \in \Gamma}\left(\|u\|_{1, p, G}^p\right)^{q / p} \\
+  & \leq K_5\left(\sum_{G \in \Gamma}\|u\|_{1, p, G}^p\right)^{q / p} \leq K_5 N^{q / p}\|u\|_{1, p, \Omega}^q,
+  \end{aligned}
+  \]
+  where we have used the finite intersection property of $\Gamma$ to obtain the final inequality. The required imbedding inequality now follows by completion.
+  
+  If $v<m p-n$, we require that $W^{m, p}(\Omega) \rightarrow L^q(\Omega)$ also holds for $q=\infty$. This is a consequence of Theorem 4.52 proved below.
+\end{para}
+
+
+\begin{lemma}
+  Let $0 \leq \bar{\nu}<m p-n$. Then there exists a constant $K=K(m, p, n, \bar{\nu})$ 
+  such that if $Q_{k, \lambda}$ is any standard cusp domain for which $(\lambda-1) k=v \leq \bar{v}$ and if $u \in C^m\left(Q_{k, \lambda}\right)$, then
+  \[
+  \sup _{x \in Q_{k, \lambda}}|u(x)| \leq K\|u\|_{m, p, Q_{k, \lambda}}
+  \]
+\end{lemma}
+
+\begin{proof}
+  Again it is sufficient to prove the lemma for the case $m=1$. If $u$ belongs to $C^1\left(Q_{k, \lambda}\right)$ where $(\lambda-1) k=v \leq \bar{v}$, then we have by Lemma 4.65 and via the
+  method of the second paragraph of the proof of Lemma 4.67,
+  \[
+  \begin{aligned}
+  \sup _{x \in Q_{k, \lambda}}|u(x)| & =\sup _{y \in \mathcal{C}_k}|\tilde{u}(y)| \\
+  & \leq K_1\left(\int_{\mathcal{C}_k}\left(|\tilde{u}(y)|^p+|\operatorname{grad} \tilde{u}(y)|^p\right)\left[r_k(y)\right]^v d y\right)^{1 / p} \\
+  & \leq K_2\left(\int_{Q_{k, \lambda}}\left(|u(x)|^p+|\operatorname{grad} u(x)|^p\right) d x\right)^{1 / p} .
+  \end{aligned}
+  \]
+  Since $r_k(y) \leq 1$ for $y \in \mathcal{C}_k$ it is evident that $K_1$, and hence $K_2$, can be chosen independent of $k$ and $\lambda$ provided $0 \leq v=(\lambda-1) k \leq \bar{\nu}$.
+\end{proof}
+
+
+\begin{para}[Proof of Theorem 4.52]
+  It is sufficient to prove that
+  \[
+  W^{m, p}(\Omega) \rightarrow C_B^0(\Omega) .
+  \]
+  Let $u \in C^{\infty}(\Omega)$. If $x \in \Omega$, then $x \in G \subset \Omega$ for some domain $G$ for which there exists a 1-smooth transformation $\Psi: G \rightarrow Q_{k, \lambda},(\lambda-1) k \leq \nu$, as specified in the statement of the theorem. Thus
+  \[
+  \begin{aligned}
+  |u(x)| & \leq \sup _{x \in G}|u(x)|=\sup _{y \in Q_{k, \lambda}}\left|u \circ \Psi^{-1}(y)\right| \\
+  & \leq K_1\left\|u \circ \Psi^{-1}\right\|_{m, p, Q_{k, \lambda}} \leq K_2\|u\|_{m, p, G} \\
+  & \leq K_2\|u\|_{m, p, \Omega},
+  \end{aligned}
+  \]
+  where $K_1$ and $K_2$ are independent of $G$. The rest of the proof is similar to the second paragraph of the proof in Paragraph 4.16.
+\end{para}
+
+\begin{para}[Proof of Theorem 4.53]
+  As in Lemma 4.28 it is sufficient to prove that
+  \[
+  W^{1, p}(\Omega) \rightarrow C^{0, \mu}(\bar{\Omega}) \quad \text { if } \quad 0<\mu \leq 1-\frac{n+v}{p}
+  \]
+  that is, that
+  \[
+  \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{|u(x)-u(y)|}{|x-y|^\mu} \leq K\|u\|_{1, p, \Omega}
+  \]
+  holds when $v+n<p$ and $0<\mu \leq 1-(v+n) / p$. For $x, y \in \Omega$ satisfying $|x-y| \geq \delta$, (61) holds by virtue of (60). If $|x-y|<\delta$, then there exists $G \subset \Omega$ with $x, y \in G$, and a 1-smooth transformation $\Psi$ from $G$ onto a standard cusp $Q_{k, \lambda}$ with $(\lambda-1) k \leq v$, satisfying the conditions of the theorem. Inequality (61)
+  can then be derived from Lemma 4.66 by the same method used in the proof of Lemma 4.69. The details are left to the reader.
+\end{para}
