@@ -31,8 +31,8 @@ spaces $L^p(\Omega)$.
   on which $\|\cdot\|_{m, p}$ is a norm:
   \begin{enumerate}[(a)]
     \item $H^{m, p}(\Omega) \equiv$ the completion of $\left\{u \in C^m(\Omega):\|u\|_{m, p}<\infty\right\}$ with respect to the norm $\|\cdot\|_{m, p}$,
-    \item $W^{m, p}(\Omega) \equiv\left\{u \in L^p(\Omega): D^\alpha u \in L^p(\Omega)\right.$ for $\left.0 \leq|\alpha| \leq m\right\}$, where $D^\alpha u$ is the weak (or distributional) partial derivative of Paragraph 1.62, and
-    \item $W_0^{m, p}(\Omega) \equiv$ the closure of $C_0^{\infty}(\Omega)$ in the space $W^{m, p}(\Omega)$.
+    \item $W^{m,p}(\Omega) \equiv\left\{u \in L^p(\Omega): D^\alpha u \in L^p(\Omega)\right.$ for $\left.0 \leq|\alpha| \leq m\right\}$, where $D^\alpha u$ is the weak (or distributional) partial derivative of Paragraph 1.62, and
+    \item $W_0^{m, p}(\Omega) \equiv$ the closure of $C_0^{\infty}(\Omega)$ in the space $W^{m,p}(\Omega)$.
   \end{enumerate}
 \end{para}
 
@@ -47,15 +47,15 @@ $\Omega$. This result, published in 1964 by Meyers and Serrin [MS] ended much co
 about the relationship of these spaces that existed in the literature before that time.
 It is surprising that this elementary result remained undiscovered for so long.
 
-The spaces $W^{m, p}(\Omega)$ were introduced by Sobolev [So1, So2].
+The spaces $W^{m,p}(\Omega)$ were introduced by Sobolev [So1, So2].
 Many related spaces were being studied by other writers, in particular Morrey [Mo]
 and Deny and Lions [DL].
-Many different symbols ($W^{m, p}, H^{m, p}, P^{m, p}, L_n^m$, etc.) have been used to
+Many different symbols ($W^{m,p}, H^{m, p}, P^{m, p}, L_n^m$, etc.) have been used to
 denote these spaces and their variants, and before they became generally associated with 
 the name of Sobolev they were sometimes referred to under other names, for example, as 
 Beppo Levi spaces.
 
-Numerous generalizations and specializions of the basic spaces $W^{m, p}(\Omega)$ have been 
+Numerous generalizations and specializions of the basic spaces $W^{m,p}(\Omega)$ have been 
 constructed. Much of this literature originated in the Soviet Union. In particular, there 
 are extensions that allow arbitrary real values of $m$ (see Chapter 7) which are interpreted as corresponding to fractional orders of differentiation.
 There are weighted spaces that introduce weight functions into the $L^p$ norms;
@@ -74,7 +74,7 @@ We will not be able to investigate the most of these generalizations here.
 \end{theorem}
 
 \begin{proof}
-  Let $\{u_n\}$ be a Cauchy sequence in $W^{m, p}(\Omega)$.
+  Let $\{u_n\}$ be a Cauchy sequence in $W^{m,p}(\Omega)$.
   Then $\left\{D^\alpha u\right\}$ is a Cauchy sequence in $L^p(\Omega)$
   for $0 \leq|\alpha| \leq m$.
   Since $L^p(\Omega)$ is complete there exist functions $u$ and $u_\alpha, 0 \leq|\alpha| \leq m$, 
@@ -98,7 +98,7 @@ We will not be able to investigate the most of these generalizations here.
   in the distributional sense on $\Omega$ for $0 \leq|\alpha| \leq m$,
   whence $u \in W^{m, p}(\Omega)$.
   Since $\lim _{n \rightarrow \infty}\left\|u_n-u\right\|_{m,p}=0$,
-  the space $W^{m, p}(\Omega)$ is complete.
+  the space $W^{m,p}(\Omega)$ is complete.
 \end{proof}
 
 
@@ -111,13 +111,13 @@ We will not be able to investigate the most of these generalizations here.
   \[
   S=\left\{\phi \in C^m(\Omega):\|\phi\|_{m, p}<\infty\right\}
   \]
-  is contained in $W^{m, p}(\Omega)$. Since $W^{m, p}(\Omega)$ is complete, the identity operator on $S$ extends to an isometric isomorphism between $H^{m, p}(\Omega)$, the completion of $S$, and the closure of $S$ in $W^{m, p}(\Omega)$. We can identify $H^{m, p}(\Omega)$ with this closure.
+  is contained in $W^{m,p}(\Omega)$. Since $W^{m,p}(\Omega)$ is complete, the identity operator on $S$ extends to an isometric isomorphism between $H^{m, p}(\Omega)$, the completion of $S$, and the closure of $S$ in $W^{m,p}(\Omega)$. We can identify $H^{m, p}(\Omega)$ with this closure.
 \end{proof}
 
 
 \begin{para}
-  Several important properties of the spaces $W^{m, p}(\Omega)$ can be easily obtained by 
-  regarding $W^{m, p}(\Omega)$ as a closed subspace of an $L^p$ space on a union of disjoint 
+  Several important properties of the spaces $W^{m,p}(\Omega)$ can be easily obtained by 
+  regarding $W^{m,p}(\Omega)$ as a closed subspace of an $L^p$ space on a union of disjoint 
   copies of $\Omega$.
   
   Given integers $n \geq 1$ and $m \geq 0$, let $N \equiv N(n, m)$ be the number of multi-indices 
@@ -126,18 +126,18 @@ We will not be able to investigate the most of these generalizations here.
   $\mathbb{R}^n$, so that the $N$ domains $\Omega_\alpha$ are \emph{de facto} mutually disjoint.
   Let $\Omega^{(m)}$ be the union of these $N$ domains;
   $\Omega^{(m)}=\bigcup_{|\alpha| \leq m} \Omega_\alpha$.
-  Given a function $u$ in $W^{m, p}(\Omega)$, let $U$ be the function on $\Omega^{(m)}$ that 
+  Given a function $u$ in $W^{m,p}(\Omega)$, let $U$ be the function on $\Omega^{(m)}$ that 
   coincides with $D^\alpha u$ on $\Omega_\alpha$. It is easy to check that the map $P$ taking $u$ 
-  to $U$ is an isometry from $W^{m, p}(\Omega)$ into $L^p(\Omega^{(m)})$.
-  Since $W^{m, p}(\Omega)$ is complete, the range $W$ of the isometry $P$ is a closed subspace of 
+  to $U$ is an isometry from $W^{m,p}(\Omega)$ into $L^p(\Omega^{(m)})$.
+  Since $W^{m,p}(\Omega)$ is complete, the range $W$ of the isometry $P$ is a closed subspace of 
   $L^p(\Omega^{(m)})$. It follows that $W$ is separable if $1 \leq p<\infty$,
   and is uniformly convex and reflexive if $1<p<\infty$. The same conclusions must therefore hold 
-  for $W^{m, p}(\Omega)=P^{-1}(W)$.
+  for $W^{m,p}(\Omega)=P^{-1}(W)$.
 \end{para}
 
 
 \begin{theorem}
-  $W^{m, p}(\Omega)$ is separable if $1 \leq p<\infty$, and is uniformly convex and reflexive if 
+  $W^{m,p}(\Omega)$ is separable if $1 \leq p<\infty$, and is uniformly convex and reflexive if 
   $1<p<\infty$. In particular, $W^{m, 2}(\Omega)$ is a separable Hilbert space with inner product
   \[(u, v)_m=\sum_{0 \leq|\alpha| \leq m}\left(D^\alpha u, D^\alpha v\right),\]
   where $(u, v)=\int_{\Omega} u(x) \overline{v(x)} \d x$ is the inner product on $L^2(\Omega)$.
@@ -165,7 +165,7 @@ We will not be able to investigate the most of these generalizations here.
       1 & \text { if } p=\infty
     \end{cases}
   \]
-  First we extend the Riesz Representation Theorem to the space $W^{m, p}(\Omega)$.
+  First we extend the Riesz Representation Theorem to the space $W^{m,p}(\Omega)$.
   Then, we identify the dual of $W_0^{m, p}(\Omega)$ with a subspace of $\mathscr{D}'(\Omega)$. 
   Finally, we show that if $1<p<\infty$, the dual of $W_0^{m, p}(\Omega)$ can also be identified 
   with the completion of $L^{p'}(\Omega)$ with respect to a norm weaker than the
@@ -241,7 +241,7 @@ We will not be able to investigate the most of these generalizations here.
 
 \begin{para}
   If $1 \leq p<\infty$ every element $L$ of $\left(W^{m, p}(\Omega)\right)^{\prime}$ is an 
-  extension to $W^{m, p}(\Omega)$ of a distribution $T \in \mathscr{D}^{\prime}(\Omega)$. To see what form this distribution takes, suppose $L$ is given by (3) for some $v \in L^{p'}(\Omega^{(m)})$ and define $T$ and $T_{v_\alpha}$ on $\mathscr{D}(\Omega)$ by
+  extension to $W^{m,p}(\Omega)$ of a distribution $T \in \mathscr{D}^{\prime}(\Omega)$. To see what form this distribution takes, suppose $L$ is given by (3) for some $v \in L^{p'}(\Omega^{(m)})$ and define $T$ and $T_{v_\alpha}$ on $\mathscr{D}(\Omega)$ by
   \begin{equation}\label{eq:3.5}
     T=\sum_{0 \leq|\alpha| \leq m}(-1)^{|\alpha|} D^\alpha T_{v_\alpha}, \quad T_{v_\alpha}(\phi)=\left\langle\phi, v_\alpha\right\rangle . \quad 0 \leq|\alpha| \leq m,
   \end{equation}
@@ -251,10 +251,10 @@ We will not be able to investigate the most of these generalizations here.
   \]
 \end{para}
 
-These remarks also hold for $L \in\left(W_0^{m, p}(\Omega)\right)^{\prime}$ since any such functional possesses a norm-preserving extension to $W^{m, p}(\Omega)$.
+These remarks also hold for $L \in\left(W_0^{m, p}(\Omega)\right)^{\prime}$ since any such functional possesses a norm-preserving extension to $W^{m,p}(\Omega)$.
 
 \begin{para}
-  Now suppose $T$ is any element of $\mathscr{D}^{\prime}(\Omega)$ having the form (5) for some $v \in L^{p'}(\Omega^{(m)})$, where $1 \leq p' \leq \infty$. Then $T$ possesses (possibly non-unique) continuous extensions to $W^{m, p}(\Omega)$. However, $T$ possesses a unique continuous extension to $W_0^{m, p}(\Omega)$. To see this, for $u \in W_0^{m, p}(\Omega)$ let $\left\{\phi_n\right\}$ be a sequence in $C_0^{\infty}(\Omega)=\mathscr{D}(\Omega)$ converging to $u$ in norm in $W_0^{m, p}(\Omega)$. Then
+  Now suppose $T$ is any element of $\mathscr{D}^{\prime}(\Omega)$ having the form (5) for some $v \in L^{p'}(\Omega^{(m)})$, where $1 \leq p' \leq \infty$. Then $T$ possesses (possibly non-unique) continuous extensions to $W^{m,p}(\Omega)$. However, $T$ possesses a unique continuous extension to $W_0^{m, p}(\Omega)$. To see this, for $u \in W_0^{m, p}(\Omega)$ let $\left\{\phi_n\right\}$ be a sequence in $C_0^{\infty}(\Omega)=\mathscr{D}(\Omega)$ converging to $u$ in norm in $W_0^{m, p}(\Omega)$. Then
   \[
   \begin{aligned}
   \left|T\left(\phi_k\right)-T\left(\phi_n\right)\right| & \leq \sum_{0 \leq|\alpha| \leq m}\left|T_{v_\alpha}\left(D^\alpha \phi_k-D^\alpha \phi_n\right)\right| \\
@@ -280,7 +280,7 @@ We have therefore proved the following theorem.
 
 The completeness of this space is a consequence of the isometric isomorphism. Evidently $W^{-m, p'}(\Omega)$ is separable and reflexive if $1<p<\infty$.
 
-When $W_0^{m, p}(\Omega)$ is a proper subset of $W^{m, p}(\Omega)$, continuous linear functionals on $W^{m, p}(\Omega)$ are not fully determined by their restrictions to $C_0(\Omega)$, and so are not determined by distributions $T$ given by (5).
+When $W_0^{m, p}(\Omega)$ is a proper subset of $W^{m,p}(\Omega)$, continuous linear functionals on $W^{m,p}(\Omega)$ are not fully determined by their restrictions to $C_0(\Omega)$, and so are not determined by distributions $T$ given by (5).
 
 
 \begin{para}[The $\bm{(-m, p')}$ norm on $\bm{L^{p'}(\Omega)}$]
@@ -342,7 +342,7 @@ When $W_0^{m, p}(\Omega)$ is a proper subset of $W^{m, p}(\Omega)$, continuous l
   {Approximation by Smooth Functions on $\bm{\Omega}$}
 
 We wish to prove that $\left\{\phi \in C^{\infty}(\Omega):\|\phi\|_{m, p}<\infty\right\}$
-is dense in $W^{m, p}(\Omega)$. For this we require the following existence theorem for
+is dense in $W^{m,p}(\Omega)$. For this we require the following existence theorem for
 infinitely differentiable partitions of unity.
 
 \begin{theorem}[Partitions of Unity]
@@ -352,7 +352,7 @@ infinitely differentiable partitions of unity.
   \begin{enumerate}[label = (\roman*)]
     \item For every $\psi \in \Psi$ and every $x \in \mathbb{R}^n$, $0 \leq \psi(x) \leq 1$.
     \item If $K \subset\subset A$, all but finitely many $\psi \in \Psi$ vanish identically on $K$.
-    \item For every $\psi \in \Psi$ there exists $U \in \mathscr{O}$ such that $\operatorname{supp}(\psi) \subset U$.
+    \item For every $\psi \in \Psi$ there exists $U \in \mathscr{O}$ such that $\supp(\psi) \subset U$.
     \item For every $x \in A$, we have $\sum_{\psi \in \Psi} \psi(x)=1$.
   \end{enumerate}
   Such a collection $\Psi$ is called a $C^{\infty}$-partition of unity for $A$ subordinate to $\mathscr{O}$.
@@ -370,7 +370,7 @@ infinitely differentiable partitions of unity.
   has the required properties.
   If $A$ is an arbitrary open set. Then $A=\bigcup_{j=1}^{\infty} A_j$, where
   \[
-  A_j=\{x \in A:|x| \leq j \text { and } \operatorname{dist}(x, \partial A) \geq 1 / j\}
+  A_j=\{x \in A:|x| \leq j \text { and } \dist(x, \partial A) \geq 1 / j\}
   \]
   is compact. Taking $A_0=A_{-1}=\emptyset$, for each $j \geq 1$ the collection
   covers $A_j$ and so there exists a finite $C^{\infty}$-partition of unity $\Psi_j$ for $A_j$ subordinate to $\mathscr{O}_j$. The sum $\sigma(x)=\sum_{j=1}^{\infty} \sum_{\phi \in \Psi_j} \phi(x)$ involves only finitely many nonzero terms at each $x \in A$. The collection $\Psi=\{\psi: \psi(x)=\phi(x) / \sigma(x)$ for some $\phi$ in some $\Psi_j$ if $x \in A, \psi(x)=0$ if $\left.x \notin A\right\}$ has the prescribed properties.
@@ -379,7 +379,7 @@ infinitely differentiable partitions of unity.
 \end{proof}
 
 \begin{lemma}[Mollification in $\bm{W^{m, p}(\Omega)}$]
-  Let $J_\varepsilon$ be defined as in Paragraph~2.28 and let $1 \leq p<\infty$ and $u \in W^{m, p}(\Omega)$. If $\Omega'$ is a subdomain with compact closure in $\Omega$, then $\lim _{\varepsilon \rightarrow 0+} J_\varepsilon * u=u$ in $W^{m, p}\left(\Omega'\right)$.
+  Let $J_\varepsilon$ be defined as in Paragraph~2.28 and let $1 \leq p<\infty$ and $u \in W^{m, p}(\Omega)$. If $\Omega'$ is a subdomain with compact closure in $\Omega$, then $\lim _{\varepsilon \rightarrow 0+} J_\varepsilon * u=u$ in $W^{m,p}\left(\Omega'\right)$.
 \end{lemma}
 
 \begin{proof}
@@ -414,14 +414,14 @@ infinitely differentiable partitions of unity.
 \end{theorem}
 
 \begin{proof}
-  By Corollary~3.4 it is sufficient to show that $W^{m, p}(\Omega) \subset H^{m, p}(\Omega)$,
+  By Corollary~3.4 it is sufficient to show that $W^{m,p}(\Omega) \subset H^{m, p}(\Omega)$,
   that is, that $\left\{\phi \in C^m(\Omega):\|\phi\|_{m, p}<\infty\right\}$
-  is dense in $W^{m, p}(\Omega)$. If $u \in W^{m, p}(\Omega)$ and $\varepsilon>0$,
+  is dense in $W^{m,p}(\Omega)$. If $u \in W^{m, p}(\Omega)$ and $\varepsilon>0$,
   we in fact show that there exists $\phi \in C^{\infty}(\Omega)$
   such that $\|\phi-u\|_{m, p}<\varepsilon$, so that $C^{\infty}(\Omega)$ is dense
-  in $W^{m, p}(\Omega)$. For $k=1,2, \ldots$ let
+  in $W^{m,p}(\Omega)$. For $k=1,2, \ldots$ let
   \[
-  \Omega_k=\{x \in \Omega:|x|<k \text { and } \operatorname{dist}(x, \partial\Omega)>1/k\}
+  \Omega_k=\{x \in \Omega:|x|<k \text { and } \dist(x, \partial\Omega)>1/k\}
   \]
   and let $\Omega_0=\Omega_{-1}=\emptyset$, the empty set. Then
   \[
@@ -467,11 +467,11 @@ infinitely differentiable partitions of unity.
 
 
 \begin{para}
-  Having shown that an element of $W^{m, p}(\Omega)$ can always be approximated by functions 
+  Having shown that an element of $W^{m,p}(\Omega)$ can always be approximated by functions 
   smooth on $\Omega$ we now ask whether the approximation can in fact be done with bounded 
   functions having bounded derivatives of all orders, or at least of all orders up to and 
   including at least $m$. That is, we are asking whether, for any values of $k \geq m$, the space 
-  $C^k(\bar{\Omega})$ is dense in $W^{m, p}(\Omega)$. The following example shows that the answer 
+  $C^k(\overline{\Omega})$ is dense in $W^{m,p}(\Omega)$. The following example shows that the answer 
   may be negative.
 \end{para}
 
@@ -482,9 +482,9 @@ infinitely differentiable partitions of unity.
   u(x, y)= \begin{cases}1 & \text { if } x>0 \\ 0 & \text { if } x<0\end{cases}
   \]
   evidently belongs to $W^{1, p}(\Omega)$. However, if $\varepsilon>0$ is sufficiently small, 
-  there can exist no $\phi \in C^1(\bar{\Omega})$ such that
+  there can exist no $\phi \in C^1(\overline{\Omega})$ such that
   $\|u-\phi\|_{1, p, \Omega}<\varepsilon$. To see this, suppose there exists such a $\phi$.
-  If $L=\{(x, y):-1 \leq x \leq 0,0 \leq y \leq 1\}$ and $R=\{(x, y): 0 \leq x \leq 1$, $0 \leq y \leq 1\}$, then $\bar{\Omega}=L \cup R$.
+  If $L=\{(x, y):-1 \leq x \leq 0,0 \leq y \leq 1\}$ and $R=\{(x, y): 0 \leq x \leq 1$, $0 \leq y \leq 1\}$, then $\overline{\Omega}=L \cup R$.
   We have $\|\phi\|_{1, L} \leq\|\phi\|_{p, L}<\varepsilon$ and
   similarly $\|1-\phi\|_{1, R}<\varepsilon$ from which we obtain $\|\phi\|_{1, R}>1-\varepsilon$. 
   If
@@ -495,7 +495,7 @@ infinitely differentiable partitions of unity.
   that $\Phi(a)<\varepsilon$ and $\Phi(b)>1-\varepsilon$. If $0<\varepsilon<1 / 2$, then
   \[
   \begin{aligned}
-  1-2 \varepsilon<\Phi(b)-\Phi(a)=\int_a^b \Phi^{\prime}(x) d x & \leq \int_{\bar{\Omega}}\left|D_x \phi(x, y)\right| d x d y \\
+  1-2 \varepsilon<\Phi(b)-\Phi(a)=\int_a^b \Phi^{\prime}(x) d x & \leq \int_{\overline{\Omega}}\left|D_x \phi(x, y)\right| d x d y \\
   & \leq 2^{1 / p^{\prime}}\left\|D_x \phi\right\|_{p, \Omega}<2^{1 / p^{\prime}} \varepsilon
   \end{aligned}
   \]
@@ -503,13 +503,13 @@ infinitely differentiable partitions of unity.
   The difficulty with the domain in this example is that it lies on both sides of part of its 
   boundary, namely the line segment $x=0,0 \leq y \leq 1$. We now formulate a condition on a 
   domain $\Omega$ that prevents this from happening and guarantees that for any $k$
-  and $m, C^k(\bar{\Omega})$ is dense in $W^{m, p}(\Omega)$ provided $1 \leq p<\infty$.
+  and $m, C^k(\overline{\Omega})$ is dense in $W^{m,p}(\Omega)$ provided $1 \leq p<\infty$.
 \end{example}
 
 
 \begin{para}[The Segment Condition]
-  We say that a domain $\Omega$ satisfies the segment condition if every $x \in$ bdry $\Omega$
-  has a neighbourhood $U_x$ and a nonzero vector $y_x$ such that if $z \in \bar{\Omega} \cap U_x$, 
+  We say that a domain $\Omega$ satisfies the segment condition if every $x \in\partial\Omega$
+  has a neighbourhood $U_x$ and a nonzero vector $y_x$ such that if $z \in \overline{\Omega} \cap U_x$, 
   then $z+t y_x \in \Omega$ for $0<t<1$.
 
   If nonempty, the boundary of a domain satisfying this condition must be $(n-1)$ dimensional,
@@ -519,7 +519,7 @@ infinitely differentiable partitions of unity.
 
 \begin{theorem}
   If $\Omega$ satisfies the segment condition, then the set of restrictions to $\Omega$
-  of functions in $C_0^{\infty}\left(\mathbb{R}^n\right)$ is dense in $W^{m, p}(\Omega)$
+  of functions in $C_0^{\infty}\left(\mathbb{R}^n\right)$ is dense in $W^{m,p}(\Omega)$
   for $1 \leq p<\infty$.
 \end{theorem}
 
@@ -534,7 +534,7 @@ infinitely differentiable partitions of unity.
   Then $f_\varepsilon(x)=1$ for $|x| \leq 1 / \varepsilon$
   and also $\left|D^\alpha f_\varepsilon(x)\right| \leq M \varepsilon^{|\alpha|} \leq M$
   if $\varepsilon \leq 1$. If $u \in W^{m, p}(\Omega)$, then $u_\varepsilon=f_\varepsilon u$
-  belongs to $W^{m, p}(\Omega)$ and has bounded support.
+  belongs to $W^{m,p}(\Omega)$ and has bounded support.
   For $0<\varepsilon \leq 1$ and $|\alpha| \leq m$
   \[
   \left|D^\alpha u_\varepsilon(x)\right|=\left|\sum_{\beta \leq \alpha}\left(\begin{array}{c}
@@ -576,7 +576,7 @@ infinitely differentiable partitions of unity.
   \|u-\phi\|_{m, p, \Omega} \leq \sum_{j=0}^k\left\|u_j-\phi_j\right\|_{m, p, \Omega}<\varepsilon .
   \]
   A function $\phi_0 \in C_0^{\infty}\left(\mathbb{R}^n\right)$ satisfying (7) for $j=0$ can be 
-  found via Lemma 3.16 since $\operatorname{supp}\left(u_0\right) \subset V_0 \subset\subset \Omega$.
+  found via Lemma 3.16 since $\supp\left(u_0\right) \subset V_0 \subset\subset \Omega$.
   It remains, therefore, to find $\phi_j$ satisfying (7) for $1 \leq j \leq k$.
   For fixed such $j$ we extend $u_j$ to be identically zero outside $\Omega$.
   Thus $u_j \in W^{m, p}\left(\mathbb{R}^n-\Gamma\right)$,
@@ -584,15 +584,15 @@ infinitely differentiable partitions of unity.
   Let $y$ be the nonzero vector associated with the set $U_j$ in the definition of the segment 
   condition. (See Fig.~1.) Let $\Gamma_t=\{x-t y: x \in \Gamma\}$, where $t$ is so chosen that
   \[
-  0<t<\min \left\{1, \operatorname{dist}\left(V_j, \mathbb{R}^n-U_j\right) /|y|\right\}.
+  0<t<\min \left\{1, \dist\left(V_j, \mathbb{R}^n-U_j\right) /|y|\right\}.
   \]
-  Then $\Gamma_t \subset U_j$ and $\Gamma_t \cap \bar{\Omega}$ is empty by the segment condition. 
+  Then $\Gamma_t \subset U_j$ and $\Gamma_t \cap \overline{\Omega}$ is empty by the segment condition. 
   Let us define $u_{j, t}(x)=u_j(x+t y)$.
   Then $u_{j, t} \in W^{m, p}\left(\mathbb{R}^n-\Gamma_t\right)$.
   Translation is continuous in $L^p(\Omega)$ (see the proof of Theorem~2.32)
   so $D^\alpha u_{j, t} \rightarrow D^\alpha u_j$ in $L^p(\Omega)$
   as $t \rightarrow 0+$ for $|\alpha| \leq m$.
-  Thus $u_{j, t} \rightarrow u_j$ in $W^{m, p}(\Omega)$ as $t \rightarrow 0+$,
+  Thus $u_{j, t} \rightarrow u_j$ in $W^{m,p}(\Omega)$ as $t \rightarrow 0+$,
   and so it is sufficient to find $\phi_j \in C_0^{\infty}\left(\mathbb{R}^n\right)$
   such that $\left\|u_{j, t}-\phi_j\right\|_{m, p}$ is sufficiently small.
   However, $\Omega \cap U_j \subset\subset \mathbb{R}^n-\Gamma_t$,
@@ -612,8 +612,8 @@ infinitely differentiable partitions of unity.
 
 \begin{para}
   Corollary 3.23 suggests the question: For what domains $\Omega$ is it true
-  that $W^{m, p}(\Omega)=W_0^{m, p}(\Omega)$, that is, when is $C_0^{\infty}(\Omega)$
-  dense in $W^{m, p}(\Omega)$ ? A partial answer to this question can be formulated in terms of 
+  that $W^{m,p}(\Omega)=W_0^{m, p}(\Omega)$, that is, when is $C_0^{\infty}(\Omega)$
+  dense in $W^{m,p}(\Omega)$ ? A partial answer to this question can be formulated in terms of 
   the nature of the distributions belonging to $W^{-m, p^{\prime}}\left(\mathbb{R}^n\right)$.
   The approach below is due to Lions [Lj]. Throughout this discussion we assume $1<p<\infty$
   and $p^{\prime}$ is the conjugate exponent $p^{\prime}=p /(p-1)$.
@@ -622,7 +622,7 @@ infinitely differentiable partitions of unity.
 \begin{para}[$\bm{(m, p')}$-Polar sets]
   Let $F$ be a closed subset of $\mathbb{R}^n$.
   A distribution $T \in \mathscr{D}^{\prime}\left(\mathbb{R}^n\right)$ is said to have support
-  in $F(\operatorname{supp}(T) \subset F)$ provided that $T(\phi)=0$ for every
+  in $F(\supp(T) \subset F)$ provided that $T(\phi)=0$ for every
   $\phi \in \mathscr{D}\left(\mathbb{R}^n-F\right)$.
   We say that the closed set $F$ is $\left(m, p^{\prime}\right)$-polar if the only
   distribution $T \in W^{-m, p^{\prime}}\left(\mathbb{R}^n\right)$ having support in $F$ is
@@ -634,7 +634,7 @@ infinitely differentiable partitions of unity.
 \end{para}
 
 We shall show later that if $m p>n$,
-then $W^{m, p}\left(\mathbb{R}^n\right) \rightarrow C\left(\mathbb{R}^n\right)$ in the sense that 
+then $W^{m,p}\left(\mathbb{R}^n\right) \rightarrow C\left(\mathbb{R}^n\right)$ in the sense that 
 if $u \in W^{m, p}\left(\mathbb{R}^n\right)$, then there exists $v \in C\left(\mathbb{R}^n\right)$ 
 such that $u(x)=v(x)$ a.e. in $\mathbb{R}^n$ and
 \[
@@ -658,7 +658,7 @@ The converse is, of course, generally not true.
   \tilde{u}(x)= \begin{cases}u(x) & \text { if } x \in \Omega, \\ 0 & \text { if } x \in \Omega^c .\end{cases}
   \]
   The following lemma shows that the mapping $u \mapsto \tilde{u}$
-  maps $W_0^{m, p}(\Omega)$ (isometrically) into $W^{m, p}\left(\mathbb{R}^n\right)$.
+  maps $W_0^{m, p}(\Omega)$ (isometrically) into $W^{m,p}\left(\mathbb{R}^n\right)$.
 \end{para}
 
 \begin{lemma}
@@ -683,19 +683,19 @@ The converse is, of course, generally not true.
 \end{proof}
 
 We can now give a necessary and sufficient condition that the mapping $u \mapsto \tilde{u}$ 
-carries $W_0^{m, p}(\Omega)$ onto $W^{m, p}\left(\mathbb{R}^n\right)$.
+carries $W_0^{m, p}(\Omega)$ onto $W^{m,p}\left(\mathbb{R}^n\right)$.
 
 \begin{theorem}
-  $C_0^{\infty}(\Omega)$ is dense in $W^{m, p}\left(\mathbb{R}^n\right)$ if and only if the 
+  $C_0^{\infty}(\Omega)$ is dense in $W^{m,p}\left(\mathbb{R}^n\right)$ if and only if the 
   complement $\Omega^c$ of $\Omega$ is $\left(m, p^{\prime}\right)$-polar.
 \end{theorem}
 
 \begin{proof}
-  First suppose $C_0^{\infty}(\Omega)$ is dense in $W^{m, p}\left(\mathbb{R}^n\right)$. Let $T \in W^{-m, p^{\prime}}\left(\mathbb{R}^n\right)$ have support in $\Omega^c$. If $u \in W^{m, p}\left(\mathbb{R}^n\right)$, then there exists a sequence $\left\{\phi_j\right\} \subset C_0^{\infty}(\Omega)$ converging to $u$ in $W^{m, p}\left(\mathbb{R}^n\right)$. Hence $T(u)=\lim _{j \rightarrow \infty} T\left(\phi_j\right)=0$ and so $T=0$. Thus $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar.
-  Conversely, suppose that $C_0^{\infty}(\Omega)$ is not dense in $W^{m, p}\left(\mathbb{R}^n\right)$. Then there exists $u \in W^{m, p}\left(\mathbb{R}^n\right)$ and a constant $k>0$ such that for all $\phi \in C_0^{\infty}(\Omega)$ we have $\|u-\phi\|_{m, p, \mathbb{R}^n} \geq k$. The Hahn-Banach theorem 1.13 can be used to show that there exists $T \in W^{-m, p^{\prime}}\left(\mathbb{R}^n\right)$ such that $T(\phi)=0$ for all $u \in C_0^{\infty}(\Omega)$ but $T(u) \neq 0$. Since $\operatorname{supp}(T) \subset \Omega^c$ but $T \neq 0, \Omega^c$ cannot be $\left(m, p^{\prime}\right)$-polar.
+  First suppose $C_0^{\infty}(\Omega)$ is dense in $W^{m,p}\left(\mathbb{R}^n\right)$. Let $T \in W^{-m, p^{\prime}}\left(\mathbb{R}^n\right)$ have support in $\Omega^c$. If $u \in W^{m, p}\left(\mathbb{R}^n\right)$, then there exists a sequence $\left\{\phi_j\right\} \subset C_0^{\infty}(\Omega)$ converging to $u$ in $W^{m,p}\left(\mathbb{R}^n\right)$. Hence $T(u)=\lim _{j \rightarrow \infty} T\left(\phi_j\right)=0$ and so $T=0$. Thus $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar.
+  Conversely, suppose that $C_0^{\infty}(\Omega)$ is not dense in $W^{m,p}\left(\mathbb{R}^n\right)$. Then there exists $u \in W^{m, p}\left(\mathbb{R}^n\right)$ and a constant $k>0$ such that for all $\phi \in C_0^{\infty}(\Omega)$ we have $\|u-\phi\|_{m, p, \mathbb{R}^n} \geq k$. The Hahn-Banach theorem 1.13 can be used to show that there exists $T \in W^{-m, p^{\prime}}\left(\mathbb{R}^n\right)$ such that $T(\phi)=0$ for all $u \in C_0^{\infty}(\Omega)$ but $T(u) \neq 0$. Since $\supp(T) \subset \Omega^c$ but $T \neq 0, \Omega^c$ cannot be $\left(m, p^{\prime}\right)$-polar.
 \end{proof}
 
-As a final preparation for our investigation of the possible identity of $W_0^{m, p}(\Omega)$ and $W^{m, p}(\Omega)$ we establish a distributional analog of the fact, obvious for differentiable functions, that the vanishing of first derivatives over a rectangle implies constancy on that rectangle. We extend this first to distributions (in Corollary~3.30) and then to locally integrable functions.
+As a final preparation for our investigation of the possible identity of $W_0^{m, p}(\Omega)$ and $W^{m,p}(\Omega)$ we establish a distributional analog of the fact, obvious for differentiable functions, that the vanishing of first derivatives over a rectangle implies constancy on that rectangle. We extend this first to distributions (in Corollary~3.30) and then to locally integrable functions.
 
 
 \begin{lemma}
@@ -772,18 +772,18 @@ The following lemma shows that different locally integrable functions on an open
   
   Let $K \subset\subset \Omega$ and let $\varepsilon>0$. Let $\chi_K$ be the characteristic function of $K$. Then $\int_K|u(x)| d x<\infty$. There exists $\delta>0$ such that for any measurable set $A \subset K$ with $\mu(A)<\delta$ we have $\int_A|u(x)| d x<\varepsilon / 2$ (see, for example, [Ru2, p. 124]). By Lusin's theorem 1.42 (f) there exists $\psi \in C_0\left(\mathbb{R}^n\right)$ with $|\psi(x)| \leq 1$ for all $x$, such that
   \[
-  \mu\left(\left\{x \in \mathbb{R}^n: \psi(x) \neq \chi_K(x) \operatorname{sgn} \overline{u(x)}\right\}\right)<\delta .
+  \mu\left(\left\{x \in \mathbb{R}^n: \psi(x) \neq \chi_K(x) \sgn \overline{u(x)}\right\}\right)<\delta .
   \]
   Here
   \[
-  \operatorname{sgn} v(x)= \begin{cases}v(x) /|v(x)| & \text { if } v(x) \neq 0 \\ 0 & \text { if } v(x)=0\end{cases}
+  \sgn v(x)= \begin{cases}v(x) /|v(x)| & \text { if } v(x) \neq 0 \\ 0 & \text { if } v(x)=0\end{cases}
   \]
   Hence
   \[
   \begin{aligned}
-  \int_K|u(x)| d x & =\int_{\Omega} u(x) \chi_K(x) \operatorname{sgn} \overline{u(x)} d x \\
-  & =\int_{\Omega} u(x) \psi(x) d x+\int_{\Omega} u(x)\left(\chi_K(x) \operatorname{sgn} \overline{u(x)}-\psi(x)\right) d x \\
-  & \leq 0+2 \int_{\left\{x \in \Omega: \psi(x) \neq \chi_K(x) \operatorname{sgn} \overline{u(x)\}}\right.}|u(x)| d x<\varepsilon .
+  \int_K|u(x)| d x & =\int_{\Omega} u(x) \chi_K(x) \sgn \overline{u(x)} d x \\
+  & =\int_{\Omega} u(x) \psi(x) d x+\int_{\Omega} u(x)\left(\chi_K(x) \sgn \overline{u(x)}-\psi(x)\right) d x \\
+  & \leq 0+2 \int_{\left\{x \in \Omega: \psi(x) \neq \chi_K(x) \sgn \overline{u(x)\}}\right.}|u(x)| d x<\varepsilon .
   \end{aligned}
   \]
   Since $\varepsilon$ is arbitrary, $u(x)=0$ a.e.~in $K$ for each such $K$,
@@ -807,21 +807,21 @@ The following lemma shows that different locally integrable functions on an open
 \begin{theorem}
   Let $m \geq 1$.
   \begin{enumerate}[label = (\alph*)]
-    \item If $W^{m, p}(\Omega)=W_0^{m, p}(\Omega)$, then $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar.
-    \item If $\Omega^c$ is both $(1, p)$-polar and $\left(m, p^{\prime}\right)$-polar, then $W^{m, p}(\Omega)=W_0^{m, p}(\Omega)$.
+    \item If $W^{m,p}(\Omega)=W_0^{m, p}(\Omega)$, then $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar.
+    \item If $\Omega^c$ is both $(1, p)$-polar and $\left(m, p^{\prime}\right)$-polar, then $W^{m,p}(\Omega)=W_0^{m, p}(\Omega)$.
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-  (a) Assume $W^{m, p}(\Omega)=W_0^{m, p}(\Omega)$. We deduce first that $\Omega^c$ must have measure zero. If not, there would exist some finite open rectangle $B \subset \mathbb{R}^n$ which intersects both $\Omega$ and $\Omega^c$ in sets of positive measure. Let $u$ be the restriction to $\Omega$ of a function in $C_0^{\infty}\left(\mathbb{R}^n\right)$ which is identically one on $B \cap \Omega$. Then $u \in W^{m, p}(\Omega)$ and so $u \in W_0^{m, p}(\Omega)$. By Lemma 3.27, the zero extension $\tilde{u}$ of $u$ to $\mathbb{R}^n$ belongs to $W^{m, p}\left(\mathbb{R}^n\right)$ and $D_j \tilde{u}=\widetilde{D_j u}$ in the distributional sense in $\mathbb{R}^n$ for $1 \leq j \leq n$. Now $\widetilde{D_j u}$ is identically zero on $B$ and so $D_j \tilde{u}=0$ as a distribution on $B$. By Corollary 3.32, $\tilde{u}$ must have a constant value a.e. in $B$. Since $\tilde{u}=1$ on $B \cap \Omega$ and $\tilde{u}=0$ on $B \cap \Omega^c$, we have a contradiction. Thus $\Omega^c$ has measure zero.
+  (a) Assume $W^{m,p}(\Omega)=W_0^{m, p}(\Omega)$. We deduce first that $\Omega^c$ must have measure zero. If not, there would exist some finite open rectangle $B \subset \mathbb{R}^n$ which intersects both $\Omega$ and $\Omega^c$ in sets of positive measure. Let $u$ be the restriction to $\Omega$ of a function in $C_0^{\infty}\left(\mathbb{R}^n\right)$ which is identically one on $B \cap \Omega$. Then $u \in W^{m, p}(\Omega)$ and so $u \in W_0^{m, p}(\Omega)$. By Lemma 3.27, the zero extension $\tilde{u}$ of $u$ to $\mathbb{R}^n$ belongs to $W^{m,p}\left(\mathbb{R}^n\right)$ and $D_j \tilde{u}=\widetilde{D_j u}$ in the distributional sense in $\mathbb{R}^n$ for $1 \leq j \leq n$. Now $\widetilde{D_j u}$ is identically zero on $B$ and so $D_j \tilde{u}=0$ as a distribution on $B$. By Corollary 3.32, $\tilde{u}$ must have a constant value a.e. in $B$. Since $\tilde{u}=1$ on $B \cap \Omega$ and $\tilde{u}=0$ on $B \cap \Omega^c$, we have a contradiction. Thus $\Omega^c$ has measure zero.
   
-  Now if $v \in W^{m, p}\left(\mathbb{R}^n\right)$ and $u$ is the restriction of $v$ to $\Omega$, then $u$ belongs to $W^{m, p}(\Omega)$ and hence, by assumption, also to $W_0^{m, p}(\Omega)$. By Lemma 3.27, $\tilde{u} \in W^{m, p}\left(\mathbb{R}^n\right)$ and can be approximated by elements of $C_0^{\infty}(\Omega)$. But $v(x)=\tilde{u}(x)$ on $\Omega$, that is, a.e. in $\mathbb{R}^n$. Hence $v$ and $\tilde{u}$ have the same distributional derivatives, and coincide in $W^{m, p}\left(\mathbb{R}^n\right)$. Therefore $C_0^{\infty}(\Omega)$ is dense in $W^{m, p}\left(\mathbb{R}^n\right)$ and $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar by Theorem 3.28.
+  Now if $v \in W^{m, p}\left(\mathbb{R}^n\right)$ and $u$ is the restriction of $v$ to $\Omega$, then $u$ belongs to $W^{m,p}(\Omega)$ and hence, by assumption, also to $W_0^{m, p}(\Omega)$. By Lemma 3.27, $\tilde{u} \in W^{m, p}\left(\mathbb{R}^n\right)$ and can be approximated by elements of $C_0^{\infty}(\Omega)$. But $v(x)=\tilde{u}(x)$ on $\Omega$, that is, a.e. in $\mathbb{R}^n$. Hence $v$ and $\tilde{u}$ have the same distributional derivatives, and coincide in $W^{m,p}\left(\mathbb{R}^n\right)$. Therefore $C_0^{\infty}(\Omega)$ is dense in $W^{m,p}\left(\mathbb{R}^n\right)$ and $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar by Theorem 3.28.
   
-  (b) Now assume $\Omega^c$ is $(1, p)$-polar and $\left(m, p^{\prime}\right)$-polar. Let $u \in W^{m, p}(\Omega)$. We show that $u \in W_0^{m, p}(\Omega)$. Since $\tilde{u} \in L^p\left(\mathbb{R}^n\right)$, the distribution $T_{D_j \tilde{u}}$, corresponding to $D_j \tilde{u}$, belongs to $W^{-1, p}\left(\mathbb{R}^n\right)$. Since $\widetilde{D_j u} \in L^p\left(\mathbb{R}^n\right) \subset H^{-1, p}\left(\mathbb{R}^n\right)$ (see Paragraph 3.13), therefore $T_{\widetilde{D_j u}} \in W^{-1, p}\left(\mathbb{R}^n\right)$. Hence $T_{D_j \tilde{u}-\widetilde{D_j u}} \in W^{-1, p}\left(\mathbb{R}^n\right)$. But $D_j \tilde{u}-\widetilde{D_j u}=0$ on $\Omega$ so $\operatorname{supp}\left(T_{D_j \tilde{u}-\widetilde{D_j u}}\right) \subset \Omega^c$. Since $\Omega^c$ is $(1, p)$ polar, $D_j \tilde{u}=\widetilde{D_j u}$ in the distributional sense on $\mathbb{R}^n$, whence $D_j \tilde{u} \in L^p\left(\mathbb{R}^n\right)$ and $\tilde{u} \in W^{m, p}\left(\mathbb{R}^n\right)$. Since $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar, $C_0^{\infty}(\Omega)$ is dense in $W^{m, p}\left(\mathbb{R}^n\right)$, and thus $u \in W_0^{m, p}(\Omega)$
+  (b) Now assume $\Omega^c$ is $(1, p)$-polar and $\left(m, p^{\prime}\right)$-polar. Let $u \in W^{m, p}(\Omega)$. We show that $u \in W_0^{m, p}(\Omega)$. Since $\tilde{u} \in L^p\left(\mathbb{R}^n\right)$, the distribution $T_{D_j \tilde{u}}$, corresponding to $D_j \tilde{u}$, belongs to $W^{-1, p}\left(\mathbb{R}^n\right)$. Since $\widetilde{D_j u} \in L^p\left(\mathbb{R}^n\right) \subset H^{-1, p}\left(\mathbb{R}^n\right)$ (see Paragraph 3.13), therefore $T_{\widetilde{D_j u}} \in W^{-1, p}\left(\mathbb{R}^n\right)$. Hence $T_{D_j \tilde{u}-\widetilde{D_j u}} \in W^{-1, p}\left(\mathbb{R}^n\right)$. But $D_j \tilde{u}-\widetilde{D_j u}=0$ on $\Omega$ so $\supp\left(T_{D_j \tilde{u}-\widetilde{D_j u}}\right) \subset \Omega^c$. Since $\Omega^c$ is $(1, p)$ polar, $D_j \tilde{u}=\widetilde{D_j u}$ in the distributional sense on $\mathbb{R}^n$, whence $D_j \tilde{u} \in L^p\left(\mathbb{R}^n\right)$ and $\tilde{u} \in W^{m, p}\left(\mathbb{R}^n\right)$. Since $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar, $C_0^{\infty}(\Omega)$ is dense in $W^{m,p}\left(\mathbb{R}^n\right)$, and thus $u \in W_0^{m, p}(\Omega)$
 \end{proof}
 
 \begin{para}
-  If $\left(m, p^{\prime}\right)$-polarity implies $(1, p)$-polarity, then Theorem 3.33 amounts to the assertion that $\left(m, p^{\prime}\right)$-polarity of $\Omega^c$ is necessary and sufficient for the equality of $W^{m, p}(\Omega)$ and $W_0^{m, p}(\Omega)$. This is certainly the case if $p=2$.
+  If $\left(m, p^{\prime}\right)$-polarity implies $(1, p)$-polarity, then Theorem 3.33 amounts to the assertion that $\left(m, p^{\prime}\right)$-polarity of $\Omega^c$ is necessary and sufficient for the equality of $W^{m,p}(\Omega)$ and $W_0^{m, p}(\Omega)$. This is certainly the case if $p=2$.
 \end{para}
 
 The following two lemmas develop properties of polarity. The first of these shows that it is a local property.
@@ -883,7 +883,7 @@ The following two lemmas develop properties of polarity. The first of these show
 
 
 \begin{theorem}
-  Let $m \geq 1$ and $p \geq 2$. Then $W^{m, p}(\Omega)=W_0^{m, p}(\Omega)$ if and only of $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar.
+  Let $m \geq 1$ and $p \geq 2$. Then $W^{m,p}(\Omega)=W_0^{m, p}(\Omega)$ if and only of $\Omega^c$ is $\left(m, p^{\prime}\right)$-polar.
 \end{theorem}
 
 \begin{proof}
@@ -891,17 +891,29 @@ The following two lemmas develop properties of polarity. The first of these show
 \end{proof}
 
 \begin{para}
-  The Sobolev Imbedding Theorem 4.12 can be used to extend the previous theorem to cover certain values of $p<2$. If $(m-1) p<n$, the imbedding theorem gives
+  The Sobolev Imbedding Theorem 4.12 can be used to extend the previous theorem to cover certain 
+  values of $p<2$. If $(m-1) p<n$, the imbedding theorem gives
   \[
   W^{m, p}\left(\mathbb{R}^n\right) \rightarrow W^{1, q}\left(\mathbb{R}^n\right), \quad q=\frac{n p}{n-(m-1) p},
   \]
-  which in turn implies that $W^{-1 \cdot q^{\prime}}\left(\mathbb{R}^n\right) \subset W^{-m, p^{\prime}}\left(\mathbb{R}^n\right)$. If also $p \geq 2 n /(n+m-1)$, then $q^{\prime} \leq p$ and so by Lemma $3.36, \Omega^c$ is $(1, p)$-polar if it is $\left(m, p^{\prime}\right)$-polar. Note that $2 n /(n+m-1)<2$ if $m>1$. If, on the other hand, $(m-1) p \geq n$, then $m p>n$, and, as pointed out in Paragraph $3.25, \Omega^c$ cannot be $\left(m, p^{\prime}\right)$-polar unless it is empty, in which case it is trivially $(1, p)$-polar.
+  which in turn implies that $W^{-1 \cdot q^{\prime}}\left(\mathbb{R}^n\right) \subset W^{-m, p^{\prime}}\left(\mathbb{R}^n\right)$.
+  If also $p \geq 2 n /(n+m-1)$, then $q^{\prime} \leq p$ and so by Lemma~3.36, $\Omega^c$
+  is $(1, p)$-polar if it is $\left(m, p^{\prime}\right)$-polar. Note that $2 n /(n+m-1)<2$
+  if $m>1$. If, on the other hand, $(m-1) p \geq n$, then $m p>n$, and, as pointed out in 
+  Paragraph~3.25, $\Omega^c$ cannot be $\left(m, p^{\prime}\right)$-polar unless it is empty,
+  in which case it is trivially $(1, p)$-polar.
   
-  The only values of $p$ for which we do not know that the $\left(m, p^{\prime}\right)$-polarity of $\Omega^c$ implies $(1, p)$-polarity and hence is equivalent to the identity of $W^{m, p}(\Omega)$ and $W_0^{m, p}(\Omega)$, are given by $1 \leq p \leq \min \{n /(m-1), 2 n /(n+m-1)\}$
+  The only values of $p$ for which we do not know that the $\left(m, p^{\prime}\right)$-polarity 
+  of $\Omega^c$ implies $(1, p)$-polarity and hence is equivalent to the identity of $W^{m,p}(\Omega)$ and $W_0^{m, p}(\Omega)$, are given by $1 \leq p \leq \min \{n /(m-1), 2 n /(n+m-1)\}$
 \end{para}
 
 \begin{para}
-  Whenever $W_0^{m . p}(\Omega) \neq W^{m, p}(\Omega)$, the former space is a closed subspace of the latter. In the Hilbert space case, $p=2$, we may consider the space $W_0^{\perp}$ consisting of all $v \in W^{m, 2}(\Omega)$ such that $(v, \phi)_m=0$ for all $\phi \in C_0^{\infty}(\Omega)$. Every $u \in W^{m, 2}(\Omega)$ can be uniquely decomposed in the form $u=u_0+v$, where $u_0 \in W_0^{m .2}(\Omega)$ and $v \in W_0^{\perp}$. Integration by parts shows that any $v \in W_0^{\perp}$ must satisfy
+  Whenever $W_0^{m, p}(\Omega) \neq W^{m, p}(\Omega)$, the former space is a closed subspace of 
+  the latter. In the Hilbert space case, $p=2$, we may consider the space $W_0^{\perp}$ consisting 
+  of all $v \in W^{m, 2}(\Omega)$ such that $(v, \phi)_m=0$ for all $\phi \in C_0^{\infty}(\Omega)$.
+  Every $u \in W^{m, 2}(\Omega)$ can be uniquely decomposed in the form $u=u_0+v$,
+  where $u_0 \in W_0^{m, 2}(\Omega)$ and $v \in W_0^{\perp}$.
+  Integration by parts shows that any $v \in W_0^{\perp}$ must satisfy
   \[
   \sum_{0 \leq|\alpha| \leq m}(-1)^{|\alpha|} D^{2 \alpha} v(x)=0
   \]
@@ -912,7 +924,9 @@ The following two lemmas develop properties of polarity. The first of these show
 \section{Coordinate Transformations}
 
 \begin{para}
-  Let $\Phi$ be a one-to-one transformation of a domain $\Omega \subset \mathbb{R}^n$ onto a domain $G \in \mathbb{R}^n$, having inverse $\Psi=\Phi^{-1}$. We say that $\Phi$ is $m$-smooth if, when we write $y=\Phi(x)$ and $x=\Psi(y)$ in the form
+  Let $\Phi$ be a one-to-one transformation of a domain $\Omega \subset \mathbb{R}^n$ onto
+  a domain $G \in \mathbb{R}^n$, having inverse $\Psi=\Phi^{-1}$.
+  We say that $\Phi$ is $m$-smooth if, when we write $y=\Phi(x)$ and $x=\Psi(y)$ in the form
   \[
   \begin{aligned}
   y_1 & =\phi_1\left(x_1, \ldots, x_n\right), & x_1 & =\psi_1\left(y_1, \ldots, y_n\right), \\
@@ -921,16 +935,21 @@ The following two lemmas develop properties of polarity. The first of these show
   y_n & =\phi_n\left(x_1, \ldots, x_n\right), & x_n & =\psi_n\left(y_1, \ldots, y_n\right),
   \end{aligned}
   \]
-  then $\phi_1, \ldots, \phi_n$ belong to $C^m(\bar{\Omega})$ and $\psi_1, \ldots, \psi_n$ belong to $C^m(\bar{G})$.
+  then $\phi_1, \ldots, \phi_n$ belong to $C^m(\overline{\Omega})$ and $\psi_1, \ldots, \psi_n$
+  belong to $C^m(\bar{G})$.
   If $u$ is a measurable function on $\Omega$, we define a measurable function $A u$ on $G$ by
   \begin{equation}\label{eq:3.9}
     A u(y)=u(\Psi(y)) .
   \end{equation}
-  Suppose that $\Phi$ is 1-smooth so that there exist constants $0<c<C$ such that for all $x \in \Omega$
+  Suppose that $\Phi$ is 1-smooth so that there exist constants $0<c<C$ such that
+  for all $x \in \Omega$
   \begin{equation}\label{eq:3.10}
-    c \leq\left|\operatorname{det} \Phi^{\prime}(x)\right| \leq C,
+    c \leq\left|\det \Phi^{\prime}(x)\right| \leq C,
   \end{equation}
-  where $\Phi^{\prime}$ denotes the Jacobian matrix $\partial\left(y_1, \ldots, y_n\right) / \partial\left(y_1, \ldots, y_n\right)$. Since smooth functions are dense in $L^p$ spaces, the operator $A$ defined by (9) $\operatorname{transforms} L^p(\Omega)$ boundedly onto $L^p(G)$ and has a bounded inverse; in fact, for $1 \leq p<\infty$,
+  where $\Phi^{\prime}$ denotes the Jacobian matrix $\partial\left(y_1, \ldots, y_n\right) / \partial\left(y_1, \ldots, y_n\right)$.
+  Since smooth functions are dense in $L^p$ spaces, the operator $A$ defined by (9)
+  transforms $L^p(\Omega)$ boundedly onto $L^p(G)$ and has a bounded inverse;
+  in fact, for $1 \leq p<\infty$,
   \[
   c^{1 / p}\|u\|_{p, \Omega} \leq\|A u\|_{p, G} \leq C^{1 / p}\|u\|_{p, \Omega} .
   \]
@@ -939,24 +958,36 @@ The following two lemmas develop properties of polarity. The first of these show
 
 \begin{theorem}
   We establish a similar result for Sobolev spaces.
-  Let $\Phi$ be $m$-smooth, where $m \geq 1$. The operator $A$ defined by (9) transforms $W^{m, p}(\Omega)$ boundedly onto $W^{m, p}(G)$ and has a bounded inverse.
+  Let $\Phi$ be $m$-smooth, where $m \geq 1$. The operator $A$ defined by (9)
+  transforms $W^{m,p}(\Omega)$ boundedly onto $W^{m,p}(G)$ and has a bounded inverse.
 \end{theorem}
 
 \begin{proof}
-  We show that the inequality $\|A u\|_{m, p, G} \leq$ const $\|u\|_{m, p, \Omega}$ holds for every $u \in W^{m, p}(\Omega)$, the constant depending only on the transformation $\Phi$. The reverse inequality $\|A u\|_{m, p, G} \geq$ const $\|u\|_{m, p, \Omega}$ (with a different constant) can be established similarly, using the inverse operator $A^{-1}$. By Theorem 3.17 for given $u \in W^{m, p}(\Omega)$, there exists a sequence $\left\{u_j\right\} \subset C^{\infty}(\Omega)$ converging to $u$ in $W^{m, p}(\Omega)$-norm. For such smooth $u_j$ it is readily checked by induction on $|\alpha|$ that
+  We show that the inequality $\|A u\|_{m, p, G} \leq$ const $\|u\|_{m, p, \Omega}$ holds for 
+  every $u \in W^{m, p}(\Omega)$, the constant depending only on the transformation $\Phi$.
+  The reverse inequality $\|A u\|_{m, p, G} \geq$ const $\|u\|_{m, p, \Omega}$ (with a different 
+  constant) can be established similarly, using the inverse operator $A^{-1}$.
+  By Theorem~3.17 for given $u \in W^{m, p}(\Omega)$, there exists
+  a sequence $\left\{u_j\right\} \subset C^{\infty}(\Omega)$ converging to $u$
+  in $W^{m,p}(\Omega)$-norm.
+  For such smooth $u_j$ it is readily checked by induction on $|\alpha|$ that
   \begin{equation}\label{eq:3.11}
-  D^\alpha\left(A u_j\right)(y)=\sum_{\beta \leq \alpha} M_{\alpha \beta}(y) A\left(D^\beta u_j\right)(y),
+    D^\alpha\left(A u_j\right)(y)=\sum_{\beta \leq \alpha} M_{\alpha \beta}(y) A\left(D^\beta u_j\right)(y),
   \end{equation}
-  where $M_{\alpha \beta}$ is a polynomial of degree not exceeding $|\beta|$ in derivatives of orders not exceeding $|\alpha|$ of the various components of $\Psi$. If $\theta \in \mathscr{D}(G)$ integration by parts gives
+  where $M_{\alpha \beta}$ is a polynomial of degree not exceeding $|\beta|$ in derivatives of 
+  orders not exceeding $|\alpha|$ of the various components of $\Psi$.
+  If $\theta \in \mathscr{D}(G)$ integration by parts gives
   \begin{equation}\label{eq:3.12}
-  (-1)^{|\alpha|} \int_G\left(A u_j\right)(y) D^\alpha \theta(y) d y=\sum_{\beta \leq \alpha} \int_G A\left(D^\beta u_j\right)(y) M_{\alpha \beta}(y) \theta(y) d y,
+    (-1)^{|\alpha|} \int_G\left(A u_j\right)(y) D^\alpha \theta(y) d y=\sum_{\beta \leq \alpha} \int_G A\left(D^\beta u_j\right)(y) M_{\alpha \beta}(y) \theta(y) d y,
   \end{equation}
   or, replacing $y$ by $\Phi(x)$ and expressing the integrals over $\Omega$,
   \begin{align}
-  & (-1)^{|\alpha|} \int_{\Omega} u_j(x)\left(D^\alpha \theta\right)(\Phi(x))\left|\operatorname{det} \Phi^{\prime}(x)\right| d x \notag \\
-  & \quad=\sum_{\beta \leq \alpha} \int_{\Omega} D^\beta u_j(x) M_{\alpha \beta}(\Phi(x)) \theta(\Phi(x))\left|\operatorname{det} \Phi^{\prime}(x)\right| d x . \label{eq:3.13}
+  & (-1)^{|\alpha|} \int_{\Omega} u_j(x)\left(D^\alpha \theta\right)(\Phi(x))\left|\det \Phi^{\prime}(x)\right| d x \notag \\
+  & \quad=\sum_{\beta \leq \alpha} \int_{\Omega} D^\beta u_j(x) M_{\alpha \beta}(\Phi(x)) \theta(\Phi(x))\left|\det \Phi^{\prime}(x)\right| d x . \label{eq:3.13}
   \end{align}
-  Since $D^\beta u_j \rightarrow u$ in $L^p(\Omega)$ for $|\beta| \leq m$, we can take the limit through (13) as $n \rightarrow \infty$ and hence obtain (12) with $u$ replacing $u_j$. Thus (11) holds in the weak sense for any $u \in W^{m, p}(\Omega)$. Therefore
+  Since $D^\beta u_j \rightarrow u$ in $L^p(\Omega)$ for $|\beta| \leq m$,
+  we can take the limit through (13) as $n \rightarrow \infty$ and hence obtain (12) with $u$ 
+  replacing $u_j$. Thus (11) holds in the weak sense for any $u \in W^{m, p}(\Omega)$. Therefore
   \[
   \begin{aligned}
   \int_G\left|D^\alpha(A u)(y)\right|^p d y & \leq\left(\sum_{\beta \leq \alpha} 1\right)^p \max _{|\beta| \leq|\alpha|}\left(\left.\sup _{y \in G}\left|M_{\alpha \beta}\right| \int_G\left|\left(D^\beta u\right)\right|(\Psi(y))\right|^p d y\right) \\

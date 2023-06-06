@@ -3,10 +3,11 @@
 
 \begin{para}
   The imbedding characteristics of Sobolev spaces are essential in their uses in analysis, 
-  especially in the study of differential and integral operators. The most important imbedding 
-  results for Sobolev spaces are often gathered together into a single ``theorem'' called the 
-  Sobolev Imbedding Theorem although they are of several different types and can require different 
-  methods of proof. The core results are due to Sobolev [So2] but our statement (Theorem 4.12) 
+  especially in the study of differential and integral operators.
+  The most important imbedding results for Sobolev spaces are often gathered together into
+  a single ``theorem'' called the Sobolev Imbedding Theorem although they are of several different
+  types and can require different methods of proof.
+  The core results are due to Sobolev [So2] but our statement (Theorem 4.12) 
   also includes refinements due to others, in particular Morrey [Mo] and Gagliardo [Ga1].
   Most of the imbeddings hold for domains $\Omega \subset \mathbb{R}^n$ satisfying some form of 
   ``cone condition'' that enables us to derive pointwise estimates for the value of a function at 
@@ -20,49 +21,54 @@
 
 
 \begin{para}[Targets of the Imbeddings]
-  The Sobolev imbedding theorem asserts the existence of imbeddings of $W^{m, p}(\Omega)$
-  (or $W_0^{m, p}(\Omega)$ ) into Banach spaces of the following types:
+  The Sobolev imbedding theorem asserts the existence of imbeddings of $W^{m,p}(\Omega)$
+  (or $W_0^{m, p}(\Omega)$) into Banach spaces of the following types:
   \begin{enumerate}[(i)]
-    \item $W^{j,q}(\Omega)$, where $j \leq m$, and in particular $L^q(\Omega)$.
+    \item $W^{j,q}(\Omega)$, where $j \leq m$, and in particular $L^q(\Omega)$,
     \item $W^{j,q}\left(\Omega_k\right)$, where, for $1 \leq k<n$,
       $\Omega_k$ is the intersection of $\Omega$ with a
       $k$-dimensional plane in $\mathbb{R}^n$.
-    \item $C_B^j(\Omega)$, the space of functions having bounded, continuous derivatives up to order $j$ on $\Omega$ (see Paragraph 1.27) normed by
-    \[
-    \left\|u ; C_B^j(\Omega)\right\|=\max _{0 \leq|\alpha| \leq j} \sup _{x \in \Omega}\left|D^\alpha u(x)\right| .
-    \]
-    \item $C^j(\bar{\Omega})$, the closed subspace of $C_B^j(\Omega)$ consisting of functions 
-      having bounded, uniformly continuous derivatives up to order $j$ on $\Omega$
-      (see Paragraph 1.28) with the same norm as $C_B^j(\Omega)$ :
+    \item $C_B^j(\Omega)$, the space of functions having bounded,
+      continuous derivatives up to order $j$ on $\Omega$ (see Paragraph~1.27) normed by
       \[
-        \left\|\phi ; C^j(\bar{\Omega})\right\|=\max _{0 \leq \alpha \leq j} \sup _{x \in \Omega}\left|D^\alpha \phi(x)\right| .
+        \|u\|_{C_B^j(\Omega)} = \max_{0 \leq|\alpha| \leq j} \sup_{x \in \Omega}\left|D^\alpha u(x)\right|.
+      \]
+    \item $C^j(\overline{\Omega})$, the closed subspace of $C_B^j(\Omega)$ consisting of functions
+      having bounded, uniformly continuous derivatives up to order $j$ on $\Omega$
+      (see Paragraph~1.28) with the same norm as $C_B^j(\Omega)$:
+      \[
+        \|\phi\|_{C^j(\overline{\Omega})} 
+          = \max_{0 \leq \alpha \leq j} \sup_{x \in \Omega} \left|D^\alpha \phi(x)\right|.
       \]
       This space is smaller than $C_B^j(\Omega)$ in that its elements must be uniformly continuous 
-      on $\Omega$. For example, the function $u$ of Example 3.20 belongs to $C_B^1(\Omega)$ but 
-      certainly not to $C^1(\bar{\Omega})$ for the domain $\Omega$ of that example.
-    \item $C^{j, \lambda}(\bar{\Omega})$, the closed subspace of $C^j(\bar{\Omega})$ consisting of 
+      on $\Omega$. For example, the function $u$ of Example~3.20 belongs to $C_B^1(\Omega)$ but 
+      certainly not to $C^1(\overline{\Omega})$ for the domain $\Omega$ of that example.
+    \item $C^{j, \lambda}(\overline{\Omega})$, the closed subspace of $C^j(\overline{\Omega})$ consisting of 
       functions whose derivatives up to order $j$ satisfy Hölder conditions of exponent $\lambda$ 
-      in $\Omega$ (see Paragraph 1.29). The norm on $C^{j, \lambda}(\bar{\Omega})$ is
+      in $\Omega$ (see Paragraph~1.29). The norm on $C^{j, \lambda}(\overline{\Omega})$ is
       \[
-        \left\|\phi ; C^{j, \lambda}(\bar{\Omega})\right\|=\left\|\phi ; C^j(\bar{\Omega})\right\|+\max _{0 \leq|\alpha| \leq j} \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{\left|D^\alpha \phi(x)-D^\alpha \phi(y)\right|}{|x-y|^\lambda} .
+        \|\phi\|_{C^{j, \lambda}(\overline{\Omega})}
+          = \|\phi\|_{C^j(\overline{\Omega})}
+            + \max_{0 \leq|\alpha| \leq j} \sup_{\substack{x, y \in \Omega \\ x \neq y}}
+              \frac{\left|D^\alpha \phi(x)-D^\alpha \phi(y)\right|}{|x-y|^\lambda} .
       \]
   \end{enumerate}
-  Since elements of $W^{m, p}(\Omega)$ are, strictly speaking, not functions defined everywhere on 
-  $\Omega$, but rather equivalence classes of such functions defined and equal up to sets of 
-  measure zero, we must clarify what is meant by imbeddings of types (ii)--(v).
+  Since elements of $W^{m,p}(\Omega)$ are, strictly speaking,
+  not functions defined everywhere on $\Omega$, but rather equivalence classes of such functions defined and equal up to sets of measure zero,
+  we must clarify what is meant by imbeddings of types (ii)--(v).
   What is intended for imbeddings into the continuous function spaces (types (iii)--(v)) is that 
   the ``equivalence class'' $u \in W^{m, p}(\Omega)$ should contain an element that belongs to the 
   continuous function space that is the target of the imbedding and is bounded in that space by a 
   constant times $\|u\|_{m,p,\Omega}$. Hence, for example, existence of the imbedding
   \[
-  W^{m, p}(\Omega) \rightarrow C^j(\bar{\Omega})
+  W^{m, p}(\Omega) \rightarrow C^j(\overline{\Omega})
   \]
   means that each $u \in W^{m, p}(\Omega)$ when considered as a function,
   can be redefined on a subset of $\Omega$ having measure zero to produce
-  a new function $u^* \in C^j(\bar{\Omega})$ such that $u^*=u$ in $W^{m, p}(\Omega)$
-  (i.e.~$u^*$ and $u$ belong to the same ``equivalence class'' in $W^{m, p}(\Omega)$) and
+  a new function $u^* \in C^j(\overline{\Omega})$ such that $u^*=u$ in $W^{m,p}(\Omega)$
+  (i.e.~$u^*$ and $u$ belong to the same ``equivalence class'' in $W^{m,p}(\Omega)$) and
   \[
-  \left\|u^* ; C^j(\bar{\Omega})\right\| \leq K\|u\|_{m, p, \Omega}
+  \left\|u^* ; C^j(\overline{\Omega})\right\| \leq K\|u\|_{m, p, \Omega}
   \]
   with $K$ independent of $u$.
   
@@ -71,7 +77,7 @@
   W^{m, p}(\Omega) \rightarrow W^{j, q}\left(\Omega_k\right)
   \]
   where $\Omega_k$ is the intersection of $\Omega$ with a plane of dimension $k<n$
-  Each element of $W^{m, p}(\Omega)$ is, by Theorem~3.17, a limit in that space of a sequence 
+  Each element of $W^{m,p}(\Omega)$ is, by Theorem~3.17, a limit in that space of a sequence 
   $\left\{u_i\right\}$ of functions in $C^{\infty}(\Omega)$.
   The functions $u_i$ have traces on $\Omega_k$ (that is, restrictions to $\Omega_k$) that belong 
   to $C^{\infty}\left(\Omega_k\right)$. The above imbedding signifies that these traces converge 
@@ -86,11 +92,11 @@
 
 \begin{para}
   Let us note as a point of interest, though of no particular use to us later,
-  that the imbedding $W^{m, p}(\Omega) \rightarrow W^{j,q}(\Omega)$ is equivalent to the simple 
-  containment $W^{m, p}(\Omega) \subset W^{j, q}(\Omega)$. Certainly the former implies the 
-  latter. To verify the converse, suppose $W^{m, p}(\Omega) \subset W^{j,q}(\Omega)$, and let $I$ 
-  be the linear operator taking $W^{m, p}(\Omega)$ into $W^{j, q}(\Omega)$ defined by $I u=u$ for 
-  $u \in W^{m, p}(\Omega)$. If $u_k \rightarrow u$ in $W^{m, p}(\Omega)$
+  that the imbedding $W^{m,p}(\Omega) \rightarrow W^{j,q}(\Omega)$ is equivalent to the simple 
+  containment $W^{m,p}(\Omega) \subset W^{j, q}(\Omega)$. Certainly the former implies the 
+  latter. To verify the converse, suppose $W^{m,p}(\Omega) \subset W^{j,q}(\Omega)$, and let $I$ 
+  be the linear operator taking $W^{m,p}(\Omega)$ into $W^{j, q}(\Omega)$ defined by $I u=u$ for 
+  $u \in W^{m, p}(\Omega)$. If $u_k \rightarrow u$ in $W^{m,p}(\Omega)$
   (and hence in $L^p(\Omega)$) and $I u_k \rightarrow v$ in $W^{j,q}(\Omega)$
   (and hence in $L^q(\Omega)$), then, passing to a subsequence if necessary,
   we have by Corollary 2.17 that
@@ -105,12 +111,12 @@
 \begin{para}[Some Definitions]
   Many properties of Sobolev spaces defined on a domain $\Omega$, and in particular the imbedding 
   properties of these spaces, depend on regularity properties of $\Omega$. Such regularity is 
-  normally expressed in terms of geometric or analytic conditions that may or may not be satisfied 
-  by a given domain. We specify below several such conditions and consider their relationships. 
-  First we make some definitions.
+  normally expressed in terms of geometric or analytic conditions that may or may not be 
+  satisfied by a given domain. We specify below several such conditions and consider their 
+  relationships. First we make some definitions.
   
-  Let $v$ be a nonzero vector in $\mathbb{R}^n$, and for each $x \neq 0$ let $\angle(x, v)$ be the 
-  angle between the position vector $x$ and $v$. For given such $v, \rho>0$, and $\kappa$ 
+  Let $v$ be a nonzero vector in $\mathbb{R}^n$, and for each $x \neq 0$ let $\angle(x, v)$ be 
+  the angle between the position vector $x$ and $v$. For given such $v, \rho>0$, and $\kappa$ 
   satisfying $0<\kappa \leq \pi$, the set
   \[
     C = \left\{x \in \mathbb{R}^n: x=0 \text { or } 0<|x| \leq \rho, \angle(x, v) \leq \kappa / 2\right\}
@@ -138,7 +144,7 @@
   possess. We denote by $\Omega_\delta$ the set of points in $\Omega$ within distance $\delta$ of 
   the boundary of $\Omega$:
   \[
-    \Omega_\delta = \{x \in \Omega: \operatorname{dist}(x, \partial\Omega)<\delta\}.
+    \Omega_\delta = \{x \in \Omega: \dist(x, \partial\Omega)<\delta\}.
   \]
 \end{para}
 
@@ -146,10 +152,10 @@
 \begin{para}[The Segment Condition]
   As defined in Paragraph~3.21, a domain $\Omega$ satisfies the segment condition
   if every $x \in\partial\Omega$ has a neighbourhood $U_x$ and a nonzero vector $y_x$
-  such that if $z \in \bar{\Omega} \cap U_x$, then $z+t y_x \in \Omega$ for $0<t<1$.
+  such that if $z \in \overline{\Omega} \cap U_x$, then $z+t y_x \in \Omega$ for $0<t<1$.
   Since the boundary of $\Omega$ is necessarily closed, we can replace its open cover by the 
   neighbourhoods $U_x$ with a locally finite subcover $\left\{U_1, U_2, \ldots\right\}$ with 
-  corresponding vectors $y_1, y_2, \ldots$ such that if $x \in \bar{\Omega} \cap U_j$ for some 
+  corresponding vectors $y_1, y_2, \ldots$ such that if $x \in \overline{\Omega} \cap U_j$ for some 
   $j$, then $x+t y_j \in \Omega$ for $0<t<1$.
 \end{para}
 
@@ -163,7 +169,8 @@
 
 
 \begin{para}[The Weak Cone Condition]
-  Given $x \in \Omega$, let $R(x)$ consist of all points $y \in \Omega$ such that the line segment from $x$ to $y$ lies in $\Omega$; thus $R(x)$ is a union of rays and line segments emanating from $x$. Let
+  Given $x \in \Omega$, let $R(x)$ consist of all points $y \in \Omega$ such that the line segment
+  from $x$ to $y$ lies in $\Omega$; thus $R(x)$ is a union of rays and line segments emanating from $x$. Let
   \[
   \Gamma(x)=\{y \in R(x):|y-x|<1\}
   \]
@@ -171,9 +178,10 @@
   \[
   \mu_n(\Gamma(x)) \geq \delta \quad \text { for all } x \in \Omega
   \]
-  where $\mu_n$ is the Lebesgue measure in $\mathbb{R}^n$. Clearly the cone condition implies the 
-  weak cone condition, but there are many domains satisfying the weak cone condition that do not 
-  satisfy the cone condition.
+  where $\mu_n$ is the Lebesgue measure in $\mathbb{R}^n$.
+  Clearly the cone condition implies the 
+  weak cone condition, but there are many domains satisfying the weak cone condition
+  that do not satisfy the cone condition.
 \end{para}
 
 
@@ -192,14 +200,14 @@
 
 
 \begin{para}[The Strong Local Lipschitz Condition]
-  $\Omega$ satisfies the strong local Lipschitz condition if there exist positive numbers $\delta$ and $M$, a locally finite open cover $\left\{U_j\right\}$ of bdry $\Omega$, and, for each $j$ a real-valued function $f_j$ of $n-1$ variables, such that the following conditions hold:
+  $\Omega$ satisfies the strong local Lipschitz condition if there exist positive numbers $\delta$ and $M$, a locally finite open cover $\left\{U_j\right\}$ of $\partial\Omega$, and, for each $j$ a real-valued function $f_j$ of $n-1$ variables, such that the following conditions hold:
   
   \begin{enumerate}[(i)]
     \item For some finite $R$, every collection of $R+1$ of the sets $U_j$ has empty intersection.
     \item For every pair of points $x, y \in \Omega_\delta$ such that $|x-y|<\delta$,
       there exists $j$ such that
       \[
-        x, y \in V_j \equiv\left\{x \in U_j: \operatorname{dist}\left(x, \text { bdry } U_j\right)>\delta\right\}
+        x, y \in V_j \equiv\left\{x \in U_j: \dist\left(x, \partial U_j\right)>\delta\right\}
       \]
     \item Each function $f_j$ satisfies a Lipschitz condition with constant $M$:
       that is, if $\xi=\left(\xi_1, \ldots, \xi_{n-1}\right)$ and
@@ -211,17 +219,19 @@
         \zeta_{j, n}<f_j\left(\zeta_{j, 1}, \ldots, \zeta_{j, n-1}\right)
       \]
   \end{enumerate}
-  If $\Omega$ is bounded, the rather complicated set of conditions above reduce to the simple condition that $\Omega$ should have a locally Lipschitz boundary, that is, that each point $x$ on the boundary of $\Omega$ should have a neighbourhood $U_x$ whose intersection with bdry $\Omega$ should be the graph of a Lipschitz continuous function.
+  If $\Omega$ is bounded, the rather complicated set of conditions above reduce to the simple condition that $\Omega$ should have a locally Lipschitz boundary, that is, that each point $x$ on the boundary of $\Omega$ should have a neighbourhood $U_x$ whose intersection with $\partial\Omega$ should be the graph of a Lipschitz continuous function.
 \end{para}
 
 
 \begin{para}[The Uniform $\bm{C^m}$-Regularity Condition]
-  $\Omega$ satisfies the uniform $C^m$ regularity condition is there exists a locally finite open cover $\left\{U_j\right\}$ of bdry $\Omega$, and a corresponding sequence $\left\{\Phi_j\right\}$ of $m$-smooth transformations (see Paragraph 3.40) with $\Phi_j$ taking $U_j$ onto the ball $B=\left\{y \in \mathbb{R}^n:|y|<1\right.$ and having inverse $\Psi_j=\Phi_j^{-1}$, such that:
+  $\Omega$ satisfies the uniform $C^m$ regularity condition is there exists a locally finite open cover $\left\{U_j\right\}$ of $\partial\Omega$, and a corresponding sequence $\left\{\Phi_j\right\}$ of $m$-smooth transformations (see Paragraph 3.40) with $\Phi_j$ taking $U_j$ onto the ball $B=\left\{y \in \mathbb{R}^n:|y|<1\right.$ and having inverse $\Psi_j=\Phi_j^{-1}$, such that:
   \begin{enumerate}[(i)]
     \item For some finite $R$. every collection of $R+1$ of the sets $U_j$ has empty intersection.
     \item For some $\delta>0, \Omega_\delta \subset \bigcup_{j=1}^{\infty} \Psi_j\left(\left\{y \in \mathbb{R}^n:|y|<\frac{1}{2}\right\}\right)$.
     \item For each $j, \Phi_j\left(U_j \cap \Omega\right)=\left\{y \in B: y_n>0\right\}$.
-    \item If $\left(\phi_{j, 1}, \ldots, \phi_{j, n}\right)$ and $\left(\psi_{j, 1}, \ldots, \psi_{j, n}\right)$ are the components of $\Phi_j$ and $\Psi_j$, then there is a finite constant $M$ such that for every $\alpha$ with $0<|\alpha| \leq m$, every $i, 1 \leq i \leq n$, and every $j$ we have
+    \item If $\left(\phi_{j, 1}, \ldots, \phi_{j, n}\right)$ and $\left(\psi_{j, 1}, \ldots, \psi_{j, n}\right)$ 
+      are the components of $\Phi_j$ and $\Psi_j$, then there is a finite constant $M$ such that for every  
+      $\alpha$ with $0<|\alpha| \leq m$, every $i, 1 \leq i \leq n$, and every $j$ we have
     \[
     \begin{array}{ll}
     \left|D^\alpha \phi_{j, i}(x)\right| \leq M, & \text { for } x \in U_j, \\
@@ -233,8 +243,11 @@
 
 
 \begin{para}
-  Except for the cone condition and the weak cone condition, the other conditions defined above all require that the boundary of $\Omega$ be $(n-1)$-dimensional and that $\Omega$ lie on only one side of its boundary. The domain $\Omega$ of Example 3.20
-  satisfies the cone condition (and therefore the weak cone condition), but none of the other four conditions. Among those four we have:
+  Except for the cone condition and the weak cone condition,
+  the other conditions defined above all require that the boundary of $\Omega$ be $(n-1)$-dimensional
+  and that $\Omega$ lie on only one side of its boundary. The domain $\Omega$ of Example~3.20
+  satisfies the cone condition (and therefore the weak cone condition), but none of the other four conditions. 
+  Among those four we have:
   \begin{align*}
     & \text{the uniform $C^m$-regularity condition $(m \geq 2)$} \\
     & \text{$\Longrightarrow$ the strong local Lipschitz condition} \\
@@ -247,9 +260,9 @@
     & \text{$\Longrightarrow$ the cone condition} \\
     & \text{$\Longrightarrow$ the weak cone condition}
   \end{align*}
-  Typically, most of the imbeddings of $W^{m, p}(\Omega)$ have been proven for domains
-  satisfying the cone condition. Exceptions are the imbeddings into spaces $C^j(\bar{\Omega})$
-  and $C^{j, \lambda}(\bar{\Omega})$ of uniformly continuous functions which, as suggested by 
+  Typically, most of the imbeddings of $W^{m,p}(\Omega)$ have been proven for domains
+  satisfying the cone condition. Exceptions are the imbeddings into spaces $C^j(\overline{\Omega})$
+  and $C^{j, \lambda}(\overline{\Omega})$ of uniformly continuous functions which, as suggested by 
   Example 3.20, require that $\Omega$ lie on one side of its boundary. These imbeddings are 
   usually proved for domains satisfying the strong local Lipschitz condition. It should be noted, 
   however, that $\Omega$ need not satisfy any of these conditions for appropriate imbeddings of 
@@ -290,19 +303,19 @@
   \item If $\Omega_k$ (or $\Omega$ ) has finite volume, then imbeddings (2)-(4) also hold for
     $1 \leq q<p$ in addition to the values of $q$ asserted in the statement of the theorem.
     This follows from Theorem 2.14. It will be shown in Theorem 6.43 that no imbedding of the form 
-    $W^{m, p}(\Omega) \rightarrow L^q(\Omega)$ where $q<p$ is possible unless $\Omega$ has finite 
+    $W^{m,p}(\Omega) \rightarrow L^q(\Omega)$ where $q<p$ is possible unless $\Omega$ has finite 
     volume.
   \item Part III of the theorem is an immediate consequence of Parts I and II
     applied to $\mathbb{R}^n$ because, by Lemma 3.27 , the operator of zero extension of functions 
     outside $\Omega$ maps $W_0^{m, p}(\Omega)$ isometrically
-    into $W^{m, p}\left(\mathbb{R}^n\right)$.
-  \item More generally, suppose there exists an operator $E$ mapping $W^{m, p}(\Omega)$
-    into $W^{m, p}\left(\mathbb{R}^n\right)$ such that $E u(x)=u(x)$ a.e. in $\Omega$ and such 
+    into $W^{m,p}\left(\mathbb{R}^n\right)$.
+  \item More generally, suppose there exists an operator $E$ mapping $W^{m,p}(\Omega)$
+    into $W^{m,p}\left(\mathbb{R}^n\right)$ such that $E u(x)=u(x)$ a.e. in $\Omega$ and such 
     that $\|E u\|_{m, p, \mathbb{R}^n} \leq K_1\|u\|_{m, p, \Omega}$.
     Such an operator is called an $(m, p)$ extension operator for $\Omega$.
     If the imbedding theorem has already been proved for $\mathbb{R}^n$,
     then it must hold for the domain $\Omega$ as well. For example, if
-    $W^{m, p}\left(\mathbb{R}^n\right) \rightarrow L^q\left(\mathbb{R}^n\right)$,
+    $W^{m,p}\left(\mathbb{R}^n\right) \rightarrow L^q\left(\mathbb{R}^n\right)$,
     and $u \in W^{m, p}(\Omega)$, then
     \[
       \|u\|_{q, \Omega} \leq\|E u\|_{q, \mathbb{R}^n} \leq K_2\|E u\|_{m, p, \mathbb{R}^n}
@@ -313,7 +326,7 @@
     prove Theorem 4.12.
   \item It is sufficient to prove imbeddings (1)-(4), (6)-(7) for the special case $j=0$,
     as the general case follows by applying this special case to derivative $D^\alpha u$ of $u$ 
-    for $|\alpha| \leq j$. For example, if the imbedding $W^{m, p}(\Omega)\rightarrow L^q(\Omega)$ 
+    for $|\alpha| \leq j$. For example, if the imbedding $W^{m,p}(\Omega)\rightarrow L^q(\Omega)$ 
     has been proven, then for any $u \in W^{j+m, p}(\Omega)$
     we have $D^\alpha u \in W^{m, p}(\Omega)$ for $|\alpha| \leq j$,
     whence $D^\alpha u \in L^q(\Omega)$. Thus $u \in W^{j, q}(\Omega)$ and
@@ -342,7 +355,10 @@
   
   Part II of the theorem follows by sharpening certain estimates used in obtaining Case A of Part I.
   
-  The entire proof of Theorem 4.12 is fairly lengthy and is broken down into several lemmas. Throughout we use $K$, and occasionally $K_1, K_2, \ldots$, to represent various constants that can depend on parameters of the spaces being imbedded. The values of these constants can change from line to line. While stated for the cone condition, the potential method works verbatim under the weak cone condition as well.
+  The entire proof of Theorem 4.12 is fairly lengthy and is broken down into several lemmas.
+  Throughout we use $K$, and occasionally $K_1, K_2, \ldots$, to represent various constants that can
+  depend on parameters of the spaces being imbedded. The values of these constants can change from line to line. 
+  While stated for the cone condition, the potential method works verbatim under the weak cone condition as well.
 \end{para}
 
 
@@ -389,7 +405,8 @@
   & \quad+\sum_{|\alpha|=m} \frac{m}{\alpha !} \int_{C_{x, r}}|x-y|^m d y \int_0^1(1-t)^{m-1}\left|D^\alpha u(t x+(1-t) y)\right| d t
   \end{aligned}
   \]
-  In the final (double) integral we first change the order of integration, then substitute $z=t x+(1-t) y$, so that $z-x=(1-t)(y-x)$ and $d z=(1-t)^n d y$, to obtain, for that integral,
+  In the final (double) integral we first change the order of integration, then substitute $z=t x+(1-t) y$,
+  so that $z-x=(1-t)(y-x)$ and $d z=(1-t)^n d y$, to obtain, for that integral,
   \[
   \int_0^1(1-t)^{-n-1} d t \int_{C_{x,(1-t) r}}|z-x|^m\left|D^\alpha u(z)\right| d z
   \]
@@ -410,7 +427,8 @@
   \[
   |u(x)| \leq K\|u\|_{m, p} .
   \]
-  For $p=1$ and $m=n$, this follows immediately from (8). For $p>1$ and $m p>n$, we apply Hölder's inequality to (8) with $r=\rho$ to obtain
+  For $p=1$ and $m=n$, this follows immediately from (8). For $p>1$ and $m p>n$,
+  we apply Hölder's inequality to (8) with $r=\rho$ to obtain
   \[
   \begin{aligned}
   |u(x)| & \leq K\left(\sum_{|\alpha| \leq m-1} c^{1 / p^{\prime}} \rho^{|\alpha|-(n / p)}\left\|D^\alpha u\right\|_{p, C_{x, \rho}}\right. \\
@@ -423,18 +441,27 @@
   \]
   and (9) follows because $C_{x, \rho} \subset \Omega$.
   
-  Next observe that since any $u \in W^{m, p}(\Omega)$ is the limit of a Cauchy sequence of continuous functions by Theorem 3.17, and since (9) implies this Cauchy sequence converges to a continuous function on $\Omega, u$ must coincide with a continuous function a.e. on $\Omega$. Thus $u \in C_B^0(\Omega)$ and imbedding (1) is proved.
-  Now let $\Omega_k$ denote the intersection of $\Omega$ with a $k$-dimensional plane $H$, let $\Omega_{k, \rho}=\left\{x \in \mathbb{R}^n: \operatorname{dist}\left(x, \Omega_k\right)<\rho\right\}$, and let $u$ and all its derivatives be extended to be zero outside $\Omega$. Since $C_{x, \rho} \subset B_\rho(x)$, the ball of radius $\rho$ with centre at $x$, we have, using (10) and denoting by $d x^{\prime}$ the $k$-volume element in $H$,
+  Next observe that since any $u \in W^{m, p}(\Omega)$ is the limit of a Cauchy sequence of continuous functions 
+  by Theorem 3.17, and since (9) implies this Cauchy sequence converges to a continuous function on $\Omega, u$ 
+  must coincide with a continuous function a.e. on $\Omega$. Thus $u \in C_B^0(\Omega)$ and imbedding (1) is 
+  proved.
+  Now let $\Omega_k$ denote the intersection of $\Omega$ with a $k$-dimensional plane $H$,
+  let $\Omega_{k, \rho}=\left\{x \in \mathbb{R}^n: \dist\left(x, \Omega_k\right)<\rho\right\}$, 
+  and let $u$ and all its derivatives be extended to be zero outside $\Omega$.
+  Since $C_{x, \rho} \subset B_\rho(x)$, the ball of radius $\rho$ with centre at $x$,
+  we have, using (10) and denoting by $d x^{\prime}$ the $k$-volume element in $H$,
   \[
   \begin{aligned}
   \int_{\Omega_k}|u(x)|^p d x^{\prime} & \leq K \sum_{|\alpha| \leq m} \int_{\Omega_k} d x^{\prime} \int_{B_\rho(x)}\left|D^\alpha u(y)\right|^p d y \\
   & =K \sum_{|\alpha| \leq m} \int_{\Omega_{k, \rho}}\left|D^\alpha u(y)\right|^p d y \int_{H \cap B_p(y)} d x^{\prime} \leq K_1\|u\|_{m, p, \Omega}^p,
   \end{aligned}
   \]
-  and $W^{m, p}(\Omega) \rightarrow L^p\left(\Omega_k\right)$. But (9) shows that $W^{m, p}(\Omega) \rightarrow L^{\infty}\left(\Omega_k\right)$ and so imbedding (2) follows by Theorem 2.11.
+  and $W^{m,p}(\Omega) \rightarrow L^p\left(\Omega_k\right)$. But (9) shows that $W^{m,p}(\Omega) \rightarrow L^{\infty}\left(\Omega_k\right)$ and so imbedding (2) follows by Theorem 2.11.
 \end{para}
 
-Let $\chi_r$ be the characteristic function of the ball $B_r(0)=\left\{x \in \mathbb{R}^n:|x|<r\right\}$. In the following discussion we will develop estimates for convolutions of $L^p$ functions with the kernels $\omega_m(x)=|x|^{m-n}$ and
+Let $\chi_r$ be the characteristic function of the ball $B_r(0)=\left\{x \in \mathbb{R}^n:|x|<r\right\}$.
+In the following discussion we will develop estimates for convolutions of $L^p$ functions with the kernels 
+$\omega_m(x)=|x|^{m-n}$ and
 \[
 \chi_r \omega_m(x)= \begin{cases}|x|^{m-n} & \text { if }|x|<r, \\ 0 & \text { if }|x| \geq r .\end{cases}
 \]
@@ -445,7 +472,9 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
 
 
 \begin{lemma}
-  Let $p \geq 1,1 \leq k \leq n$, and $n-m p<k$. There exists a constant $K$ such that for every $r>0$, every $k$-dimensional plane $H \subset \mathbb{R}^n$, and every $v \in L^p\left(\mathbb{R}^n\right)$, we have $\chi_r \omega_m *|v| \in L^p(H)$ and
+  Let $p \geq 1,1 \leq k \leq n$, and $n-m p<k$. There exists a constant $K$ such that for every $r>0$,
+  every $k$-dimensional plane $H \subset \mathbb{R}^n$, and every $v \in L^p\left(\mathbb{R}^n\right)$,
+  we have $\chi_r \omega_m *|v| \in L^p(H)$ and
   \[
   \left\|\chi_r \omega_m *|v|\right\|_{p, H} \leq K r^{m-(n-k) / p}\|v\|_{p, \mathbb{R}^n}
   \]
@@ -464,7 +493,8 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   & =K r^{s+m-(n / p)}\left(\int_{B_r(x)}|v(y)|^p|x-y|^{-s p} d y\right)^{1 / p}
   \end{aligned}
   \]
-  provided $s+m-(n / p)>0$. If $p=1$ the same estimate holds provided $s+m-n \geq 0$ without using Hölder's inequality.
+  provided $s+m-(n / p)>0$. If $p=1$ the same estimate holds provided $s+m-n \geq 0$
+  without using Hölder's inequality.
   
   Integrating the $p$ th power of the above estimate over $H$ (with volume element $\left.d x^{\prime}\right)$, we obtain
   \[
@@ -586,7 +616,7 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   $\Omega_j=\bigcup_{x \in A_j}\left(x+P_j\right)$.
   
   If $\Omega$ is bounded and $\rho>0$ is given, we can accomplish the above decomposition using 
-  sets $A_j$ each satisfying $\operatorname{diam}\left(A_j\right)<\rho$.
+  sets $A_j$ each satisfying $\diam\left(A_j\right)<\rho$.
   
   Finally, if $\Omega$ is bounded and $\rho>0$ is sufficiently small, then each $\Omega_j$ will 
   satisfy the strong local Lipschitz condition.
@@ -597,7 +627,7 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   \[
   x+P_j \subset x+C_j \subset C_x \subset \Omega .
   \]
-  Since $\Omega$ is open and $\overline{x+P_j}$ is compact, $y+P_j \subset \Omega$ for any $y$ sufficiently close to $x$. Hence every $x \in \Omega$ belongs to $y+P_j$ for some $j$ and some $y \in \Omega$. Let $A_j=\left\{y \in \bar{\Omega}: y+P_j \subset \Omega\right\}$ and let $\Omega_j=\bigcup_{y \in A_j}\left(y+P_j\right)$. Then $\Omega=\bigcup_{j=1}^N \Omega_j$. Now suppose $\Omega$ is bounded and $\rho>0$ is given. If $\operatorname{diam}\left(A_j\right) \geq \rho$ we can decompose $A_j$ into a finite union of sets $A_{j i}$ each with diameter less than $\rho$ and define the corresponding parallelepiped $P_{j i}=P_j$. We then rename the totality of such sets $A_{j i}$ as a single finite family, which we again call $\left\{A_j\right\}$ and define $\Omega_j$ as above.
+  Since $\Omega$ is open and $\overline{x+P_j}$ is compact, $y+P_j \subset \Omega$ for any $y$ sufficiently close to $x$. Hence every $x \in \Omega$ belongs to $y+P_j$ for some $j$ and some $y \in \Omega$. Let $A_j=\left\{y \in \overline{\Omega}: y+P_j \subset \Omega\right\}$ and let $\Omega_j=\bigcup_{y \in A_j}\left(y+P_j\right)$. Then $\Omega=\bigcup_{j=1}^N \Omega_j$. Now suppose $\Omega$ is bounded and $\rho>0$ is given. If $\diam\left(A_j\right) \geq \rho$ we can decompose $A_j$ into a finite union of sets $A_{j i}$ each with diameter less than $\rho$ and define the corresponding parallelepiped $P_{j i}=P_j$. We then rename the totality of such sets $A_{j i}$ as a single finite family, which we again call $\left\{A_j\right\}$ and define $\Omega_j$ as above.
   
   Figure 2 attempts to illustrate these notions for the domain in $\mathbb{R}^2$ considered in
   Example 3.20:
@@ -762,13 +792,13 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
 
 
 \begin{para}
-  To prove Part II of Theorem 4.12 , we now assume that the domain $\Omega \subset \mathbb{R}^n$ satisfies the strong local Lipschitz condition defined in Paragraph 4.9 , and that $m p>n \geq(m-1) p$. We shall show that $W^{m, p}(\Omega) \rightarrow C^{0, \lambda}(\bar{\Omega})$ where:
+  To prove Part II of Theorem 4.12 , we now assume that the domain $\Omega \subset \mathbb{R}^n$ satisfies the strong local Lipschitz condition defined in Paragraph 4.9 , and that $m p>n \geq(m-1) p$. We shall show that $W^{m,p}(\Omega) \rightarrow C^{0, \lambda}(\overline{\Omega})$ where:
   \begin{enumerate}[(i)]
     \item $0<\lambda \leq m-(n / p)$ if $n>(m-1) p$, or
     \item $0<\lambda<1$ if $n=(m-1) p$ and $p>1$, or
     \item $0<\lambda \leq 1$ if $n=m-1$ and $p=1$.
   \end{enumerate}
-  In particular, therefore, $W^{m, p}(\Omega) \rightarrow C^0(\bar{\Omega})$. The imbedding constants may depend on $m, p, n$, and the parameters $\delta$ and $M$ specified in the definition of the strong local Lipschitz condition. Since that condition implies the cone condition, we already know that $W^{m, p}(\Omega) \rightarrow C_B^0(\Omega)$, so if $u \in W^{m, p}(\Omega)$, then
+  In particular, therefore, $W^{m,p}(\Omega) \rightarrow C^0(\overline{\Omega})$. The imbedding constants may depend on $m, p, n$, and the parameters $\delta$ and $M$ specified in the definition of the strong local Lipschitz condition. Since that condition implies the cone condition, we already know that $W^{m,p}(\Omega) \rightarrow C_B^0(\Omega)$, so if $u \in W^{m, p}(\Omega)$, then
   \[
   \sup _{x \in \Omega}|u(x)| \leq K_1\|u\|_{m, p, \Omega}
   \]
@@ -776,7 +806,7 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   \[
   \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{|u(x)-u(y)|}{|x-y|^\lambda} \leq K_2\|u\|_{m, p, \Omega}
   \]
-  Since $m p>n \geq(m-1) p$, Cases $\mathrm{B}$ and $\mathrm{C}$ of Part I of Theorem 4.12 yields the imbedding $W^{m, p}(\Omega) \rightarrow W^{1, r}(\Omega)$ where:
+  Since $m p>n \geq(m-1) p$, Cases $\mathrm{B}$ and $\mathrm{C}$ of Part I of Theorem 4.12 yields the imbedding $W^{m,p}(\Omega) \rightarrow W^{1, r}(\Omega)$ where:
   \begin{enumerate}[(i)]
     \item $r=n p /(n-m+1) p$ and so $1-(n / r)=m-(n / p)$ if $n>(m-1) p$, or
     \item $p<r<\infty$ and so $0<1-(n / r)<1$ if $n>(m-1) p$, or
@@ -801,25 +831,36 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   \]
   so that
   \[
-  |u(x)-u(z)| \leq \sigma \sqrt{n} \int_0^1 \mid \operatorname{grad} u((x+t(z-x)) \mid d t
+  |u(x)-u(z)| \leq \sigma \sqrt{n} \int_0^1 \mid \grad u((x+t(z-x)) \mid d t
   \]
   It follows that
   \[
   \begin{aligned}
   \left|u(x)-\frac{1}{\sigma^n} \int_{Q_\sigma} u(z) d z\right| & =\left|\frac{1}{\sigma^n} \int_{Q_\sigma}(u(x)-u(z)) d z\right| \\
-  & \leq \frac{\sqrt{n}}{\sigma^{n-1}} \int_{Q_\sigma} d z \int_0^1 \mid \operatorname{grad} u((x+t(z-x)) \mid d t \\
-  & =\frac{\sqrt{n}}{\sigma^{n-1}} \int_0^1 t^{-n} d t \int_{Q_{t \sigma}}|\operatorname{grad} u(\zeta)| d \zeta \\
-  & \leq \frac{\sqrt{n}}{\sigma^{n-1}}\|\operatorname{grad} u\|_{0, p, \Omega} \int_0^1\left(\operatorname{vol}(Q)_{t \sigma}\right)^{1 / p^{\prime}} t^{-n} d t(16) \\
-  & \leq K \sigma^{1-(n / p)}\|\operatorname{grad} u\|_{0, p, \Omega},
+  & \leq \frac{\sqrt{n}}{\sigma^{n-1}} \int_{Q_\sigma} d z \int_0^1 \mid \grad u((x+t(z-x)) \mid d t \\
+  & =\frac{\sqrt{n}}{\sigma^{n-1}} \int_0^1 t^{-n} d t \int_{Q_{t \sigma}}|\grad u(\zeta)| d \zeta \\
+  & \leq \frac{\sqrt{n}}{\sigma^{n-1}}\|\grad u\|_{0, p, \Omega} \int_0^1\left(\vol(Q)_{t \sigma}\right)^{1 / p^{\prime}} t^{-n} d t(16) \\
+  & \leq K \sigma^{1-(n / p)}\|\grad u\|_{0, p, \Omega},
   \end{aligned}
   \]
   where $K=K(n, p)=\sqrt{n} \int_0^1 t^{-n / p} d t<\infty$. A similar inequality holds with $y$ in place of $x$ and so
   \[
-  |u(x)-u(y)| \leq 2 K|x-y|^{1-(n / p)}\|\operatorname{grad} u\|_{0, p, \Omega} .
+  |u(x)-u(y)| \leq 2 K|x-y|^{1-(n / p)}\|\grad u\|_{0, p, \Omega} .
   \]
-  It follows that (15) holds for $0<\lambda \leq 1-(n / p)$ for $\Omega$ a cube, and therefore via a nonsingular linear transformation, for $\Omega$ a parallelepiped.
+  It follows that (15) holds for $0<\lambda \leq 1-(n / p)$ for $\Omega$ a cube,
+  and therefore via a nonsingular linear transformation, for $\Omega$ a parallelepiped.
   
-  Now suppose that $\Omega$ is an arbitrary domain satisfying the strong local Lipschitz condition. Let $\delta, M, \Omega_\delta, U_j$ and $V_j$ be as specified in the definition of that condition in Paragraph 4.9. There exists a parallelepiped $P$ of diameter $\delta$ whose dimensions depend only on $\delta$ and $M$ such that to each $j$ there corresponds a parallelepiped $P_j$ congruent to $P$ and having one vertex at the origin, such that for every $x \in V_j \cap \Omega$ we have $x+P_j \subset \Omega$. Furthermore, there exist constants $\delta_0$ and $\delta_1$ depending only on $\delta$ and $P$, with $\delta_0 \leq \delta$, such that if $x, y \in V_j \cap \Omega$ and $|x-y|<\delta_0$, then there exists $z \in\left(x+P_j\right) \cap\left(y+P_j\right)$ with $|x-z|+|y-z| \leq \delta_1|x-y|$. If follows from applications of (15) to $x+P_j$ and $y+P_j$ that if $u \in C^{\infty}(\Omega)$, then
+  Now suppose that $\Omega$ is an arbitrary domain satisfying the strong local Lipschitz 
+  condition. Let $\delta, M, \Omega_\delta, U_j$ and $V_j$ be as specified in the definition of 
+  that condition in Paragraph 4.9. There exists a parallelepiped $P$ of diameter $\delta$ whose 
+  dimensions depend only on $\delta$ and $M$ such that to each $j$ there corresponds a 
+  parallelepiped $P_j$ congruent to $P$ and having one vertex at the origin,
+  such that for every $x \in V_j \cap \Omega$ we have $x+P_j \subset \Omega$.
+  Furthermore, there exist constants $\delta_0$ and $\delta_1$ depending only on $\delta$
+  and $P$, with $\delta_0 \leq \delta$, such that if $x, y \in V_j \cap \Omega$
+  and $|x-y|<\delta_0$, then there exists $z \in\left(x+P_j\right) \cap\left(y+P_j\right)$
+  with $|x-z|+|y-z| \leq \delta_1|x-y|$. If follows from applications of (15) to $x+P_j$
+  and $y+P_j$ that if $u \in C^{\infty}(\Omega)$, then
   \[
   \begin{aligned}
   |u(x)-u(y)| & \leq|u(x)-u(z)|+|u(y)-u(z)| \\
@@ -827,12 +868,19 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   & \leq K_1|x-y|^\lambda\|u\|_{1, p, \Omega}
   \end{aligned}
   \]
-  Now let $x, y$ be arbitrary points in $\Omega$. If $|x-y|<\delta_0 \leq \delta$ and $x, y \in \Omega_\delta$, then $x, y \in V_j$ for some $j$ and (17) holds. If $|x-y|<\delta_0, x \in \Omega_\delta, y \in \Omega-\Omega_\delta$, then $x \in V_j$ for some $j$ and (17) still follows by an applications of (15) to $x+P_j$ and $y+P_j$. If $|x-y|<\delta_0, x, y \in \Omega-\Omega_\delta$, then (17) follows from applications
-  of (15) to $x+P^{\prime}$ and $y+P^{\prime}$ where $P^{\prime}$ is any parallelepiped congruent to $p$ and having one vertex at the origin. Finally, if $|x-y| \geq \delta_0$, then
+  Now let $x, y$ be arbitrary points in $\Omega$. If $|x-y|<\delta_0 \leq \delta$
+  and $x, y \in \Omega_\delta$, then $x, y \in V_j$ for some $j$ and (17) holds.
+  If $|x-y|<\delta_0$, $x \in \Omega_\delta$, $y \in \Omega-\Omega_\delta$,
+  then $x \in V_j$ for some $j$ and (17) still follows by an applications of (15)
+  to $x+P_j$ and $y+P_j$. If $|x-y|<\delta_0, x, y \in \Omega-\Omega_\delta$,
+  then (17) follows from applications of (15) to $x+P^{\prime}$ and $y+P^{\prime}$
+  where $P^{\prime}$ is any parallelepiped congruent to $p$ and having one vertex at the origin. 
+  Finally, if $|x-y| \geq \delta_0$, then
   \[
   |u(x)-u(y)| \leq|u(x)|+|u(y)| \leq K_1\|u\|_{1, p, \Omega} \leq K \delta_0^{-\lambda}|x-y|^\lambda\|u\|_{1, p, \Omega} .
   \]
-  Thus (15) holds for all $u \in C^{\infty}(\Omega)$ and, by Theorem 3.17, for all $u \in C_B^0(\Omega)$.
+  Thus (15) holds for all $u \in C^{\infty}(\Omega)$ and, by Theorem~3.17,
+  for all $u \in C_B^0(\Omega)$.
 \end{proof}
 
 This completes the proof of Part II of Theorem 4.12 and therefore of the whole theorem since,
@@ -844,7 +892,7 @@ for $\Omega=\mathbb{R}^n$.
 
 
 \begin{para}[Seminorms]
-  For $1 \leq p<\infty$ and for integers $j, 0 \leq j \leq m$, we introduce functionals $|\cdot|_{j, p}$ on $W^{m, p}(\Omega)$ as follows:
+  For $1 \leq p<\infty$ and for integers $j, 0 \leq j \leq m$, we introduce functionals $|\cdot|_{j, p}$ on $W^{m,p}(\Omega)$ as follows:
   \[
   |u|_{j, p}=|u|_{j, p, \Omega}=\left(\sum_{|\alpha|=j}\left|D^\alpha u(x)\right|^p d x\right)^{1 / p} .
   \]
@@ -852,7 +900,7 @@ for $\Omega=\mathbb{R}^n$.
   \[
   \|u\|_{m, p}=\left(\sum_{j=0}^m|u|_{j, p}^p\right)^{1 / p}
   \]
-  If $j \geq 1$, we call $|\cdot|_{j, p}$ a seminorm. It has all the properties of a norm except that $|u|_{j, p}=0$ need not imply $u=0$ in $W^{m, p}(\Omega)$. For example, $u$ may be a nonzero constant function if $\Omega$ has finite volume. Under certain circumstances which we begin to investigate in Paragraph $6.29,|\cdot|_{m, p}$ is a norm on $W_0^{m, p}(\Omega)$ equivalent to the usual norm $\|\cdot\|_{m, p}$. In particular, this is so if $\Omega$ is bounded.
+  If $j \geq 1$, we call $|\cdot|_{j, p}$ a seminorm. It has all the properties of a norm except that $|u|_{j, p}=0$ need not imply $u=0$ in $W^{m,p}(\Omega)$. For example, $u$ may be a nonzero constant function if $\Omega$ has finite volume. Under certain circumstances which we begin to investigate in Paragraph $6.29,|\cdot|_{m, p}$ is a norm on $W_0^{m, p}(\Omega)$ equivalent to the usual norm $\|\cdot\|_{m, p}$. In particular, this is so if $\Omega$ is bounded.
 
   For now we will confine our attention to these seminorms as they apply to functions in $C_0^{\infty}\left(\mathbb{R}^n\right)$.
 \end{para}
@@ -884,7 +932,7 @@ for $\Omega=\mathbb{R}^n$.
 \end{theorem}
 
 \begin{proof}
-  The "only if" part was demonstrated above. For the "if" part note first that it is sufficient to establish the inequality for $m=1$ as its validity for higher $m$ (with $m p<n$ ) can be confirmed by induction on $m$. We leave the details to the reader.
+  The ``only if'' part was demonstrated above. For the ``if'' part note first that it is sufficient to establish the inequality for $m=1$ as its validity for higher $m$ (with $m p<n$ ) can be confirmed by induction on $m$. We leave the details to the reader.
   Next, it suffices to prove the case $m=1, p=1$, that is
   \[
   \int_{\mathbb{R}^n}|\phi(x)|^{n /(n-1)} d x \leq K\left(\sum_{j=1}^n \int_{\mathbb{R}^n}\left|D_j \phi(x)\right| d x\right)^{n /(n-1)}
@@ -928,18 +976,18 @@ for $\Omega=\mathbb{R}^n$.
 \begin{remark}
   For the case $m=1,1<p<n$, Talenti [T] and Aubin, as exposed in Section 2.6 of [Au], obtained the best constant for the equivalent form of Sobolev's inequality
   \[
-  \|\phi\|_{n p /(n-p), \mathbb{R}^n} \leq K\|\operatorname{grad} \phi\|_{p, \mathbb{R}^n}
+  \|\phi\|_{n p /(n-p), \mathbb{R}^n} \leq K\|\grad \phi\|_{p, \mathbb{R}^n}
   \]
   by showing that the ratio
   \[
-  \frac{\|\phi\|_{n p /(n-p)}}{\|\operatorname{grad} \phi\|_{1, p}}
+  \frac{\|\phi\|_{n p /(n-p)}}{\|\grad \phi\|_{1, p}}
   \]
   is maximized if $u$ is a radially symmetric function of the form
   \[
   u(x)=\left(a+b|x|^{p /(p-1)}\right)^{1-(n / p)}
   \]
   which, while not in $C_0^{\infty}\left(\mathbb{R}^n\right)$ is a limit of functions in that space. His method involved first showing that replacing an arbitrary function $u$ vanishing at infinity
-  with a radially symmetric, non-increasing, equimeasurable rearrangement of $u$ decreased $\|\operatorname{grad} u\|_{p, \mathbb{R}^n}$ while, of course, leaving $\|u\|_{n p /(n-p), \mathbb{R}^n}$ unchanged. Talenti's best constant for (21) is
+  with a radially symmetric, non-increasing, equimeasurable rearrangement of $u$ decreased $\|\grad u\|_{p, \mathbb{R}^n}$ while, of course, leaving $\|u\|_{n p /(n-p), \mathbb{R}^n}$ unchanged. Talenti's best constant for (21) is
   \[
   K=\pi^{-1 / 2} n^{-1 / p}\left(\frac{p-1}{n-p}\right)^{1 / p^{\prime}}\left(\frac{\Gamma(1+n / 2) \Gamma(n)}{\Gamma(n / p) \Gamma(1+n-(n / p))}\right)^{1 / n}.
   \]
@@ -1040,7 +1088,7 @@ for $\Omega=\mathbb{R}^n$.
 
 
 \begin{para}[Reduced Sobolev Inequalities]
-  Another variation of Sobolev's inequality addresses the question of whether the number of derivatives estimated in the seminorm on the right side of (19) (or, equivalently, (18)) can be reduced without jeopardizing the validity of the inequality for all $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$. If $m \geq 2$, the answer is yes; only those partial derivatives of order $m$ that are "completely mixed" (in the sense that all $m$ differentiations are taken with respect to different variables) need be included in the seminorm. Specifically, if we denote
+  Another variation of Sobolev's inequality addresses the question of whether the number of derivatives estimated in the seminorm on the right side of (19) (or, equivalently, (18)) can be reduced without jeopardizing the validity of the inequality for all $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$. If $m \geq 2$, the answer is yes; only those partial derivatives of order $m$ that are ``completely mixed'' (in the sense that all $m$ differentiations are taken with respect to different variables) need be included in the seminorm. Specifically, if we denote
   \[
   \mathcal{M}=\mathcal{M}(n, m)=\left\{\alpha:|\alpha|=m, \quad \alpha_j=0 \text { or } \alpha_j=1 \text { for } 1 \leq j \leq n\right.
   \]
@@ -1052,12 +1100,12 @@ for $\Omega=\mathbb{R}^n$.
 \end{para}
 
 
-\section[$W^{m, p}(\Omega)$ as a Banach Algebra]%
+\section[$W^{m,p}(\Omega)$ as a Banach Algebra]%
   {$\bm{W^{m, p}(\Omega)}$ as a Banach Algebra}
 
 
 \begin{para}
-  Given $u$ and $v$ in $W^{m, p}(\Omega)$, where $\Omega$ is a domain in $\mathbb{R}^n$, one cannot in general expect that their pointwise product $u v$ will belong to $W^{m, p}(\Omega)$. The imbedding theorem, however, shows that this is the case provided $m p>n$ and $\Omega$ satisfies the cone condition. (See [Sr] and [Mz2].)
+  Given $u$ and $v$ in $W^{m,p}(\Omega)$, where $\Omega$ is a domain in $\mathbb{R}^n$, one cannot in general expect that their pointwise product $u v$ will belong to $W^{m,p}(\Omega)$. The imbedding theorem, however, shows that this is the case provided $m p>n$ and $\Omega$ satisfies the cone condition. (See [Sr] and [Mz2].)
 \end{para}
 
 
@@ -1070,7 +1118,7 @@ for $\Omega=\mathbb{R}^n$.
   \[
   \|u\|_{m, p, \Omega}^*=K^*\|u\|_{m, p, \Omega}
   \]
-  $W^{m, p}(\Omega)$ is a commutative Banach algebra with respect to pointwise multiplication in that
+  $W^{m,p}(\Omega)$ is a commutative Banach algebra with respect to pointwise multiplication in that
   \[
   \|u v\|_{m, p, \Omega}^* \leq\|u\|_{m, p, \Omega}^*\|v\|_{m, p, \Omega}^*
   \]
@@ -1124,7 +1172,7 @@ for $\Omega=\mathbb{R}^n$.
   \end{aligned}
   \]
   This completes the proof of (23) for $u \in C^{\infty}(\Omega), v \in W^{m, p}(\Omega)$.
-  If $u \in W^{m, p}(\Omega)$ then by Theorem 3.17 there exists a sequence $\left\{u_j\right\}$ of $C^{\infty}(\Omega)$ functions converging to $u$ in $W^{m, p}(\Omega)$. By the above argument, $\left\{u_j v\right\}$ is a Cauchy sequence in $W^{m, p}(\Omega)$ and so it converges to an element $w$ of that space. Since $m p>n, u$ and $v$ may be assumed to be continuous and bounded on $\Omega$. Thus
+  If $u \in W^{m, p}(\Omega)$ then by Theorem 3.17 there exists a sequence $\left\{u_j\right\}$ of $C^{\infty}(\Omega)$ functions converging to $u$ in $W^{m,p}(\Omega)$. By the above argument, $\left\{u_j v\right\}$ is a Cauchy sequence in $W^{m,p}(\Omega)$ and so it converges to an element $w$ of that space. Since $m p>n, u$ and $v$ may be assumed to be continuous and bounded on $\Omega$. Thus
   \[
   \begin{aligned}
   \|w-u v\|_{0, p, \Omega} & \leq\left\|w-u_j v\right\|_{0, p, \Omega}+\left\|\left(u_j-u\right) v\right\|_{0, p, \Omega} \\
@@ -1132,30 +1180,39 @@ for $\Omega=\mathbb{R}^n$.
   & \rightarrow 0 \quad \text { as } j \rightarrow \infty .
   \end{aligned}
   \]
-  Hence $w=u v$ in $L^p(\Omega)$ and so $w=u v$ in the sense of distributions. Therefore, $w=u v$ in $W^{m, p}(\Omega)$ and
+  Hence $w=u v$ in $L^p(\Omega)$ and so $w=u v$ in the sense of distributions. Therefore, $w=u v$ in $W^{m,p}(\Omega)$ and
   \[
   \|u v\|_{m, p, \Omega}=\|w\|_{m, p, \Omega} \leq \limsup _{j \rightarrow \infty}\left\|u_j v\right\|_{m, p, \Omega} \leq K^*\|u\|_{m, p, \Omega}\|v\|_{m, p, \Omega}
   \]
   as was to be shown.
 \end{proof}
 
-We remark that the Banach algebra $W^{m, p}(\Omega)$ has an identity element if an only if $\Omega$ is bounded. That is, the function $e(x)=1$ belongs to $W^{m, p}(\Omega)$ if and only if $\Omega$ has finite volume, but there are no unbounded domains of finite volume that satisfy the cone condition.
+We remark that the Banach algebra $W^{m,p}(\Omega)$ has an identity element if an only if $\Omega$ is bounded. 
+That is, the function $e(x)=1$ belongs to $W^{m,p}(\Omega)$ if and only if $\Omega$ has finite volume,
+but there are no unbounded domains of finite volume that satisfy the cone condition.
 
 
 \section{Optimality of the Imbedding Theorem}
 
 
 \begin{para}
-  The imbeddings furnished by the Sobolev Imbedding Theorem 4.12 are "best possible" in the sense that no imbeddings of the types asserted there are possible for any domain for parameter values $m, p, q, \lambda$ etc. not satisfying the restrictions imposed in the statement of the theorem. We present below a number of examples to illustrate this fact. In these examples it is the local behaviour of functions in $W^{m, p}(\Omega)$ rather than their behaviour near the boundary that prevents extending the parameter intervals for imbeddings.
+  The imbeddings furnished by the Sobolev Imbedding Theorem 4.12 are ``best possible'' in the sense that
+  no imbeddings of the types asserted there are possible for any domain for parameter values $m, p, q, \lambda$ 
+  etc.\ not satisfying the restrictions imposed in the statement of the theorem.
+  We present below a number of examples to illustrate this fact.
+  In these examples it is the local behaviour of functions in $W^{m,p}(\Omega)$ rather than their behaviour 
+  near the boundary that prevents extending the parameter intervals for imbeddings.
   
-  There remains the possibility that a weaker version of Part I of the imbedding theorem may hold for certain domains not nice enough to satisfy the (weak) cone condition. We will examine some such possibilities later in this chapter.
+  There remains the possibility that a weaker version of Part I of the imbedding theorem may hold for certain 
+  domains not nice enough to satisfy the (weak) cone condition.
+  We will examine some such possibilities later in this chapter.
 \end{para}
 
 
 \begin{example}
-  Let $k$ be an integer such that $1 \leq k \leq n$ and suppose that $m p<n$ and $q>p^*=k p /(n-m p)$. We construct a function $u \in W^{m, p}(\Omega)$ such that $u \notin L^q\left(\Omega_k\right)$, where $\Omega_k$ is the intersection of $\Omega$ with a $k$-dimensional plane, thus showing that $W^{m, p}(\Omega)$ does not imbed into $L^q\left(\Omega_k\right)$.
+  Let $k$ be an integer such that $1 \leq k \leq n$ and suppose that $m p<n$ and $q>p^*=k p /(n-m p)$. We construct a function $u \in W^{m, p}(\Omega)$ such that $u \notin L^q\left(\Omega_k\right)$, where $\Omega_k$ is the intersection of $\Omega$ with a $k$-dimensional plane, thus showing that $W^{m,p}(\Omega)$ does not imbed into $L^q\left(\Omega_k\right)$.
   
-  Without loss of generality, we can assume that the origin belongs to $\Omega$ and that $\Omega_k=\left\{x \in \Omega: x_{k+1}=\cdots=x_n=0\right\}$. For $R>0$, let $B_R=\left\{x \in \mathbb{R}^n:|x|<R\right\}$. We fix $R$ small enough that $\overline{B_{2 R}} \subset \Omega$. Let $v(x)=|x|^\mu$; the value of $\mu$ will be set later. Evidently $v \in C^{\infty}\left(\mathbb{R}^n-\{0\}\right)$. Let $u \in C^{\infty}\left(\mathbb{R}^n-\{0\}\right)$ be a function satisfying $u(x)=v(x)$ in $B_R$ and $u(x)=0$ outside $B_{2 R}$. The membership of $u$ in $W^{m, p}(\Omega)$ depends only on the behaviour of $v$ near the origin:
+  Without loss of generality, we can assume that the origin belongs to $\Omega$ and that $\Omega_k=\left\{x \in \Omega: x_{k+1}=\cdots=x_n=0\right\}$. For $R>0$, let $B_R=\left\{x \in \mathbb{R}^n:|x|<R\right\}$. We fix $R$ small enough that $\overline{B_{2 R}} \subset \Omega$. Let $v(x)=|x|^\mu$; the value of $\mu$ will be set later. Evidently $v \in C^{\infty}\left(\mathbb{R}^n-\{0\}\right)$. Let $u \in C^{\infty}\left(\mathbb{R}^n-\{0\}\right)$ be a function satisfying $u(x)=v(x)$ in $B_R$ and $u(x)=0$ outside $B_{2 R}$. The membership of $u$ in $W^{m,p}(\Omega)$ depends only on the behaviour of $v$ near the origin:
   \[
   u \in W^{m, p}(\Omega) \quad \Longleftrightarrow \quad v \in W^{m, p}\left(B_R\right) .
   \]
@@ -1176,19 +1233,19 @@ We remark that the Banach algebra $W^{m, p}(\Omega)$ has an identity element if 
   Since $q>k p /(n-m p)$ we can pick $\mu$ so that $m-(n / p)<\mu \leq-(k / q)$, thus completing the specification of $u$.
 \end{example}
 
-Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of the form $W^{m, p}(\Omega) \rightarrow C_B^0(\Omega)$ is possible if $m p<n$.
+Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of the form $W^{m,p}(\Omega) \rightarrow C_B^0(\Omega)$ is possible if $m p<n$.
 
 
 \begin{example}
-  Suppose $m p>n>(m-1) p$, and let $\lambda>m-(n / p)$. Fix $\mu$ so that $m-(n / p)<\mu<\lambda$. Then the function $u$ constructed in Example 4.41 continues to belong to $W^{m, p}(\Omega)$. However, if $|x|<R$,
+  Suppose $m p>n>(m-1) p$, and let $\lambda>m-(n / p)$. Fix $\mu$ so that $m-(n / p)<\mu<\lambda$. Then the function $u$ constructed in Example 4.41 continues to belong to $W^{m,p}(\Omega)$. However, if $|x|<R$,
   \[
   \frac{|u(x)-u(0)|}{|x-0|^\lambda}=|x|^{\mu-\lambda} \rightarrow \infty \quad \text { as }|x| \rightarrow 0
   \]
-  Thus $u \notin C^{0, \lambda}(\bar{\Omega})$, and the imbedding $W^{m, p}(\Omega) \rightarrow C^{0, \lambda}(\bar{\Omega})$ is not possible.
+  Thus $u \notin C^{0, \lambda}(\overline{\Omega})$, and the imbedding $W^{m,p}(\Omega) \rightarrow C^{0, \lambda}(\overline{\Omega})$ is not possible.
 \end{example}
 
 \begin{example}
-  Suppose $p>1$ and $m p=n$. We construct a function $u$ in $W^{m, p}(\Omega)$ such that $u \notin L^{\infty}(\Omega)$. Hence the imbedding $W^{m, p}(\Omega) \rightarrow L^q(\Omega)$, valid for $p \leq q<\infty$, cannot be extended to yield $W^{m, p}(\Omega) \rightarrow L^{\infty}(\Omega)$ or $W^{m, p}(\Omega) \rightarrow C^0(\bar{\Omega})$ unless $p=1$ and $m=n$. (See, however, Theorem 8.27.)
+  Suppose $p>1$ and $m p=n$. We construct a function $u$ in $W^{m,p}(\Omega)$ such that $u \notin L^{\infty}(\Omega)$. Hence the imbedding $W^{m,p}(\Omega) \rightarrow L^q(\Omega)$, valid for $p \leq q<\infty$, cannot be extended to yield $W^{m,p}(\Omega) \rightarrow L^{\infty}(\Omega)$ or $W^{m,p}(\Omega) \rightarrow C^0(\overline{\Omega})$ unless $p=1$ and $m=n$. (See, however, Theorem 8.27.)
   Again we assume $0 \in \Omega$ and define $u(x)$ as in Example 4.41 except with a different function $v(x)$ defined by
   \[
   v(x)=\log (\log (4 R /|x|))
@@ -1214,34 +1271,34 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
 \end{example}
 
 \begin{example}
-  Suppose $(m-1) p=n$ and $p>1$. We construct $u$ in $W^{m, p}(\Omega)$ such that $u \notin C^{0,1}(\bar{\Omega})$. Hence the imbedding $W^{m, p}(\Omega) \rightarrow C^{0, \lambda}(\bar{\Omega})$, valid for $0<\lambda<1$ whenever $\Omega$ satisfies the strong local Lipschitz condition,
-  cannot be extended to yield $W^{m, p}(\Omega) \rightarrow C^{0,1}(\bar{\Omega})$ unless $p=1$ and $m-1=n$. Here $u$ is constructed as in the previous example except using
+  Suppose $(m-1) p=n$ and $p>1$. We construct $u$ in $W^{m,p}(\Omega)$ such that $u \notin C^{0,1}(\overline{\Omega})$. Hence the imbedding $W^{m,p}(\Omega) \rightarrow C^{0, \lambda}(\overline{\Omega})$, valid for $0<\lambda<1$ whenever $\Omega$ satisfies the strong local Lipschitz condition,
+  cannot be extended to yield $W^{m,p}(\Omega) \rightarrow C^{0,1}(\overline{\Omega})$ unless $p=1$ and $m-1=n$. Here $u$ is constructed as in the previous example except using
   \[
   v(x)=|x| \log (\log (4 R /|x|)) .
   \]
-  Since $|v(x)-v(0)| /|x-0|=\log (\log (4 R /|x|)) \rightarrow \infty$ as $x \rightarrow 0$ it is clear that $v \notin C^{0,1}\left(\overline{B_R}\right)$ and therefore $u \notin C^{0,1}(\bar{\Omega})$. The fact that $v \in W^{m, p}\left(B_R\right)$ and hence $u \in W^{m, p}(\Omega)$ is shown just as in the previous example.
+  Since $|v(x)-v(0)| /|x-0|=\log (\log (4 R /|x|)) \rightarrow \infty$ as $x \rightarrow 0$ it is clear that $v \notin C^{0,1}\left(\overline{B_R}\right)$ and therefore $u \notin C^{0,1}(\overline{\Omega})$. The fact that $v \in W^{m, p}\left(B_R\right)$ and hence $u \in W^{m, p}(\Omega)$ is shown just as in the previous example.
 \end{example}
 
 
 \section{Nonimbedding Theorems for Irregular Domains}
 
 \begin{para}
-  The above examples show that even for very regular domains there can exist no imbeddings of the types considered in Theorem 4.12 except those explicitly stated there. It remains to be seen whether any imbeddings of those types can exist for domains that do not satisfy the cone condition (or at least the weak cone condition). We will show below that Theorem 4.12 can be extended, with weakened conclusions, to certain types of irregular domains, but first we show that no extension is possible if the domain is "too irregular." This can happen if either the domain is unbounded and too narrow at infinity, or if it has a cusp of exponential sharpness on its boundary.
+  The above examples show that even for very regular domains there can exist no imbeddings of the types considered in Theorem 4.12 except those explicitly stated there. It remains to be seen whether any imbeddings of those types can exist for domains that do not satisfy the cone condition (or at least the weak cone condition). We will show below that Theorem 4.12 can be extended, with weakened conclusions, to certain types of irregular domains, but first we show that no extension is possible if the domain is ``too irregular.'' This can happen if either the domain is unbounded and too narrow at infinity, or if it has a cusp of exponential sharpness on its boundary.
   An unbounded domain $\Omega \subset \mathbb{R}^n$ may have a smooth boundary and still fail to satisfy the cone condition if it becomes narrow at infinity, that is, if
   \[
-  \lim _{\substack{|x| \rightarrow \infty \\ x \in \Omega}} \operatorname{dist}(x, \operatorname{bdry} \Omega)=0 .
+  \lim _{\substack{|x| \rightarrow \infty \\ x \in \Omega}} \dist(x, \partial \Omega)=0 .
   \]
   The following theorem shows that Parts I and II of Theorem 4.12 fail completely for any unbounded $\Omega$ which has finite volume.
 \end{para}
 
 
 \begin{theorem}
-  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$ having finite volume, and let $q>p$. Then $W^{m, p}(\Omega)$ is not imbedded in $L^q(\Omega)$.
+  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$ having finite volume, and let $q>p$. Then $W^{m,p}(\Omega)$ is not imbedded in $L^q(\Omega)$.
 \end{theorem}
 
 \begin{proof}
-  We construct a function $u(x)$ depending only on distance $\rho=|x|$ of $x$ from the origin whose growth as $\rho$ increases is rapid enough to prevent membership in $L^q(\Omega)$ but not so rapid as to prevent membership in $W^{m, p}(\Omega)$.
-  Without loss of generality we assume $\operatorname{vol}(\Omega)=1$. Let $A(\rho)$ denote the surface area (( $n-1)$-measure) of the intersection of $\Omega$ with the surface $|x|=\rho$. Then
+  We construct a function $u(x)$ depending only on distance $\rho=|x|$ of $x$ from the origin whose growth as $\rho$ increases is rapid enough to prevent membership in $L^q(\Omega)$ but not so rapid as to prevent membership in $W^{m,p}(\Omega)$.
+  Without loss of generality we assume $\vol(\Omega)=1$. Let $A(\rho)$ denote the surface area (( $n-1)$-measure) of the intersection of $\Omega$ with the surface $|x|=\rho$. Then
   \[
   \int_0^{\infty} A(\rho) d \rho=1
   \]
@@ -1287,23 +1344,28 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
   & =2^{k_{j-1}}\left(2^{-k_{j-1}-1}-2^{-k_j-1}\right) \geq \frac{1}{4} .
   \end{aligned}
   \]
-  Therefore $W^{m, p}(\Omega)$ cannot be imbedded in $L^q(\Omega)$.
+  Therefore $W^{m,p}(\Omega)$ cannot be imbedded in $L^q(\Omega)$.
 \end{proof}
 
 The conclusion of the above theorem can be extended to unbounded domains having infinite volume but satisfying
-\[
-\limsup _{N \rightarrow \infty} \operatorname{vol}(\{x \in \Omega: N \leq|x| \leq N+1\})=0 .
-\]
+\[\limsup_{N \rightarrow \infty} \vol(\{x \in \Omega: N \leq|x| \leq N+1\})=0.\]
 (See Theorem 6.41.)
-4.47 Parts I and II of Theorem 4.12 also fail completely for domains with sufficiently sharp boundary cusps. If $\Omega$ is a domain in $\mathbb{R}^n$ and $x_0$ is a point on its boundary, let $B_r=B_r\left(x_0\right)$ denote the open ball of radius $r$ and centre at $x_0$. Let $\Omega_r=B_r \cap \Omega$, let $S_r=$ (bdry $\left.B_r\right) \cap \Omega$, and let $A(r, \Omega)$ be the surface area ((n-1)-measure) of $S_r$. We shall say that $\Omega$ has a cusp of exponential sharpness
-at its boundary point $x_0$ if for every real number $k$ we have
-\[
-\lim _{r \rightarrow 0+} \frac{A(r, \Omega)}{r^k}=0
-\]
 
+\begin{para}
+  Parts I and II of Theorem 4.12 also fail completely for domains with sufficiently sharp boundary cusps. 
+  If $\Omega$ is a domain in $\mathbb{R}^n$ and $x_0$ is a point on its boundary,
+  let $B_r=B_r\left(x_0\right)$ denote the open ball of radius $r$ and centre at $x_0$.
+  Let $\Omega_r=B_r \cap \Omega$, let $S_r = \partial B_r \cap \Omega$,
+  and let $A(r, \Omega)$ be the surface area ($(n-1)$-measure) of $S_r$.
+  We shall say that $\Omega$ has a cusp of exponential sharpness
+  at its boundary point $x_0$ if for every real number $k$ we have
+  \begin{equation}\label{eq:4.25}
+    \lim_{r\to 0+} \frac{A(r, \Omega)}{r^k} = 0.
+  \end{equation}
+\end{para}
 
 \begin{theorem}
-  If $\Omega$ is a domain in $\mathbb{R}^n$ having a cusp of exponential sharpness at a point $x_0$ on its boundary, then $W^{m, p}(\Omega)$ is not imbedded in $L^q(\Omega)$ for any $q>p$.
+  If $\Omega$ is a domain in $\mathbb{R}^n$ having a cusp of exponential sharpness at a point $x_0$ on its boundary, then $W^{m,p}(\Omega)$ is not imbedded in $L^q(\Omega)$ for any $q>p$.
 \end{theorem}
 
 \begin{proof}
@@ -1338,7 +1400,7 @@ at its boundary point $x_0$ if for every real number $k$ we have
   & \leq K \sum_{i=0}^j \int_1^{\infty}\left|\tilde{v}^{(i)}(r)\right|^p r^{(\lambda+j+i) p-2 n} A\left(r, \Omega^*\right) d r .
   \end{aligned}
   \]
-  If it happens that $(\lambda+2 m) p \leq 2 n$, then, since $p<t$ and $\operatorname{vol}\left(\Omega^*\right)<\infty$, all the integrals in the above sum are finite by Hölder's inequality, and $u \in W^{m, p}(\Omega)$. Otherwise let
+  If it happens that $(\lambda+2 m) p \leq 2 n$, then, since $p<t$ and $\vol\left(\Omega^*\right)<\infty$, all the integrals in the above sum are finite by Hölder's inequality, and $u \in W^{m, p}(\Omega)$. Otherwise let
   \[
   k=((\lambda+2 m) p-2 n) \frac{t}{t-p}+2 n \text {. }
   \]
@@ -1406,7 +1468,7 @@ at its boundary point $x_0$ if for every real number $k$ we have
   In $\mathbb{R}^3$ the cusp $Q_{2.2}$ has a single cusp point (vertex) at the origin,
   while $Q_{1.2}$ has a cusp line along the $x_3$-axis.
   
-  It is convenient to adopt a system of generalized "cylindrical" coordinates
+  It is convenient to adopt a system of generalized ``cylindrical'' coordinates
   in $\mathbb{R}^n$, $\left(r_k, \phi_1, \ldots, \phi_{k-1}, y_{k+1}, \ldots, y_n\right)$,
   so that $r_k \geq 0,-\pi \leq \phi_1 \leq \pi, 0 \leq \phi_2, \ldots$
   $\phi_{k-1} \leq \pi$, and
@@ -1477,8 +1539,12 @@ at its boundary point $x_0$ if for every real number $k$ we have
 
 
 \begin{theorem}
-  Let $\Omega$ be a domain in $\mathbb{R}^n$ having the following property: There exist positive constants $v<m p-n$ and $A$ such that for each $x \in \Omega$ there
-  exists an open set $G$ with $x \in G \subset \Omega$ and a one-to-one mapping $\Psi=\left(\psi_1, \ldots, \psi_n\right)$ mapping $G$ onto a standard cusp $Q_{k, \lambda}$, where $(\lambda-1) k \leq \nu$, and such that for all $i, j,(1 \leq i, j \leq n)$, all $x \in G$, and all $y \in Q_{k, \lambda}$,
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ having the following property:
+  There exist positive constants $v<m p-n$ and $A$ such that for each $x \in \Omega$ there
+  exists an open set $G$ with $x \in G \subset \Omega$ and a one-to-one
+  mapping $\Psi=\left(\psi_1, \ldots, \psi_n\right)$ mapping $G$ onto a standard cusp $Q_{k, \lambda}$,
+  where $(\lambda-1) k \leq \nu$, and such that for all $i, j,(1 \leq i, j \leq n)$, all $x \in G$,
+  and all $y \in Q_{k, \lambda}$,
   \[
   \left|\frac{\partial \psi_j}{\partial x_i}\right| \leq A \quad \text { and } \quad\left|\frac{\partial\left(\psi^{-1}\right)_j}{\partial y_i}\right| \leq A .
   \]
@@ -1494,22 +1560,31 @@ at its boundary point $x_0$ if for every real number $k$ we have
 
 
 \begin{theorem}
-  Let $\Omega$ be a domain in $\mathbb{R}^n$ having the following property: There exist positive constants $v, \delta$, and $A$ such that for each pair of points $x, y \in \Omega$ with $|x-y| \leq \delta$ there exists an open set $G$ with $x, y \in G \subset \Omega$ and a one-toone mapping $\Psi=\left(\psi_1, \ldots, \psi_n\right)$ mapping $G$ onto a standard cusp $Q_{k, \lambda}$, where $(\lambda-1) k \leq \nu$, and such that for all $i, j,(1 \leq i, j \leq n)$, all $x \in G$, and all $y \in Q_{k, \lambda}$,
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ having the following property:
+  There exist positive constants $v, \delta$, and $A$ such that for each pair of points $x, y \in \Omega$
+  with $|x-y| \leq \delta$ there exists an open set $G$ with $x, y \in G \subset \Omega$ and a one-toone mapping 
+  $\Psi=\left(\psi_1, \ldots, \psi_n\right)$ mapping $G$ onto a standard cusp $Q_{k, \lambda}$,
+  where $(\lambda-1) k \leq \nu$, and such that for all $i, j,(1 \leq i, j \leq n)$, all $x \in G$,
+  and all $y \in Q_{k, \lambda}$,
   \[
   \left|\frac{\partial \psi_j}{\partial x_i}\right| \leq A \quad \text { and } \quad\left|\frac{\partial\left(\psi^{-1}\right)_j}{\partial y_i}\right| \leq A .
   \]
   Suppose that $(m-j-1) p<v+n<(m-j) p$ for some integer $j,(0 \leq j \leq m-1)$. Then
   \[
-  W^{m, p}(\Omega) \rightarrow C^{j, \mu}(\bar{\Omega}) \quad \text { for } \quad 0<\mu \leq m-j-\frac{n+\nu}{p} .
+  W^{m, p}(\Omega) \rightarrow C^{j, \mu}(\overline{\Omega}) \quad \text { for } \quad 0<\mu \leq m-j-\frac{n+\nu}{p} .
   \]
-  If $(m-j-1) p=v+n$, then the same imbedding holds for $0<\mu<1$. In either event we have $W^{m, p}(\Omega) \rightarrow C^j(\bar{\Omega})$.
+  If $(m-j-1) p=v+n$, then the same imbedding holds for $0<\mu<1$. In either event we have $W^{m,p}(\Omega) \rightarrow C^j(\overline{\Omega})$.
 \end{theorem}
 
 
 \begin{remarks}
   \begin{enumerate}
-    \item In these theorems the role played by the parameter $v$ is equivalent to an increase in the dimension $n$ in Theorem 4.12, where increasing $n$ results in weaker imbedding results for given $m$ and $p$. Since $v \geq(\lambda-1) k$, the sharper the cusp, the greater the equivalent increase in dimension.
-    \item The reader may wish to construct examples similar to those of Paragraphs 4.41-4.44 to show that the three theorems above give the best possible imbeddings for the domains and types of spaces considered.
+    \item In these theorems the role played by the parameter $v$ is equivalent to an increase
+      in the dimension $n$ in Theorem 4.12, where increasing $n$ results in weaker imbedding results for
+      given $m$ and $p$. Since $v \geq(\lambda-1) k$, the sharper the cusp, the greater the equivalent increase 
+      in dimension.
+    \item The reader may wish to construct examples similar to those of Paragraphs 4.41-4.44 to show that the 
+      three theorems above give the best possible imbeddings for the domains and types of spaces considered.
   \end{enumerate}
 \end{remarks}
 
@@ -1524,7 +1599,11 @@ at its boundary point $x_0$ if for every real number $k$ we have
   \[
   y_1=x_1+2 x_2^2, \quad y_2=x_2, \quad y_3=x_3-(k / a), \quad k=0, \pm 1, \pm 2, \ldots
   \]
-  transforms a subdomain $G_k$ of $\Omega$ onto the standard cusp $Q_{1,2} \subset \mathbb{R}^3$ in the manner required of the transformation $\Psi$ in the statement of the theorem. Moreover, $\{G\}_{k=-\infty}^{\infty}$ has the finite intersection property and covers $\Omega$ up to a set satisfying the cone condition. Using $v=1$, we conclude that $W^{m, p}(\Omega) \rightarrow L^q(\Omega)$ for $p \leq q \leq 4 p /(4-m p)$ if $m p<4$, or for $p \leq q<\infty$ if $m p=4$, or for $p \leq q \leq \infty$ if $m p>4$.
+  transforms a subdomain $G_k$ of $\Omega$ onto the standard cusp $Q_{1,2} \subset \mathbb{R}^3$ in the manner 
+  required of the transformation $\Psi$ in the statement of the theorem. Moreover, $\{G\}_{k=-\infty}^{\infty}$ 
+  has the finite intersection property and covers $\Omega$ up to a set satisfying the cone condition.
+  Using $v=1$, we conclude that $W^{m,p}(\Omega) \rightarrow L^q(\Omega)$ for $p \leq q \leq 4 p /(4-m p)$
+  if $m p<4$, or for $p \leq q<\infty$ if $m p=4$, or for $p \leq q \leq \infty$ if $m p>4$.
 \end{example}
 
 
@@ -1649,7 +1728,10 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   \[
   0<\rho<a, \quad-\beta_1<\phi_1<\beta_1, \quad 0 \leq \phi_j<\beta_j, \quad(2 \leq j \leq n-1)
   \]
-  where $0<\beta_i \leq \pi$. (Inequalities " $<"$ in (33) corresponding to any $\beta_i=\pi$ are replaced by " $\leq$. ." If all $\beta_i=\pi$, the first inequality is replaced with $0 \leq \rho<a$.) Note that any standard cone $\mathcal{C}_k$ (introduced in section 4.50) is of the form (33) for some choice of the parameters $\beta_i, 1 \leq i \leq n-1$.
+  where $0<\beta_i \leq \pi$. (Inequalities ``$<$'' in (33) corresponding to any $\beta_i=\pi$
+  are replaced by ``$\leq$''. If all $\beta_i=\pi$, the first inequality is replaced with $0 \leq \rho<a$.)
+  Note that any standard cone $\mathcal{C}_k$ (introduced in section 4.50) is of the form (33)
+  for some choice of the parameters $\beta_i$, $1 \leq i \leq n-1$.
 \end{para}
 
 
@@ -1658,7 +1740,7 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   \[
   \begin{aligned}
   & \int_{\mathcal{C}}|u(x)|^p\left[r_k(x)\right]^\nu\left[r_m(x)\right]^{-1} d x \\
-  & \leq K \int_{\mathcal{C}}|u(x)|^{p-1}\left(\frac{1}{a}|u(x)|+|\operatorname{grad} u(x)|\right)\left[r_k(x)\right]^\nu d x .
+  & \leq K \int_{\mathcal{C}}|u(x)|^{p-1}\left(\frac{1}{a}|u(x)|+|\grad u(x)|\right)\left[r_k(x)\right]^\nu d x .
   \end{aligned}
   \]
 \end{lemma}
@@ -1669,14 +1751,14 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   \[
   \begin{aligned}
   \int_{\mathcal{C}}|u| & \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{m-1} \sin ^{\nu+j-1} \phi_j \prod_{j=m}^{n-1} \sin ^{\nu+j-2} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
-  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-1} \phi_j \rho^{\nu+n-1} d \rho d \phi .
+  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\grad u|\right) \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-1} \phi_j \rho^{\nu+n-1} d \rho d \phi .
   \end{aligned}
   \]
   For $k>m \geq 2$ we may write (34) in the form
   \[
   \begin{aligned}
   \int_{\mathcal{C}}|u| & \prod_{j=2}^{m-1} \sin ^{j-1} \phi_j \prod_{j=m}^{k-1} \sin ^{j-2} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-2} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
-  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-1} \phi_j \rho^{\nu+n-1} d \rho d \phi .
+  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\grad u|\right) \prod_{j=2}^{k-1} \sin ^{j-1} \phi_j \prod_{j=k}^{n-1} \sin ^{\nu+j-1} \phi_j \rho^{\nu+n-1} d \rho d \phi .
   \end{aligned}
   \]
   By virtue of the restrictions placed on $v, m$, and $k$ in the statement of the lemma,
@@ -1684,7 +1766,7 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   \[
   \begin{aligned}
   \int_{\mathcal{C}}|u| & \prod_{j=1}^{i-1} \sin ^{\mu_j} \phi_j \prod_{j=i}^{n-1} \sin ^{\mu_j-1} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
-  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{\nu+n-1} d \rho d \phi
+  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+|\grad u|\right) \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{\nu+n-1} d \rho d \phi
   \end{aligned}
   \]
   where $1 \leq i \leq n, \mu_j \geq 0$, and $\mu_j>0$ if $j \geq i$.
@@ -1698,7 +1780,7 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   \]
   where $K_1=K_1\left(\beta_k\right)$. By Lemma 4.58, and since
   \[
-  \left|\frac{\partial u}{\partial \phi_k}\right| \leq \rho|\operatorname{grad} u| \prod_{j=k+1}^{n-1} \sin \phi_j,
+  \left|\frac{\partial u}{\partial \phi_k}\right| \leq \rho|\grad u| \prod_{j=k+1}^{n-1} \sin \phi_j,
   \]
   we have
   \begin{align*}
@@ -1709,7 +1791,10 @@ We begin with some one-dimensional inequalities for functions continuously diffe
     \leq & \int_{0}^{\beta_k} \biggl(|u| 
       + |\grad u| \rho \prod_{j=k+1}^{n-1} \sin\phi_j\biggr) \sin^{\mu_k} \phi_k \d \phi_k.
   \end{align*}
-  Note that $K_2$, and hence $K_3$, depends on $\beta_k$ but may be chosen independent of $\mu_k$, and hence of $v$, under the conditions of the lemma. If $\beta_k=\pi$, we obtain (37) by writing $\int_0^\pi=\int_0^{\pi / 2}+\int_{\pi / 2}^\pi$ and using the inequalities
+  Note that $K_2$, and hence $K_3$, depends on $\beta_k$ but may be chosen independent of $\mu_k$,
+  and hence of $v$, under the conditions of the lemma.
+  If $\beta_k=\pi$, we obtain (37) by writing $\int_0^\pi=\int_0^{\pi / 2}+\int_{\pi / 2}^\pi$
+  and using the inequalities
   \[
   \begin{array}{ll}
   \sin \phi_k \leq \phi_k \leq(\pi / 2) \sin \phi_k & \text { if } \quad 0 \leq \phi_k \leq \pi / 2 \\
@@ -1722,24 +1807,29 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   & \int_{\mathcal{C}}|u| \prod_{j=1}^{k-1} \sin ^{\mu_j} \phi_j \prod_{j=k}^{n-1} \sin ^{\mu_j-1} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
   & \leq \int_0^a \rho^{\nu+n-2} d \rho \prod_{j=1}^{k-1} \int_0^{\beta_j} \sin ^{\mu_j} \phi_j d \phi_j \\
   & \times \prod_{j=k+1}^{n-1} \int_0^{\beta_j} \sin ^{\mu_j-1} \phi_j d \phi_j \times \int_0^{\beta_k}|u| \sin ^{\mu_k-1} \phi_k d \phi_k \\
-  & \leq K_3 \int_{\mathcal{C}}|\operatorname{grad} u| \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{v+n-1} d \rho d \phi \\
+  & \leq K_3 \int_{\mathcal{C}}|\grad u| \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{v+n-1} d \rho d \phi \\
   &+K_3 \int_{\mathcal{C}}|u| \prod_{j=1}^k \sin ^{\mu_j} \phi_j \prod_{j=k+1}^{n-1} \sin ^{\mu_j-1} \phi_j \rho^{\nu+n-2} d \rho d \phi \\
-  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+\mid \operatorname{grad}^{n \mid}\right) \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{\nu+n-1} d \rho d \phi
+  & \leq K \int_{\mathcal{C}}\left(\frac{1}{a}|u|+\mid \grad^{n \mid}\right) \prod_{j=1}^{n-1} \sin ^{\mu_j} \phi_j \rho^{\nu+n-1} d \rho d \phi
   \end{aligned}
   \]
   This completes the induction establishing (35) and hence the lemma.
 \end{proof}
 
-The following lemma provides a weighted imbedding inequality for the $L^q$-norm of a function defined on a conical domain of the type (33) in terms of the $W^{m, p_{-}}$ norm, both norms being weighted with a power of distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proof of Theorem 4.51.
+The following lemma provides a weighted imbedding inequality for the $L^q$-norm of a function defined on a 
+conical domain of the type (33) in terms of the $W^{m,p_{-}}$ norm, both norms being weighted with a power of 
+distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proof of Theorem~4.51.
 
 
 \begin{lemma}
-  Let $\mathcal{C}$ be as specified by (33) and let $p \geq 1$ and $1 \leq k \leq n$. Suppose that $\max \{1-k, p-n\}<v_1<v_2<\infty$. Then there exists a constant
-  $K=K\left(k, n, p, v_1, v_2, \beta_1, \ldots, \beta_{n-1}\right)$, independent of $a$, such that for every $v$ satisfying $v_1 \leq v \leq v_2$ and every function $u \in C^1(\mathcal{C}) \cap C(\overline{\mathcal{C}})$ we have
+  Let $\mathcal{C}$ be as specified by (33) and let $p \geq 1$ and $1 \leq k \leq n$.
+  Suppose that $\max \{1-k, p-n\}<v_1<v_2<\infty$. Then there exists a constant
+  $K=K\left(k, n, p, v_1, v_2, \beta_1, \ldots, \beta_{n-1}\right)$, independent of $a$,
+  such that for every $v$ satisfying $v_1 \leq v \leq v_2$ and every function
+  $u \in C^1(\mathcal{C}) \cap C(\overline{\mathcal{C}})$ we have
   \[
   \begin{aligned}
   & \left(\int_{\mathcal{C}}|u(x)|^q\left[r_k(x)\right]^\nu d x\right)^{1 / q} \\
-  & \quad \leq K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u(x)|^p+|\operatorname{grad} u(x)|^p\right)\left[r_k(x)\right]^\nu d x\right)^{1 / p}
+  & \quad \leq K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u(x)|^p+|\grad u(x)|^p\right)\left[r_k(x)\right]^\nu d x\right)^{1 / p}
   \end{aligned}
   \]
   where $q=(v+n) p /(v+n-p)$.
@@ -1750,7 +1840,7 @@ The following lemma provides a weighted imbedding inequality for the $L^q$-norm 
   \[
   \begin{aligned}
   \int_{\mathcal{C}}|u(x)|^q\left[r_k(x)\right]^\nu d x \leq & \left(\int_{\mathcal{C}}|u|^\delta r_k^{\nu-1} d x\right)^{1 / s}\left(\int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n \nu /(n-1)} d x\right)^{1 / s^{\prime}} \\
-  \leq & K_1\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) r_k^\nu d x\right)^{1 / s} \\
+  \leq & K_1\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu d x\right)^{1 / s} \\
   & \times\left(\int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n v /(n-1)} d x\right)^{1 / s^{\prime}}
   \end{aligned}
   \]
@@ -1785,20 +1875,20 @@ The following lemma provides a weighted imbedding inequality for the $L^q$-norm 
   & \leq\left(\int_{\mathcal{C}_0^*}\left(F_0\left(\rho^*\right)\right)^{n-1} d \phi \prod_{j=1}^{n-1} \int_{\mathcal{C}_j^*}\left(F_j\left(\phi_j^*\right)\right)^{n-1} d \rho d \hat{\phi}_j\right)^{1 /(n-1)}
   \end{aligned}
   \]
-  Now by Lemma 4.59, and since $|\partial u / \partial \rho| \leq|\operatorname{grad} u|$,
+  Now by Lemma 4.59, and since $|\partial u / \partial \rho| \leq|\grad u|$,
   \[
-  \sup _{0<\rho<a}|u|^\delta \rho^{\nu+n-1} \leq K_2 \int_0^a|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) \rho^{\nu+n-1} d \rho,
+  \sup _{0<\rho<a}|u|^\delta \rho^{\nu+n-1} \leq K_2 \int_0^a|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) \rho^{\nu+n-1} d \rho,
   \]
   where $K_2$ is independent of $v$ for $1-n<v_1 \leq v \leq v_2<\infty$. It follows that
   \[
-  \int_{\mathcal{C}_0^*}\left(F_0\left(\rho^*\right)\right)^{n-1} d \phi \leq K_2 \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) r_k^\nu d x
+  \int_{\mathcal{C}_0^*}\left(F_0\left(\rho^*\right)\right)^{n-1} d \phi \leq K_2 \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu d x
   \]
   Similarly, by making use of (36) or (38) as in Lemma 4.61, we obtain from Lemma 4.59
   \[
   \begin{aligned}
   & \sup _{0<\phi_j<\beta_j}|u|^\delta \sin ^{\nu+j-1} \phi_j \\
   & \leq K_{2, j} \int_0^{\beta_j}|u|^{\delta-1}\left(|u|+\left|\frac{\partial u}{\partial \phi_j}\right|\right) \sin ^{\nu+j-1} \phi_j d \phi_j \\
-  & \leq K_{2, j} \int_0^{\beta_j}|u|^{\delta-1}\left(|u|+|\operatorname{grad} u| \rho \prod_{i=j+1}^{n-1} \sin \phi_i\right) \sin ^{v+j-1} \phi_j d \phi_j, \\
+  & \leq K_{2, j} \int_0^{\beta_j}|u|^{\delta-1}\left(|u|+|\grad u| \rho \prod_{i=j+1}^{n-1} \sin \phi_i\right) \sin ^{v+j-1} \phi_j d \phi_j, \\
   &
   \end{aligned}
   \]
@@ -1806,16 +1896,16 @@ The following lemma provides a weighted imbedding inequality for the $L^q$-norm 
   \[
   \begin{aligned}
   \int_{\mathcal{C}_j^*} & \left(F_j\left(\phi_j^*\right)\right)^{n-1} d \rho d \hat{\phi}_j \\
-  & \leq K_{2, j} \int_{\mathcal{C}}|\operatorname{grad} u \| u|^{\delta-1} r_k^\nu d x+K_{2, j} \int_{\mathcal{C}}|u|^\delta r_k^\nu r_{j+1}^{-1} d x \\
-  & \leq K_{3, j} \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) r_k^\nu d x,
+  & \leq K_{2, j} \int_{\mathcal{C}}|\grad u \| u|^{\delta-1} r_k^\nu d x+K_{2, j} \int_{\mathcal{C}}|u|^\delta r_k^\nu r_{j+1}^{-1} d x \\
+  & \leq K_{3, j} \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu d x,
   \end{aligned}
   \]
   where we have used Lemma 4.61 again to obtain the last inequality. Note that the constants $K_{2, j}$ and $K_{3, j}$ can be chosen independent of $v$ for the values of $v$ allowed. Substitution of (42) and (43) into (41) and then into (40) leads to
   \[
   \begin{aligned}
-  \int_{\mathcal{C}}|u|^q r_k^\nu d x \leq & K_4\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\operatorname{grad} u|\right) r_k^\nu d x\right)^{1 / s+n /\left((n-1) s^{\prime}\right)} \\
+  \int_{\mathcal{C}}|u|^q r_k^\nu d x \leq & K_4\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu d x\right)^{1 / s+n /\left((n-1) s^{\prime}\right)} \\
   \leq & K_4\left(\left[\int_{\mathcal{C}}|u|^q r_k^\nu d x\right]^{(p-1) / p}\right. \\
-  & \left.\times\left[2^{p-1} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\operatorname{grad} u|^p\right) r_k^\nu d x\right]^{1 / p}\right)^{(\nu+n) /(\nu+n-1)}
+  & \left.\times\left[2^{p-1} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^\nu d x\right]^{1 / p}\right)^{(\nu+n) /(\nu+n-1)}
   \end{aligned}
   \]
   Since $(v+n-1) /(v+n)-(p-1) / p=1 / q$, inequality (39) follows by cancellation for, since $u$ is bounded on $\mathcal{C}$ and $v>1-n, \int_{\mathcal{C}}|u|^q r_k^\nu d x$ is finite.
@@ -1827,8 +1917,8 @@ The following lemma provides a weighted imbedding inequality for the $L^q$-norm 
   \item If $1-k<v_1<v_2<\infty$ and $v_1 \leq v \leq v_2$, where $p \geq v+n$, then (39) holds for any $q$ satisfying $1 \leq q<\infty$. It is sufficient to prove this for large $q$. If $q \geq(v+n) /(\nu+n-1)$, then $q=(\nu+n) s /(\nu+n-s)$ for some $s$ satisfying $1 \leq s<p$. Thus
   \[
   \begin{aligned}
-  & \left(\int_{\mathcal{C}}|u|^q r_k^v d x\right)^{s / q} \leq K \int_{\mathcal{C}}\left(\frac{1}{a^s}|u|^s+|\operatorname{grad} u|^s\right) r_k^\nu d x \\
-  & \quad \leq K\left(2^{(p-2) / s} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\operatorname{grad} u|^p\right) r_k^\nu d x\right)^{s / p}\left(\int_{\mathcal{C}} r_k^\nu d x\right)^{(p-s) / p}
+  & \left(\int_{\mathcal{C}}|u|^q r_k^v d x\right)^{s / q} \leq K \int_{\mathcal{C}}\left(\frac{1}{a^s}|u|^s+|\grad u|^s\right) r_k^\nu d x \\
+  & \quad \leq K\left(2^{(p-2) / s} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^\nu d x\right)^{s / p}\left(\int_{\mathcal{C}} r_k^\nu d x\right)^{(p-s) / p}
   \end{aligned}
   \]
   which yields (39) since the last factor is finite.
@@ -1840,18 +1930,18 @@ The following lemma provides a weighted imbedding inequality for the $L^q$-norm 
   \[
   \begin{aligned}
   \left(\int_{\mathcal{C}}|u|^q r_k^m d x\right)^{1 / q} & =\left(\int_{\mathcal{C}^*}\left|u^*(y)\right|^q d y\right)^{1 / q} \\
-  & \leq K\left(\int_{\mathcal{C}^*}\left(\frac{1}{a^p}\left|u^*(y)\right|^p+\left|\operatorname{grad} u^*(y)\right|^p\right) d y\right)^{1 / p} \\
-  & =K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\operatorname{grad} u|^p\right) r_k^m d x\right)^{1 / p}
+  & \leq K\left(\int_{\mathcal{C}^*}\left(\frac{1}{a^p}\left|u^*(y)\right|^p+\left|\grad u^*(y)\right|^p\right) d y\right)^{1 / p} \\
+  & =K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^m d x\right)^{1 / p}
   \end{aligned}
   \]
-  since $\left|\operatorname{grad} u^*(y)\right|=|\operatorname{grad} u(x)|, u^*$ being independent of $z$.
+  since $\left|\grad u^*(y)\right|=|\grad u(x)|, u^*$ being independent of $z$.
   \item Suppose that $u \in C_0^{\infty}\left(\mathbb{R}^n\right)$, or, more generally, that
   \[
   \int_{\mathbb{R}^n}|u(x)|^p\left[r_k(x)\right]^v d x<\infty
   \]
   with $v$ as in the above lemma. If we take $\beta_i=\pi, 1 \leq i \leq n-1$, and let $a \rightarrow \infty$ in (39), we obtain
   \[
-  \left(\int_{\mathbb{R}^n}|u(x)|^q\left[r_k(x)\right]^v d x\right)^{1 / q} \leq K\left(\int_{\mathbb{R}^n}|\operatorname{grad} u(x)|^p\left[r_k(x)\right]^v d x\right)^{1 / p} .
+  \left(\int_{\mathbb{R}^n}|u(x)|^q\left[r_k(x)\right]^v d x\right)^{1 / q} \leq K\left(\int_{\mathbb{R}^n}|\grad u(x)|^p\left[r_k(x)\right]^v d x\right)^{1 / p} .
   \]
   This generalizes (the case $m=1$ of) Sobolev's inequality, Theorem 4.31.
 \end{remarks}
@@ -1862,7 +1952,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
 \begin{lemma}
   Let $z \in \mathbb{R}^k$ and let $\Omega$ be a domain of finite volume in $\mathbb{R}^k$. If $0 \leq v<k$, then
   \[
-  \int_{\Omega}|x-z|^{-v} d x \leq \frac{K}{k-v}(\operatorname{vol}(\Omega))^{1-v / k}
+  \int_{\Omega}|x-z|^{-v} d x \leq \frac{K}{k-v}(\vol(\Omega))^{1-v / k}
   \]
   where the constant $K$ depends on $\nu$ and $k$, but not on $z$ or $\Omega$.
 \end{lemma}
@@ -1875,7 +1965,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
 \begin{lemma}
   Let $\Omega \subset \mathbb{R}^n$ satisfy the cone condition. Let $1 \leq k \leq n$ and let $P$ be an $(n-k)$-dimensional plane in $\mathbb{R}^n$. Denote by $r(x)$ the distance from $x$ to $P$. If $0 \leq v<p-n$, then for all $u \in C^1(\Omega)$ we have
   \[
-  \sup _{x \in \Omega}|u(x)| \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\operatorname{grad} u|^p\right)[r(x)]^\nu d x\right)^{1 / p}
+  \sup _{x \in \Omega}|u(x)| \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\grad u|^p\right)[r(x)]^\nu d x\right)^{1 / p}
   \]
   where the constant $K$ may depend on $v, n, p, k$, and the cone $C$ determining the cone condition for $\Omega$, but not on $u$.
 \end{lemma}
@@ -1884,7 +1974,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   Throughout this proof $A_i$ and $K_i$ will denote various constants depending on one or more of the parameters on which $K$ is allowed to depend above. It is
   sufficient to prove that if $C$ is a finite cone contained in $\Omega$ having vertex at, say, the origin, then
   \[
-  |u(0)| \leq K\left(\int_C\left(|u(x)|^p+|\operatorname{grad} u|^p\right)[r(x)]^v d x\right)^{1 / p}
+  |u(0)| \leq K\left(\int_C\left(|u(x)|^p+|\grad u|^p\right)[r(x)]^v d x\right)^{1 / p}
   \]
   For $0 \leq j \leq n$, let $A_j$ denote the supremum of the Lebesgue $j$-dimensional measure of the projection of $C$ onto $\mathbb{R}^j$, taken over all $j$-dimensional subspaces $\mathbb{R}^j$ of $\mathbb{R}^n$. Writing $x=\left(x^{\prime}, x^{\prime \prime}\right)$ where $x^{\prime}=\left(x_1, \ldots, x_{n-k}\right)$ and $x^{\prime \prime}=\left(x_{n-k+1}, \ldots, x_n\right)$, we may assume, without loss of generality, that $P$ is orthogonal to the coordinate axes corresponding to the components of $x^{\prime \prime}$. Define
   \[
@@ -1899,13 +1989,13 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   \]
   so that
   \[
-  |u(0)| \leq|u(x)|+|x| \int_0^1|\operatorname{grad} u(t x)| d t
+  |u(0)| \leq|u(x)|+|x| \int_0^1|\grad u(t x)| d t
   \]
-  Setting $V=\operatorname{vol}(C)$ and $a=\sup _{x \in C}|x|$, and integrating the above inequality over $C$, we obtain
+  Setting $V=\vol(C)$ and $a=\sup _{x \in C}|x|$, and integrating the above inequality over $C$, we obtain
   \[
   \begin{aligned}
-  V|u(0)| & \leq \int_C|u(x)| d x+a \int_C \int_0^1|\operatorname{grad} u(t x)| d t d x \\
-  & =\int_C|u(x)| d x+a \int_0^1 t^{-n} d t \int_{C_t}|\operatorname{grad} u(x)| d x .
+  V|u(0)| & \leq \int_C|u(x)| d x+a \int_C \int_0^1|\grad u(t x)| d t d x \\
+  & =\int_C|u(x)| d x+a \int_0^1 t^{-n} d t \int_{C_t}|\grad u(x)| d x .
   \end{aligned}
   \]
   Let $z$ denote the orthogonal projection of $x$ onto $P$. Then $r(x)=\left|x^{\prime \prime}-z^{\prime \prime}\right|$. Since $0 \leq v<p-n$, we have $p>1$, and so by the previous lemma
@@ -1919,14 +2009,14 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   It follows that
   \[
   \begin{aligned}
-  & \int_{C_t}|\operatorname{grad} u(x)| d x \\
-  & \quad \leq\left(\int_{C_t}|\operatorname{grad} u(x)|^p[r(x)]^\nu d x\right)^{1 / p}\left(\int_{C_t}[r(x)]^{-v /(p-1)} d x\right)^{1 / p^{\prime}} \\
-  & \quad \leq K_3 t^{n-(v+n) / p}\left(\int_{C_t}|\operatorname{grad} u(x)|^p[r(x)]^v d x\right)^{1 / p}
+  & \int_{C_t}|\grad u(x)| d x \\
+  & \quad \leq\left(\int_{C_t}|\grad u(x)|^p[r(x)]^\nu d x\right)^{1 / p}\left(\int_{C_t}[r(x)]^{-v /(p-1)} d x\right)^{1 / p^{\prime}} \\
+  & \quad \leq K_3 t^{n-(v+n) / p}\left(\int_{C_t}|\grad u(x)|^p[r(x)]^v d x\right)^{1 / p}
   \end{aligned}
   \]
   Hence, since $v<p-n$,
   \[
-  \int_0^1 t^{-n} d t \int_{C_t}|\operatorname{grad} u(x)| d x \leq K_4\left(\int_C|\operatorname{grad} u(x)|^p[r(x)]^v d x\right)^{1 / p}
+  \int_0^1 t^{-n} d t \int_{C_t}|\grad u(x)| d x \leq K_4\left(\int_C|\grad u(x)|^p[r(x)]^v d x\right)^{1 / p}
   \]
   Similarly,
   \[
@@ -1942,7 +2032,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
 \begin{lemma}
   Suppose all the conditions of the previous lemma are satisfied and, in addition, $\Omega$ satisfies the strong local Lipschitz condition. Then for all $u \in C^1(\Omega)$ we have
   \[
-  \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{|u(x)-u(y)|}{|x-y|^\mu} \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\operatorname{grad} u(x)|^p\right)[r(x)]^\nu d x\right)^{1 / p}
+  \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{|u(x)-u(y)|}{|x-y|^\mu} \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\grad u(x)|^p\right)[r(x)]^\nu d x\right)^{1 / p}
   \]
   where $\mu=1-(v+n) / p$ satisfies $0<\mu<1$, and $K$ is independent of $u$.
 \end{lemma}
@@ -1950,7 +2040,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
 \begin{proof}
   The proof is the same as that given for inequality (15) in Lemma 4.28 except that the inequality
   \[
-  \int_{\Omega_{t \sigma}}|\operatorname{grad} u(z)| d z \leq K_1 t^{n-(\nu+n) / p}\left(|\operatorname{grad} u(z)|^p[r(z)]^\nu d z\right)^{1 / p}
+  \int_{\Omega_{t \sigma}}|\grad u(z)| d z \leq K_1 t^{n-(\nu+n) / p}\left(|\grad u(z)|^p[r(z)]^\nu d z\right)^{1 / p}
   \]
   is used in (16) in place of the special case $v=0$ actually used there. Inequality (51) is obtained in the same way as (47) above.
 \end{proof}
@@ -1976,7 +2066,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   \[
   \begin{aligned}
   \|u\|_{0, q, Q_{k, \lambda}} & =\left(\lambda \int_{\mathcal{C}_k}|\tilde{u}(y)|^q\left[r_k(y)\right]^v d y\right)^{1 / q} \\
-  & \leq K_1\left(\int_{\mathcal{C}_k}\left(|\tilde{u}(y)|^p+|\operatorname{grad} \tilde{u}(y)|^p\right)\left[r_k(y)\right]^v d y\right)^{1 / q} .
+  & \leq K_1\left(\int_{\mathcal{C}_k}\left(|\tilde{u}(y)|^p+|\grad \tilde{u}(y)|^p\right)\left[r_k(y)\right]^v d y\right)^{1 / q} .
   \end{aligned}
   \]
   Now $x_j=r_k^{\lambda-1} y_j$ if $1 \leq j \leq k$ and $x_j=y_j$ if $k+1 \leq j \leq n$. Since $r_k^2=y_1^2+\cdots+y_k^2$ we have
@@ -1984,26 +2074,26 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   \frac{\partial x_j}{\partial y_i}= \begin{cases}\delta_{i j} r_k^{\lambda-1}+(\lambda-1) r_k^{\lambda-3} y_i y_j & \text { if } 1 \leq i, j \leq k \\ \delta_{i j} & \text { otherwise },\end{cases}
   \]
   where $\delta_{i i}=1$ and $\delta_{i j}=0$ if $i \neq j$. Since $r_k(y) \leq 1$ on $\mathcal{C}_k$ it follows that
-  $|\operatorname{grad} \tilde{u}(y)| \leq K_2|\operatorname{grad} u(x)|$.
+  $|\grad \tilde{u}(y)| \leq K_2|\grad u(x)|$.
   Hence (52) follows from (53) in this case. For $\bar{v} \leq p-n$ and arbitrary $q$ the proof is similar, being based on Remark 2 of Paragraph 4.63 .
   In order to show that the constant $K$ in (52) can be chosen independent of $k$ and $\lambda$ provided $v=(\lambda-1) k \leq \bar{v}$, we note that it is sufficient to prove that there is a constant $\tilde{K}$ such that for any such $k, \lambda$ and all $v \in C^1\left(\mathcal{C}_k\right) \cap C\left(\overline{\mathcal{C}_k}\right)$ we have
   \[
   \begin{aligned}
   & \left(\int_{\mathcal{C}_k}|v(y)|^q\left[r_k(y)\right]^\nu d y\right)^{1 / q} \\
-  & \quad \leq \tilde{K}\left(\int_{\mathcal{C}_k}\left(|v(y)|^p+|\operatorname{grad} v(y)|^p\right)\left[r_k(y)\right]^\nu d y\right)^{1 / p}
+  & \quad \leq \tilde{K}\left(\int_{\mathcal{C}_k}\left(|v(y)|^p+|\grad v(y)|^p\right)\left[r_k(y)\right]^\nu d y\right)^{1 / p}
   \end{aligned}
   \]
   In fact, it is sufficient to establish (54) with $\tilde{K}$ depending on $k$ as we can then use the maximum of $\tilde{K}(k)$ over the finitely many values of $k$ allowed. We distinguish three cases.
   Case I $\bar{v}<p-n, 1 \leq q<\infty$. By Lemma 4.65 we have for $0 \leq v \leq \bar{v}$
   \[
-  \sup _{y \in \mathcal{C}_k}|v(y)| \leq K(v)\left(\int_{\mathcal{C}_k}\left(|v(y)|^p+|\operatorname{grad} v(y)|^p\right)\left[r_k(y)\right]^\nu d y\right)^{1 / p}
+  \sup _{y \in \mathcal{C}_k}|v(y)| \leq K(v)\left(\int_{\mathcal{C}_k}\left(|v(y)|^p+|\grad v(y)|^p\right)\left[r_k(y)\right]^\nu d y\right)^{1 / p}
   \]
   Since the integral on the right decreases as $\nu$ increases, we have $K(\nu) \leq K(\bar{\nu})$ and (54) now follows from (55) and the boundedness of $\mathcal{C}_k$.
   
   Case II $\bar{v}>p-n$. Again it is sufficient to deal with $q=(\bar{v}+n) p /(\bar{v}+n-p)$. From Lemma 4.62 we obtain
   where $s=(\nu+n) p /(\nu+n-p) \geq q$ and $K_1$ is independent of $v$ for $p-n<v_0 \leq \bar{v}$. By Hölder's inequality, and since $r_k(y) \leq 1$ on $\mathcal{C}_k$, we have
   \[
-  \left(\int_{\mathcal{C}_k}|v|^q r_k^\nu d y\right)^{1 / q} \leq\left(\int_{\mathcal{C}_k}|v|^s r_k^\nu d y\right)^{1 / s}\left(\operatorname{vol}\left(\mathcal{C}_k\right)\right)^{(s-q) / s q}
+  \left(\int_{\mathcal{C}_k}|v|^q r_k^\nu d y\right)^{1 / q} \leq\left(\int_{\mathcal{C}_k}|v|^s r_k^\nu d y\right)^{1 / s}\left(\vol\left(\mathcal{C}_k\right)\right)^{(s-q) / s q}
   \]
   so that if $v_0 \leq v \leq \bar{v}$, then (54) follows from (56).
   If $p-n<0$, we can take $v_0=0$ and be done. Otherwise, $p \geq n \geq 2$. Fixing $v_0=(\bar{v}-n+p) / 2$, we can find $v_1$ such that $0 \leq v_1 \leq p-n$ (or $v_1=0$ if $p=n$ ) such that for $v_1 \leq v \leq v_0$ we have
@@ -2013,8 +2103,8 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   where $\varepsilon_0>0$ and depends only on $\bar{\nu}, n$, and $p$. Because of the latter inequality we may also assume $t-n<v_1$. Since $(v+n) t /(v+n-t)=q$ we have, again by Lemma 4.62 and Hölder's inequality,
   \[
   \begin{gathered}
-  \left(\int_{\mathcal{C}_k}|v|^q r_k^\nu d y\right)^{1 / q} \leq K_2\left(\int_{\mathcal{C}_k}\left(|v|^t+|\operatorname{grad} v|^t\right) r_k^\nu d y\right)^{1 / t} \\
-  2^{(p-t) / p t} K_2\left(\int_{\mathcal{C}_k}\left(|v|^p+|\operatorname{grad} v|^p\right) r_k^\nu d y\right)^{1 / p}\left(\operatorname{vol}\left(\mathcal{C}_k\right)\right)^{(p-t) / p t}
+  \left(\int_{\mathcal{C}_k}|v|^q r_k^\nu d y\right)^{1 / q} \leq K_2\left(\int_{\mathcal{C}_k}\left(|v|^t+|\grad v|^t\right) r_k^\nu d y\right)^{1 / t} \\
+  2^{(p-t) / p t} K_2\left(\int_{\mathcal{C}_k}\left(|v|^p+|\grad v|^p\right) r_k^\nu d y\right)^{1 / p}\left(\vol\left(\mathcal{C}_k\right)\right)^{(p-t) / p t}
   \end{gathered}
   \]
   where $K_2$ is independent of $v$ for $v_1 \leq v \leq v_0$.
@@ -2042,29 +2132,33 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   \]
   where we have used the finite intersection property of $\Gamma$ to obtain the final inequality. The required imbedding inequality now follows by completion.
   
-  If $v<m p-n$, we require that $W^{m, p}(\Omega) \rightarrow L^q(\Omega)$ also holds for $q=\infty$. This is a consequence of Theorem 4.52 proved below.
+  If $v<m p-n$, we require that $W^{m,p}(\Omega) \rightarrow L^q(\Omega)$ also holds for $q=\infty$. This is a consequence of Theorem 4.52 proved below.
 \end{para}
 
 
 \begin{lemma}
   Let $0 \leq \bar{\nu}<m p-n$. Then there exists a constant $K=K(m, p, n, \bar{\nu})$ 
-  such that if $Q_{k, \lambda}$ is any standard cusp domain for which $(\lambda-1) k=v \leq \bar{v}$ and if $u \in C^m\left(Q_{k, \lambda}\right)$, then
+  such that if $Q_{k, \lambda}$ is any standard cusp domain for which $(\lambda-1) k=v \leq \bar{v}$
+  and if $u \in C^m\left(Q_{k, \lambda}\right)$, then
   \[
   \sup _{x \in Q_{k, \lambda}}|u(x)| \leq K\|u\|_{m, p, Q_{k, \lambda}}
   \]
 \end{lemma}
 
 \begin{proof}
-  Again it is sufficient to prove the lemma for the case $m=1$. If $u$ belongs to $C^1\left(Q_{k, \lambda}\right)$ where $(\lambda-1) k=v \leq \bar{v}$, then we have by Lemma 4.65 and via the
+  Again it is sufficient to prove the lemma for the case $m=1$.
+  If $u$ belongs to $C^1\left(Q_{k, \lambda}\right)$ where $(\lambda-1) k=v \leq \bar{v}$,
+  then we have by Lemma 4.65 and via the
   method of the second paragraph of the proof of Lemma 4.67,
   \[
   \begin{aligned}
   \sup _{x \in Q_{k, \lambda}}|u(x)| & =\sup _{y \in \mathcal{C}_k}|\tilde{u}(y)| \\
-  & \leq K_1\left(\int_{\mathcal{C}_k}\left(|\tilde{u}(y)|^p+|\operatorname{grad} \tilde{u}(y)|^p\right)\left[r_k(y)\right]^v d y\right)^{1 / p} \\
-  & \leq K_2\left(\int_{Q_{k, \lambda}}\left(|u(x)|^p+|\operatorname{grad} u(x)|^p\right) d x\right)^{1 / p} .
+  & \leq K_1\left(\int_{\mathcal{C}_k}\left(|\tilde{u}(y)|^p+|\grad \tilde{u}(y)|^p\right)\left[r_k(y)\right]^v d y\right)^{1 / p} \\
+  & \leq K_2\left(\int_{Q_{k, \lambda}}\left(|u(x)|^p+|\grad u(x)|^p\right) d x\right)^{1 / p} .
   \end{aligned}
   \]
-  Since $r_k(y) \leq 1$ for $y \in \mathcal{C}_k$ it is evident that $K_1$, and hence $K_2$, can be chosen independent of $k$ and $\lambda$ provided $0 \leq v=(\lambda-1) k \leq \bar{\nu}$.
+  Since $r_k(y) \leq 1$ for $y \in \mathcal{C}_k$ it is evident that $K_1$, and hence $K_2$,
+  can be chosen independent of $k$ and $\lambda$ provided $0 \leq v=(\lambda-1) k \leq \bar{\nu}$.
 \end{proof}
 
 
@@ -2073,7 +2167,9 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   \[
   W^{m, p}(\Omega) \rightarrow C_B^0(\Omega) .
   \]
-  Let $u \in C^{\infty}(\Omega)$. If $x \in \Omega$, then $x \in G \subset \Omega$ for some domain $G$ for which there exists a 1-smooth transformation $\Psi: G \rightarrow Q_{k, \lambda},(\lambda-1) k \leq \nu$, as specified in the statement of the theorem. Thus
+  Let $u \in C^{\infty}(\Omega)$. If $x \in \Omega$, then $x \in G \subset \Omega$ for some domain $G$
+  for which there exists a 1-smooth transformation $\Psi: G \rightarrow Q_{k, \lambda},(\lambda-1) k \leq \nu$, 
+  as specified in the statement of the theorem. Thus
   \[
   \begin{aligned}
   |u(x)| & \leq \sup _{x \in G}|u(x)|=\sup _{y \in Q_{k, \lambda}}\left|u \circ \Psi^{-1}(y)\right| \\
@@ -2081,18 +2177,23 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   & \leq K_2\|u\|_{m, p, \Omega},
   \end{aligned}
   \]
-  where $K_1$ and $K_2$ are independent of $G$. The rest of the proof is similar to the second paragraph of the proof in Paragraph 4.16.
+  where $K_1$ and $K_2$ are independent of $G$. The rest of the proof is similar
+  to the second paragraph of the proof in Paragraph~4.16.
 \end{para}
 
 \begin{para}[Proof of Theorem 4.53]
   As in Lemma 4.28 it is sufficient to prove that
   \[
-  W^{1, p}(\Omega) \rightarrow C^{0, \mu}(\bar{\Omega}) \quad \text { if } \quad 0<\mu \leq 1-\frac{n+v}{p}
+  W^{1, p}(\Omega) \rightarrow C^{0, \mu}(\overline{\Omega}) \quad \text { if } \quad 0<\mu \leq 1-\frac{n+v}{p}
   \]
   that is, that
   \[
   \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{|u(x)-u(y)|}{|x-y|^\mu} \leq K\|u\|_{1, p, \Omega}
   \]
-  holds when $v+n<p$ and $0<\mu \leq 1-(v+n) / p$. For $x, y \in \Omega$ satisfying $|x-y| \geq \delta$, (61) holds by virtue of (60). If $|x-y|<\delta$, then there exists $G \subset \Omega$ with $x, y \in G$, and a 1-smooth transformation $\Psi$ from $G$ onto a standard cusp $Q_{k, \lambda}$ with $(\lambda-1) k \leq v$, satisfying the conditions of the theorem. Inequality (61)
-  can then be derived from Lemma 4.66 by the same method used in the proof of Lemma 4.69. The details are left to the reader.
+  holds when $v+n<p$ and $0<\mu \leq 1-(v+n) / p$. For $x, y \in \Omega$ satisfying $|x-y| \geq \delta$,
+  (61) holds by virtue of (60). If $|x-y|<\delta$, then there exists $G \subset \Omega$ with $x, y \in G$,
+  and a 1-smooth transformation $\Psi$ from $G$ onto a standard cusp $Q_{k, \lambda}$
+  with $(\lambda-1) k \leq v$, satisfying the conditions of the theorem. Inequality (61)
+  can then be derived from Lemma~4.66 by the same method used in the proof of Lemma~4.69.
+  The details are left to the reader.
 \end{para}

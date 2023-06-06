@@ -11,7 +11,14 @@
   \begin{equation}\label{eq:2.1}
     \int_{\Omega} |u(x)|^p dx < \infty.
   \end{equation}
-  We identify in $L^p(\Omega)$ functions that are equal almost everywhere in $\Omega$; the elements of $L^p(\Omega)$ are thus equivalence classes of measurable functions satisfying (1), two functions being equivalent if they are equal a.e. in $\Omega$. For convenience, we ignore this distinction, and write $u \in L^p(\Omega)$ if $u$ satisfies (1), and $u=0$ in $L^p(\Omega)$ if $u(x)=0$ a.e. in $\Omega$. Evidently $c u \in L^p(\Omega)$ if $u \in L^p(\Omega)$ and $c \in \mathbb{C}$. To confirm that $L^p(\Omega)$ is a vector space we must show that if $u, v \in L^p(\Omega)$, then $u+v \in L^p(\Omega)$. This is an immediate consequence of the following inequality, which will also prove useful later on.
+  We identify in $L^p(\Omega)$ functions that are equal almost everywhere in $\Omega$;
+  the elements of $L^p(\Omega)$ are thus equivalence classes of measurable functions satisfying (1),
+  two functions being equivalent if they are equal a.e. in $\Omega$. For convenience,
+  we ignore this distinction, and write $u \in L^p(\Omega)$ if $u$ satisfies (1), and $u=0$ in $L^p(\Omega)$
+  if $u(x)=0$ a.e.~in $\Omega$. Evidently $c u \in L^p(\Omega)$ if $u \in L^p(\Omega)$ and $c \in \mathbb{C}$. 
+  To confirm that $L^p(\Omega)$ is a vector space we must show that if $u, v \in L^p(\Omega)$,
+  then $u+v \in L^p(\Omega)$. This is an immediate consequence of the following inequality,
+  which will also prove useful later on.
 \end{para}
 
 
@@ -23,7 +30,8 @@
 \end{lemma}
 
 \begin{proof}
-  If $p=1$, then (2) is an obvious equality. For $p>1$, the function $t^p$ is convex on $[0, \infty)$; that is, its graph lies below the chord line joining the points
+  If $p=1$, then (2) is an obvious equality. For $p>1$, the function $t^p$ is convex on $[0, \infty)$;
+  that is, its graph lies below the chord line joining the points
   $\left(a, a^p\right)$ and $\left(b, b^p\right)$. Thus
   \[
   \left(\frac{a+b}{2}\right)^p \leq \frac{a^p+b^p}{2}
@@ -41,7 +49,9 @@
   \[
   \|u\|_p=\left(\int_{\Omega} \mid u(x)^p d x\right)^{1 / p}
   \]
-  is a norm on $L^p(\Omega)$ provided $1 \leq p<\infty$. (It is not a norm if $0<p<1$.) In arguments where confusion of domains may occur, we use $\|\cdot\|_{p, \Omega}$ in place of $\|\cdot\|_p$. It is clear that $\|u\|_p \geq 0$ and $\|u\|_p=0$ if and only if $u=0$ in $L^p(\Omega)$. Moreover,
+  is a norm on $L^p(\Omega)$ provided $1 \leq p<\infty$. (It is not a norm if $0<p<1$.)
+  In arguments where confusion of domains may occur, we use $\|\cdot\|_{p, \Omega}$ in place of $\|\cdot\|_p$. 
+  It is clear that $\|u\|_p \geq 0$ and $\|u\|_p=0$ if and only if $u=0$ in $L^p(\Omega)$. Moreover,
   \[
   \|c u\|_p=|c|\|u\|_p, \quad c \in \mathbb{C} .
   \]
@@ -50,7 +60,8 @@
   \[
   \|u+v\|_p \leq\|u\|_p+\|v\|_p
   \]
-  which is known as Minkowski's inequality. We verify it in Paragraph 2.8 below, for which we first require Hölder's inequality.
+  which is known as Minkowski's inequality. We verify it in Paragraph~2.8 below,
+  for which we first require Hölder's inequality.
 \end{para}
 
 \begin{theorem}[Hölder's Inequality]
@@ -58,19 +69,23 @@
   \[
   p^{\prime}=\frac{p}{p-1}, \quad \text { that is } \quad \frac{1}{p}+\frac{1}{p^{\prime}}=1
   \]
-  which also satisfies $1<p^{\prime}<1$. If $u \in L^p(\Omega)$ and $v \in L^{p^{\prime}}(\Omega)$, then $u v \in L^1(\Omega)$, and
+  which also satisfies $1<p^{\prime}<1$. If $u \in L^p(\Omega)$ and $v \in L^{p^{\prime}}(\Omega)$,
+  then $u v \in L^1(\Omega)$, and
   \begin{equation}\label{eq:2.3}
     \int_{\Omega}|u(x) v(x)| d x \leq\|u\|_p\|v\|_{p^{\prime}}
   \end{equation}
-  Equality holds if and only if $|u(x)|^p$ and $|v(x)|^{p^{\prime}}$ are proportional a.e. in $\Omega$.
+  Equality holds if and only if $|u(x)|^p$ and $|v(x)|^{p^{\prime}}$ are proportional a.e.~in $\Omega$.
 \end{theorem}
 
 \begin{proof}
-  Let $a, b>0$ and let $A=\ln \left(a^p\right)$ and $B=\ln \left(b^{p^{\prime}}\right)$. Since the exponential function is strictly convex, $\exp \left((A / p)+\left(B / p^{\prime}\right)\right) \leq(1 / p) \exp A+\left(1 / p^{\prime}\right) \exp B$, with equality only if $A=B$. Hence
+  Let $a, b>0$ and let $A=\ln \left(a^p\right)$ and $B=\ln \left(b^{p^{\prime}}\right)$.
+  Since the exponential function is strictly convex, $\exp \left((A / p)+\left(B / p^{\prime}\right)\right) \leq(1 / p) \exp A+\left(1 / p^{\prime}\right) \exp B$, with equality only if $A=B$. Hence
   \[
   a b \leq\left(a^p / p\right)+\left(b^{p^{\prime}} / p^{\prime}\right)
   \]
-  with equality occurring if and only if $a^p=b^{p^{\prime}}$. If either $\|u\|_p=0$ or $\|v\|_{p^{\prime}}=0$, then $u(x) v(x)=0$ a.e. in $\Omega$, and (3) is satisfied. Otherwise we can substitute $a=|u(x)| /\|u\|_p$ and $b=|v(x)| /\|v\|_{p^{\prime}}$ in the above inequality and integrate over $\Omega$ to obtain (3).
+  with equality occurring if and only if $a^p=b^{p^{\prime}}$. If either $\|u\|_p=0$ or $\|v\|_{p^{\prime}}=0$, 
+  then $u(x) v(x)=0$ a.e.~in $\Omega$, and (3) is satisfied. Otherwise we can substitute $a=|u(x)| /\|u\|_p$ and 
+  $b=|v(x)| /\|v\|_{p^{\prime}}$ in the above inequality and integrate over $\Omega$ to obtain (3).
 \end{proof}
 
 \begin{corollary}
@@ -231,9 +246,9 @@ The following two theorems establish reverse forms of Hölder's and Minkowski's 
 Here is a useful imbedding theorem for $L^p$ spaces over domains with finite volume.
 
 \begin{theorem}[An Imbedding Theorem for $\bm{L^p}$ Spaces]
-  Suppose that $\operatorname{vol}(\Omega)=\int_{\Omega} 1 d x<\infty$ and $1 \leq p \leq q \leq \infty$. If $u \in L^q(\Omega)$, then $u \in L^p(\Omega)$ and
+  Suppose that $\vol(\Omega)=\int_{\Omega} 1 d x<\infty$ and $1 \leq p \leq q \leq \infty$. If $u \in L^q(\Omega)$, then $u \in L^p(\Omega)$ and
   \begin{equation}\label{eq:2.8}
-    \|u\|_p \leq(\operatorname{vol}(\Omega))^{(1 / p)-(1 / q)}\|u\|_q
+    \|u\|_p \leq(\vol(\Omega))^{(1 / p)-(1 / q)}\|u\|_q
   \end{equation}
   Hence
   \begin{equation}\label{eq:2.9}
@@ -361,12 +376,12 @@ Here is a useful imbedding theorem for $L^p$ spaces over domains with finite vol
   \]
   and
   \[
-  \operatorname{vol}\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)<\left(\frac{\varepsilon}{4\|s\|_{\infty}}\right)^p
+  \vol\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)<\left(\frac{\varepsilon}{4\|s\|_{\infty}}\right)^p
   \]
   By Theorem 2.14
   \[
   \begin{aligned}
-  \|s-\phi\|_p & \leq\|s-\phi\|_{\infty}\left(\operatorname{vol}\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)\right)^{1 / p} \\
+  \|s-\phi\|_p & \leq\|s-\phi\|_{\infty}\left(\vol\left(\left\{x \in \mathbb{R}^n: \phi(x) \neq s(x)\right\}\right)\right)^{1 / p} \\
   & <2\|s\|_{\infty}\left(\frac{\varepsilon}{4\|s\|_{\infty}}\right)=\frac{\varepsilon}{2}
   \end{aligned}
   \]
@@ -385,13 +400,13 @@ Here is a useful imbedding theorem for $L^p$ spaces over domains with finite vol
 \begin{proof}
   For $m=1,2, \ldots$ let
   \[
-  \Omega_m=\{x \in \Omega:|x| \leq m \quad \text { and } \operatorname{dist}(x, \operatorname{bdry}(\Omega)) \geq 1 / m\}
+  \Omega_m=\{x \in \Omega:|x| \leq m \quad \text { and } \dist(x, \partial(\Omega)) \geq 1 / m\}
   \]
   Then $\Omega_m$ is a compact subset of $\Omega$. Let $P$ be the set of all polynomials on $\mathbb{R}^n$ having rational-complex coefficients, and let $P_m=\left\{\chi_m f: f \in P\right\}$ where $\chi_m$ is the characteristic function of $\Omega_m$. As shown in Paragraph 1.32, $P_m$ is dense in $C\left(\Omega_m\right)$. Moreover, $\bigcup_{m=1}^{\infty} P_m$ is countable.
   
-  If $u \in L^p(\Omega)$ and $\varepsilon>0$, there exists $\phi \in C_0(\Omega)$ such that $\|u-\phi\|_p<\varepsilon / 2$. If $1 / m<\operatorname{dist}(\operatorname{supp}(\phi)$, bdry $(\Omega))$, then there exists $f$ in the set $P_m$ such that $\|\phi-f\|_{\infty}<(\varepsilon / 2)\left(\operatorname{vol}\left(\Omega_m\right)\right)^{-1 / p}$. It follows that
+  If $u \in L^p(\Omega)$ and $\varepsilon>0$, there exists $\phi \in C_0(\Omega)$ such that $\|u-\phi\|_p<\varepsilon / 2$. If $1 / m<\dist(\supp(\phi), \partial(\Omega))$, then there exists $f$ in the set $P_m$ such that $\|\phi-f\|_{\infty}<(\varepsilon / 2)\left(\vol\left(\Omega_m\right)\right)^{-1 / p}$. It follows that
   \[
-  \|\phi-f\|_p \leq\|\phi-f\|_{\infty}\left(\operatorname{vol}\left(\Omega_m\right)\right)^{1 / p}<\varepsilon / 2
+  \|\phi-f\|_p \leq\|\phi-f\|_{\infty}\left(\vol\left(\Omega_m\right)\right)^{1 / p}<\varepsilon / 2
   \]
   and so $\|u-f\|_p<\varepsilon$. Thus the countable set $\bigcup_{m=1}^{\infty} P_m$ is dense in $L^p(\Omega)$ and $L^p(\Omega)$ is separable.
 \end{proof}
@@ -558,16 +573,16 @@ The latter inequality is obvious if $q=\infty$ and follows for other $q \geq p$ 
   Let $u$ be a function which is defined on $\mathbb{R}^n$ and vanishes identically outside $\Omega$.
   \begin{enumerate}[label = (\alph*)]
     \item If $u \in L_{\text {loc }}^1(\mathbb{R}^n)$, then $J_\varepsilon * u \in C^{\infty}(\mathbb{R}^n)$.
-    \item If $u \in L_{\mathrm{loc}}^1(\Omega)$ and $\operatorname{supp}(u) \subset\subset \Omega$, then $J_\varepsilon * u \in C_0^{\infty}(\Omega)$ provided
+    \item If $u \in L_{\mathrm{loc}}^1(\Omega)$ and $\supp(u) \subset\subset \Omega$, then $J_\varepsilon * u \in C_0^{\infty}(\Omega)$ provided
     \[
-    \varepsilon<\operatorname{dist}(\operatorname{supp}(u), \operatorname{bdry}(\Omega))
+    \varepsilon<\dist(\supp(u), \partial(\Omega))
     \]
     \item If $u \in L^p(\Omega)$ where $1 \leq p<\infty$, then $J_\varepsilon * u \in L^p(\Omega)$. Also
     \[
     \left\|J_\varepsilon * u\right\|_p \leq\|u\|_p \quad \text { and } \quad \lim _{\varepsilon \rightarrow 0+}\left\|J_\varepsilon * u-u\right\|_p=0
     \]
     \item If $u \in C(\Omega)$ and if $G \subset\subset \Omega$, then $\lim _{\varepsilon \rightarrow 0+} J_\varepsilon * u(x)=u(x)$ uniformly on $G$.
-    \item If $u \in C(\bar{\Omega})$, then $\lim _{\varepsilon \rightarrow 0+} J_\varepsilon * u(x)=u(x)$ uniformly on $\Omega$.
+    \item If $u \in C(\overline{\Omega})$, then $\lim _{\varepsilon \rightarrow 0+} J_\varepsilon * u(x)=u(x)$ uniformly on $\Omega$.
   \end{enumerate}
 \end{theorem}
 
@@ -600,7 +615,7 @@ The latter inequality is obvious if $q=\infty$ and follows for other $q \geq p$ 
   & \leq \sup _{|y-x|<\varepsilon}|\phi(y)-\phi(x)| .
   \end{aligned}
   \]
-  Since $\phi$ is uniformly continuous on $\Omega$, the right side of (20) tends to zero as $\varepsilon \rightarrow 0+$. Since $\operatorname{supp}(\phi)$ is compact, we can ensure that $\left\|J_\varepsilon * \phi-\phi\right\|_p<\eta / 3$
+  Since $\phi$ is uniformly continuous on $\Omega$, the right side of (20) tends to zero as $\varepsilon \rightarrow 0+$. Since $\supp(\phi)$ is compact, we can ensure that $\left\|J_\varepsilon * \phi-\phi\right\|_p<\eta / 3$
   by choosing $\varepsilon$ sufficiently small. For such $\varepsilon$ we have $\left\|J_\varepsilon * u-u\right\|_p<\eta$ and (c) follows.
   
   The proofs of (d) and (e) may be obtained by replacing $\phi$ by $u$ in inequality (20).
@@ -686,14 +701,14 @@ This is an immediate consequence of conclusions (b) and (e) of the theorem and T
   \]
   and so $\lim _{|h| \rightarrow 0} J_\eta * u(x+h)=J_\eta * u(x)$ uniformly for $x \in \mathbb{R}^n$ and $u \in K$. Thus $\left\{J_\eta * u: u \in K\right\}$ is precompact in $C(\bar{G})$, and by Theorem 1.19 there exists a finite set $\left\{\psi_1, \ldots, \psi_m\right\}$ of functions in $C(\bar{G})$ such that if $u \in K$, then for some $j$, $1 \leq j \leq m$, and all $x \in \bar{G}$ we have
   \[
-  \left|\psi_j(x)-J_\eta * u(x)\right|<\frac{\varepsilon}{3 \cdot 2^{p-1} \cdot \operatorname{vol}(\bar{G})}
+  \left|\psi_j(x)-J_\eta * u(x)\right|<\frac{\varepsilon}{3 \cdot 2^{p-1} \cdot \vol(\bar{G})}
   \]
   This, together with (23), (24), and the inequality $(|a|+|b|)^p \leq 2^{p-1}\left(|a|^p+|b|^p\right)$ of Lemma~2.2, implies that
   \[
   \begin{aligned}
   & \int_{\mathbb{R}^n}\left|u(x)-\tilde{\psi}_j(x)\right|^p d x=\int_{\mathbb{R}^n-\bar{G}}|u(x)|^p d x+\int_{\bar{G}}\left|u(x)-\psi_j(x)\right|^p d x \\
   &<\frac{\varepsilon}{3}+2^{p-1} \int_{\bar{G}}\left(\left|u(x)-J_\eta * u(x)\right|^p+\left|J_\eta * u(x)-\psi_j(x)\right|^p\right) d x \\
-  &<\frac{\varepsilon}{3}+2^{p-1}\left(\frac{\varepsilon}{3 \cdot 2^{p-1}}+\frac{\varepsilon}{3 \cdot 2^{p-1} \cdot \operatorname{vol}(\bar{G})} \operatorname{vol}(\bar{G})\right)=\varepsilon
+  &<\frac{\varepsilon}{3}+2^{p-1}\left(\frac{\varepsilon}{3 \cdot 2^{p-1}}+\frac{\varepsilon}{3 \cdot 2^{p-1} \cdot \vol(\bar{G})} \vol(\bar{G})\right)=\varepsilon
   \end{aligned}
   \]
   Hence $K$ has a finite $\varepsilon$-net in $L^p(\mathbb{R}^n)$ and is precompact there by Theorem 1.19.
@@ -1030,7 +1045,7 @@ We will give a direct proof after calculating the normed dual of $L^p(\Omega)$.
 \begin{proof}
   Once again we assume that $L \neq 0$ and $\left\|L ;\left[L^1(\Omega)\right]^{\prime}\right\|=1$. Let us suppose, for the moment, that $\Omega$ has finite volume. If $1<p<\infty$, then by Theorem 2.14 we have $L^p(\Omega) \subset L^1(\Omega)$ and
   \[
-  |L(u)| \leq\|u\|_1 \leq(\operatorname{vol}(\Omega))^{1-(1 / p)}\|u\|_p
+  |L(u)| \leq\|u\|_1 \leq(\vol(\Omega))^{1-(1 / p)}\|u\|_p
   \]
   for any $u \in L^p(\Omega)$. Hence $L \in\left[L^p(\Omega)\right]^{\prime}$ and by Theorem 2.44 there exists $v_p \in L^{p^{\prime}}(\Omega)$ such that
   \[
@@ -1038,7 +1053,7 @@ We will give a direct proof after calculating the normed dual of $L^p(\Omega)$.
   \]
   and
   \[
-  \left\|v_p\right\|_{p^{\prime}} \leq(\operatorname{vol}(\Omega))^{1-(1 / p)} \text {. }
+  \left\|v_p\right\|_{p^{\prime}} \leq(\vol(\Omega))^{1-(1 / p)} \text {. }
   \]
   Since $C_0^{\infty}(\Omega)$ is dense in $L^p(\Omega)$ for $1<p<\infty$, and since for any $p, q$ satisfying $1<p, q<\infty$ and any $\phi \in C_0^{\infty}(\Omega)$ we have
   \[
@@ -1046,11 +1061,11 @@ We will give a direct proof after calculating the normed dual of $L^p(\Omega)$.
   \]
   it follows that $v_p=v_q$ a.e. on $\Omega$. Hence we may replace $v_p$ in (37) with a function $v$ belonging to $L^p(\Omega)$ for each $p, 1<p<\infty$, and satisfying, following (38)
   \[
-  \|v\|_{p^{\prime}} \leq(\operatorname{vol}(\Omega))^{1-(1 / p)}=(\operatorname{vol}(\Omega))^{1 / p^{\prime}}
+  \|v\|_{p^{\prime}} \leq(\vol(\Omega))^{1-(1 / p)}=(\vol(\Omega))^{1 / p^{\prime}}
   \]
   It follows by Theorem 2.14 again that $v \in L^{\infty}(\Omega)$ and
   \[
-  \|v\|_{\infty} \leq \lim _{p^{\prime} \rightarrow \infty}(\operatorname{vol}(\Omega))^{1 / p^{\prime}}=1
+  \|v\|_{\infty} \leq \lim _{p^{\prime} \rightarrow \infty}(\vol(\Omega))^{1 / p^{\prime}}=1
   \]
   The argument of Paragraph 2.41 shows that there must be equality in (39).
   Even if $\Omega$ does not have finite volume, we can still write $\Omega=\bigcup_{j=1}^{\infty} G_j$, where $G_j=\{x \in \Omega: j-1 \leq|x|<j\}$ has finite volume. The sets $G_j$ are mutually disjoint. Let $\chi_j$ be the characteristic function of $G_j$. If $u_j \in L^1\left(G_j\right)$, let $\tilde{u}_j$ denote the zero extension of $u_j$ outside $G_j$. Let $L_j\left(u_j\right)=L\left(\tilde{u}_j\right)$. Then $L_j \in\left[L^1\left(G_j\right)\right]^{\prime}$ and $\left\|L_j ;\left[L^1\left(G_j\right)\right]^{\prime}\right\| \leq 1$. By the finite volume case considered above, there exists $v_j \in L^{\infty}\left(G_j\right)$ such that $\left\|v_j\right\|_{\infty, G_j} \leq 1$ and
@@ -1245,7 +1260,7 @@ Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorph
   & =2\left([u]_p+[v]_p\right)
   \end{aligned}
   \]
-  so weak- $L^p(\Omega)$ is a vector space and the "open balls" $B_r(u)=\left\{v \in\right.$ weak- $L^p(\Omega)$ : $\left.[v-u]_p<r\right\}$ do generate a topology on weak- $L^p(\Omega)$ with respect to which weak- $L^p(\Omega)$ is a topological vector space. A functional [.] with the properties of a norm except that the triangle inequality is replaced with a weaker version of the form $[u+v] \leq K([u]+[v])$ for some constant $K>1$ is called a quasi-norm.
+  so weak- $L^p(\Omega)$ is a vector space and the ``open balls'' $B_r(u)=\left\{v \in\right.$ weak- $L^p(\Omega)$ : $\left.[v-u]_p<r\right\}$ do generate a topology on weak- $L^p(\Omega)$ with respect to which weak- $L^p(\Omega)$ is a topological vector space. A functional [.] with the properties of a norm except that the triangle inequality is replaced with a weaker version of the form $[u+v] \leq K([u]+[v])$ for some constant $K>1$ is called a quasi-norm.
   Chebyshev's inequality (42) shows that $[u]_p \leq\|u\|_p$ so that $L^p(\Omega) \subset$ weak- $L^p(\Omega)$. The inclusion is strict since, if $x_0 \in \Omega$ it is easily shown that $u(x)=\left|x-x_0\right|^{-n / p}$ belongs to weak- $L^p(\Omega)$ but not to $L^p(\Omega)$.
 \end{para}
 
@@ -1304,7 +1319,7 @@ Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorph
   \[
   c=\frac{p_1\left(q_1-q\right)}{q_1\left(p_1-p\right)}=\frac{p_2\left(q_2-q\right)}{q_2\left(p_2-p\right)}
   \]
-  Given any $T>0$, a measurable function $u$ on $\Omega$ can be written as a sum of a "small" part $u_{S, T}$ and a "big" part $u_{B, T}$ defined as follows:
+  Given any $T>0$, a measurable function $u$ on $\Omega$ can be written as a sum of a ``small'' part $u_{S, T}$ and a ``big'' part $u_{B, T}$ defined as follows:
   \[
   \begin{aligned}
   & u_{S, T}(x)= \begin{cases}u(x) & \text { if }|u(x)| \leq T \\

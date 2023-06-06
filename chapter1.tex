@@ -350,7 +350,7 @@ A vector subspace $M$ of a normed space $X$ is itself a normed space under the n
   The norm on $X$ is called uniformly convex if for every number $\varepsilon$ 
   satisfying $0<\varepsilon \leq 2$, there exists a number $\delta(\varepsilon)>0$ such 
   that if $x, y \in X$ satisfy $\|x ; X\|=\|y ; X\|=1$ and $\|x-y ; X\| \geq \varepsilon$, then $\|(x+y) / 2 ; X\| \leq$ $1-\delta(\varepsilon)$.
-  The normed space $X$ itself is called "uniformly convex" in this case.
+  The normed space $X$ itself is called ``uniformly convex'' in this case.
   It should be noted, however, that uniform convexity is a property of the norm $-X$ 
   may have another equivalent norm that is not uniformly convex. Any normable space 
   is called uniformly convex if it possesses a uniformly convex norm.
@@ -705,14 +705,12 @@ There is a version of set theory where every subset of $\mathbb{R}^n$ is measura
 \section{The Lebesgue Integral}
 
 \begin{para}
-  We are now in a position to define the (Lebesgue) integral of a measurable, real-valued function defined on a measurable subset $A \subset \mathbb{R}^n$. For a simple function $s=\sum_{j=1}^m a_j \chi_{A_j}$, where $A_j \subset A, A_j$ measurable, we define
-  \[
-  \int_A s(x) \d x=\sum_{j=1}^m a_j \mu\left(A_j\right) .
-  \]
+  We are now in a position to define the (Lebesgue) integral of a measurable, real-valued function defined
+  on a measurable subset $A \subset \mathbb{R}^n$. For a simple function $s=\sum_{j=1}^m a_j \chi_{A_j}$,
+  where $A_j \subset A, A_j$ measurable, we define
+  \[\int_A s(x) \d x=\sum_{j=1}^m a_j \mu\left(A_j\right).\]
   If $f$ is measurable and nonnegative-valued on $A$, we define
-  \[
-  \int_A f(x) \d x=\sup \int_A s(x) \d x
-  \]
+  \[\int_A f(x) \d x=\sup \int_A s(x) \d x\]
   where the supremum is taken over measurable, simple functions $s$ vanishing outside $A$ and satisfying $0 \leq s(x) \leq f(x)$ in $A$. If $f$ is a nonnegative simple function, then the two definitions of $\int_A f(x) \d x$ given by (10) and (11) coincide. Note that the integral of a nonnegative function may be $+\infty$.
   
   If $f$ is measurable and real-valued, we set $f=f^{+}-f^{-}$, where $f^{+}=\max (f, 0)$ and $f^{-}=-\min (f, 0)$ are both measurable and nonnegative. We define
