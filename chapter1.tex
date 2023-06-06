@@ -441,14 +441,14 @@ The separability and uniform convexity of $X$ are readily deduced from the corre
 \begin{para}[Spaces of Bounded, Continuous Functions]
   Since $\Omega$ is open, functions in $C^m(\Omega)$ need not be bounded on $\Omega$. We define $C_B^m(\Omega)$ to consist of those functions $\phi \in C^m(\Omega)$ for which $D^\alpha u$ is bounded on $\Omega$ for $0 \leq|\alpha| \leq m . C_B^m(\Omega)$ is a Banach space with norm given by
   \[
-  \left\|\phi ; C_B^m(\Omega)\right\|=\max _{0 \leq \alpha \leq m} \sup _{x \in \Omega}\left|D^\alpha \phi(x)\right|
+  \left\|\phi\right\|_{C_B^m(\Omega)}=\max _{0 \leq \alpha \leq m} \sup _{x \in \Omega}\left|D^\alpha \phi(x)\right|
   \]
 \end{para}
 
 \begin{para}[Spaces of Bounded, Uniformly Continuous Functions]
   If $\phi \in C(\Omega)$ is bounded and uniformly continuous on $\Omega$, then it possesses a unique, bounded, continuous extension to the closure $\overline{\Omega}$ of $\Omega$. We define the vector space $C^m(\overline{\Omega})$ to consist of all those functions $\phi \in C^m(\Omega)$ for which $D^\alpha \phi$ is bounded and uniformly continuous on $\Omega$ for $0 \leq|\alpha| \leq m$. (This convenient abuse of notation leads to ambiguities if $\Omega$ is unbounded; e.g., $C^m\left(\overline{\mathbb{R}^n}\right) \neq C^m\left(\mathbb{R}^n\right)$ even though $\overline{\mathbb{R}^n}=\mathbb{R}^n$.) $C^m(\overline{\Omega})$ is a closed subspace of $C_B^m(\Omega)$, and therefore also a Banach space with the same norm
   \[
-  \left\|\phi ; C^m(\overline{\Omega})\right\|=\max _{0 \leq \alpha \leq m} \sup _{x \in \Omega}\left|D^\alpha \phi(x)\right| .
+  \left\|\phi\right\|_{C^m(\overline{\Omega})}=\max _{0 \leq \alpha \leq m} \sup _{x \in \Omega}\left|D^\alpha \phi(x)\right| .
   \]
 \end{para}
 
@@ -459,7 +459,7 @@ The separability and uniform convexity of $X$ are readily deduced from the corre
   \]
   $C^{m, \lambda}(\overline{\Omega})$ is a Banach space with norm given by
   \[
-  \left\|\phi ; C^{m, \lambda}(\overline{\Omega})\right\|=\left\|\phi ; C^m(\overline{\Omega})\right\|+\max _{0 \leq|\alpha| \leq m} \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{\left|D^\alpha \phi(x)-D^\alpha \phi(y)\right|}{|x-y|^\lambda} .
+  \left\|\phi\right\|_{C^{m, \lambda}(\overline{\Omega})}=\left\|\phi\right\|_{C^m(\overline{\Omega})}+\max _{0 \leq|\alpha| \leq m} \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{\left|D^\alpha \phi(x)-D^\alpha \phi(y)\right|}{|x-y|^\lambda} .
   \]
   It should be noted that for $0<v<\lambda \leq 1$,
   \[
@@ -522,8 +522,8 @@ The following is a straightforward imbedding theorem for the various continuous 
   The existence of imbeddings (3) and (4) follows from the obvious inequalities
   \[
   \begin{aligned}
-  & \left\|\phi ; C^m(\overline{\Omega})\right\| \leq\left\|\phi ; C^{m+1}(\overline{\Omega})\right\|, \\
-  & \left\|\phi ; C^m(\overline{\Omega})\right\| \leq\left\|\phi ; C^{m, \lambda}(\overline{\Omega})\right\| .
+  & \left\|\phi\right\|_{C^m(\overline{\Omega})} \leq\left\|\phi\right\|_{C^{m+1}(\overline{\Omega})}, \\
+  & \left\|\phi\right\|_{C^m(\overline{\Omega})} \leq\left\|\phi\right\|_{C^{m, \lambda}(\overline{\Omega})} .
   \end{aligned}
   \]
   To establish (5) we note that for $|\alpha| \leq m$,
@@ -540,16 +540,16 @@ The following is a straightforward imbedding theorem for the various continuous 
   \]
   from which we conclude that
   \[
-  \left\|\phi ; C^{m, v}(\overline{\Omega})\right\| \leq 2\left\|\phi ; C^{m, \lambda}(\overline{\Omega})\right\|
+  \left\|\phi\right\|_{C^{m, v}(\overline{\Omega})} \leq 2\left\|\phi\right\|_{C^{m, \lambda}(\overline{\Omega})}
   \]
   If $\Omega$ is convex and $x, y \in \Omega$, then by the Mean-Value Theorem there is a point $z \in \Omega$ on the line segment joining $x$ and $y$ such that $D^\alpha \phi(x)-D^\alpha \phi(y)$ is given by $(x-y) \cdot \nabla D^\alpha \phi(z)$, where $\nabla u=\left(D_1 u, \ldots, D_n u\right)$. Thus
   \begin{equation}\label{eq:1.8}
     \left|D^\alpha \phi(x)-D^\alpha \phi(y)\right|
-    \leq n|x-y|\left\|\phi ; C^{m+1}(\overline{\Omega})\right\|,
+    \leq n|x-y|\left\|\phi\right\|_{C^{m+1}(\overline{\Omega})},
   \end{equation}
   and so
   \[
-  \left\|\phi ; C^{m, 1}(\overline{\Omega})\right\| \leq n\left\|\phi ; C^{m+1}(\overline{\Omega})\right\|.
+  \left\|\phi\right\|_{C^{m, 1}(\overline{\Omega})} \leq n\left\|\phi\right\|_{C^{m+1}(\overline{\Omega})}.
   \]
   Thus (6) is proved, and (7) follows from (5) and (6).
 
