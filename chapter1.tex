@@ -303,11 +303,11 @@ A vector subspace $M$ of a normed space $X$ is itself a normed space under the n
   \[
   J x\left(x^{\prime}\right)=x^{\prime}(x), \quad x^{\prime} \in X^{\prime}.
   \]
-  Since $\left|J x\left(x^{\prime}\right)\right| \leq\left\|x^{\prime} ; X^{\prime}\right\|\|x ; X\|$, we have
+  Since $\left|J x\left(x^{\prime}\right)\right| \leq\left\|x^{\prime}\right\|_{X^{\prime}}\|x\|_{X}$, we have
   \[
-  \left\|J x ; X^{\prime \prime}\right\| \leq\|x ; X\|
+  \left\|J x\right\|_{X^{\prime \prime}} \leq\|x\|_{X}
   \]
-  However, the Hahn-Banach Extension Theorem assures us that for any $x \in X$ we can find $x^{\prime} \in X^{\prime}$ such that $\left\|x^{\prime} ; X^{\prime}\right\|=1$ and $x^{\prime}(x)=\|x ; X\|$. Therefore $J$ is an isometric isomorphism of $X$ into $X^{\prime \prime}$.
+  However, the Hahn-Banach Extension Theorem assures us that for any $x \in X$ we can find $x^{\prime} \in X^{\prime}$ such that $\left\|x^{\prime}\right\|_{X^{\prime}}=1$ and $x^{\prime}(x)=\|x\|_{X}$. Therefore $J$ is an isometric isomorphism of $X$ into $X^{\prime \prime}$.
 
   If the range of the isomorphism $J$ is the entire space $X^{\prime \prime}$, we say that the normed space $X$ is reflexive. A reflexive space must be complete, and hence a Banach space.
 \end{para}
@@ -321,7 +321,7 @@ A vector subspace $M$ of a normed space $X$ is itself a normed space under the n
 \begin{para}[Weak Topologies and Weak Convergence]
   The weak topology on a normed space $X$ is the weakest topology on $X$ that still renders continuous each $x^{\prime}$ in the normed dual $X^{\prime}$ of $X$. Unless $X$ is finite dimensional, the weak topology is weaker than the norm topology on $X$. It is a consequence of the Hahn-Banach Theorem that a closed, convex set in a normed space is also closed in the weak topology of that space.
 
-  A sequence convergent with respect to the weak topology on $X$ is said to converge weakly. Thus $x_n$ converges weakly to $x$ in $X$ provided $x^{\prime}\left(x_n\right) \rightarrow x^{\prime}(x)$ in $\mathbb{C}$ for every $x^{\prime} \in X^{\prime}$. We denote norm convergence of a sequence $\left\{x_n\right\}$ to $x$ in $X$ by $x_n \rightarrow x$, and we denote weak convergence by $x_n \rightarrow x$. Since we have $\left|x^{\prime}\left(x_n-x\right)\right| \leq\left\|x^{\prime} ; X^{\prime}\right\|\left\|x_n-x ; X\right\|$, we see that $x_n \rightarrow x$ implies $x_n \rightarrow x$. The converse is generally not true (unless $X$ is finite dimensional).
+  A sequence convergent with respect to the weak topology on $X$ is said to converge weakly. Thus $x_n$ converges weakly to $x$ in $X$ provided $x^{\prime}\left(x_n\right) \rightarrow x^{\prime}(x)$ in $\mathbb{C}$ for every $x^{\prime} \in X^{\prime}$. We denote norm convergence of a sequence $\left\{x_n\right\}$ to $x$ in $X$ by $x_n \rightarrow x$, and we denote weak convergence by $x_n \rightarrow x$. Since we have $\left|x^{\prime}\left(x_n-x\right)\right| \leq\left\|x^{\prime}\right\|_{X^{\prime}}\left\|x_n-x\right\|_{X}$, we see that $x_n \rightarrow x$ implies $x_n \rightarrow x$. The converse is generally not true (unless $X$ is finite dimensional).
 \end{para}
 
 
@@ -331,7 +331,7 @@ A vector subspace $M$ of a normed space $X$ is itself a normed space under the n
 
 
 \begin{theorem}
-  A Banach space is reflexive if and only if its closed unit ball $\overline{B_1(0)}=\{x \in X:\|x ; X\| \leq 1\}$ is weakly sequentially compact.
+  A Banach space is reflexive if and only if its closed unit ball $\overline{B_1(0)}=\{x \in X:\|x\|_{X} \leq 1\}$ is weakly sequentially compact.
 \end{theorem}
 
 
@@ -349,7 +349,7 @@ A vector subspace $M$ of a normed space $X$ is itself a normed space under the n
   Any normed space is locally convex with respect to its norm topology.
   The norm on $X$ is called uniformly convex if for every number $\varepsilon$ 
   satisfying $0<\varepsilon \leq 2$, there exists a number $\delta(\varepsilon)>0$ such 
-  that if $x, y \in X$ satisfy $\|x ; X\|=\|y ; X\|=1$ and $\|x-y ; X\| \geq \varepsilon$, then $\|(x+y) / 2 ; X\| \leq$ $1-\delta(\varepsilon)$.
+  that if $x, y \in X$ satisfy $\|x\|_{X}=\|y\|_{X}=1$ and $\|x-y\|_{X} \geq \varepsilon$, then $\|(x+y) / 2\|_{X} \leq$ $1-\delta(\varepsilon)$.
   The normed space $X$ itself is called ``uniformly convex'' in this case.
   It should be noted, however, that uniform convexity is a property of the norm $-X$ 
   may have another equivalent norm that is not uniformly convex. Any normable space 
@@ -409,7 +409,7 @@ The separability and uniform convexity of $X$ are readily deduced from the corre
   
   Let $X, Y$ be normed spaces and $f$ an operator from $X$ into $Y$. We say that $f$ is compact if $f(A)$ is precompact in $Y$ whenever $A$ is bounded in $X$. (A bounded set in a normed space is one which is contained in the ball $B_R(0)$ for some $R$.) If $f$ is continuous and compact, we say that $f$ is completely continuous. We say that $f$ is bounded if $f(A)$ is bounded in $Y$ whenever $A$ is bounded in $X$.
 
-  Every compact operator is bounded. Every bounded linear operator is continuous. Therefore, every compact linear operator is completely continuous. The norm of a linear operator $f$ is $\sup \{\|f(x) ; Y\|:\|x ; X\| \leq 1\}$.
+  Every compact operator is bounded. Every bounded linear operator is continuous. Therefore, every compact linear operator is completely continuous. The norm of a linear operator $f$ is $\sup \{\|f(x)\|_{Y}:\|x\|_{X} \leq 1\}$.
 \end{para}
 
 
@@ -421,7 +421,7 @@ The separability and uniform convexity of $X$ are readily deduced from the corre
   \end{enumerate}
   Since $I$ is linear, (ii) is equivalent to the existence of a constant $M$ such that
   \[
-  \|I x ; Y\| \leq M\|x ; X\|, \quad x \in X \text {. }
+  \|I x\|_{Y} \leq M\|x\|_{X}, \quad x \in X \text {. }
   \]
   Sometimes the requirement that $X$ be a subspace of $Y$ and $I$ be the identity map is weakened to allow as imbeddings certain canonical transformations of $X$ into $Y$. Examples are trace imbeddings of Sobolev spaces as well as imbeddings of Sobolev spaces into spaces of continuous functions. See Chapter~5.
 
@@ -554,7 +554,7 @@ The following is a straightforward imbedding theorem for the various continuous 
   Thus (6) is proved, and (7) follows from (5) and (6).
 
   Now suppose that $\Omega$ is bounded. If $A$ is a bounded set in $C^{0, \lambda}(\overline{\Omega})$, 
-  then there exists $M$ such that $\bigl\|\phi ; C^{0, \lambda}(\overline{\Omega})\bigr\| \leq M$
+  then there exists $M$ such that $\|\phi\|_{C^{0, \lambda}(\overline{\Omega})} \leq M$
   for all $\phi \in A$. But then $|\phi(x)-\phi(y)| \leq M|x-y|^\lambda$ for all $\phi \in A$ and all $x, y \in \Omega$, whence $A$ is precompact in $C(\overline{\Omega})$ by the Ascoli-Arzela Theorem~1.33. This proves the compactness of (4) for $m=0$.
   If $m \geq 1$ and $A$ is bounded in $C^{m \cdot \lambda}(\overline{\Omega})$,
   then $A$ is bounded in $C^{0,\lambda}(\overline{\Omega})$ and
@@ -894,7 +894,7 @@ The function $f$ is uniquely determined by $\lambda$ up to sets of measure zero.
   \]
   However, the linear functional $\delta$ defined on $\mathscr{D}(\Omega)$ by
   \begin{equation}
-    \delta(\phi)=\phi(0)
+   \delta(\phi)=\phi(0)
   \end{equation}
   is easily seen to be continuous and hence a distribution on $\Omega$.
   It is called a \emph{Dirac distribution}.

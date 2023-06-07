@@ -2,7 +2,7 @@
   {The Sobolev Spaces \boldmath{$W^{m,p}(\varOmega)$}}
 
 In this chapter we introduce Sobolev spaces of integer order and establish
-some of their most important properties. These spaces are defines over an arbitrary
+some of their most important properties. These spaces are defined over an arbitrary
 domain $\Omega\subset \mathbb{R}^n$ and are subspaces of various Lebesgue
 spaces $L^p(\Omega)$.
 
@@ -18,7 +18,7 @@ spaces $L^p(\Omega)$.
     \|u\|_{m,\infty} & = \max_{0\leq |\alpha| \leq m} \|D^\alpha u\|_{\infty}
   \end{align}
   for any function $u$ for which the right side makes sense,
-  $\|\cdot\|_p$ beging, of course, the norm in $L^p(\Omega)$.
+  $\|\cdot\|_p$ being, of course, the norm in $L^p(\Omega)$.
   In some situations where confusion of domains may occur
   we will use $\|u\|_{m,p,\Omega}$ in place of $\|u\|_{m,p}$.
   Evidently (1) or (2) defines a norm on 
@@ -178,11 +178,10 @@ We will not be able to investigate the most of these generalizations here.
   there corresponds a unique $v \in L^{p'}(\Omega^{(m)})$ such that for every 
   $u \in L^p(\Omega^{(m)})$,
   \[
-   L(u)=\int_{\Omega^{(m)}} u(x) v(x) d x=\sum_{|\alpha| \leq m} \int_{\Omega_\alpha} u_\alpha(x)v_\alpha(x) d x=\sum_{|\alpha| \leq m}\left\langle u_\alpha, v_\alpha\right\rangle,
+   L(u)=\int_{\Omega^{(m)}} u(x) v(x) \d x=\sum_{|\alpha| \leq m} \int_{\Omega_\alpha} u_\alpha(x)v_\alpha(x) \d x=\sum_{|\alpha| \leq m}\left\langle u_\alpha, v_\alpha\right\rangle,
   \]
   where $u_\alpha$ and $v_\alpha$ are the restrictions of $u$ and $v$, respectively, to $\Omega_\alpha$.
-  Moreover, $\bigl\|L ;\left(L^p(\Omega^{(m)})\right)^{\prime}\bigr\|
-    = \bigl\|v ; L^{p'}(\Omega^{(m)})\bigr\|$.
+  Moreover, $\|L\|_{\left(L^p(\Omega^{(m)})\right)^{\prime}} = \|v\|_{L^{p'}(\Omega^{(m)})}$.
   Thus $\left(L^p(\Omega^{(m)})\right)^{\prime} \equiv L^{p'}(\Omega^{(m)})$.
   This is valid because $L^p(\Omega^{(m)})$ is,
   after all, an $L^p$ space, albeit one defined on an unusual domain.
@@ -215,7 +214,7 @@ We will not be able to investigate the most of these generalizations here.
   \]
   Since $P$ is an isometric isomorphism, $L^* \in W'$ and
   \[
-  \left\|L^* ; W'\right\|=\left\|L ;\left(W^{m,p}(\Omega)\right)^{\prime}\right\| .
+  \|L^*\|_{W'} = \|L\|_{\left(W^{m,p}(\Omega)\right)^{\prime}} .
   \]
   By the Hahn-Banach Theorem~1.13 there exists a norm preserving extension $\hat{L}$ of $L^*$
   to all of $L^p(\Omega^{(m)})$, and, as observed in Paragraph~3.8
@@ -229,12 +228,12 @@ We will not be able to investigate the most of these generalizations here.
   \]
   Moreover,
   \[
-  \left\|L ;\left(W^{m,p}(\Omega)\right)^{\prime}\right\|
-    = \left\|L^* ; W'\right\|
-    = \left\|\hat{L} ;\left(L^p(\Omega^{(m)})\right)^{\prime}\right\|
-    = \left\|v ; L^{p'}(\Omega^{(m)})\right\| .
+  \|L\|_{\left(W^{m,p}(\Omega)\right)^{\prime}}
+    = \left\|L^*\right\|_{W'}
+    = \|\hat{L}\|_{\left(L^p(\Omega^{(m)})\right)^{\prime}}
+    = \left\|v\right\|_{L^{p'}(\Omega^{(m)})} .
   \]
-  Now (4) must hold because any element $v \in L^{p'}(\Omega^{(m)})$ for which (3) holds for every $u \in W^{m,p}(\Omega)$ corresponds to an extension $L$ of $L^*$ and so will have norm $\left\|v ; L^{p'}(\Omega^{(m)})\right\|$ not less than $\left\|L ;\left(W^{m,p}(\Omega)\right)^{\prime}\right\|$.
+  Now (4) must hold because any element $v \in L^{p'}(\Omega^{(m)})$ for which (3) holds for every $u \in W^{m,p}(\Omega)$ corresponds to an extension $L$ of $L^*$ and so will have norm $\|v\|_{L^{p'}(\Omega^{(m)})}$ not less than $\|L\|_{\left(W^{m,p}(\Omega)\right)^{\prime}}$.
   The uniqueness of $v$ if $1<p<\infty$ follows from the uniform convexity of $L^p(\Omega^{(m)})$ and $L^{p'}(\Omega^{(m)})$ by an argument similar to that in Lemma 2.43.
 \end{proof}
 
@@ -247,7 +246,7 @@ We will not be able to investigate the most of these generalizations here.
   \end{equation}
   For every $\phi \in \mathscr{D}(\Omega) \subset W^{m,p}(\Omega)$ we have $T(\phi)=\sum_{0 \leq|\alpha| \leq m} T_{v_\alpha}\left(D^\alpha \phi\right)=L(\phi)$ so that $L$ is clearly an extension of $T$. Moreover, by (4)
   \[
-  \left\|L ;\left(W^{m,p}(\Omega)\right)^{\prime}\right\|=\min \left\{\left\|v ; L^{p'}(\Omega^{(m)})\right\|: L \text { extends } T \text { given by }(5)\right\} .
+  \|L\|_{\left(W^{m,p}(\Omega)\right)^{\prime}}=\min \left\{\left\|v\right\|_{L^{p'}(\Omega^{(m)})}: L \text { extends } T \text { given by }(5)\right\} .
   \]
 \end{para}
 
@@ -259,12 +258,12 @@ These remarks also hold for $L \in\left(W_0^{m, p}(\Omega)\right)^{\prime}$ sinc
   \begin{aligned}
   \left|T\left(\phi_k\right)-T\left(\phi_n\right)\right| & \leq \sum_{0 \leq|\alpha| \leq m}\left|T_{v_\alpha}\left(D^\alpha \phi_k-D^\alpha \phi_n\right)\right| \\
   & \leq \sum_{0 \leq|\alpha| \leq m}\left\|D^\alpha\left(\phi_k-\phi_n\right)\right\|_p\left\|v_\alpha\right\|_{p'} \\
-  & \leq\left\|\phi_k-\phi_n\right\|_{m,p}\left\|v ; L^{p'}(\Omega^{(m)})\right\| \rightarrow 0 \quad \text { as } k, n \rightarrow \infty .
+  & \leq\left\|\phi_k-\phi_n\right\|_{m,p}\left\|v\right\|_{L^{p'}(\Omega^{(m)})} \rightarrow 0 \quad \text { as } k, n \rightarrow \infty .
   \end{aligned}
   \]
   Thus $\left\{T\left(\phi_n\right)\right\}$ is a Cauchy sequence in $\mathbb{C}$ and so converges to a limit that we can denote by $L(u)$ since it is clear that if also $\left\{\psi_n\right\} \subset \mathscr{D}(\Omega)$ and $\left\|\psi_n-u\right\|_{m,p} \rightarrow 0$, then $T\left(\phi_n\right)-T\left(\psi_n\right) \rightarrow 0$ as $n \rightarrow \infty$. The functional $L$ thus defined is linear and belongs to $\left(W_0^{m, p}(\Omega)\right)^{\prime}$, for if $u=\lim _{n \rightarrow \infty} \phi_n$ as above, then
   \[
-  |L(u)|=\lim _{n \rightarrow \infty}\left|T\left(\phi_n\right)\right| \leq \lim _{n \rightarrow \infty}\left\|\phi_n\right\|_{m,p}\left\|v ; L^{p'}(\Omega^{(m)})\right\|=\|u\|_{m,p}\left\|v ; L^{p'}(\Omega^{(m)})\right\| .
+  |L(u)|=\lim _{n \rightarrow \infty}\left|T\left(\phi_n\right)\right| \leq \lim _{n \rightarrow \infty}\left\|\phi_n\right\|_{m,p}\left\|v\right\|_{L^{p'}(\Omega^{(m)})}=\|u\|_{m,p}\left\|v\right\|_{L^{p'}(\Omega^{(m)})} .
   \]
 \end{para}
 
@@ -274,7 +273,7 @@ We have therefore proved the following theorem.
 \begin{theorem}[The Normed Dual of $\bm{W_0^{m, p}(\Omega)}$]
   If $1 \leq p<\infty$, $p'$ is the exponent conjugate to $p$, and $m \geq 1$, the dual space $\left(W_0^{m, p}(\Omega)\right)^{\prime}$ is isometrically isomorphic to the Banach space $W^{-m, p'}(\Omega)$ consisting of those distributions $T \in \mathscr{D}^{\prime}(\Omega)$ that satisfy (5) and having norm
   \[
-  \|T\|=\min \left\{\left\|v ; L^{p'}(\Omega^{(m)})\right\|: v \text { satisfies }(5)\right\} .
+  \|T\|=\min \left\{\left\|v\right\|_{L^{p'}(\Omega^{(m)})}: v \text { satisfies }(5)\right\} .
   \]
 \end{theorem}
 
@@ -294,7 +293,7 @@ When $W_0^{m, p}(\Omega)$ is a proper subset of $W^{m,p}(\Omega)$, continuous li
   We define the $\left(-m, p'\right)$-norm of $v \in L^{p'}(\Omega)$ to be the norm of $L_v$, that is
   \[
   \|v\|_{-m, p'}
-    = \left\|L_v ;\left(W_0^{m, p}(\Omega)\right)^{\prime}\right\|
+    = \|L_v\|_{\left(W_0^{m, p}(\Omega)\right)^{\prime}}
     = \sup_{u \in W_0^{m, p}(\Omega),\|u\|_{m,p} \leq 1}|\langle u, v\rangle| .
   \]
   Clearly $\|v\|_{-m, p'} \leq\|v\|_{p'}$ and for any $u \in W_0^{m, p}(\Omega)$ and $v \in L^{p'}(\Omega)$ we have
@@ -388,12 +387,12 @@ infinitely differentiable partitions of unity.
   If $\phi \in \mathscr{D}\left(\Omega'\right)$
   \[
   \begin{aligned}
-    \int_{\Omega'} J_\varepsilon * u(x) D^\alpha \phi(x) d x
+    \int_{\Omega'} J_\varepsilon * u(x) D^\alpha \phi(x) \d x
     & = \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} \tilde{u}(x-y) J_\varepsilon(y) 
         D^\alpha \phi(x) d x d y \\
     & = (-1)^{|\alpha|} \int_{\mathbb{R}^n} \int_{\Omega'}
         D_x^\alpha u(x-y) J_\varepsilon(y) \phi(x) d x d y \\
-    & = (-1)^{|\alpha|} \int_{\Omega'} J_\varepsilon * D^\alpha u(x) \phi(x) d x .
+    & = (-1)^{|\alpha|} \int_{\Omega'} J_\varepsilon * D^\alpha u(x) \phi(x) \d x .
   \end{aligned}
   \]
   Thus $D^\alpha J_\varepsilon * u=J_\varepsilon * D^\alpha u$ in the distributional sense
@@ -495,7 +494,7 @@ infinitely differentiable partitions of unity.
   that $\Phi(a)<\varepsilon$ and $\Phi(b)>1-\varepsilon$. If $0<\varepsilon<1 / 2$, then
   \[
   \begin{aligned}
-  1-2 \varepsilon<\Phi(b)-\Phi(a)=\int_a^b \Phi^{\prime}(x) d x & \leq \int_{\overline{\Omega}}\left|D_x \phi(x, y)\right| d x d y \\
+  1-2 \varepsilon<\Phi(b)-\Phi(a)=\int_a^b \Phi^{\prime}(x) \d x & \leq \int_{\overline{\Omega}}\left|D_x \phi(x, y)\right| \d x d y \\
   & \leq 2^{1 / p^{\prime}}\left\|D_x \phi\right\|_{p, \Omega}<2^{1 / p^{\prime}} \varepsilon
   \end{aligned}
   \]
@@ -537,13 +536,7 @@ infinitely differentiable partitions of unity.
   belongs to $W^{m,p}(\Omega)$ and has bounded support.
   For $0<\varepsilon \leq 1$ and $|\alpha| \leq m$
   \[
-  \left|D^\alpha u_\varepsilon(x)\right|=\left|\sum_{\beta \leq \alpha}\left(\begin{array}{c}
-  \alpha \\
-  \beta
-  \end{array}\right) D^\beta u(x) D^{\alpha-\beta} f_\varepsilon(x)\right| \leq M \sum_{\beta \leq \alpha}\left(\begin{array}{c}
-  \alpha \\
-  \beta
-  \end{array}\right)\left|D^\beta u(x)\right| .
+  \left|D^\alpha u_\varepsilon(x)\right|=\left|\sum_{\beta \leq \alpha}\binom{\alpha}{\beta} D^\beta u(x) D^{\alpha-\beta} f_\varepsilon(x)\right| \leq M \sum_{\beta \leq \alpha}\binom{\alpha}{\beta}\left|D^\beta u(x)\right| .
   \]
   Therefore, setting $\Omega_\varepsilon=\{x \in \Omega:|x|>1 / \varepsilon\}$, we have
   \[
@@ -671,10 +664,10 @@ The converse is, of course, generally not true.
   Let $\left\{\phi_j\right\}$ be a sequence in $C_0^{\infty}(\Omega)$ converging to $u$ in $W_0^{m, p}(\Omega)$. If $\psi \in \mathscr{D}\left(\mathbb{R}^n\right)$, then for $|\alpha| \leq m$
   \[
   \begin{aligned}
-  (-1)^{|\alpha|} \int_{\mathbb{R}^n} \tilde{u}(x) D^\alpha \psi(x) d x & =(-1)^{|\alpha|} \int_{\Omega} u(x) D^\alpha \psi(x) d x \\
-  & =\lim _{j \rightarrow \infty}(-1)^{|\alpha|} \int_{\Omega} \phi_j(x) D^\alpha \psi(x) d x \\
-  & =\lim _{j \rightarrow \infty} \int_{\Omega} D^\alpha \phi_j(x) \psi(x) d x \\
-  & =\int_{\mathbb{R}^n} \widetilde{D^\alpha u(x) \psi(x) d x}
+  (-1)^{|\alpha|} \int_{\mathbb{R}^n} \tilde{u}(x) D^\alpha \psi(x) \d x & =(-1)^{|\alpha|} \int_{\Omega} u(x) D^\alpha \psi(x) \d x \\
+  & =\lim _{j \rightarrow \infty}(-1)^{|\alpha|} \int_{\Omega} \phi_j(x) D^\alpha \psi(x) \d x \\
+  & =\lim _{j \rightarrow \infty} \int_{\Omega} D^\alpha \phi_j(x) \psi(x) \d x \\
+  & =\int_{\mathbb{R}^n} \widetilde{D^\alpha u(x) \psi(x) \d x}
   \end{aligned}
   \]
   Thus $D^\alpha \tilde{u}=\widetilde{D^\alpha u}$ in the distributional sense
@@ -699,9 +692,9 @@ As a final preparation for our investigation of the possible identity of $W_0^{m
 
 
 \begin{lemma}
-  Let $B=\left(a_1, b_1\right) \times \cdots \times\left(a_n, b_n\right)$ be an open rectangular box in $\mathbb{R}^n$ and let $\phi \in \mathscr{D}(B)$. If $\int_B \phi(x) d x=0$, then $\phi(x)=\sum_{j=1}^n \phi_j(x)$, where $\phi_j \in \mathscr{D}(B)$ and
+  Let $B=\left(a_1, b_1\right) \times \cdots \times\left(a_n, b_n\right)$ be an open rectangular box in $\mathbb{R}^n$ and let $\phi \in \mathscr{D}(B)$. If $\int_B \phi(x) \d x=0$, then $\phi(x)=\sum_{j=1}^n \phi_j(x)$, where $\phi_j \in \mathscr{D}(B)$ and
   \begin{equation}\label{eq:3.8}
-    \int_{a_j}^{b_j} \phi_j\left(x_1, \ldots, x_j, \ldots, x_n\right) d x_j=0
+    \int_{a_j}^{b_j} \phi_j\left(x_1, \ldots, x_j, \ldots, x_n\right) \d x_j=0
   \end{equation}
   for every fixed $\left(x_1, \ldots, x_{j-1}, x_{j+1}, \ldots, x_n\right) \in \mathbb{R}^{n-1}$.
 \end{lemma}
@@ -717,19 +710,19 @@ As a final preparation for our investigation of the possible identity of $W_0^{m
   \]
   Then $\psi_j \in \mathscr{D}\left(B_j\right)$ and $\omega_j \in \mathscr{D}(B)$. Moreover
   \[
-  \int_{B_j} \psi_j\left(x_j, \ldots, x_n\right) d x_j \cdots d x_n=\int_B \phi(x) d x=0
+  \int_{B_j} \psi_j\left(x_j, \ldots, x_n\right) \d x_j \cdots d x_n=\int_B \phi(x) \d x=0
   \]
   Let $\phi_1=\phi-\omega_2, \phi_j=\omega_j-\omega_{j+1}$ if $2 \leq j \leq n-1$, and $\phi_n=\omega_n$. Clearly $\phi_j \in \mathscr{D}(B)$ for $1 \leq j \leq n$, and $\phi=\sum_{j=1}^n \phi_j$. Finally,
   \[
   \begin{aligned}
-  & \int_{a_1}^{b_1} \phi_1\left(x_1, \ldots, x_n\right) d x_1 \\
-  & =\int_{a_1}^{b_1} \phi\left(x_1, \ldots, x_n\right) d x_1-\psi_2\left(x_2, \ldots, x_n\right) \int_{a_1}^{b_1} u_1\left(x_1\right) d x_1=0 \\
-  & \int_{a_j}^{b_j} \phi_j\left(x_1, \ldots, x_n\right) d x_j \\
+  & \int_{a_1}^{b_1} \phi_1\left(x_1, \ldots, x_n\right) \d x_1 \\
+  & =\int_{a_1}^{b_1} \phi\left(x_1, \ldots, x_n\right) \d x_1-\psi_2\left(x_2, \ldots, x_n\right) \int_{a_1}^{b_1} u_1\left(x_1\right) \d x_1=0 \\
+  & \int_{a_j}^{b_j} \phi_j\left(x_1, \ldots, x_n\right) \d x_j \\
   & =u_1\left(x_1\right) \cdots u_{j-1}\left(x_{j-1}\right) \\
-  & \times\left(\int_{a_j}^{b_j} \psi_j\left(x_1, \ldots, x_n\right) d x_j-\psi_{j+1}\left(x_{j+1}, \ldots, x_n\right) \int_{a_j}^{b_j} u_j\left(x_j\right) d x_j\right) \\
+  & \times\left(\int_{a_j}^{b_j} \psi_j\left(x_1, \ldots, x_n\right) \d x_j-\psi_{j+1}\left(x_{j+1}, \ldots, x_n\right) \int_{a_j}^{b_j} u_j\left(x_j\right) \d x_j\right) \\
   & =0, \quad 2 \leq j \leq n-1 \\
-  & \int_{a_n}^{b_n} \phi_n\left(x_1, \ldots, x_n\right) d x_n=u_1\left(x_1\right) \cdots u_{n-1}\left(x_{n-1}\right) \int_{a_n}^{b_n} \psi_n\left(x_n\right) d x_n \\
-  & =u_1\left(x_1\right) \cdots u_{n-1}\left(x_{n-1}\right) \int_B \phi(x) d x=0 \\
+  & \int_{a_n}^{b_n} \phi_n\left(x_1, \ldots, x_n\right) \d x_n=u_1\left(x_1\right) \cdots u_{n-1}\left(x_{n-1}\right) \int_{a_n}^{b_n} \psi_n\left(x_n\right) \d x_n \\
+  & =u_1\left(x_1\right) \cdots u_{n-1}\left(x_{n-1}\right) \int_B \phi(x) \d x=0 \\
   &
   \end{aligned}
   \]
@@ -739,23 +732,23 @@ As a final preparation for our investigation of the possible identity of $W_0^{m
 \begin{corollary}
   If $T \in \mathscr{D}^{\prime}(B)$ and $D_j T=0$ for $1 \leq j \leq n$, then there exists a constant $k$ such that for all $\phi \in \mathscr{D}(B)$
   \[
-  T(\phi)=k \int_B \phi(x) d x
+  T(\phi)=k \int_B \phi(x) \d x
   \]
 \end{corollary}
 
 \begin{proof}
-  First note that if $\int_B \phi(x) d x=0$, then $T(\phi)=0$, for, by the above lemma we may write $\phi=\sum_{j=1}^n \phi_j$, where $\phi_j \in \mathscr{D}(B)$ satisfies $(8)$, and hence $\phi_j=D_j \theta_j$, where $\theta_j$ defined by
+  First note that if $\int_B \phi(x) \d x=0$, then $T(\phi)=0$, for, by the above lemma we may write $\phi=\sum_{j=1}^n \phi_j$, where $\phi_j \in \mathscr{D}(B)$ satisfies $(8)$, and hence $\phi_j=D_j \theta_j$, where $\theta_j$ defined by
   \[
   \theta_j(x)=\int_{a_j}^{x_j} \phi_j\left(x_1, \ldots, x_{j-1}, t, x_{j+1}, \ldots, x_n\right) d t
   \]
   belongs to $\mathscr{D}(B)$. Thus $T(\phi)=\sum_{j=1}^n T\left(D_j \theta_j\right)=-\sum_{j=1}^n\left(D_j T\right)\left(\theta_j\right)=0$.
-  Now suppose $T \neq 0$. Then there exists $\phi_0 \in \mathscr{D}(B)$ such that $T\left(\phi_0\right)=k_1 \neq 0$. Thus $\int_B \phi_0(x) d x=k_2 \neq 0$ and $T\left(\phi_0\right)=k \int_B \phi_0(x) d x$, where $k=k_1 / k_2$. If $\phi \in \mathscr{D}(B)$ is arbitrary, let $K(\phi)=\int_B \phi(x) d x$. Then
+  Now suppose $T \neq 0$. Then there exists $\phi_0 \in \mathscr{D}(B)$ such that $T\left(\phi_0\right)=k_1 \neq 0$. Thus $\int_B \phi_0(x) \d x=k_2 \neq 0$ and $T\left(\phi_0\right)=k \int_B \phi_0(x) \d x$, where $k=k_1 / k_2$. If $\phi \in \mathscr{D}(B)$ is arbitrary, let $K(\phi)=\int_B \phi(x) \d x$. Then
   \[
-  \int_B\left(\phi(x)-\frac{K(\phi)}{k_2} \phi_0(x)\right) d x=0
+  \int_B\left(\phi(x)-\frac{K(\phi)}{k_2} \phi_0(x)\right) \d x=0
   \]
   and so $T\left(\phi-\left[K(\phi) / k_2\right] \phi_0\right)=0$. It follows that
   \[
-  T(\phi)=\frac{T\left(\phi_0\right)}{k_2} K(\phi)=k K(\phi)=k \int_B \phi(x) d x .
+  T(\phi)=\frac{T\left(\phi_0\right)}{k_2} K(\phi)=k K(\phi)=k \int_B \phi(x) \d x .
   \]
 \end{proof}
 
@@ -764,13 +757,13 @@ Note that this corollary can be extended to any connected set $\Omega \in \mathb
 The following lemma shows that different locally integrable functions on an open set $\Omega$ determine different distributions on $\Omega$.
 
 \begin{lemma}
-  Let $u \in L_{\mathrm{loc}}^1(\Omega)$ satisfy $\int_{\Omega} u(x) \phi(x) d x=0$ for every $\phi$ in $\mathscr{D}(\Omega)$. Then $u(x)=0$ a.e. in $\Omega$.
+  Let $u \in L_{\mathrm{loc}}^1(\Omega)$ satisfy $\int_{\Omega} u(x) \phi(x) \d x=0$ for every $\phi$ in $\mathscr{D}(\Omega)$. Then $u(x)=0$ a.e. in $\Omega$.
 \end{lemma}
 
 \begin{proof}
-  If $\psi \in C_0(\Omega)$, then for sufficiently small positive $\varepsilon$, the mollifier $J_\varepsilon * \psi$ belongs to $\mathscr{D}(\Omega)$. By Lemma $2.29, J_\varepsilon * \psi \rightarrow \psi$ uniformly on $\Omega$ as $\varepsilon \rightarrow 0+$. Hence $\int_{\Omega} u(x) \psi(x) d x=0$ for every $\psi \in C_0(\Omega)$.
+  If $\psi \in C_0(\Omega)$, then for sufficiently small positive $\varepsilon$, the mollifier $J_\varepsilon * \psi$ belongs to $\mathscr{D}(\Omega)$. By Lemma $2.29, J_\varepsilon * \psi \rightarrow \psi$ uniformly on $\Omega$ as $\varepsilon \rightarrow 0+$. Hence $\int_{\Omega} u(x) \psi(x) \d x=0$ for every $\psi \in C_0(\Omega)$.
   
-  Let $K \subset\subset \Omega$ and let $\varepsilon>0$. Let $\chi_K$ be the characteristic function of $K$. Then $\int_K|u(x)| d x<\infty$. There exists $\delta>0$ such that for any measurable set $A \subset K$ with $\mu(A)<\delta$ we have $\int_A|u(x)| d x<\varepsilon / 2$ (see, for example, [Ru2, p. 124]). By Lusin's theorem 1.42 (f) there exists $\psi \in C_0\left(\mathbb{R}^n\right)$ with $|\psi(x)| \leq 1$ for all $x$, such that
+  Let $K \subset\subset \Omega$ and let $\varepsilon>0$. Let $\chi_K$ be the characteristic function of $K$. Then $\int_K|u(x)| \d x<\infty$. There exists $\delta>0$ such that for any measurable set $A \subset K$ with $\mu(A)<\delta$ we have $\int_A|u(x)| \d x<\varepsilon / 2$ (see, for example, [Ru2, p. 124]). By Lusin's theorem 1.42 (f) there exists $\psi \in C_0\left(\mathbb{R}^n\right)$ with $|\psi(x)| \leq 1$ for all $x$, such that
   \[
   \mu\left(\left\{x \in \mathbb{R}^n: \psi(x) \neq \chi_K(x) \sgn \overline{u(x)}\right\}\right)<\delta .
   \]
@@ -781,9 +774,9 @@ The following lemma shows that different locally integrable functions on an open
   Hence
   \[
   \begin{aligned}
-  \int_K|u(x)| d x & =\int_{\Omega} u(x) \chi_K(x) \sgn \overline{u(x)} d x \\
-  & =\int_{\Omega} u(x) \psi(x) d x+\int_{\Omega} u(x)\left(\chi_K(x) \sgn \overline{u(x)}-\psi(x)\right) d x \\
-  & \leq 0+2 \int_{\left\{x \in \Omega: \psi(x) \neq \chi_K(x) \sgn \overline{u(x)\}}\right.}|u(x)| d x<\varepsilon .
+  \int_K|u(x)| \d x & =\int_{\Omega} u(x) \chi_K(x) \sgn \overline{u(x)} \d x \\
+  & =\int_{\Omega} u(x) \psi(x) \d x+\int_{\Omega} u(x)\left(\chi_K(x) \sgn \overline{u(x)}-\psi(x)\right) \d x \\
+  & \leq 0+2 \int_{\left\{x \in \Omega: \psi(x) \neq \chi_K(x) \sgn \overline{u(x)\}}\right.}|u(x)| \d x<\varepsilon .
   \end{aligned}
   \]
   Since $\varepsilon$ is arbitrary, $u(x)=0$ a.e.~in $K$ for each such $K$,
@@ -798,7 +791,7 @@ The following lemma shows that different locally integrable functions on an open
 \begin{proof}
   By Corollary 3.30 , since $D_j T_u=0$ for $1 \leq j \leq n$, we have
   \[
-  \int_B u(x) \phi(x) d x=T_u(\phi)=k \int_B \phi(x) d x
+  \int_B u(x) \phi(x) \d x=T_u(\phi)=k \int_B \phi(x) \d x
   \]
   Hence $u(x)-k=0$ a.e. in $B$.
 \end{proof}
@@ -982,8 +975,8 @@ The following two lemmas develop properties of polarity. The first of these show
   \end{equation}
   or, replacing $y$ by $\Phi(x)$ and expressing the integrals over $\Omega$,
   \begin{align}
-  & (-1)^{|\alpha|} \int_{\Omega} u_j(x)\left(D^\alpha \theta\right)(\Phi(x))\left|\det \Phi^{\prime}(x)\right| d x \notag \\
-  & \quad=\sum_{\beta \leq \alpha} \int_{\Omega} D^\beta u_j(x) M_{\alpha \beta}(\Phi(x)) \theta(\Phi(x))\left|\det \Phi^{\prime}(x)\right| d x . \label{eq:3.13}
+  & (-1)^{|\alpha|} \int_{\Omega} u_j(x)\left(D^\alpha \theta\right)(\Phi(x))\left|\det \Phi^{\prime}(x)\right| \d x \notag \\
+  & \quad=\sum_{\beta \leq \alpha} \int_{\Omega} D^\beta u_j(x) M_{\alpha \beta}(\Phi(x)) \theta(\Phi(x))\left|\det \Phi^{\prime}(x)\right| \d x . \label{eq:3.13}
   \end{align}
   Since $D^\beta u_j \rightarrow u$ in $L^p(\Omega)$ for $|\beta| \leq m$,
   we can take the limit through (13) as $n \rightarrow \infty$ and hence obtain (12) with $u$ 
@@ -991,7 +984,7 @@ The following two lemmas develop properties of polarity. The first of these show
   \[
   \begin{aligned}
   \int_G\left|D^\alpha(A u)(y)\right|^p d y & \leq\left(\sum_{\beta \leq \alpha} 1\right)^p \max _{|\beta| \leq|\alpha|}\left(\left.\sup _{y \in G}\left|M_{\alpha \beta}\right| \int_G\left|\left(D^\beta u\right)\right|(\Psi(y))\right|^p d y\right) \\
-  & \leq \text { const } \max _{|\beta| \leq|\alpha|} \int_{\Omega}\left|D^\beta u(x)\right|^p d x
+  & \leq \text { const } \max _{|\beta| \leq|\alpha|} \int_{\Omega}\left|D^\beta u(x)\right|^p \d x
   \end{aligned}
   \]
   from which it follows that $\|A u\|_{m, p, G} \leq$ const $\|u\|_{m, p, \Omega}$.

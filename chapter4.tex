@@ -452,8 +452,8 @@
   we have, using (10) and denoting by $d x^{\prime}$ the $k$-volume element in $H$,
   \[
   \begin{aligned}
-  \int_{\Omega_k}|u(x)|^p d x^{\prime} & \leq K \sum_{|\alpha| \leq m} \int_{\Omega_k} d x^{\prime} \int_{B_\rho(x)}\left|D^\alpha u(y)\right|^p d y \\
-  & =K \sum_{|\alpha| \leq m} \int_{\Omega_{k, \rho}}\left|D^\alpha u(y)\right|^p d y \int_{H \cap B_p(y)} d x^{\prime} \leq K_1\|u\|_{m, p, \Omega}^p,
+  \int_{\Omega_k}|u(x)|^p \d x^{\prime} & \leq K \sum_{|\alpha| \leq m} \int_{\Omega_k} \d x^{\prime} \int_{B_\rho(x)}\left|D^\alpha u(y)\right|^p d y \\
+  & =K \sum_{|\alpha| \leq m} \int_{\Omega_{k, \rho}}\left|D^\alpha u(y)\right|^p d y \int_{H \cap B_p(y)} \d x^{\prime} \leq K_1\|u\|_{m, p, \Omega}^p,
   \end{aligned}
   \]
   and $W^{m,p}(\Omega) \rightarrow L^p(\Omega_k)$. But (9) shows that $W^{m,p}(\Omega) \rightarrow L^{\infty}(\Omega_k)$ and so imbedding (2) follows by Theorem 2.11.
@@ -499,8 +499,8 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   Integrating the $p$ th power of the above estimate over $H$ (with volume element $\left.d x^{\prime}\right)$, we obtain
   \[
   \begin{aligned}
-  \left\|\chi_r \omega_m *|v|\right\|_{p, H}^p & =\int_H\left|\chi_r \omega_m *\right| v|(x)|^p d x^{\prime} \\
-  & \leq K r^{(s+m) p-n} \int_H d x^{\prime} \int_{B_r(x)}|v(y)|^p|x-y|^{-s p} d y \\
+  \left\|\chi_r \omega_m *|v|\right\|_{p, H}^p & =\int_H\left|\chi_r \omega_m *\right| v|(x)|^p \d x^{\prime} \\
+  & \leq K r^{(s+m) p-n} \int_H \d x^{\prime} \int_{B_r(x)}|v(y)|^p|x-y|^{-s p} d y \\
   & \leq K r^{(s+m) p-n} r^{k-s p}\|v\|_{p, \mathbb{R}^n}^p=K r^{m p-(n-k)}\|v\|_{p, \mathbb{R}^n}^p
   \end{aligned}
   \]
@@ -583,7 +583,13 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   \[
   \frac{1}{p}=\frac{\theta}{p_1}+\frac{1-\theta}{p_2}, \quad \frac{1}{q}=\frac{\theta}{p_1}
   \]
-  As in the above proof of Case $C$ for $p>1$, the maps $\left.v \mapsto\left(\chi_1 *|v|\right)\right|_H$ and $\left.v \mapsto\left(\chi_1 \omega_m *|v|\right)\right|_H$ are bounded from $L^{p_1}\left(\mathbb{R}^n\right)$ into $L^{p_1}\left(\mathbb{R}^k\right)$ and so are of weak type $\left(p_1, p_1\right)$. As in the proof of Case $\mathrm{A}$, these same maps are bounded from $L^{p_2}\left(\mathbb{R}^n\right)$ into $L^{\infty}\left(\mathbb{R}^k\right)$ and so are of weak type $\left(p_2, \infty\right)$. By the Marcinkiewicz theorem again, they are bounded from $L^p\left(\mathbb{R}^n\right)$ into $L^q\left(\mathbb{R}^k\right)$ and
+  As in the above proof of Case $C$ for $p>1$, the maps $\left.v \mapsto\left(\chi_1 *|v|\right)\right|_H$
+  and $\left.v \mapsto\left(\chi_1 \omega_m *|v|\right)\right|_H$ are bounded
+  from $L^{p_1}\left(\mathbb{R}^n\right)$ into $L^{p_1}\left(\mathbb{R}^k\right)$ and so are of weak
+  type $\left(p_1, p_1\right)$. As in the proof of Case $\mathrm{A}$, these same maps are bounded
+  from $L^{p_2}\left(\mathbb{R}^n\right)$ into $L^{\infty}\left(\mathbb{R}^k\right)$ and so are of
+  weak type $\left(p_2, \infty\right)$. By the Marcinkiewicz theorem again, they are bounded
+  from $L^p\left(\mathbb{R}^n\right)$ into $L^q\left(\mathbb{R}^k\right)$ and
   \[
   \left\|\chi_1 *|v|\right\|_{q, H} \leq\left\|\chi_1 \omega_m *|v|\right\|_{q, H} \leq K\|v\|_{p, \mathbb{R}^n}
   \]
@@ -623,11 +629,25 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
 \end{lemma}
 
 \begin{proof}
-  Let $C$ be the finite cone with vertex at 0 such that any $x \in \Omega$ is the vertex of a finite cone $C_x \subset \Omega$ congruent to $C$. We can select a finite number of finite cones $C_1, \ldots, C_N$ each having vertex at 0 (and each having the same height as $C$ but smaller aperture angle than $C$ ) such that any finite cone congruent to $C$ and having vertex at 0 must contain one of the cones $C_j$. For each $j$, let $P_j$ be an open parallelepiped with one vertex at the origin, contained in $C_j$, and having positive volume. Then for each $x \in \Omega$ there exists $j, 1 \leq j \leq N$, such that
+  Let $C$ be the finite cone with vertex at 0 such that any $x \in \Omega$ is the vertex of a finite
+  cone $C_x \subset \Omega$ congruent to $C$. We can select a finite number of finite cones
+  $C_1, \ldots, C_N$ each having vertex at 0 (and each having the same height as $C$ but smaller
+  aperture angle than $C$ ) such that any finite cone congruent to $C$ and having vertex at 0
+  must contain one of the cones $C_j$. For each $j$, let $P_j$ be an open parallelepiped with
+  one vertex at the origin, contained in $C_j$, and having positive volume.
+  Then for each $x \in \Omega$ there exists $j, 1 \leq j \leq N$, such that
   \[
   x+P_j \subset x+C_j \subset C_x \subset \Omega .
   \]
-  Since $\Omega$ is open and $\overline{x+P_j}$ is compact, $y+P_j \subset \Omega$ for any $y$ sufficiently close to $x$. Hence every $x \in \Omega$ belongs to $y+P_j$ for some $j$ and some $y \in \Omega$. Let $A_j=\left\{y \in \overline{\Omega}: y+P_j \subset \Omega\right\}$ and let $\Omega_j=\bigcup_{y \in A_j}\left(y+P_j\right)$. Then $\Omega=\bigcup_{j=1}^N \Omega_j$. Now suppose $\Omega$ is bounded and $\rho>0$ is given. If $\diam\left(A_j\right) \geq \rho$ we can decompose $A_j$ into a finite union of sets $A_{j i}$ each with diameter less than $\rho$ and define the corresponding parallelepiped $P_{j i}=P_j$. We then rename the totality of such sets $A_{j i}$ as a single finite family, which we again call $\left\{A_j\right\}$ and define $\Omega_j$ as above.
+  Since $\Omega$ is open and $\overline{x+P_j}$ is compact, $y+P_j \subset \Omega$ for any $y$
+  sufficiently close to $x$. Hence every $x \in \Omega$ belongs to $y+P_j$ for some $j$ and some $y \in \Omega$. 
+  Let $A_j=\left\{y \in \overline{\Omega}: y+P_j \subset \Omega\right\}$ and
+  let $\Omega_j=\bigcup_{y \in A_j}\left(y+P_j\right)$. Then $\Omega=\bigcup_{j=1}^N \Omega_j$.
+  Now suppose $\Omega$ is bounded and $\rho>0$ is given. If $\diam\left(A_j\right) \geq \rho$
+  we can decompose $A_j$ into a finite union of sets $A_{j i}$ each with diameter less than $\rho$
+  and define the corresponding parallelepiped $P_{j i}=P_j$. We then rename the totality of such
+  sets $A_{j i}$ as a single finite family, which we again call $\left\{A_j\right\}$ and
+  define $\Omega_j$ as above.
   
   Figure 2 attempts to illustrate these notions for the domain in $\mathbb{R}^2$ considered in
   Example 3.20:
@@ -681,7 +701,7 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   \]
   belongs to $L^1(\Omega)$, and $\|F\|_{1, \Omega} \leq \prod_{\kappa \in S}\left\|F_\kappa\right\|_{\lambda, \Omega_k}$, that is,
   \[
-  \left(\int_{\Omega}|F(x)| d x\right)^\lambda \leq \prod_{\kappa \in S} \int_{\Omega_\kappa}\left|F_\kappa\left(x_\kappa\right)\right|^\lambda d x_\kappa .
+  \left(\int_{\Omega}|F(x)| \d x\right)^\lambda \leq \prod_{\kappa \in S} \int_{\Omega_\kappa}\left|F_\kappa\left(x_\kappa\right)\right|^\lambda \d x_\kappa .
   \]
 \end{lemma}
 
@@ -744,7 +764,7 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   \]
   Since $|u(x)|^{n /(n-1)} \leq \prod_{j=1}^n u_j(x)$, applying inequality (14) with $k=n-1=\lambda$ now gives
   \[
-  \int_{\Omega}|u(x)|^{n /(n-1)} d x \leq\left.\prod_{j=1}^n \int_{\Omega_j}\left|u_j\right|\left(\hat{x}_j\right)\right|^{n-1} d \hat{x}_j \leq\|u\|_{1,1, \Omega}^{n /(n-1)}
+  \int_{\Omega}|u(x)|^{n /(n-1)} \d x \leq\left.\prod_{j=1}^n \int_{\Omega_j}\left|u_j\right|\left(\hat{x}_j\right)\right|^{n-1} d \hat{x}_j \leq\|u\|_{1,1, \Omega}^{n /(n-1)}
   \]
   For the original domain $\Omega$, this will imply that
   \[
@@ -778,11 +798,11 @@ Observe that if $m \leq n$ and $0<r \leq 1$, then
   \]
   where $x^{\prime}=\left(x_1, \ldots x_m\right)$ and $x^{\prime \prime}=\left(x_{m+1}, \ldots, x_n\right)$. For $x \in \Omega$ let $\Omega_x$ be the intersection of $\Omega$ with the $m$-plane of variables $x^{\prime}$ passing through $x . \Omega_x$ contains an $m$-cube $Q_x$ of edge 1 containing $x$, and so by Case A of Theorem 4.12 applied to this cube, we have for $u \in C^{\infty}(\Omega)$,
   \[
-  |u(x)| \leq K \sum_{|\alpha| \leq m} \int_{\Omega_x}\left|D^\alpha u\left(x^{\prime}, x^{\prime \prime}\right)\right| d x^{\prime} .
+  |u(x)| \leq K \sum_{|\alpha| \leq m} \int_{\Omega_x}\left|D^\alpha u\left(x^{\prime}, x^{\prime \prime}\right)\right| \d x^{\prime} .
   \]
   Integrating $x^{\prime \prime}$ over $\Omega_k$ then gives
   \[
-  \int_{\Omega_k}|u(x)| d x^{\prime \prime} \leq K \sum_{|\alpha| \leq m} \int_{\Omega}\left|D^\alpha u(x)\right| d x .
+  \int_{\Omega_k}|u(x)| \d x^{\prime \prime} \leq K \sum_{|\alpha| \leq m} \int_{\Omega}\left|D^\alpha u(x)\right| \d x .
   \]
   The proof of Part I of Theorem 4.12 is now complete.
 \end{para}
@@ -913,18 +933,25 @@ for $\Omega=\mathbb{R}^n$.
   \]
   We now ask whether such an inequality can hold with $|\cdot|_{m,p}$ in place of $\|\cdot\|_{m,p}$. That is, do there exist constants $K<\infty$ and $q \geq 1$ such that for all $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$
   \[
-  \int_{\mathbb{R}^n}|\phi(x)|^q d x \leq K^q\left(\sum_{|\alpha|=m} \int_{\mathbb{R}^n}\left|D^\alpha \phi(x)\right|^p d x\right)^{q / p} ?
+  \int_{\mathbb{R}^n}|\phi(x)|^q \d x \leq K^q\left(\sum_{|\alpha|=m} \int_{\mathbb{R}^n}\left|D^\alpha \phi(x)\right|^p \d x\right)^{q / p} ?
   \]
-  If so, for any given $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$, the inequality must also hold for all dilates $\phi_t(x)=\phi(t x), 0<t<\infty$, as these functions also belong to $C_0^{\infty}\left(\mathbb{R}^n\right)$. Since $\left\|\phi_t\right\|_q=t^{-n / q}\|\phi\|_q$ and $\left\|D^\alpha \phi_t\right\|_p=t^{m-(n / p)}\left\|D^\alpha \phi\right\|_p$ if $|\alpha|=m$, we must have
+  If so, for any given $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$, the inequality must also hold
+  for all dilates $\phi_t(x)=\phi(t x), 0<t<\infty$, as these functions also belong
+  to $C_0^{\infty}\left(\mathbb{R}^n\right)$. Since $\left\|\phi_t\right\|_q=t^{-n / q}\|\phi\|_q$
+  and $\left\|D^\alpha \phi_t\right\|_p=t^{m-(n / p)}\left\|D^\alpha \phi\right\|_p$ if $|\alpha|=m$,
+  we must have
   \[
-  \int_{\mathbb{R}^n}|\phi(x)|^q d x \leq K^q t^{n+m q-(n q / p)}\left(\sum_{|\alpha|=m} \int_{\mathbb{R}^n}\left|D^\alpha \phi(x)\right|^p d x\right)^{q / p}
+  \int_{\mathbb{R}^n}|\phi(x)|^q \d x \leq K^q t^{n+m q-(n q / p)}\left(\sum_{|\alpha|=m} \int_{\mathbb{R}^n}\left|D^\alpha \phi(x)\right|^p \d x\right)^{q / p}
   \]
-  This is clearly not possible for all $t>0$ unless the exponent of $t$ on the right side is zero, that is, unless $q=p^*=n p /(n-m p)$. Thus no inequality of the form (18) is possible unless $m p<n$ and $q=p^*=n p /(n-m p)$. We now show that (18) does hold if these conditions are satisfied.
+  This is clearly not possible for all $t>0$ unless the exponent of $t$ on the right side is zero,
+  that is, unless $q=p^*=n p /(n-m p)$. Thus no inequality of the form (18) is possible unless $m p<n$
+  and $q=p^*=n p /(n-m p)$. We now show that (18) does hold if these conditions are satisfied.
 \end{para}
 
 
 \begin{theorem}[Sobolev's Inequality]
-  When $m p<n$, there exists a finite constant $K$ such that (18) holds for every $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$ :
+  When $m p<n$, there exists a finite constant $K$ such that (18) holds for
+  every $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$ :
   \[
   \|\phi\|_{q, \mathbb{R}^n} \leq K|\phi|_{m, p, \mathbb{R}^n}
   \]
@@ -932,15 +959,17 @@ for $\Omega=\mathbb{R}^n$.
 \end{theorem}
 
 \begin{proof}
-  The ``only if'' part was demonstrated above. For the ``if'' part note first that it is sufficient to establish the inequality for $m=1$ as its validity for higher $m$ (with $m p<n$ ) can be confirmed by induction on $m$. We leave the details to the reader.
+  The ``only if'' part was demonstrated above. For the ``if'' part note first that it is sufficient
+  to establish the inequality for $m=1$ as its validity for higher $m$ (with $m p<n$ ) can be confirmed
+  by induction on $m$. We leave the details to the reader.
   Next, it suffices to prove the case $m=1, p=1$, that is
   \[
-  \int_{\mathbb{R}^n}|\phi(x)|^{n /(n-1)} d x \leq K\left(\sum_{j=1}^n \int_{\mathbb{R}^n}\left|D_j \phi(x)\right| d x\right)^{n /(n-1)}
+  \int_{\mathbb{R}^n}|\phi(x)|^{n /(n-1)} \d x \leq K\left(\sum_{j=1}^n \int_{\mathbb{R}^n}\left|D_j \phi(x)\right| \d x\right)^{n /(n-1)}
   \]
   for if $1<p<n$ and $p^*=n p /(n-p)$ we can apply (20) to $|\phi(x)|^s$ where $s=(n-1) p^* / n$ and obtain, using Hölder's inequality,
   \[
   \begin{aligned}
-  \int_{\mathbb{R}^n}|\phi(x)|^{p^*} d x & \leq K\left(\sum_{j=1}^n s|\phi(x)|^{s-1}\left|D_j \phi(x)\right| d x\right)^{n /(n-1)} \\
+  \int_{\mathbb{R}^n}|\phi(x)|^{p^*} \d x & \leq K\left(\sum_{j=1}^n s|\phi(x)|^{s-1}\left|D_j \phi(x)\right| d x\right)^{n /(n-1)} \\
   & \leq K_1\left(\sum_{j=1}^n\|\phi\|_{(s-1) p^{\prime}}^{s-1}\left\|D_j \phi\right\|_p\right)^{n /(n-1)}
   \end{aligned}
   \]
@@ -948,7 +977,7 @@ for $\Omega=\mathbb{R}^n$.
   \[\|\phi\|_{p^*} \leq K_2 |\phi|_{1,p}.\]
   It remains, therefore, to prove $(20)$. Let $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$ and for $x \in \mathbb{R}^n$ and $1 \leq j \leq n$ let $\hat{x}_j=\left(x_1, \ldots, x_{j-1}, x_{j+1}, \ldots, x_n\right)$. Let
   \[
-  u_j\left(\hat{x}_j\right)=\left(\sum_{i=1}^n \int_{-\infty}^{\infty}\left|D_j \phi(x)\right| d x_j\right)^{1 /(n-1)}
+  u_j\left(\hat{x}_j\right)=\left(\sum_{i=1}^n \int_{-\infty}^{\infty}\left|D_j \phi(x)\right| \d x_j\right)^{1 /(n-1)}
   \]
   which is evidently independent of $x_j$ and satisfies
   \[
@@ -965,7 +994,7 @@ for $\Omega=\mathbb{R}^n$.
   Similarly, $|\phi(x)| \leq\left(u_j\left(\hat{x}_j\right)\right)^{n-1}$. Applying the inequality (14) from Lemma 4.23 with $k=n-1=\lambda$ we obtain
   \[
   \begin{aligned}
-  \int_{\mathbb{R}^n}|\phi(x)|^{n /(n-1)} d x & \leq \int_{\mathbb{R}^n} \prod_{j=1}^n u_j\left(\hat{x}_j\right) d x \\
+  \int_{\mathbb{R}^n}|\phi(x)|^{n /(n-1)} \d x & \leq \int_{\mathbb{R}^n} \prod_{j=1}^n u_j\left(\hat{x}_j\right) \d x \\
   & \leq\left(\prod_{j=1}^n \int_{\mathbb{R}^{n-1}}\left|u_j\left(\hat{x}_j\right)\right|^{n-1} d \hat{x}_j\right)^{1 /(n-1)} \leq|u|_{1,1, \mathbb{R}^n}^{n /(n-1)},
   \end{aligned}
   \]
@@ -974,7 +1003,8 @@ for $\Omega=\mathbb{R}^n$.
 
 
 \begin{remark}
-  For the case $m=1,1<p<n$, Talenti [T] and Aubin, as exposed in Section 2.6 of [Au], obtained the best constant for the equivalent form of Sobolev's inequality
+  For the case $m=1,1<p<n$, Talenti [T] and Aubin, as exposed in Section 2.6 of [Au],
+  obtained the best constant for the equivalent form of Sobolev's inequality
   \[
   \|\phi\|_{n p /(n-p), \mathbb{R}^n} \leq K\|\grad \phi\|_{p, \mathbb{R}^n}
   \]
@@ -986,8 +1016,10 @@ for $\Omega=\mathbb{R}^n$.
   \[
   u(x)=\left(a+b|x|^{p /(p-1)}\right)^{1-(n / p)}
   \]
-  which, while not in $C_0^{\infty}\left(\mathbb{R}^n\right)$ is a limit of functions in that space. His method involved first showing that replacing an arbitrary function $u$ vanishing at infinity
-  with a radially symmetric, non-increasing, equimeasurable rearrangement of $u$ decreased $\|\grad u\|_{p, \mathbb{R}^n}$ while, of course, leaving $\|u\|_{n p /(n-p), \mathbb{R}^n}$ unchanged. Talenti's best constant for (21) is
+  which, while not in $C_0^{\infty}\left(\mathbb{R}^n\right)$ is a limit of functions in that space.
+  His method involved first showing that replacing an arbitrary function $u$ vanishing at infinity
+  with a radially symmetric, non-increasing, equimeasurable rearrangement of $u$ decreased $\|\grad u\|_{p, \mathbb{R}^n}$ while, of course, leaving $\|u\|_{n p /(n-p), \mathbb{R}^n}$ unchanged.
+  Talenti's best constant for (21) is
   \[
   K=\pi^{-1 / 2} n^{-1 / p}\left(\frac{p-1}{n-p}\right)^{1 / p^{\prime}}\left(\frac{\Gamma(1+n / 2) \Gamma(n)}{\Gamma(n / p) \Gamma(1+n-(n / p))}\right)^{1 / n}.
   \]
@@ -998,7 +1030,9 @@ for $\Omega=\mathbb{R}^n$.
 
 
 \begin{para}
-  Mixed-norm $L^p$ estimates of the type considered in Paragraphs 2.48-2.51 and used in the proof of Gagliardo's averaging lemma 4.23 can contribute to generalizations of Sobolev's inequality. We examine briefly two such generalizations:
+  Mixed-norm $L^p$ estimates of the type considered in Paragraphs 2.48-2.51 and used in the proof of
+  Gagliardo's averaging lemma 4.23 can contribute to generalizations of Sobolev's inequality.
+  We examine briefly two such generalizations:
   
   \begin{enumerate}[(a)]
     \item anisotropic Sobolev inequalities, in which different $L^p$ norms are used for different 
@@ -1008,27 +1042,34 @@ for $\Omega=\mathbb{R}^n$.
       derivatives of order $m$ of $\phi$.
   \end{enumerate}
   
-  Questions of this sort are discussed in [BIN1] and [BIN2]. We follow the treatment in [A3] and [A4] and most of the details will be omitted here.
+  Questions of this sort are discussed in [BIN1] and [BIN2]. We follow the treatment in [A3] and [A4]
+  and most of the details will be omitted here.
 \end{para}
 
 
 \begin{para}[A First-Order Anisotropic Sobolev Inequality]
-  If $p_j \geq 1$ for each $j$ with $1 \leq j \leq n$ and $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$, then an inequality of the form
+  If $p_j \geq 1$ for each $j$ with $1 \leq j \leq n$ and $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$,
+  then an inequality of the form
   \begin{equation}
     \|\phi\|_q \leq K \sum_{j=1}^n\left\|D_j \phi\right\|_{p_j}
   \end{equation}
-  is a (first-order) anisotropic Sobolev inequality because different $L^p$ norms are used to estimate the derivatives of $\phi$ in different coordinate directions. A dilation argument involving $\phi\left(\lambda_1 x_1, \ldots, \lambda_n x_n\right)$ for $0<\lambda_j<\infty, 1 \leq j \leq n$ shows that no such anisotropic inequality is possible for finite $q$ unless
-  \[
-  \sum_{j=1}^n \frac{1}{p_j}>1 \quad \text { and } \quad \frac{1}{q}=\frac{1}{n} \sum_{j=1}^n \frac{1}{p_j}-\frac{1}{n} .
-  \]
-  If these conditions are satisfied, then (22) does hold. The proof is a generalization of that of Theorem 4.31 and uses the mixed-norm Hölder and permutation inequalities. (See [A3] for the details.)
+  is a (first-order) anisotropic Sobolev inequality because different $L^p$ norms are used to estimate the 
+  derivatives of $\phi$ in different coordinate directions.
+  A dilation argument involving $\phi\left(\lambda_1 x_1, \ldots, \lambda_n x_n\right)$
+  for $0<\lambda_j<\infty, 1 \leq j \leq n$ shows that no such anisotropic inequality
+  is possible for finite $q$ unless
+  \[\sum_{j=1}^n \frac{1}{p_j}>1 \quad \text { and }
+    \quad \frac{1}{q}=\frac{1}{n} \sum_{j=1}^n \frac{1}{p_j}-\frac{1}{n}.\]
+  If these conditions are satisfied, then (22) does hold. The proof is a generalization of that of
+  Theorem 4.31 and uses the mixed-norm Hölder and permutation inequalities. (See [A3] for the details.)
 \end{para}
 
 
 \begin{para}[Higher-Order Anisotropic Sobolev Inequalities]
   The generalization of (22) to an $m$ th order inequality by induction on $m$ is somewhat more 
   problematic.
-  The $m$ th order isotropic inequality (19) follows from its special case $m=1$ by simple induction. We can also obtain
+  The $m$ th order isotropic inequality (19) follows from its special case $m=1$ by simple induction.
+  We can also obtain
   \[
   \|\phi\|_q \leq K \sum_{|\alpha|=m}\left\|D^\alpha \phi\right\|_{p_\alpha}
   \]
@@ -1049,8 +1090,9 @@ for $\Omega=\mathbb{R}^n$.
   \alpha
   \end{array}\right) \frac{1}{p_\alpha}>\frac{m}{n}
   \]
-  will not suffice in general for the induction even though $\sum_{|\alpha|=m}\left(\begin{array}{c}m \\ \alpha\end{array}\right)=n^m$. The conditions $m p_\alpha<n$ for each $\alpha$ with $|\alpha|=m$ will suffice, but are stronger than necessary.
-  For any multi-index $\beta$ and $1 \leq j \leq n$, let
+  will not suffice in general for the induction even though $\sum_{|\alpha|=m} \binom{m}{\alpha} = n^m$.
+  The conditions $m p_\alpha<n$ for each $\alpha$ with $|\alpha|=m$ will suffice, but are stronger than 
+  necessary. For any multi-index $\beta$ and $1 \leq j \leq n$, let
   \[
   \beta[j]=\left(\beta_1, \ldots, \beta_{j-1}, \beta_j+1, \beta_{j+1}, \ldots, \beta_n\right)
   \]
@@ -1064,12 +1106,14 @@ for $\Omega=\mathbb{R}^n$.
   \alpha
   \end{array}\right) \frac{1}{p_\alpha}
   \]
-  This provides the induction step necessary to verify the following theorem, for which the details can again be found in [A3].
+  This provides the induction step necessary to verify the following theorem,
+  for which the details can again be found in [A3].
 \end{para}
 
 
 \begin{theorem}
-  Let $p_\alpha \geq 1$ for all $\alpha$ with $|\alpha|=m$. Suppose that for every $\beta$ with $|\beta|=m-1$ we have
+  Let $p_\alpha \geq 1$ for all $\alpha$ with $|\alpha|=m$.
+  Suppose that for every $\beta$ with $|\beta|=m-1$ we have
   \[
   \sum_{j=1}^n \frac{1}{p_{\beta[j]}}>m .
   \]
@@ -1088,7 +1132,12 @@ for $\Omega=\mathbb{R}^n$.
 
 
 \begin{para}[Reduced Sobolev Inequalities]
-  Another variation of Sobolev's inequality addresses the question of whether the number of derivatives estimated in the seminorm on the right side of (19) (or, equivalently, (18)) can be reduced without jeopardizing the validity of the inequality for all $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$. If $m \geq 2$, the answer is yes; only those partial derivatives of order $m$ that are ``completely mixed'' (in the sense that all $m$ differentiations are taken with respect to different variables) need be included in the seminorm. Specifically, if we denote
+  Another variation of Sobolev's inequality addresses the question of whether the number of derivatives 
+  estimated in the seminorm on the right side of (19) (or, equivalently, (18)) can be reduced without 
+  jeopardizing the validity of the inequality for all $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$.
+  If $m \geq 2$, the answer is yes; only those partial derivatives of order $m$ that are ``completely mixed'' 
+  (in the sense that all $m$ differentiations are taken with respect to different variables) need be included
+  in the seminorm. Specifically, if we denote
   \[
   \mathcal{M}=\mathcal{M}(n, m)=\left\{\alpha:|\alpha|=m, \quad \alpha_j=0 \text { or } \alpha_j=1 \text { for } 1 \leq j \leq n\right.
   \]
@@ -1096,7 +1145,10 @@ for $\Omega=\mathbb{R}^n$.
   \[
   \|\phi\|_q \leq K \sum_{\alpha \in \mathcal{M}}\left\|D^\alpha \phi\right\|_p
   \]
-  holds for all $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$, provided $m p<n$ and $q=n p /(n-m p)$. Again the proof depends on mixed-norm estimates; it can be found in [A4] where the possibility of further reductions in the number of derivatives estimated on the right side of Sobolev's inequality is also considered. See also Section 13 in [BIN1].
+  holds for all $\phi \in C_0^{\infty}\left(\mathbb{R}^n\right)$, provided $m p<n$ and $q=n p /(n-m p)$.
+  Again the proof depends on mixed-norm estimates; it can be found in [A4] where the possibility of
+  further reductions in the number of derivatives estimated on the right side of Sobolev's
+  inequality is also considered. See also Section 13 in [BIN1].
 \end{para}
 
 
@@ -1105,12 +1157,18 @@ for $\Omega=\mathbb{R}^n$.
 
 
 \begin{para}
-  Given $u$ and $v$ in $W^{m,p}(\Omega)$, where $\Omega$ is a domain in $\mathbb{R}^n$, one cannot in general expect that their pointwise product $u v$ will belong to $W^{m,p}(\Omega)$. The imbedding theorem, however, shows that this is the case provided $m p>n$ and $\Omega$ satisfies the cone condition. (See [Sr] and [Mz2].)
+  Given $u$ and $v$ in $W^{m,p}(\Omega)$, where $\Omega$ is a domain in $\mathbb{R}^n$,
+  one cannot in general expect that their pointwise product $u v$ will belong to $W^{m,p}(\Omega)$.
+  The imbedding theorem, however, shows that this is the case provided $m p>n$ and $\Omega$
+  satisfies the cone condition. (See [Sr] and [Mz2].)
 \end{para}
 
 
 \begin{theorem}
-  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the cone condition. If $m p>n$ or $p=1$ and $m \geq n$, then there exists a constant $K^*$ depending on $m, p, n$, and the cone $C$ determining the cone condition for $\Omega$, such that for $u, v \in W^{m,p}(\Omega)$ the product $u v$, defined pointwise a.e. in $\Omega$, satisfies
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the cone condition.
+  If $m p>n$ or $p=1$ and $m \geq n$, then there exists a constant $K^*$ depending on $m, p, n$,
+  and the cone $C$ determining the cone condition for $\Omega$,
+  such that for $u, v \in W^{m,p}(\Omega)$ the product $u v$, defined pointwise a.e. in $\Omega$, satisfies
   \[
   \|u v\|_{m, p, \Omega} \leq K^*\|u\|_{m, p, \Omega}\|v\|_{m, p, \Omega}
   \]
@@ -1137,7 +1195,7 @@ for $\Omega=\mathbb{R}^n$.
   \]
   it is sufficient to show that for any $\beta \leq \alpha,|\alpha| \leq m$, we have
   \[
-  \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p d x \leq K_{\alpha, \beta}\|u\|_{m, p, \Omega}^p\|v\|_{m, p, \Omega}^p
+  \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p \d x \leq K_{\alpha, \beta}\|u\|_{m, p, \Omega}^p\|v\|_{m, p, \Omega}^p
   \]
   where $K_{\alpha, \beta}=K_{\alpha, \beta}(m, p, n, C)$. By the imbedding theorem there exists, for any $\beta$ with $|\beta| \leq m$, a constant $K(\beta)=K(\beta, m, p, n, C)$ such that for any $w \in W^{m,p}(\Omega)$
   provided $(m-|\beta|) p \leq n$ and $p \leq r \leq n p /(n-[m-|\beta|] p)[$ or $p \leq r<\infty$ if $(m-|\beta|) p=n]$, or alternatively
@@ -1148,13 +1206,13 @@ for $\Omega=\mathbb{R}^n$.
   Let $k$ be the largest integer such that $(m-k) p>n$. Since $m p>n$ we have $k \geq 0$. If $|\beta| \leq k$, then $(m-|\beta|) p>n$, so
   \[
   \begin{aligned}
-  \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p d x & \leq K(\beta)^p\|u\|_{m, p . \Omega}^p\left\|D^{\alpha-\beta} v\right\|_{0, p . \Omega}^p \\
+  \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p \d x & \leq K(\beta)^p\|u\|_{m, p . \Omega}^p\left\|D^{\alpha-\beta} v\right\|_{0, p . \Omega}^p \\
   & \leq K(\beta)^p\|u\|_{m, p . \Omega}^p\|v\|_{m . p . \Omega}^p .
   \end{aligned}
   \]
   Similarly, if $|\alpha-\beta| \leq k$, then
   \[
-  \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p d x \leq K(\alpha-\beta)^p\|u\|_{m, p, \Omega}^p\|v\|_{m, p, \Omega}^p .
+  \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p \d x \leq K(\alpha-\beta)^p\|u\|_{m, p, \Omega}^p\|v\|_{m, p, \Omega}^p .
   \]
   Now if $|\beta|>k$ and $|\alpha-\beta|>k$, then, in fact, $|\beta| \geq k+1$ and $|\alpha-\beta| \geq k+1$ so that $n \geq(m-|\beta|) p$ and $n \geq(m-|\alpha-\beta|) p$. Moreover,
   \[
@@ -1167,7 +1225,7 @@ for $\Omega=\mathbb{R}^n$.
   Thus by Hölder's inequality and (24) we have
   \[
   \begin{aligned}
-  \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p d x & \leq\left(\int_{\Omega}\left|D^\beta u(x)\right|^{r p} d x\right)^{1 / r}\left(\int_{\Omega}\left|D^{\alpha-\beta} v(x)\right|^{r^{\prime} p} d x\right)^{1 / r^{\prime}} \\
+  \int_{\Omega}\left|D^\beta u(x) D^{\alpha-\beta} v(x)\right|^p \d x & \leq\left(\int_{\Omega}\left|D^\beta u(x)\right|^{r p} \d x\right)^{1 / r}\left(\int_{\Omega}\left|D^{\alpha-\beta} v(x)\right|^{r^{\prime} p} \d x\right)^{1 / r^{\prime}} \\
   & \leq(K(\beta))^{1 / r}(K(\alpha-\beta))^{1 / r^{\prime}}\|u\|_{m, p, \Omega}^p\|v\|_{m, p, \Omega}^p .
   \end{aligned}
   \]
@@ -1222,7 +1280,7 @@ but there are no unbounded domains of finite volume that satisfy the cone condit
   \]
   where $P_\alpha(x)$ is a polynomial homogeneous of degree $|\alpha|$ in the components of $x$. Thus $\left|D^\alpha v(x)\right| \leq K_\alpha|x|^{\mu-|\alpha|}$ and, setting $\rho=|x|$,
   \[
-  \int_{B_R}\left|D^\alpha v(x)\right|^p d x \leq K_n K_\alpha^P \int_0^R \rho^{(\mu-|\alpha|) p+n-1} d \rho,
+  \int_{B_R}\left|D^\alpha v(x)\right|^p \d x \leq K_n K_\alpha^P \int_0^R \rho^{(\mu-|\alpha|) p+n-1} d \rho,
   \]
   where $K_n$ is the $(n-1)$-measure of the sphere of radius 1 in $\mathbb{R}^n$. Therefore $v \in W^{m,p}\left(B_R\right)$ and $u \in W^{m,p}(\Omega)$ provided $\mu>m-(n / p)$.
   On the other hand, denoting $\tilde{x}_k=\left(x_1, \ldots, x_k\right)$ and $r=\left|\tilde{x}_k\right|$, we have
@@ -1245,8 +1303,12 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
 \end{example}
 
 \begin{example}
-  Suppose $p>1$ and $m p=n$. We construct a function $u$ in $W^{m,p}(\Omega)$ such that $u \notin L^{\infty}(\Omega)$. Hence the imbedding $W^{m,p}(\Omega) \rightarrow L^q(\Omega)$, valid for $p \leq q<\infty$, cannot be extended to yield $W^{m,p}(\Omega) \rightarrow L^{\infty}(\Omega)$ or $W^{m,p}(\Omega) \rightarrow C^0(\overline{\Omega})$ unless $p=1$ and $m=n$. (See, however, Theorem 8.27.)
-  Again we assume $0 \in \Omega$ and define $u(x)$ as in Example 4.41 except with a different function $v(x)$ defined by
+  Suppose $p>1$ and $m p=n$. We construct a function $u$ in $W^{m,p}(\Omega)$ such that
+  $u \notin L^{\infty}(\Omega)$. Hence the imbedding $W^{m,p}(\Omega) \rightarrow L^q(\Omega)$,
+  valid for $p \leq q<\infty$, cannot be extended to yield $W^{m,p}(\Omega) \rightarrow L^{\infty}(\Omega)$
+  or $W^{m,p}(\Omega) \rightarrow C^0(\overline{\Omega})$ unless $p=1$ and $m=n$. (See, however, Theorem 8.27.)
+  Again we assume $0 \in \Omega$ and define $u(x)$ as in Example 4.41 except with a different function $v(x)$ 
+  defined by
   \[
   v(x)=\log (\log (4 R /|x|))
   \]
@@ -1254,51 +1316,72 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
   \[
   D^\alpha v(x)=\sum_{j=1}^{|\alpha|} P_{\alpha, j}(x)|x|^{-2|\alpha|}(\log (4 R /|x|))^{-j}
   \]
-  where $P_{\alpha, j}(x)$ is a polynomial homogeneous of degree $|\alpha|$ in the components of $x$. Since $p=n / m$, we have
+  where $P_{\alpha, j}(x)$ is a polynomial homogeneous of degree $|\alpha|$ in the components of $x$.
+  Since $p=n / m$, we have
   \[
   \left|D^\alpha v(x)\right|^p \leq \sum_{j=1}^{|\alpha|} K_{\alpha, j}|x|^{-|\alpha| n / m}(\log (4 R /|x|))^{-j p}
   \]
   so that, setting $\rho=|x|$,
   \[
-  \int_{B_R}\left|D^\alpha v(x)\right|^p d x \leq K \sum_{j=1}^{|\alpha|} \int_0^R(\log (4 R / \rho))^{-j p} \rho^{-|\alpha| n / m+n-1} d \rho
+  \int_{B_R}\left|D^\alpha v(x)\right|^p \d x \leq K \sum_{j=1}^{|\alpha|} \int_0^R(\log (4 R / \rho))^{-j p} \rho^{-|\alpha| n / m+n-1} d \rho
   \]
   The right side of the above inequality is certainly finite if $|\alpha|<m$. If $|\alpha|=m$, we have, setting $\sigma=\log (4 R / \rho)$,
   \[
-  \int_{B_R}\left|D^\alpha v(x)\right|^p d x \leq K \sum_{j=1}^{|\alpha|} \int_{\log 4}^{\infty} \sigma^{-j p} d \sigma
+  \int_{B_R}\left|D^\alpha v(x)\right|^p \d x \leq K \sum_{j=1}^{|\alpha|} \int_{\log 4}^{\infty} \sigma^{-j p} d \sigma
   \]
   which is finite since $p>1$. Thus $v \in W^{m,p}\left(B_R\right)$ and $u \in W^{m,p}(\Omega)$.
   It is interesting that the same function $v$ (and hence $u$ ) works for any choice of $m$ and $p$ with $m p=n$.
 \end{example}
 
 \begin{example}
-  Suppose $(m-1) p=n$ and $p>1$. We construct $u$ in $W^{m,p}(\Omega)$ such that $u \notin C^{0,1}(\overline{\Omega})$. Hence the imbedding $W^{m,p}(\Omega) \rightarrow C^{0, \lambda}(\overline{\Omega})$, valid for $0<\lambda<1$ whenever $\Omega$ satisfies the strong local Lipschitz condition,
-  cannot be extended to yield $W^{m,p}(\Omega) \rightarrow C^{0,1}(\overline{\Omega})$ unless $p=1$ and $m-1=n$. Here $u$ is constructed as in the previous example except using
+  Suppose $(m-1) p=n$ and $p>1$. We construct $u$ in $W^{m,p}(\Omega)$ such
+  that $u \notin C^{0,1}(\overline{\Omega})$.
+  Hence the imbedding $W^{m,p}(\Omega) \rightarrow C^{0, \lambda}(\overline{\Omega})$,
+  valid for $0<\lambda<1$ whenever $\Omega$ satisfies the strong local Lipschitz condition,
+  cannot be extended to yield $W^{m,p}(\Omega) \rightarrow C^{0,1}(\overline{\Omega})$ unless $p=1$ and $m-1=n$. 
+  Here $u$ is constructed as in the previous example except using
   \[
   v(x)=|x| \log (\log (4 R /|x|)) .
   \]
-  Since $|v(x)-v(0)| /|x-0|=\log (\log (4 R /|x|)) \rightarrow \infty$ as $x \rightarrow 0$ it is clear that $v \notin C^{0,1}\left(\overline{B_R}\right)$ and therefore $u \notin C^{0,1}(\overline{\Omega})$. The fact that $v \in W^{m,p}\left(B_R\right)$ and hence $u \in W^{m,p}(\Omega)$ is shown just as in the previous example.
+  Since $|v(x)-v(0)| /|x-0|=\log (\log (4 R /|x|)) \rightarrow \infty$ as $x \rightarrow 0$
+  it is clear that $v \notin C^{0,1}\left(\overline{B_R}\right)$ and
+  therefore $u \notin C^{0,1}(\overline{\Omega})$.
+  The fact that $v \in W^{m,p}\left(B_R\right)$ and hence $u \in W^{m,p}(\Omega)$
+  is shown just as in the previous example.
 \end{example}
 
 
 \section{Nonimbedding Theorems for Irregular Domains}
 
 \begin{para}
-  The above examples show that even for very regular domains there can exist no imbeddings of the types considered in Theorem 4.12 except those explicitly stated there. It remains to be seen whether any imbeddings of those types can exist for domains that do not satisfy the cone condition (or at least the weak cone condition). We will show below that Theorem 4.12 can be extended, with weakened conclusions, to certain types of irregular domains, but first we show that no extension is possible if the domain is ``too irregular.'' This can happen if either the domain is unbounded and too narrow at infinity, or if it has a cusp of exponential sharpness on its boundary.
-  An unbounded domain $\Omega \subset \mathbb{R}^n$ may have a smooth boundary and still fail to satisfy the cone condition if it becomes narrow at infinity, that is, if
+  The above examples show that even for very regular domains there can exist no imbeddings of the types 
+  considered in Theorem 4.12 except those explicitly stated there. It remains to be seen whether any imbeddings 
+  of those types can exist for domains that do not satisfy the cone condition (or at least the weak cone 
+  condition). We will show below that Theorem 4.12 can be extended, with weakened conclusions, to certain types 
+  of irregular domains, but first we show that no extension is possible if the domain is ``too irregular''.
+  This can happen if either the domain is unbounded and too narrow at infinity, or if it has a cusp of 
+  exponential sharpness on its boundary.
+  An unbounded domain $\Omega \subset \mathbb{R}^n$ may have a smooth boundary and still fail to satisfy the 
+  cone condition if it becomes narrow at infinity, that is, if
   \[
   \lim _{\substack{|x| \rightarrow \infty \\ x \in \Omega}} \dist(x, \partial \Omega)=0 .
   \]
-  The following theorem shows that Parts I and II of Theorem 4.12 fail completely for any unbounded $\Omega$ which has finite volume.
+  The following theorem shows that Parts I and II of Theorem~4.12 fail completely for any
+  unbounded $\Omega$ which has finite volume.
 \end{para}
 
 
 \begin{theorem}
-  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$ having finite volume, and let $q>p$. Then $W^{m,p}(\Omega)$ is not imbedded in $L^q(\Omega)$.
+  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$ having finite volume, and let $q>p$.
+  Then $W^{m,p}(\Omega)$ is not imbedded in $L^q(\Omega)$.
 \end{theorem}
 
 \begin{proof}
-  We construct a function $u(x)$ depending only on distance $\rho=|x|$ of $x$ from the origin whose growth as $\rho$ increases is rapid enough to prevent membership in $L^q(\Omega)$ but not so rapid as to prevent membership in $W^{m,p}(\Omega)$.
-  Without loss of generality we assume $\vol(\Omega)=1$. Let $A(\rho)$ denote the surface area (( $n-1)$-measure) of the intersection of $\Omega$ with the surface $|x|=\rho$. Then
+  We construct a function $u(x)$ depending only on distance $\rho=|x|$ of $x$ from the origin whose growth
+  as $\rho$ increases is rapid enough to prevent membership in $L^q(\Omega)$ but not so rapid as to prevent 
+  membership in $W^{m,p}(\Omega)$.
+  Without loss of generality we assume $\vol(\Omega)=1$. Let $A(\rho)$ denote the surface area
+  (($n-1)$-measure) of the intersection of $\Omega$ with the surface $|x|=\rho$. Then
   \[
   \int_0^{\infty} A(\rho) d \rho=1
   \]
@@ -1306,7 +1389,14 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
   \[
   \int_{r_k}^{\infty} A(\rho) d \rho=\frac{1}{2^k}=\int_{r_{k-1}}^{r_k} A(\rho) d \rho
   \]
-  Since $\Omega$ is unbounded, $r_k$ increases to infinity with $k$. Let $\Delta r_k=r_{k+1}-r_k$ and fix $\varepsilon$ such that $0<\varepsilon<[1 /(m p)]-[1 /(m q)]$. There must exist an increasing sequence $\left\{k_j\right\}_{j=1}^{\infty}$ such that $\Delta r_{k_j} \geq 2^{-\varepsilon k_j}$, for otherwise $\Delta r_k<2^{-\varepsilon k}$ for all but possibly finitely many values of $k$ and we would have $\sum_{k=0}^{\infty} \Delta r_k<\infty$, contradicting $\lim r_k=\infty$. For convenience we assume $k_1 \geq 1$ so $k_j \geq j$ for all $j$. Let $a_0=0$, $a_j=r_{k_j+1}$, and $b_j=r_{k_j}$. Note that $a_{j-1} \leq b_j<a_j$ and $a_j-b_j=\Delta r_{k_j} \geq 2^{-\varepsilon k_j}$.
+  Since $\Omega$ is unbounded, $r_k$ increases to infinity with $k$. Let $\Delta r_k=r_{k+1}-r_k$
+  and fix $\varepsilon$ such that $0<\varepsilon<[1 /(m p)]-[1 /(m q)]$.
+  There must exist an increasing sequence $\left\{k_j\right\}_{j=1}^{\infty}$ such that
+  $\Delta r_{k_j} \geq 2^{-\varepsilon k_j}$, for otherwise $\Delta r_k<2^{-\varepsilon k}$
+  for all but possibly finitely many values of $k$ and we would have $\sum_{k=0}^{\infty} \Delta r_k<\infty$, 
+  contradicting $\lim r_k=\infty$. For convenience we assume $k_1 \geq 1$ so $k_j \geq j$ for all $j$.
+  Let $a_0=0$, $a_j=r_{k_j+1}$, and $b_j=r_{k_j}$. Note that $a_{j-1} \leq b_j<a_j$
+  and $a_j-b_j=\Delta r_{k_j} \geq 2^{-\varepsilon k_j}$.
   Let $f$ be an infinitely differentiable function on $\mathbb{R}$ having the properties:
   \begin{enumerate}[(i)]
     \item $0 \leq f(t) \leq 1$ for all $t$,
@@ -1320,27 +1410,29 @@ Note that $\mu<0$, so $u$ is unbounded near the origin. Hence no imbedding of th
   Clearly $u \in C^{\infty}(\Omega)$. Denoting $\Omega_j=\left\{x \in \Omega: a_{j-1} \leq \rho \leq a_j\right\}$, we have
   \[
   \begin{aligned}
-  \int_{\Omega_j}|u(x)|^p d x & =\left(\int_{a_{j-1}}^{b_j}+\int_{b_j}^{a_j}\right)(u(x))^p A(\rho) d \rho \\
+  \int_{\Omega_j}|u(x)|^p \d x & =\left(\int_{a_{j-1}}^{b_j}+\int_{b_j}^{a_j}\right)(u(x))^p A(\rho) d \rho \\
   & \leq 2^{k_{j-1} p / q} \int_{a_{j-1}}^{\infty} A(\rho) d \rho+2^{k_j p / q} \int_{b_j}^{a_j} A(\rho) d \rho \\
   & =\frac{2^{-k_{j-1}(1-p / q)}+2^{-k_j(1-p / q)}}{2} \leq \frac{1}{2^{(j-1)(1-p / q)}} .
   \end{aligned}
   \]
   Since $p<q$, the above inequality forces
   \[
-  \int_{\Omega}|u(x)|^p d x=\sum_{j=1}^{\infty} \int_{\Omega_j}|u(x)|^p d x<\infty .
+  \int_{\Omega}|u(x)|^p \d x=\sum_{j=1}^{\infty} \int_{\Omega_j}|u(x)|^p \d x<\infty .
   \]
   Also, if $1 \leq \kappa \leq m$, we have
   \[
   \begin{aligned}
-  \int_{\Omega_j}\left|\frac{d^\kappa u}{d \rho^\kappa}\right|^p d x & =\int_{b_j}^{a_j}\left|\frac{d^\kappa u}{d \rho^\kappa}\right|^p A(\rho) d \rho \\
+  \int_{\Omega_j}\left|\frac{d^\kappa u}{d \rho^\kappa}\right|^p \d x & =\int_{b_j}^{a_j}\left|\frac{d^\kappa u}{d \rho^\kappa}\right|^p A(\rho) d \rho \\
   & \leq M^p 2^{k_j p / q}\left(a_j-b_j\right)^{-\kappa p} \int_{b_j}^{a_j} A(\rho) d \rho \\
   & =\frac{M^p 2^{-k_j(1-p / q-\varepsilon \kappa p)}}{2} \leq \frac{M^p 2^{-C j}}{2},
   \end{aligned}
   \]
-  where $C=1-p / q-\varepsilon \kappa p>0$ because of the choice of $\varepsilon$. Hence $D^\alpha u \in L^p(\Omega)$ for $|\alpha| \leq m$, that is, $u \in W^{m,p}(\Omega)$. However, $u \notin L^q(\Omega)$ because we have for each $j$,
+  where $C=1-p / q-\varepsilon \kappa p>0$ because of the choice of $\varepsilon$.
+  Hence $D^\alpha u \in L^p(\Omega)$ for $|\alpha| \leq m$, that is, $u \in W^{m,p}(\Omega)$.
+  However, $u \notin L^q(\Omega)$ because we have for each $j$,
   \[
   \begin{aligned}
-  \int_{\Omega_j}|u(x)|^q d x & \geq 2^{k_{j-1}} \int_{a_{j-1}}^{a_j} A(\rho) d \rho \\
+  \int_{\Omega_j}|u(x)|^q \d x & \geq 2^{k_{j-1}} \int_{a_{j-1}}^{a_j} A(\rho) d \rho \\
   & =2^{k_{j-1}}\left(2^{-k_{j-1}-1}-2^{-k_j-1}\right) \geq \frac{1}{4} .
   \end{aligned}
   \]
@@ -1365,7 +1457,8 @@ The conclusion of the above theorem can be extended to unbounded domains having 
 \end{para}
 
 \begin{theorem}
-  If $\Omega$ is a domain in $\mathbb{R}^n$ having a cusp of exponential sharpness at a point $x_0$ on its boundary, then $W^{m,p}(\Omega)$ is not imbedded in $L^q(\Omega)$ for any $q>p$.
+  If $\Omega$ is a domain in $\mathbb{R}^n$ having a cusp of exponential sharpness at a point $x_0$
+  on its boundary, then $W^{m,p}(\Omega)$ is not imbedded in $L^q(\Omega)$ for any $q>p$.
 \end{theorem}
 
 \begin{proof}
@@ -1391,12 +1484,12 @@ The conclusion of the above theorem can be extended to unbounded domains having 
   \]
   where the coefficients $c_{i j}$ depend only on $\lambda$. Now $u(x)$ vanishes for $|x| \geq 1$ and so
   \[
-  \int_{\Omega}|u(x)|^q d x=\int_0^1|\tilde{u}(\rho)|^q A(\rho, \Omega) d \rho=\int_1^{\infty}|\tilde{v}(r)|^q A\left(r, \Omega^*\right) d r=\infty
+  \int_{\Omega}|u(x)|^q \d x=\int_0^1|\tilde{u}(\rho)|^q A(\rho, \Omega) d \rho=\int_1^{\infty}|\tilde{v}(r)|^q A\left(r, \Omega^*\right) d r=\infty
   \]
   On the other hand, if $0 \leq|\alpha|=j \leq m$, we have
   \[
   \begin{aligned}
-  \int_{\Omega}\left|D^\alpha u(x)\right|^p d x & \leq \int_0^1\left|\tilde{u}^{(j)}(\rho)\right|^p A(\rho, \Omega) d \rho \\
+  \int_{\Omega}\left|D^\alpha u(x)\right|^p \d x & \leq \int_0^1\left|\tilde{u}^{(j)}(\rho)\right|^p A(\rho, \Omega) d \rho \\
   & \leq K \sum_{i=0}^j \int_1^{\infty}\left|\tilde{v}^{(i)}(r)\right|^p r^{(\lambda+j+i) p-2 n} A\left(r, \Omega^*\right) d r .
   \end{aligned}
   \]
@@ -1629,7 +1722,7 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   \]
   Now there exists $\delta$ in $(0, s)$ such that
   \[
-  \delta^\nu\left|u^{\prime}(T / 2)\right|<\varepsilon / 3 \quad \text { and } \quad(\delta / s)^\nu \int_s^{T / 2}\left|u^{\prime}(\tau)\right| \tau^\nu d \tau<\varepsilon / 3
+ \delta^\nu\left|u^{\prime}(T / 2)\right|<\varepsilon / 3 \quad \text { and } \quad(\delta / s)^\nu \int_s^{T / 2}\left|u^{\prime}(\tau)\right| \tau^\nu d \tau<\varepsilon / 3
   \]
   If $0<t \leq \delta$, then
   \[
@@ -1739,8 +1832,8 @@ We begin with some one-dimensional inequalities for functions continuously diffe
   Let $\mathcal{C}$ be as specified by (33) and let $p \geq 1$. Suppose that either $m=k=1$, or $2 \leq m \leq n$ and $1 \leq k \leq n$. Let $1-k<v_1 \leq v \leq v_2<\infty$. Then there exists a constant $K=K\left(m, k, n, p, v 1, v 2, \beta_1, \ldots, \beta_{n-1}\right)$ independent of $v$ and $a$, such that for every $u \in C^1(\mathcal{C})$ we have
   \[
   \begin{aligned}
-  & \int_{\mathcal{C}}|u(x)|^p\left[r_k(x)\right]^\nu\left[r_m(x)\right]^{-1} d x \\
-  & \leq K \int_{\mathcal{C}}|u(x)|^{p-1}\left(\frac{1}{a}|u(x)|+|\grad u(x)|\right)\left[r_k(x)\right]^\nu d x .
+  & \int_{\mathcal{C}}|u(x)|^p\left[r_k(x)\right]^\nu\left[r_m(x)\right]^{-1} \d x \\
+  & \leq K \int_{\mathcal{C}}|u(x)|^{p-1}\left(\frac{1}{a}|u(x)|+|\grad u(x)|\right)\left[r_k(x)\right]^\nu \d x .
   \end{aligned}
   \]
 \end{lemma}
@@ -1828,8 +1921,8 @@ distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proo
   $u \in C^1(\mathcal{C}) \cap C(\overline{\mathcal{C}})$ we have
   \[
   \begin{aligned}
-  & \left(\int_{\mathcal{C}}|u(x)|^q\left[r_k(x)\right]^\nu d x\right)^{1 / q} \\
-  & \quad \leq K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u(x)|^p+|\grad u(x)|^p\right)\left[r_k(x)\right]^\nu d x\right)^{1 / p}
+  & \left(\int_{\mathcal{C}}|u(x)|^q\left[r_k(x)\right]^\nu \d x\right)^{1 / q} \\
+  & \quad \leq K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u(x)|^p+|\grad u(x)|^p\right)\left[r_k(x)\right]^\nu \d x\right)^{1 / p}
   \end{aligned}
   \]
   where $q=(v+n) p /(v+n-p)$.
@@ -1839,9 +1932,9 @@ distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proo
   Let $\delta=(v+n-1) p /(v+n-p)$, let $s=(\nu+n-1) / \nu$, and let $s^{\prime}=(v+n-1) /(n-1)$. We have by Hölder's inequality and Lemma 4.61 (the case $m=k)$
   \[
   \begin{aligned}
-  \int_{\mathcal{C}}|u(x)|^q\left[r_k(x)\right]^\nu d x \leq & \left(\int_{\mathcal{C}}|u|^\delta r_k^{\nu-1} d x\right)^{1 / s}\left(\int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n \nu /(n-1)} d x\right)^{1 / s^{\prime}} \\
-  \leq & K_1\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu d x\right)^{1 / s} \\
-  & \times\left(\int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n v /(n-1)} d x\right)^{1 / s^{\prime}}
+  \int_{\mathcal{C}}|u(x)|^q\left[r_k(x)\right]^\nu \d x \leq & \left(\int_{\mathcal{C}}|u|^\delta r_k^{\nu-1} \d x\right)^{1 / s}\left(\int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n \nu /(n-1)} \d x\right)^{1 / s^{\prime}} \\
+  \leq & K_1\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu \d x\right)^{1 / s} \\
+  & \times\left(\int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n v /(n-1)} \d x\right)^{1 / s^{\prime}}
   \end{aligned}
   \]
   In order to estimate the last integral above we adopt the notation
@@ -1870,7 +1963,7 @@ distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proo
   Applying the combinatorial lemma 4.23 with $k=n-1=\lambda$ we obtain
   \[
   \begin{aligned}
-  & \int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n \nu /(n-1)} d x \\
+  & \int_{\mathcal{C}}|u|^{n \delta /(n-1)} r_k^{n \nu /(n-1)} \d x \\
   & \leq \int_{\mathcal{C}} F_0\left(\rho^*\right) \prod_{j=1}^{n-1} F_j\left(\phi_j^*\right) d \rho d \phi \\
   & \leq\left(\int_{\mathcal{C}_0^*}\left(F_0\left(\rho^*\right)\right)^{n-1} d \phi \prod_{j=1}^{n-1} \int_{\mathcal{C}_j^*}\left(F_j\left(\phi_j^*\right)\right)^{n-1} d \rho d \hat{\phi}_j\right)^{1 /(n-1)}
   \end{aligned}
@@ -1881,7 +1974,7 @@ distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proo
   \]
   where $K_2$ is independent of $v$ for $1-n<v_1 \leq v \leq v_2<\infty$. It follows that
   \[
-  \int_{\mathcal{C}_0^*}\left(F_0\left(\rho^*\right)\right)^{n-1} d \phi \leq K_2 \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu d x
+  \int_{\mathcal{C}_0^*}\left(F_0\left(\rho^*\right)\right)^{n-1} d \phi \leq K_2 \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu \d x
   \]
   Similarly, by making use of (36) or (38) as in Lemma 4.61, we obtain from Lemma 4.59
   \[
@@ -1896,19 +1989,19 @@ distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proo
   \[
   \begin{aligned}
   \int_{\mathcal{C}_j^*} & \left(F_j\left(\phi_j^*\right)\right)^{n-1} d \rho d \hat{\phi}_j \\
-  & \leq K_{2, j} \int_{\mathcal{C}}|\grad u \| u|^{\delta-1} r_k^\nu d x+K_{2, j} \int_{\mathcal{C}}|u|^\delta r_k^\nu r_{j+1}^{-1} d x \\
-  & \leq K_{3, j} \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu d x,
+  & \leq K_{2, j} \int_{\mathcal{C}}|\grad u \| u|^{\delta-1} r_k^\nu \d x+K_{2, j} \int_{\mathcal{C}}|u|^\delta r_k^\nu r_{j+1}^{-1} \d x \\
+  & \leq K_{3, j} \int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu \d x,
   \end{aligned}
   \]
   where we have used Lemma 4.61 again to obtain the last inequality. Note that the constants $K_{2, j}$ and $K_{3, j}$ can be chosen independent of $v$ for the values of $v$ allowed. Substitution of (42) and (43) into (41) and then into (40) leads to
   \[
   \begin{aligned}
-  \int_{\mathcal{C}}|u|^q r_k^\nu d x \leq & K_4\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu d x\right)^{1 / s+n /\left((n-1) s^{\prime}\right)} \\
-  \leq & K_4\left(\left[\int_{\mathcal{C}}|u|^q r_k^\nu d x\right]^{(p-1) / p}\right. \\
-  & \left.\times\left[2^{p-1} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^\nu d x\right]^{1 / p}\right)^{(\nu+n) /(\nu+n-1)}
+  \int_{\mathcal{C}}|u|^q r_k^\nu \d x \leq & K_4\left(\int_{\mathcal{C}}|u|^{\delta-1}\left(\frac{1}{a}|u|+|\grad u|\right) r_k^\nu \d x\right)^{1 / s+n /\left((n-1) s^{\prime}\right)} \\
+  \leq & K_4\left(\left[\int_{\mathcal{C}}|u|^q r_k^\nu \d x\right]^{(p-1) / p}\right. \\
+  & \left.\times\left[2^{p-1} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^\nu \d x\right]^{1 / p}\right)^{(\nu+n) /(\nu+n-1)}
   \end{aligned}
   \]
-  Since $(v+n-1) /(v+n)-(p-1) / p=1 / q$, inequality (39) follows by cancellation for, since $u$ is bounded on $\mathcal{C}$ and $v>1-n, \int_{\mathcal{C}}|u|^q r_k^\nu d x$ is finite.
+  Since $(v+n-1) /(v+n)-(p-1) / p=1 / q$, inequality (39) follows by cancellation for, since $u$ is bounded on $\mathcal{C}$ and $v>1-n, \int_{\mathcal{C}}|u|^q r_k^\nu \d x$ is finite.
 \end{proof}
 
 
@@ -1917,8 +2010,8 @@ distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proo
   \item If $1-k<v_1<v_2<\infty$ and $v_1 \leq v \leq v_2$, where $p \geq v+n$, then (39) holds for any $q$ satisfying $1 \leq q<\infty$. It is sufficient to prove this for large $q$. If $q \geq(v+n) /(\nu+n-1)$, then $q=(\nu+n) s /(\nu+n-s)$ for some $s$ satisfying $1 \leq s<p$. Thus
   \[
   \begin{aligned}
-  & \left(\int_{\mathcal{C}}|u|^q r_k^v d x\right)^{s / q} \leq K \int_{\mathcal{C}}\left(\frac{1}{a^s}|u|^s+|\grad u|^s\right) r_k^\nu d x \\
-  & \quad \leq K\left(2^{(p-2) / s} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^\nu d x\right)^{s / p}\left(\int_{\mathcal{C}} r_k^\nu d x\right)^{(p-s) / p}
+  & \left(\int_{\mathcal{C}}|u|^q r_k^v \d x\right)^{s / q} \leq K \int_{\mathcal{C}}\left(\frac{1}{a^s}|u|^s+|\grad u|^s\right) r_k^\nu \d x \\
+  & \quad \leq K\left(2^{(p-2) / s} \int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^\nu \d x\right)^{s / p}\left(\int_{\mathcal{C}} r_k^\nu \d x\right)^{(p-s) / p}
   \end{aligned}
   \]
   which yields (39) since the last factor is finite.
@@ -1929,19 +2022,19 @@ distance $r_k$ from a coordinate $(n-k)$-plane. It provides the core of the proo
   then $\mathcal{C}^*$ satisfies the cone condition in $\mathbb{R}^{n+m}$, whence by Theorem 4.12 we have, putting $q=(n+m) p /(n+m-p)$,
   \[
   \begin{aligned}
-  \left(\int_{\mathcal{C}}|u|^q r_k^m d x\right)^{1 / q} & =\left(\int_{\mathcal{C}^*}\left|u^*(y)\right|^q d y\right)^{1 / q} \\
+  \left(\int_{\mathcal{C}}|u|^q r_k^m \d x\right)^{1 / q} & =\left(\int_{\mathcal{C}^*}\left|u^*(y)\right|^q d y\right)^{1 / q} \\
   & \leq K\left(\int_{\mathcal{C}^*}\left(\frac{1}{a^p}\left|u^*(y)\right|^p+\left|\grad u^*(y)\right|^p\right) d y\right)^{1 / p} \\
-  & =K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^m d x\right)^{1 / p}
+  & =K\left(\int_{\mathcal{C}}\left(\frac{1}{a^p}|u|^p+|\grad u|^p\right) r_k^m \d x\right)^{1 / p}
   \end{aligned}
   \]
   since $\left|\grad u^*(y)\right|=|\grad u(x)|, u^*$ being independent of $z$.
   \item Suppose that $u \in C_0^{\infty}\left(\mathbb{R}^n\right)$, or, more generally, that
   \[
-  \int_{\mathbb{R}^n}|u(x)|^p\left[r_k(x)\right]^v d x<\infty
+  \int_{\mathbb{R}^n}|u(x)|^p\left[r_k(x)\right]^v \d x<\infty
   \]
   with $v$ as in the above lemma. If we take $\beta_i=\pi, 1 \leq i \leq n-1$, and let $a \rightarrow \infty$ in (39), we obtain
   \[
-  \left(\int_{\mathbb{R}^n}|u(x)|^q\left[r_k(x)\right]^v d x\right)^{1 / q} \leq K\left(\int_{\mathbb{R}^n}|\grad u(x)|^p\left[r_k(x)\right]^v d x\right)^{1 / p} .
+  \left(\int_{\mathbb{R}^n}|u(x)|^q\left[r_k(x)\right]^v \d x\right)^{1 / q} \leq K\left(\int_{\mathbb{R}^n}|\grad u(x)|^p\left[r_k(x)\right]^v \d x\right)^{1 / p} .
   \]
   This generalizes (the case $m=1$ of) Sobolev's inequality, Theorem 4.31.
 \end{remarks}
@@ -1952,20 +2045,20 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
 \begin{lemma}
   Let $z \in \mathbb{R}^k$ and let $\Omega$ be a domain of finite volume in $\mathbb{R}^k$. If $0 \leq v<k$, then
   \[
-  \int_{\Omega}|x-z|^{-v} d x \leq \frac{K}{k-v}(\vol(\Omega))^{1-v / k}
+  \int_{\Omega}|x-z|^{-v} \d x \leq \frac{K}{k-v}(\vol(\Omega))^{1-v / k}
   \]
   where the constant $K$ depends on $\nu$ and $k$, but not on $z$ or $\Omega$.
 \end{lemma}
 
 \begin{proof}
-  Let $B$ be the ball in $\mathbb{R}^k$ having centre $z$ and the same volume as $\Omega$. It is easily seen that the left side of the above inequality does not exceed $\int_B|x-z|^{-v} d x$, and that the inequality holds for $\Omega=B$
+  Let $B$ be the ball in $\mathbb{R}^k$ having centre $z$ and the same volume as $\Omega$. It is easily seen that the left side of the above inequality does not exceed $\int_B|x-z|^{-v} \d x$, and that the inequality holds for $\Omega=B$
 \end{proof}
 
 
 \begin{lemma}
   Let $\Omega \subset \mathbb{R}^n$ satisfy the cone condition. Let $1 \leq k \leq n$ and let $P$ be an $(n-k)$-dimensional plane in $\mathbb{R}^n$. Denote by $r(x)$ the distance from $x$ to $P$. If $0 \leq v<p-n$, then for all $u \in C^1(\Omega)$ we have
   \[
-  \sup _{x \in \Omega}|u(x)| \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\grad u|^p\right)[r(x)]^\nu d x\right)^{1 / p}
+  \sup _{x \in \Omega}|u(x)| \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\grad u|^p\right)[r(x)]^\nu \d x\right)^{1 / p}
   \]
   where the constant $K$ may depend on $v, n, p, k$, and the cone $C$ determining the cone condition for $\Omega$, but not on $u$.
 \end{lemma}
@@ -1974,7 +2067,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   Throughout this proof $A_i$ and $K_i$ will denote various constants depending on one or more of the parameters on which $K$ is allowed to depend above. It is
   sufficient to prove that if $C$ is a finite cone contained in $\Omega$ having vertex at, say, the origin, then
   \[
-  |u(0)| \leq K\left(\int_C\left(|u(x)|^p+|\grad u|^p\right)[r(x)]^v d x\right)^{1 / p}
+  |u(0)| \leq K\left(\int_C\left(|u(x)|^p+|\grad u|^p\right)[r(x)]^v \d x\right)^{1 / p}
   \]
   For $0 \leq j \leq n$, let $A_j$ denote the supremum of the Lebesgue $j$-dimensional measure of the projection of $C$ onto $\mathbb{R}^j$, taken over all $j$-dimensional subspaces $\mathbb{R}^j$ of $\mathbb{R}^n$. Writing $x=\left(x^{\prime}, x^{\prime \prime}\right)$ where $x^{\prime}=\left(x_1, \ldots, x_{n-k}\right)$ and $x^{\prime \prime}=\left(x_{n-k+1}, \ldots, x_n\right)$, we may assume, without loss of generality, that $P$ is orthogonal to the coordinate axes corresponding to the components of $x^{\prime \prime}$. Define
   \[
@@ -1994,35 +2087,35 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   Setting $V=\vol(C)$ and $a=\sup _{x \in C}|x|$, and integrating the above inequality over $C$, we obtain
   \[
   \begin{aligned}
-  V|u(0)| & \leq \int_C|u(x)| d x+a \int_C \int_0^1|\grad u(t x)| d t d x \\
-  & =\int_C|u(x)| d x+a \int_0^1 t^{-n} d t \int_{C_t}|\grad u(x)| d x .
+  V|u(0)| & \leq \int_C|u(x)| \d x+a \int_C \int_0^1|\grad u(t x)| d t \d x \\
+  & =\int_C|u(x)| \d x+a \int_0^1 t^{-n} d t \int_{C_t}|\grad u(x)| \d x .
   \end{aligned}
   \]
   Let $z$ denote the orthogonal projection of $x$ onto $P$. Then $r(x)=\left|x^{\prime \prime}-z^{\prime \prime}\right|$. Since $0 \leq v<p-n$, we have $p>1$, and so by the previous lemma
   \[
   \begin{aligned}
-  \int_{C_t}[r(x)]^{-v /(p-1)} d x & =\int_{S_t} d x^{\prime} \int_{R_t\left(x^{\prime}\right)}\left|x^{\prime \prime}-z^{\prime \prime}\right|^{-v /(p-1)} d x^{\prime \prime} \\
-  & \leq K_1 \int_{S_t}\left[A_{t, k}\right]^{1-v /(k(p-1))} d x^{\prime} \\
+  \int_{C_t}[r(x)]^{-v /(p-1)} \d x & =\int_{S_t} \d x^{\prime} \int_{R_t\left(x^{\prime}\right)}\left|x^{\prime \prime}-z^{\prime \prime}\right|^{-v /(p-1)} \d x^{\prime \prime} \\
+  & \leq K_1 \int_{S_t}\left[A_{t, k}\right]^{1-v /(k(p-1))} \d x^{\prime} \\
   & \leq K_1\left[A_{t, k}\right]^{1-v /(k(p-1))}\left[A_{t, n-k}\right]=K_2 t^{n-v /(p-1)}
   \end{aligned}
   \]
   It follows that
   \[
   \begin{aligned}
-  & \int_{C_t}|\grad u(x)| d x \\
-  & \quad \leq\left(\int_{C_t}|\grad u(x)|^p[r(x)]^\nu d x\right)^{1 / p}\left(\int_{C_t}[r(x)]^{-v /(p-1)} d x\right)^{1 / p^{\prime}} \\
-  & \quad \leq K_3 t^{n-(v+n) / p}\left(\int_{C_t}|\grad u(x)|^p[r(x)]^v d x\right)^{1 / p}
+  & \int_{C_t}|\grad u(x)| \d x \\
+  & \quad \leq\left(\int_{C_t}|\grad u(x)|^p[r(x)]^\nu \d x\right)^{1 / p}\left(\int_{C_t}[r(x)]^{-v /(p-1)} \d x\right)^{1 / p^{\prime}} \\
+  & \quad \leq K_3 t^{n-(v+n) / p}\left(\int_{C_t}|\grad u(x)|^p[r(x)]^v \d x\right)^{1 / p}
   \end{aligned}
   \]
   Hence, since $v<p-n$,
   \[
-  \int_0^1 t^{-n} d t \int_{C_t}|\grad u(x)| d x \leq K_4\left(\int_C|\grad u(x)|^p[r(x)]^v d x\right)^{1 / p}
+  \int_0^1 t^{-n} d t \int_{C_t}|\grad u(x)| \d x \leq K_4\left(\int_C|\grad u(x)|^p[r(x)]^v \d x\right)^{1 / p}
   \]
   Similarly,
   \[
   \begin{aligned}
-  \int_C|u(x)| d x & \leq\left(\int_C|u(x)|^p[r(x)]^\nu d x\right)^{1 / p}\left(\int_C[r(x)]^{-\nu /(p-1)} d x\right)^{1 / p^{\prime}} \\
-  & \leq K_5\left(\int_C|u(x)|^p[r(x)]^\nu d x\right)^{1 / p}
+  \int_C|u(x)| \d x & \leq\left(\int_C|u(x)|^p[r(x)]^\nu \d x\right)^{1 / p}\left(\int_C[r(x)]^{-\nu /(p-1)} \d x\right)^{1 / p^{\prime}} \\
+  & \leq K_5\left(\int_C|u(x)|^p[r(x)]^\nu \d x\right)^{1 / p}
   \end{aligned}
   \]
   Inequality (45) now follows from (46), (48), and (49).
@@ -2032,7 +2125,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
 \begin{lemma}
   Suppose all the conditions of the previous lemma are satisfied and, in addition, $\Omega$ satisfies the strong local Lipschitz condition. Then for all $u \in C^1(\Omega)$ we have
   \[
-  \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{|u(x)-u(y)|}{|x-y|^\mu} \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\grad u(x)|^p\right)[r(x)]^\nu d x\right)^{1 / p}
+  \sup _{\substack{x, y \in \Omega \\ x \neq y}} \frac{|u(x)-u(y)|}{|x-y|^\mu} \leq K\left(\int_{\Omega}\left(|u(x)|^p+|\grad u(x)|^p\right)[r(x)]^\nu \d x\right)^{1 / p}
   \]
   where $\mu=1-(v+n) / p$ satisfies $0<\mu<1$, and $K$ is independent of $u$.
 \end{lemma}
@@ -2154,7 +2247,7 @@ As final preparations for the proofs of Theorems $4.51-4.53$ we need to obtain w
   \begin{aligned}
   \sup _{x \in Q_{k, \lambda}}|u(x)| & =\sup _{y \in \mathcal{C}_k}|\tilde{u}(y)| \\
   & \leq K_1\left(\int_{\mathcal{C}_k}\left(|\tilde{u}(y)|^p+|\grad \tilde{u}(y)|^p\right)\left[r_k(y)\right]^v d y\right)^{1 / p} \\
-  & \leq K_2\left(\int_{Q_{k, \lambda}}\left(|u(x)|^p+|\grad u(x)|^p\right) d x\right)^{1 / p} .
+  & \leq K_2\left(\int_{Q_{k, \lambda}}\left(|u(x)|^p+|\grad u(x)|^p\right) \d x\right)^{1 / p} .
   \end{aligned}
   \]
   Since $r_k(y) \leq 1$ for $y \in \mathcal{C}_k$ it is evident that $K_1$, and hence $K_2$,
