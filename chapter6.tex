@@ -1,0 +1,77 @@
+\setcounter{chapter}{5}
+\chapter{Compact Imbeddings of Sobolev Spaces}
+
+\section{The Rellich-Kondrachov Theorem}
+
+\begin{para}[Restricted Imbeddings]
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ and let $\Omega_0$ be a sundomain of $\Omega$.
+  Let $X(\Omega)$ denote any of the possible target spaces for imbeddings of $W^{m,p}(\Omega)$, that is,
+  $X(\Omega)$ is a space of the form $C_B^j(\Omega)$, $C^j(\overline{\Omega})$,
+  $C^{j,\lambda}(\overline{\Omega})$, $L^q(\Omega_k)$, or $W^{j,q}(\Omega_k)$, where $\Omega_k$, $1\leq k\leq n$,
+  is the intersection of $\Omega$ with a $k$-dimensional plane in $\mathbb{R}^n$. Since the linear restriction 
+  operator $i_{\Omega_0}: u\to u|_{\Omega_0}$ is bounded from $X(\Omega)$ into $X(\Omega_0)$
+  (in fact $\|i_{\Omega_0}u\|_{X(\Omega_0)} \leq \|u\|_{X(\Omega)}$) any imbeddings of the form
+  \begin{equation}\label{eq:6.1}
+    W^{m,p}(\Omega) \to X(\Omega)
+  \end{equation}
+  can be composed with this restriction to yield the imbedding
+  \begin{equation}\label{eq:6.2}
+    W^{m,p}(\Omega) \to X(\Omega_0)
+  \end{equation}
+  and \eqref{eq:6.2} has imbedding constant no larger than \eqref{eq:6.1}.
+\end{para}
+
+
+\begin{para}[Compact Imbeddings]
+  Recall that a set $A$ in a normed space is precompact if every sequence of points in $A$ has a subsequence
+  converging in norm to an element of the space. An operator between normed spaces is called compact if it
+  maps bounded sets into precompact sets, and is called completely continuous if it is continuous and compact.
+  (See Paragraph~1.24; for linear operators compactness and complete continuity are equivalent.)
+  In this chapter we are concerned with the compactness of imbedding operators which are continuous whenever
+  they exist, and so are completely continuous whenever they are compact.
+
+  If $\Omega$ satisfies the hypothesis of the Sobolev imbedding Theorem~4.12 and if $\Omega_0$ is a bounded
+  subset of $\Omega$, then, with the exception of certain extreme cases, all the restricted
+  imbeddings \eqref{eq:6.1} corresponding to imbeddings asserted in Theorem~4.12 are compact.
+  The most important of these compact imbedding results originated in a lemma of Rellich [Re] and was proved
+  specifically for Sobolev spaces by Kondrachov [K]. Such compact imbeddings have many important applications
+  in analysis, especially to showing that linear elliptic partial differential equations defined over
+  bounded domains have discrete spectra. See, for example, [EE] and [ET] for such applications and further
+  refinements.
+\end{para}
+
+We summarize the various compact imbeddings of $W^{m,p}(\Omega)$ in the following theorem
+
+\begin{theorem}[The Rellich-Kondrachov Theorem]
+  Let $\Omega$ be a domain in $\mathbb{R}^n$, let $\Omega_0$ be a bounded subdomain of $\Omega$, and let
+  $\Omega_0^k$ be the intersection of $\Omega_0$ with a $k$-dimensional plane in $\mathbb{R}^n$.
+  Let $j\geq 0$ and $m\geq 1$ be integers, and let $1\leq p<\infty$.
+  \begin{enumerate}[label = \textbf{PART \Roman*},
+                    labelindent = 0pt,
+                    labelsep = 1em,
+                    leftmargin = 0pt,
+                    labelwidth = 4em,
+                    itemindent = *,
+                    align = left]
+    \item If $\Omega$ satisfies the cone condition and $mp<n$, then the following imbeddings are compact:
+      \begin{align}
+        & W^{j+m,p}(\Omega) \to W^{j,q}(\Omega_0^k) & & \text{if } 0 < n-mp < k \leq n \text{ and } 
+          1\leq q < kp/(n-mp), \label{eq:6.3} \\
+        & W^{j+m,p}(\Omega) \to W^{j,q}(\Omega_0^k) & & \text{if } n = mp, 1\leq k \leq n \text{ and }
+          1\leq q <\infty. \label{eq:6.4}
+      \end{align}
+    \item If $\Omega$ satisfies the cone condition and $mp > n$, then the following imbeddings are compact:
+      \begin{align}
+        & W^{j+m,p}(\Omega) \to C_B^j(\Omega_0) \label{eq:6.5} \\
+        & W^{j+m,p}(\Omega) \to W^{j,q}(\Omega_0^k) \qquad \text{if } 1\leq q < \infty. \label{eq:6.6}
+      \end{align}
+    \item If $\Omega$ satisfies the strong local Lipschitz condition, then the following imbeddings are compact:
+      \begin{align}
+        W^{j+m,p}(\Omega) \to C^j(\overline{\Omega_0}) \qquad & \text{if } mp > n, \label{eq:6.7} \\
+        W^{j+m,p}(\Omega) \to C^{j,\lambda}(\overline{\Omega_0}) \qquad & \text{if } mp > n \geq (m-1)p
+          \text{ and } 0 < \lambda < m - (n/p). \label{eq:6.8}
+      \end{align}
+    \item If $\Omega$ is an arbitrary domain in $\mathbb{R}^n$, the imbeddings \eqref{eq:6.3}--\eqref{eq:6.8}
+      are compact provided $W^{j+m,p}(\Omega)$ is replaced by $W^{j+m,p}_0(\Omega)$.
+  \end{enumerate}
+\end{theorem}
