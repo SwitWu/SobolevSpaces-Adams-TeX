@@ -1187,50 +1187,56 @@ Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorph
 
 \section{The Marcinkiewicz Interpolation Theorem}
 
-
 \begin{para}[Distribution Functions]
-  Let $\Omega$ be a domain in $\mathbb{R}^n$ and $u$ be a measurable function defined on $\Omega$. For $t \geq 0$, let
-  \[
-  \Omega_{u, t}=\{x \in \Omega:|u(x)|>t\} .
-  \]
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ and $u$ be a measurable function defined on $\Omega$.
+  For $t \geq 0$, let
+  \[\Omega_{u, t}=\{x \in \Omega:|u(x)|>t\}.\]
   We define the distribution function of $u$ to be
-  \[
- \delta_u(t)=\mu\left(\Omega_{u, t}\right)
-  \]
-  where $\mu$ is the Lebesgue measure on $\mathbb{R}^n$. Evidently $\delta_u$ is nonincreasing for $t \geq 0$ and if $|u(x)| \leq|v(x)|$ a.e. on $\Omega$, then $\delta_u(t) \leq \delta_v(t)$ for $t \geq 0$.
-  Since $|u(x)|>t$ implies $|u(x)|>t+(1 / k)$ for some integer $k>0$, we have $\Omega_{u, t}=\bigcup_{k=1}^{\infty} \Omega_{u, t+(1 / k)}$ and it follows that $\delta_u$ is right continuous on the interval $[0, \infty)$. Similarly, if $|u(x)|$ is an increasing limit of $\left\{\left|u_j(x)\right|\right\}$ at each $x$, then $|u(x)|>t$ implies $\left|u_j(x)\right|>t$ for some $j$ and so $\Omega_{u, t}=\bigcup_{j=1}^{\infty} \Omega_{u_j, t}$. Hence
-  $\lim _{j \rightarrow \infty} \delta_{u_j}(t)=\delta_u(t)$
-  If $|u(x)+v(x)|>t$, then either $|u(x)|>t / 2$ or $|v(x)|>t / 2$ (or both), so that $\Omega_{u+v, t} \subset \Omega_{u, t / 2} \cup \Omega_{v, t / 2}$ and hence
-  \[
- \delta_{u+v}(t) \leq \delta_u(t / 2)+\delta_v(t / 2)
-  \]
+  \[\delta_u(t)=\mu\left(\Omega_{u, t}\right),\]
+  where $\mu$ is the Lebesgue measure on $\mathbb{R}^n$. 
+  Evidently $\delta_u$ is nonincreasing for $t \geq 0$ and if $|u(x)| \leq|v(x)|$ a.e.~on $\Omega$,
+  then $\delta_u(t) \leq \delta_v(t)$ for $t \geq 0$.
+
+  Since $|u(x)|>t$ implies $|u(x)|>t+(1 / k)$ for some integer $k>0$,
+  we have $\Omega_{u, t}=\bigcup_{k=1}^{\infty} \Omega_{u, t+(1 / k)}$
+  and it follows that $\delta_u$ is right continuous on the interval $[0, \infty)$.
+  Similarly, if $|u(x)|$ is an increasing limit of $\left\{\left|u_j(x)\right|\right\}$ at each $x$,
+  then $|u(x)|>t$ implies $\left|u_j(x)\right|>t$ for some $j$
+  and so $\Omega_{u, t}=\bigcup_{j=1}^{\infty} \Omega_{u_j, t}$.
+  Hence $\lim _{j \rightarrow \infty} \delta_{u_j}(t)=\delta_u(t)$
+
+  If $|u(x)+v(x)|>t$, then either $|u(x)|>t / 2$ or $|v(x)|>t / 2$ (or both),
+  so that $\Omega_{u+v, t} \subset \Omega_{u, t / 2} \cup \Omega_{v, t / 2}$ and hence
+  \begin{equation}\label{eq:2.41}
+    \delta_{u+v}(t) \leq \delta_u(t / 2)+\delta_v(t / 2).
+  \end{equation}
   Now suppose $u \in L^p(\Omega)$ for some $p$ satisfying $0<p<\infty$. For $t>0$ we have
-  \[
-  \|u\|_p^p=\int_{\Omega}|u(x)|^p \d x \geq \int_{\Omega_{u, t}}|u(x)|^p \d x \geq t^p \mu\left(\Omega_{u, t}\right)
-  \]
-  from which we obtain Chebyshev's inequality
-  \[
- \delta_u(t)=\mu\left(\Omega_{u, t}\right) \leq t^{-p}\|u\|_p^p
-  \]
+  \[\|u\|_p^p = \int_{\Omega}|u(x)|^p \d x \geq \int_{\Omega_{u, t}}|u(x)|^p \d x
+    \geq t^p \mu\left(\Omega_{u, t}\right),\]
+  from which we obtain \emph{Chebyshev's inequality}
+  \begin{equation}\label{eq:2.42}
+    \delta_u(t)=\mu\left(\Omega_{u, t}\right) \leq t^{-p}\|u\|_p^p.
+  \end{equation}
 \end{para}
 
 
 \begin{lemma}
   If $0<p<\infty$, then
   \begin{equation}\label{eq:2.43}
-    \|u\|_p^p=\int_{\Omega} \cdot|u(x)|^p \d x=p \int_0^{\infty} t^{p-1} \delta_u(t) d t.  
+    \|u\|_p^p=\int_{\Omega} \cdot|u(x)|^p \d x=p \int_0^{\infty} t^{p-1} \delta_u(t) \d t.  
   \end{equation}
 \end{lemma}
 
 \begin{proof}
   First suppose $|u|$ is a simple function, say
-  \[
-  |u(x)|=a_j \quad \text { on } \quad A_j \subset \Omega, \quad 1 \leq j \leq k,
-  \]
+  \[|u(x)|=a_j \quad \text { on } \quad A_j \subset \Omega, \quad 1 \leq j \leq k,\]
   where $0<a_1<a_2<\cdots<a_k$ and $A_i \cap A_j$ is empty for $i \neq j$. Then
-  \[
- \delta_u(t)= \begin{cases}\sum_{i=1}^k \mu\left(A_i\right) & \text { if } t<a_1 \\ \sum_{i=j}^k \mu\left(A_i\right) & \text { if } a_{j-1} \leq t<a_j, \quad(2 \leq j \leq k) \\ 0 & \text { if } t \geq a_k .\end{cases}
-  \]
+  \[ \delta_u(t) =
+    \begin{cases}
+      \sum_{i=1}^k \mu\left(A_i\right) & \text { if } t<a_1 \\
+      \sum_{i=j}^k \mu\left(A_i\right) & \text { if } a_{j-1} \leq t<a_j, \quad(2 \leq j \leq k) \\
+      0 & \text { if } t \geq a_k.
+    \end{cases}\]
   Therefore,
   \[
   \begin{aligned}
@@ -1239,87 +1245,115 @@ Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorph
   & =\sum_{j=1}^k a_j^p \mu\left(A_j\right)=\|u\|_p^p,
   \end{aligned}
   \]
-  so (43) holds for simple functions. By Theorem 1.44 , if $u$ is measurable, then $|u|$ is a limit of a monotonically increasing sequence of measurable simple functions. Equation (43) now follows by monotone convergence.
+  so \eqref{eq:2.43} holds for simple functions. By Theorem~1.44, if $u$ is measurable,
+  then $|u|$ is a limit of a monotonically increasing sequence of measurable simple functions.
+  Equation \eqref{eq:2.43} now follows by monotone convergence.
 \end{proof}
 
 
 \begin{para}[Weak $\bm{L^p}$ Spaces]
   If $u$ is a measurable function on $\Omega$, let
-  \[
-  [u]_p=[u]_{p, \Omega}=\left(\sup _{t>0} t^p \delta_u(t)\right)^{1 / p}
-  \]
-  We define the space weak- $L^p(\Omega)$ as follows:
-  \[
-  \text { weak- } L^p(\Omega)=\left\{u:[u]_p<\infty\right\}
-  \]
-  It is easily checked that $[c u]_p=|c|[u]_p$ for complex $c$, but $[\cdot]_p$ is not a norm on weak- $L^p(\Omega)$ because it does not satisfy the triangle inequality. However, by (41)
-  \[
-  \begin{aligned}
-  {[u+v]_p } & =\left(\sup _{t>0} t^p \delta_{u+v}(t)\right)^{1 / p} \\
-  & \leq\left(2^p \sup _{t>0}\left(\frac{t}{2}\right)^p \delta_u(t / 2)+2^p \sup _{t>0}\left(\frac{t}{2}\right)^p \delta_v(t / 2)\right)^{1 / p} \\
-  & =2\left([u]_p+[v]_p\right)
-  \end{aligned}
-  \]
-  so weak- $L^p(\Omega)$ is a vector space and the ``open balls'' $B_r(u)=\left\{v \in\right.$ weak- $L^p(\Omega)$ : $\left.[v-u]_p<r\right\}$ do generate a topology on weak- $L^p(\Omega)$ with respect to which weak- $L^p(\Omega)$ is a topological vector space. A functional [.] with the properties of a norm except that the triangle inequality is replaced with a weaker version of the form $[u+v] \leq K([u]+[v])$ for some constant $K>1$ is called a quasi-norm.
-  Chebyshev's inequality (42) shows that $[u]_p \leq\|u\|_p$ so that $L^p(\Omega) \subset$ weak- $L^p(\Omega)$. The inclusion is strict since, if $x_0 \in \Omega$ it is easily shown that $u(x)=\left|x-x_0\right|^{-n / p}$ belongs to weak- $L^p(\Omega)$ but not to $L^p(\Omega)$.
+  \[ [u]_p = [u]_{p,\Omega} = \left(\sup_{t>0} t^p \delta_u(t)\right)^{1/p}. \]
+  We define the space weak-$L^p(\Omega)$ as follows:
+  \[ \text { weak- } L^p(\Omega)=\left\{u:[u]_p<\infty\right\}. \]
+  It is easily checked that $[c u]_p=|c|[u]_p$ for complex $c$,
+  but $[\cdot]_p$ is not a norm on weak-$L^p(\Omega)$ because it does not satisfy the triangle inequality. 
+  However, by \eqref{eq:2.41}
+  \begin{align*}
+    {[u+v]_p } 
+    & =\left(\sup _{t>0} t^p \delta_{u+v}(t)\right)^{1 / p} \\
+    & \leq\left(2^p \sup _{t>0}\left(\frac{t}{2}\right)^p \delta_u(t / 2)+2^p
+      \sup_{t>0}\left(\frac{t}{2}\right)^p \delta_v(t / 2)\right)^{1 / p} \\
+    & =2\left([u]_p+[v]_p\right),
+  \end{align*}
+  so weak-$L^p(\Omega)$ is a vector space and the ``open balls''
+  $B_r(u) = \{v\in\text{weak-}L^p(\Omega) : [v-u]_p<r\}$
+  do generate a topology on weak-$L^p(\Omega)$ with respect to which weak-$L^p(\Omega)$
+  is a topological vector space.
+  A functional $[\cdot]$ with the properties of a norm except that the triangle inequality
+  is replaced with a weaker version of the form $[u+v] \leq K([u]+[v])$
+  for some constant $K>1$ is called a \emph{quasi-norm}.
+
+  Chebyshev's inequality \eqref{eq:2.42} shows that $[u]_p \leq\|u\|_p$
+  so that $L^p(\Omega) \subset$ weak-$L^p(\Omega)$.
+  The inclusion is strict since, if $x_0 \in \Omega$ it is easily shown
+  that $u(x)=\left|x-x_0\right|^{-n / p}$ belongs to weak-$L^p(\Omega)$ but not to $L^p(\Omega)$.
 \end{para}
 
 \begin{para}[Strong and Weak Type Operators]
-  A operator $F$ mapping a vector space $X$ of measurable functions into another such space $Y$ is called sublinear if, for all $u, v \in X$ and scalars $c$
-  \[
-  \begin{aligned}
-  |F(u+v)| & \leq|F(u)|+|F(v)|, \quad \text { and } \\
-  |T(c u)| & =|c||T(u)| .
-  \end{aligned}
-  \]
-  A linear operator from $X$ into $Y$ is certainly sublinear. We will be especially concerned with operators from $L^p$ spaces on a domain $\Omega$ in $\mathbb{R}^n$ into $L^q\left(\Omega^{\prime}\right)$ or weak- $L^q\left(\Omega^{\prime}\right)$ where $\Omega^{\prime}$ is a domain in $\mathbb{R}^k$ with $k$ not necessarily equal to $n$.
+  A operator $F$ mapping a vector space $X$ of measurable functions into another such
+  space $Y$ is called sublinear if, for all $u, v \in X$ and scalars $c$
+  \begin{align*}
+    |F(u+v)| & \leq|F(u)|+|F(v)|, \quad \text { and } \\
+    |T(c u)| & =|c||T(u)| .
+  \end{align*}
+  A linear operator from $X$ into $Y$ is certainly sublinear.
+  We will be especially concerned with operators from $L^p$ spaces on a domain $\Omega$
+  in $\mathbb{R}^n$ into $L^q\left(\Omega^{\prime}\right)$ or weak-$L^q\left(\Omega^{\prime}\right)$
+  where $\Omega^{\prime}$ is a domain in $\mathbb{R}^k$ with $k$ not necessarily equal to $n$.
   We distinguish two important classes of sublinear operators:
   \begin{enumerate}[label = (\alph*)]
-    \item $F$ is of strong type $(p, q)$, where $1 \leq p \leq \infty$ and $1 \leq q \leq \infty$, if $F$ maps $L^p(\Omega)$ into $L^q\left(\Omega^{\prime}\right)$ and there exists a constant $K$ such that for all $u \in L^p(\Omega)$
-    \[
-    \|F(u)\|_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}
-    \]
-    \item $F$ is of weak type $(p, q)$, where $1 \leq p \leq \infty$ and $1 \leq q<\infty$, if $F$ maps $L^p(\Omega)$ into weak- $L^q\left(\Omega^{\prime}\right)$ and there exists a constant $K$ such that for all $u \in L^p(\Omega)$
-    \[
-    [F(u)]_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}
-    \]
-    We also say that $F$ is of weak type $(p, \infty)$ if $F$ is of strong type $(p, \infty)$.
+    \item $F$ is of \emph{strong type} $(p, q)$, where $1 \leq p \leq \infty$ and $1 \leq q \leq \infty$, 
+      if $F$ maps $L^p(\Omega)$ into $L^q\left(\Omega^{\prime}\right)$ and there exists a constant $K$ 
+      such that for all $u \in L^p(\Omega)$,
+      \[ \|F(u)\|_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}. \]
+    \item $F$ is of \emph{weak type} $(p, q)$, where $1 \leq p \leq \infty$ and $1 \leq q<\infty$,
+      if $F$ maps $L^p(\Omega)$ into weak- $L^q\left(\Omega^{\prime}\right)$ and there exists a constant 
+      $K$ such that for all $u \in L^p(\Omega)$
+      \[ [F(u)]_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}. \]
+      We also say that $F$ is of weak type $(p, \infty)$ if $F$ is of strong type $(p, \infty)$.
   \end{enumerate}
   Strong type $(p, q)$ implies weak type $(p, q)$ but not conversely unless $q=\infty$.
 \end{para}
 
 \begin{para}
-  The following theorem has its origins in the work of Marcinkiewicz [Mk] and was further developed by Zygmund [Z]. It is valid in more general contexts than stated here, but we only need it for operators between $L^p$ spaces on domains in $\mathbb{R}^n$ and only state it in this context. It will form one of the cornerstones on which our proof of the Sobolev imbedding theorem will rest. In that context it will only be used for linear operators.
+  The following theorem has its origins in the work of Marcinkiewicz [Mk]
+  and was further developed by Zygmund [Z]. It is valid in more general
+  contexts than stated here, but we only need it for operators between
+  $L^p$ spaces on domains in $\mathbb{R}^n$ and only state it in this context.
+  It will form one of the cornerstones on which our proof of the Sobolev
+  imbedding theorem will rest. In that context it will only be used for linear operators.
   
-  Because the Marcinkiewicz theorem involves an operator on a vector space containing two different $L^p$ spaces, say $X$ and $Y$, (over the same domain) it is convenient to consider its domain to be the sum of those spaces, that is the vector space consisting of sums $u+v$ where $u \in X$ and $v \in Y$.
+  Because the Marcinkiewicz theorem involves an operator on a vector space
+  containing two different $L^p$ spaces, say $X$ and $Y$, (over the same domain)
+  it is convenient to consider its domain to be the sum of those spaces,
+  that is the vector space consisting of sums $u+v$ where $u \in X$ and $v \in Y$.
 
-  There are numerous proofs of the Marcinkiewicz theorem in the literature. See, for example, $[\mathrm{St}]$ and [SW]. Our proof is based on Folland $\left[\mathrm{Fo}_{\mathrm{O}}\right]$.
+  There are numerous proofs of the Marcinkiewicz theorem in the literature.
+  See, for example, [St] and [SW]. Our proof is based on Folland [Fo].
 \end{para}
 
 
 \begin{theorem}[The Marcinkiewicz Interpolation Theorem]
-  Let $1 \leq p_1 \leq q_1<\infty$ and $1 \leq p_2 \leq q_2 \leq \infty$, with $q_1<q_2$. Suppose the numbers $p$ and $q$ satisfy
-  \[
-  \frac{1}{p}=\frac{1-\theta}{p_1}+\frac{\theta}{p_2}, \quad \frac{1}{q}=\frac{1-\theta}{q_1}+\frac{\theta}{q_2}
-  \]
-  where $0<\theta<1$. Let $\Omega$ and $\Omega^{\prime}$ be domains in $\mathbb{R}^n$ and $\mathbb{R}^k$, respectively; $k$ may or may not be equal to $n$. Let $F$ be a sublinear operator from $L^{p_1}(\Omega)+L^{p_2}(\Omega)$ into the space of measurable functions on $\Omega^{\prime}$. If $F$ is of weak type $\left(p_1, q_1\right)$ and also of weak type $\left(p_2, q_2\right)$, then $F$ is of strong type $(p, q)$. That is, if
-  \[
-  [F(u)]_{q_j, \Omega^{\prime}} \leq K_j\|u\|_{p_j, \Omega}, \quad j=1,2
-  \]
+  Let $1 \leq p_1 \leq q_1<\infty$ and $1 \leq p_2 \leq q_2 \leq \infty$, with $q_1<q_2$.
+  Suppose the numbers $p$ and $q$ satisfy
+  \[ \frac{1}{p}=\frac{1-\theta}{p_1}+\frac{\theta}{p_2}, \quad
+    \frac{1}{q}=\frac{1-\theta}{q_1}+\frac{\theta}{q_2}, \]
+  where $0<\theta<1$. Let $\Omega$ and $\Omega^{\prime}$
+  be domains in $\mathbb{R}^n$ and $\mathbb{R}^k$, 
+  respectively; $k$ may or may not be equal to $n$.
+  Let $F$ be a sublinear operator from $L^{p_1}(\Omega)+L^{p_2}(\Omega)$
+  into the space of measurable functions on $\Omega^{\prime}$.
+  If $F$ is of weak type $\left(p_1, q_1\right)$ and also of weak type $\left(p_2, q_2\right)$,
+  then $F$ is of strong type $(p, q)$. That is, if
+  \[ [F(u)]_{q_j, \Omega^{\prime}} \leq K_j\|u\|_{p_j, \Omega}, \quad j=1,2, \]
   then
-  \[
-  \|F(u)\|_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}
-  \]
-  where the constant $K$ depends only on $p, p_1, q_1, p_2, q_2, K_1$, and $K_2$.
+  \[ \|F(u)\|_{q, \Omega^{\prime}} \leq K\|u\|_{p, \Omega}, \]
+  where the constant $K$ depends only on $p$, $p_1$, $q_1$, $p_2$, $q_2$, $K_1$, and $K_2$.
 \end{theorem}
 
 \begin{proof}
-  First consider the case where $q_1<q<q_2<\infty$ so that $p_1$ and $p_2$ are necessarily both finite. The conditions satisfied by $p$ and $q$ imply that $(1 / p, 1 / q)$ is an interior point of the line segment joining $\left(p_1^{-1}, q_1^{-1}\right)$ and $\left(p_2^{-1}, q_2^{-1}\right)$ in the $(p, q)$-plane. Let $c$ be the extended real number equal to $q / p$ times the slope of
+  First consider the case where $q_1<q<q_2<\infty$ so that $p_1$ and $p_2$ are necessarily both finite. 
+  The conditions satisfied by $p$ and $q$ imply that $(1 / p, 1 / q)$ is an interior point of the line 
+  segment joining $\left(p_1^{-1}, q_1^{-1}\right)$ and $\left(p_2^{-1}, q_2^{-1}\right)$
+  in the $(p, q)$-plane. Let $c$ be the extended real number equal to $q / p$ times the slope of
   that line segment;
-  \[
-  c=\frac{p_1\left(q_1-q\right)}{q_1\left(p_1-p\right)}=\frac{p_2\left(q_2-q\right)}{q_2\left(p_2-p\right)}
-  \]
-  Given any $T>0$, a measurable function $u$ on $\Omega$ can be written as a sum of a ``small'' part $u_{S, T}$ and a ``big'' part $u_{B, T}$ defined as follows:
+  \begin{equation}\label{eq:2.44}
+    c = \frac{p_1\left(q_1-q\right)}{q_1\left(p_1-p\right)}
+     = \frac{p_2\left(q_2-q\right)}{q_2\left(p_2-p\right)}.
+  \end{equation}
+  Given any $T>0$, a measurable function $u$ on $\Omega$ can be written as a sum of
+  a ``small'' part $u_{S, T}$ and a ``big'' part $u_{B, T}$ defined as follows:
   \[
   \begin{aligned}
   & u_{S, T}(x)= \begin{cases}u(x) & \text { if }|u(x)| \leq T \\
@@ -1336,7 +1370,7 @@ Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorph
   & \delta_{u_{B, T}}(t)=\delta_u(t+T) .
   \end{aligned}
   \]
-  It follows, using (43), that
+  It follows, using \eqref{eq:2.43}, that
   \[
   \begin{aligned}
   \int_{\Omega}\left|u_{S, T}(x)\right|^{p_2} \d x & =p_2 \int_0^{\infty} t^{p_2-1} \delta_{u_{S, T}}(t) d t=p_2 \int_0^T t^{p_2-1} \delta_u(t) d t \\
@@ -1344,7 +1378,8 @@ Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorph
   & =p_1 \int_T^{\infty}(t-T)^{p_1-1} \delta_u(t) d t \leq p_1 \int_T^{\infty} t^{p_1-1} \delta_u(t) d t
   \end{aligned}
   \]
-  Using (43) followed by the sublinearity of $F$ and inequality (41), we calculate
+  Using \eqref{eq:2.43} followed by the sublinearity of $F$ and inequality \eqref{eq:2.41},
+  we calculate
   \[
   \begin{aligned}
   & \int_{\Omega^{\prime}}|F(u)(y)|^q d y=q \int_0^{\infty} t^{q-1} \delta_{F(u)}(t) d t \\
@@ -1353,7 +1388,10 @@ Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorph
   & \leq 2^q q \int_0^{\infty} t^{q-1} \delta_{F\left(u_{S, T}\right)}(t) d t+2^q q \int_0^{\infty} t^{q-1} \delta_{F\left(u_{B, T}\right)}(t) d t
   \end{aligned}
   \]
-  This inequality holds for any $T>0$; we can choose $T$ to depend on $t$ if we wish. In the following, let $T=t^c$ where $c$ is given by (44). For positive $s$, the definition of $[\cdot]_s$ implies that $\delta_v(t) \leq t^{-s}[v]_s^s$. Using this and the given estimate $[F(v)]_{q_2, \Omega^{\prime}} \leq K_2\|v\|_{p, \Omega}$ we obtain
+  This inequality holds for any $T>0$; we can choose $T$ to depend on $t$ if we wish.
+  In the following, let $T=t^c$ where $c$ is given by (44). For positive $s$,
+  the definition of $[\cdot]_s$ implies that $\delta_v(t) \leq t^{-s}[v]_s^s$.
+  Using this and the given estimate $[F(v)]_{q_2, \Omega^{\prime}} \leq K_2\|v\|_{p, \Omega}$ we obtain
   \[
   \begin{aligned}
   \int_0^{\infty} t^{q-1} \delta_{F\left(u_{S . T}\right)}(t) d t & \leq \int_0^{\infty} t^{q-1-q_2}\left[F\left(u_{S, T}\right)\right]_{q_2}^{q_2} d t \\
@@ -1411,15 +1449,21 @@ Since $L^1(\Omega)$ is separable while its dual, which is isometrically isomorph
   & =K_2^{p_2} p_2 T^{p_2-p}(1 / p)\|u\|_{p, \Omega}^p=t^{p_2},
   \end{aligned}
   \]
-  and again $\delta_{F\left(u_{S . r}\right)}(t)=0$. In either of these cases the first term in (45) is zero and an estimate similar to (47) holds for the second term provided $p_1<p_2$.
+  and again $\delta_{F\left(u_{S . r}\right)}(t)=0$. In either of these cases the first term
+  in (45) is zero and an estimate similar to (47) holds for the second term provided $p_1<p_2$.
   
-  If $q_2=\infty$ and $p_2<p_1<\infty$ we can instead assure that the second term in (45) is zero by choosing $T$ to force $\delta_{F\left(u_{B, t}\right)}(t)=0$ and obtain an estimate similar to (46) for the first term.
+  If $q_2=\infty$ and $p_2<p_1<\infty$ we can instead assure that the second term in (45)
+  is zero by choosing $T$ to force $\delta_{F\left(u_{B, t}\right)}(t)=0$ and obtain an estimate similar 
+  to (46) for the first term.
   
-  There remains one case to be considered: $q_1<q<q_2=\infty, p_1=p=p_2<\infty$. In this case it follows directly from the definition of $[\cdot]_s$ that
+  There remains one case to be considered: $q_1<q<q_2=\infty$, $p_1=p=p_2<\infty$.
+  In this case it follows directly from the definition of $[\cdot]_s$ that
   \[
   t^{q_1} \delta_{F(u)}(t) \leq[F(u)]_{q_1}^{q_1} \leq K_1^{q_1}\|u\|_{p, \Omega}^{q_1},
   \]
-  and hence $\delta_{F(u)} \leq\left(K_1\|u\|_{p, \Omega} / t\right)^{q_1}$. On the other hand, $\delta_{F(u)}(t)=0$ if we have $t \geq T=K_2\|u\|_{p, \Omega} \geq\|F(u)\|_{\infty, \Omega^{\prime}}$. Thus
+  and hence $\delta_{F(u)} \leq\left(K_1\|u\|_{p, \Omega} / t\right)^{q_1}$.
+  On the other hand, $\delta_{F(u)}(t)=0$ if we have
+  $t \geq T=K_2\|u\|_{p, \Omega} \geq\|F(u)\|_{\infty, \Omega^{\prime}}$. Thus
   \[
   \begin{aligned}
   \|F(u)\|_{q, \Omega^{\prime}}^q & =q \int_0^{\infty} t^{q-1} \delta_{F(u)}(t) d t=q \int_0^T t^{q-1} \delta_{F(u)}(t) d t \\

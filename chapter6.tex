@@ -48,9 +48,9 @@ We summarize the various compact imbeddings of $W^{m,p}(\Omega)$ in the followin
   Let $j\geq 0$ and $m\geq 1$ be integers, and let $1\leq p<\infty$.
   \begin{enumerate}[label = \textbf{PART \Roman*},
                     labelindent = 0pt,
-                    labelsep = 1em,
+                    labelsep = 5pt,
                     leftmargin = 0pt,
-                    labelwidth = 4em,
+                    labelwidth = 3em,
                     itemindent = *,
                     align = left]
     \item If $\Omega$ satisfies the cone condition and $mp<n$, then the following imbeddings are compact:
@@ -75,3 +75,66 @@ We summarize the various compact imbeddings of $W^{m,p}(\Omega)$ in the followin
       are compact provided $W^{j+m,p}(\Omega)$ is replaced by $W^{j+m,p}_0(\Omega)$.
   \end{enumerate}
 \end{theorem}
+
+
+\begin{remarks}
+  \begin{enumerate}[1.]
+    \item Note that if $\Omega$ is bounded, we may have $\Omega_0 = \Omega$ in the statement of the theorem.
+    \item If $X$, $Y$, and $Z$ are spaces for which we have the imbeddings $X\to Y$ and $Y\to Z$,
+      and one of these imbeddings is compact, then the composite imbedding $X\to Z$ is compact.
+      Thus, for example, if $Y\to Z$ is compact, then any sequence $\{u_j\}$ bounded in $X$ will
+      be bounded in $Y$ and will therefore have a subsequence $\{u_j'\}$ convergent in $Z$.
+    \item Since the extension operator $u\to\tilde{u}$, where $\tilde{u}(x) = u(x)$ if $x\in\Omega$
+      and $\tilde{u}(x) = 0$ if $x\notin \Omega$,
+      defines an imbedding $W_0^{j+m,p}(\Omega) \to W^{j+m,p}(\mathbb{R}^n)$ by Lemma~3.27, Part IV of Theorem~6.3
+      follows from application of Parts I--III to $\mathbb{R}^n$.
+    \item In proving the compactness of any of the imbeddings \eqref{eq:6.3}--\eqref{eq:6.8} it is
+      sufficient to consider only the case $j=0$. For $j\geq 1$ and $\{u_i\}$ a bounded sequence in
+      $W^{j+m,p}(\Omega)$ it is clear that $\{D^\alpha u_i\}$ is bounded in $W^{m,p}(\Omega)$ for each $\alpha$
+      such that $|\alpha|\leq j$. Hence $\{D^\alpha u_i|_{\Omega_0^k}\}$ is precompact in $L^q(\Omega_0^k)$
+      with $q$ specified as in \eqref{eq:6.3}. It is possible, therefore, to select (by finite induction)
+      a subsequence $\{u_i'\}$ of $\{u_i\}$ for which $\{D^\alpha u_i'|_{\Omega_0^k}\}$
+      converges in $L^q(\Omega_0^k)$ for each $\alpha$ such that $|\alpha|\leq j$.
+      Thus $\{u_i'|_{\Omega_0^k}\}$ converges in $W_0^{j,q}(\Omega_0^k)$ and \eqref{eq:6.3} is compact.
+    \item Since $\Omega_0$ is bounded, $C_B^0(\Omega_0^k)\to L^q(\Omega_0^k)$ for $1\leq q\leq \infty$;
+      in fact $\|u\|_{0,q,\Omega_0^k} \leq \|u\|_{C_B^0(\Omega_0^k)} \bigl[\vol (\Omega_0^k)\bigr]^{1/q}$.
+      Thus the compactness of \eqref{eq:6.6} (for $j=0$) follows from that of \eqref{eq:6.5}.
+    \item For the purpose of proving Theorem 6.3 the bounded subdomain $\Omega_0$ of $\Omega$ may be assumed
+      to satisfy the cone condition in $\Omega$ does. If $C$ is a finite cone determining the cone condition
+      for $\Omega$, let $\widetilde{\Omega}$ be the union of all finite cones congruent to $C$, contained in
+      $\Omega$ and having nonempty intersection with $\Omega_0$.
+      Then $\Omega_0\subset\widetilde{\Omega}\subset\Omega$ and $\widetilde{\Omega}$ is bounded and satisfies
+      the cone condition. If $W^{m,p}(\Omega)\to X(\widetilde{\Omega})$ is compact, then so is
+      $W^{m,p}\to X(\Omega_0)$ by restriction.
+  \end{enumerate}
+\end{remarks}
+
+\begin{para}[Proof of Theorem 6.3, Part III]
+  If $mp > n\geq (m-1)p$ and if $0 < \lambda < m-(n/p)$, then there exists $\mu$ such that
+  $\lambda < \mu < m-(n/p)$. Since $\Omega_0$ is bounded,
+  the imbedding $C^{0,\mu}(\overline{\Omega_0})\to C^{0,\lambda}(\overline{\Omega_0})$ is compact by Theorem~1.34.
+  Since $W^{m,p}(\Omega)\to C^{0,\mu}(\overline{\Omega})\to C^{0,\mu}(\overline{\Omega_0})$ by Theorem~4.12
+  and restriction, imbedding \eqref{eq:6.8} is compact for $j=0$ by Remark 6.4(2).
+
+  If $mp>n$, let $j^*$ be the nonnegative integer satisfying the inequalities
+  $(m-j^*)p > n \geq (m-j^*-1)p$. Then we have the imbedding chain
+  \begin{equation}\label{eq:6.9}
+    W^{m,p}(\Omega) \to W^{m-j^*,p}(\Omega) \to C^{0,\mu}(\overline{\Omega_0}) \to C(\overline{\Omega_0})
+  \end{equation}
+  where $0 < \mu < m-j^*-(n/p)$. The last imbeddings in \eqref{eq:6.9} is compact by Theorem 1.34.
+  Thus \eqref{eq:6.7} is compact for $j=0$.
+\end{para}
+
+
+\begin{para}[Proof of Theorem 6.3, Part II]
+  As noted in Remark 6.4(6), $\Omega_0$ may be assumed to satisfy the cone condition.
+  Since $\Omega_0$ is bounded it can, by Lemma~4.22 be written as a finite union,
+  $\Omega_0 = \bigcup_{k=1}^M \Omega_k$, where each $\Omega_k$ satisfies the strong local Lipschitz
+  condition. If $mp>n$, then
+  \[W^{m,p}(\Omega) \to W^{m,p}(\Omega_k) \to C(\overline{\Omega_k}),\]
+  the latter imbedding being compact as proved above. If $\{u_i\}$ is a sequence bounded in $W^{m,p}(\Omega)$,
+  we may select by finite induction on $k$ a subsequence $\{u_i'\}$ whose restriction to $\Omega_k$
+  converges in $C(\overline{\Omega_k})$ for each $k$, $1\leq k\leq M$.
+  But this subsequence then converges in $C_B^0(\Omega_0)$, so proving that \eqref{eq:6.5} is compact
+  for $j=0$. Therefore \eqref{eq:6.6} is also compact by Remark 6.4(5).
+\end{para}
