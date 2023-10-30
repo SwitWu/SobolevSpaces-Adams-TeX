@@ -182,4 +182,132 @@ We summarize the various compact imbeddings of $W^{m,p}(\Omega)$ in the followin
     u(x) & \text{if}\ x\in\Omega_0 \\
     0    & \text{otherwise.}
   \end{cases} \]
+  By H\"older's inequality and since $W^{m,p}(\Omega)\to L^{q_0}(\Omega_0)$, we have
+  \begin{align*}
+    \int_{\Omega_0-\Omega_j} |u(x)| \d x
+    & \leq \biggl(\int_{\Omega_0-\Omega_j} |u(x)|^{q_0} \d x\biggr)^{1/q_0}
+           \biggl(\int_{\Omega_0-\Omega_j} 1 \d x\biggr)^{1-1/q_0} \\
+    & \leq K_1 \|u\|_{m,p,\Omega} [\vol(\Omega_0-\Omega_j)]^{1-1/q_0},
+  \end{align*}
+  with $K_1$ independent of $u$. Since $q_0>1$ and $\Omega_0$ has finite volume,
+  $j$ may be selected large enough to ensure that for every $u\in S$,
+  \[\int_{\Omega_0-\Omega_j} |u(x)| \d x < \epsilon \]
+  and also, for every $h\in\mathbb{R}^n$,
+  \[\int_{\Omega_0-\Omega_j} |\tilde{u}(x+h) - \tilde{u}(x)| \d x < \frac{\epsilon}{2}.\]
+  Now if $|h|<1/j$, then $x+th\in \Omega_{2j}$ provided $x\in\Omega_j$ and $0<t<1$.
+  If $u\in C^\infty(\Omega)$, it follows that
+  \begin{align*}
+    \int_{\Omega_j} |u(x+h)-u(x)| \d x
+    & \leq \int_{\Omega_j} \d x \int_0^1 \biggl|\frac{\d}{\d t} u(x+th)\biggr| \d t \\
+    & \leq |h| \int_0^1 \d t \int_{\Omega_{2j}} |\nabla u(y)| \d y \\
+    & \leq |h| \|u\|_{1,1,\Omega_0}
+      \leq K_2 |h| \|u\|_{m,p,\Omega},
+  \end{align*}
+  where $K_2$ is independent of $u$.
+  Since $C^\infty(\Omega)$ is dense in $W^{m,p}(\Omega)$, this estimate
+  holds for any $u\in W^{m,p}(\Omega)$. Hence if $|h|$ is sufficiently small,
+  we have
+  \[\int_{\Omega_0} |\tilde{u}(x+h) - \tilde{u}(x)| \d x < \epsilon.\]
+  Hence $S$ is precompact in $L^1(\Omega_0)$ by Theorem~2.32 and imbedding (10)
+  is compact. Next suppose that $k<n$ and $p>1$.
+  The Sobolev Imbedding Theorem~4.12 assures us that $W^{m,p}(\Omega)\to L^{kp/(n-mp)}(\Omega_0^k)$.
+  For any $q<kp/(n-mp)$ we can choose $r$ such that $1\leq r<p$, $n-mr<k$,
+  and $q\leq kr/(n-mr)<kp/(n-mp)$. Since $\Omega_0$ is bounded, the imbeddings
+  \[ W^{m,p}(\Omega) \to W^{m,p}(\Omega_0) \to W^{m,r}(\Omega_0) \]
+  exist. By Theorem~5.10 we have
+  \begin{align*}
+    \|u\|_{q,\Omega_0^k}
+    & \leq K_1 \|u\|_{kr/(n-mr), \Omega_0^k} \\
+    & \leq K_2 \|u\|_{nr/(n-mr), \Omega_0}^{1-\theta} \|u\|_{m,r,\Omega_0}^\theta \\
+    & \leq K_3 \|u\|_{nr/(n-mr), \Omega_0}^{1-\theta} \|u\|_{m,p,\Omega}^\theta,
+  \end{align*}
+  where $K_j$ and $\theta$ are constants (independent of $u\in W^{m,p}(\Omega)$)
+  and $\theta$ satisfies $0<\theta<1$.
+  Since $nr/(n-mr) < np/(n-mp)$, a sequence bounded in $W^{m,p}(\Omega)$
+  must have a subsequence convergent in $L^{nr/(n-mr)}(\Omega_0)$ by the earlier
+  part of this proof. That sequence is therefore a Cauchy sequence in $L^{nr/(n-mr)}(\Omega_0)$,
+  and by the above inequality it is therefore a Cauchy sequence in $L^q(\Omega_0^k)$,
+  so the imbedding $W^{m,p}(\Omega) \to L^q(\Omega_0^k)$ is compact and so is
+  $W^{m,p}(\Omega) \to L^1(\Omega_0^k)$.
+
+  If $p=1$ and $0\leq n-m<k<n$, then necessarily $m\geq 2$.
+  Composing the continuous imbedding $W^{m,1}(\Omega)\to W^{m-1,r}(\Omega)$,
+  where $r = n/(n-1) > 1$, with the compact imbedding $W^{m-1,r}(\Omega)\to L^1(\Omega_0^k)$,
+  (which is compact because $k\geq n-(m-1) > n-(m-1)r$),
+  completes the proof of the compactness of (3).
+
+  To prove that imbedding (4) is compact we proceed as follows. If $n=mp$,
+  $p>1$ and $1\leq q<\infty$, then we may select $r$ so that $1\leq r<p$,
+  $k>n-mr>0$, and $kr/(n-mr)>q$. Assuming again that $\Omega_0$ satisfies
+  the cone condition, we have
+  \[ W^{m,p}(\Omega) \to W^{m,r}(\Omega_0) \to L^q(\Omega_0^k). \]
+  The latter imbedding is compact by (3).
+  If $p=1$ and $n=m\geq 2$, then, setting $r=n/(n-1)>1$ so that $n=(n-1)r$,
+  we have for $1\leq q<\infty$,
+  \[W^{n,1}(\Omega) \to W^{n-1,r}(\Omega) \to L^q(\Omega_0^k), \]
+  the latter imbedding being compact as shown immediately above.
+  Finally, if $n=m=p=1$, then $k=1$ also. Letting $q_0>1$ be arbitrarily chosen
+  we prove the compactness of $W^{1,1}(\Omega) \to L^1(\Omega_0)$ exactly as in the case
+  $k=n$ considered at the beginning of this proof.
+  Since $W^{1,1}(\Omega)\to L^q(\Omega_0)$ for $1\leq q<\infty$,
+  all these imbeddings are compact by Lemma~6.7.
 \end{para}
+
+
+\section{Two Counterexamples}\label{sec:Two-Counterexamples}
+
+\begin{para}[Quasibounded Domains]
+  We say that an unbounded domain $\Omega\subset\mathbb{R}^n$ is
+  \emph{quasibounded} if
+  \[ \lim_{\substack{x\in\Omega\\ |x|\to\infty}} \dist(x,\partial\Omega) = 0. \]
+  An unbounded domain is not quasibounded if and only if it contains infinitely
+  many pairwise disjoint congruent balls.
+\end{para}
+
+\begin{para}
+  Two obvious questions arise from consideration of the statement of the Rellich-Kondrachov
+  Theorem~6.3. First, can the theorem be extended to cover unbounded $\Omega_0$?
+  Second, can the \emph{extreme cases}
+  \begin{align*}
+    W^{j+m,p}(\Omega) \to W^{j,q}(\Omega_0^k),
+    & 0<n-, p<k\leq n, \\
+    & q = kp/(n-mp)
+  \end{align*}
+  and
+  \begin{align*}
+    W^{j+m,p}(\Omega) \to C^{j,\lambda}(\overline{\Omega_0}),
+    & mp>n>(m-1)p, \\
+    & \lambda = m-(n/p)
+  \end{align*}
+  ever be compact? The first of these questions will be investigated later in this chapter.
+  For the moment though we show that that answer is negative if $k=n$ and $\Omega_0$
+  is not quasibounded. However, the situation changes (see [Lp]) for subspaces of symmetric
+  functions.
+\end{para}
+
+\begin{example}
+  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$ that is not quasibounded.
+  Then there exists a sequence $\{B_i\}$ of mutually disjoint open balls contained
+  in $\Omega$ and all having the same positive radius.
+  Let $\phi_1\in C_0^\infty(B_1)$ satisfy $\|\phi_1\|_{j,p,B_1}=A_{j,p}>0$
+  for each $j=0,1,2,\ldots$ and each $p\geq 1$.
+  Let $\phi_i$ be a translate of $\phi_1$ having support in $B_i$.
+  Then $\{\phi_i\}$ is a bounded sequence in $W^{m,p}_0(\Omega)$
+  for any fixed $m$ and $p$. But for any $q$,
+  \[\|\phi_i-\phi_k\|_{j,q,\Omega}
+    = \Bigl(\|\phi_i\|_{j,q,B_i}^q + \|\phi_k\|_{j,q,B_i}^q\Bigr)^{1/q}
+    = 2^{1/q} A_{j,q} >0\]
+  so that $\{\phi_i\}$ cannot have a sequence converging in $W^{j,q}(\Omega)$
+  for any $j\geq 0$. Thus no compact imbedding of the form
+  $W^{j+m,p}_0(\Omega)\to W^{j,q}(\Omega)$ is possible.
+  The non-compactness of the other imbeddings of Theorem 6.3 is proved similarly.
+\end{example}
+
+Now we provide an example showing that the answer to the second question
+raised in Paragraph 6.10 is always negative.
+
+\begin{example}
+  Let integers $j,m,n$ be given with $j\geq 0$ and $m,n\geq 1$.
+  Let $p\geq 1$. If $mp<n$, let $k$ be an integer such that $n-mp<k\leq n$
+  and let $q=kp/(n-mp)$. If $(m-1)p<n<mp$, let $\lambda=m-(n/p)$. Let $\Omega$
+\end{example}
