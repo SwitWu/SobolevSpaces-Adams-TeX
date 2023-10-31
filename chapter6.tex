@@ -310,4 +310,46 @@ raised in Paragraph 6.10 is always negative.
   Let integers $j,m,n$ be given with $j\geq 0$ and $m,n\geq 1$.
   Let $p\geq 1$. If $mp<n$, let $k$ be an integer such that $n-mp<k\leq n$
   and let $q=kp/(n-mp)$. If $(m-1)p<n<mp$, let $\lambda=m-(n/p)$. Let $\Omega$
+  be a domain in $\mathbb{R}^n$ and let $\Omega_0$ be a nonempty bounded subdomain
+  of $\Omega$ having nonempty intersection $\Omega_0^k$ with a $k$-dimensional
+  plane $H$ in $\mathbb{R}^n$ which, without loss of generality, we can take
+  to be the plane $\mathbb{R}^k$ spanned by the $x_1$, $x_2$, $\ldots$, $x_k$
+  coordinate axes. We show that the imbeddings
+  \begin{align}
+    W^{j+m,p}(\Omega) \to W^{j,q}(\Omega_0^k) \qquad & \text{if}\ mp<n \\
+    W^{j+m,p}(\Omega) \to C^{j,\lambda}(\overline{\Omega_0}) \qquad & \text{if}\ (m-1)p\leq n<mp
+  \end{align}
+  cannot be compact.
+
+  Let $B_r(x)$ be the open ball of radius $r$ in $\mathbb{R}^n$ centred at $x$
+  and let $\phi$ be a nontrivial function in $C_0^\infty(B_1(0))$.
+  Let $\{a_i\}$ be a sequence of distinct points in $\Omega_0^k$,
+  and let $B_i=B_{r_i}(a_i)$ where the positive radii $r_i$ satisfy $r_i\leq 1$
+  and are chosen so that the balls $B_i$ are pairwise disjoint and contained in $\Omega_0$.
+  We define a scaled, translated dilation $\phi_i$ of $\phi$ with support in $B_i$ by
+  \[\phi_i(x) = r_i^{j+m-(n/p)}\phi(y), \qquad \text{where}\ x = a_i+r_iy.\]
+  The functions $\phi_i$ have disjoint supports in $\Omega_0$ and, since
+  $D^\alpha \phi_i(x) = r^{-|\alpha|} D^\alpha \phi(y)$ and $\d x = r_i^n \d y$,
+  we have, for $|\alpha|\leq j+m$,
+  \[\int_\Omega |D^\alpha\phi_i(x)|^p \d x
+    = r_i^{(j+m-|\alpha|)p}\int_\Omega |\mathscr{D}^\alpha \phi(y)|^p \d y.\]
+  Therefore, $\{\phi\}$ is bounded in $W^{j+m,p}(\Omega)$.
+
+  On the other hand, $\d x_1\cdots\d x_k = r_i^k \d y_1\cdots \d y_k$,
+  so that if $|\alpha|=j$, then
+  \[\int_{\Omega_0^k} |D^\alpha\phi_i(x)|^q \d x_1\cdots\d x_k
+    = r_i^{k+q[m-(n/p)]} \int_{\mathbb{R}^n} |D^\alpha\phi(y)|^q \d y_1\cdots\d y_k.\]
+  Since $k+q[m-(n/p)] = 0$, this shows that
+  \[\|\phi_i\|_{j,q,\Omega_0^k} \geq |\phi_i|_{j,q,\Omega_0^k} = C_1 |\phi|_{j,q,\mathbb{R}^k} > 0\]
+  for all $i$, and $\{\phi_i\}$ is bounded away from zero in $W^{j,q}(\Omega_0^k)$.
+  The disjointness of the supports of the functions $\phi_i$ now implies that
+  $\{\phi\}$ can have no subsequence converging in $W^{j,q}(\Omega_0^k)$,
+  so the imbedding (11) cannot be compact.
+
+  Now suppose that $(m-1)p\leq n<mp$. Let $a$ be a point in $B_1(0)$
+  and $\beta$ be a particular multiindex satisfying $|\beta|=j$
+  such that $|D^\beta\phi(a)|=C_2>0$.
+  Let $b_i = a_i+r_ia$ and let $c_i$ be the point on the boundary of $B_i$ closest
+  to $b_i$. We have
+  \[|D^\beta\phi_i(b_i)| = r_i^{m-(n/p)} C_2 = r_i^\lambda C_2,\]
 \end{example}
