@@ -352,4 +352,66 @@ raised in Paragraph 6.10 is always negative.
   Let $b_i = a_i+r_ia$ and let $c_i$ be the point on the boundary of $B_i$ closest
   to $b_i$. We have
   \[|D^\beta\phi_i(b_i)| = r_i^{m-(n/p)} C_2 = r_i^\lambda C_2,\]
+  and, since $D^\beta\phi_i(c_i) = 0$,
+  \[\|\phi_i\|_{C^{j,\lambda}(\overline{\Omega_0})}
+    \geq \frac{|D^\beta\phi_i(b_i) - D^\beta\phi_i(c_i)|}{|b_i-c_i|^\lambda} = C_2 > 0.\]
+  Again, this precludes the existence of a subsequence of $\{\phi_i\}$
+  convergent in $C^{j,\lambda}(\overline{\Omega_0})$, so the imbedding (12)
+  cannot be compact.
 \end{example}
+
+
+\begin{remark}
+  Observe that the above examples in fact showed that no imbeddings of $W_0^{j+m,p}(\Omega)$,
+  not just of the larger space $W^{j+m,p}(\Omega)$, into the appropriate target space
+  can be compact. We now examine the possibility of obtaining compact imbeddings of $W_0^{m,p}(\Omega)$
+  for certain unbounded domains.
+\end{remark}
+
+
+\section{Unbounded Domains---Compact Imbeddings of $W_0^{m,p}(\Omega)$}
+
+\begin{para}
+  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$. We shall be concerned
+  below with determining whether the imbedding
+  \begin{equation}\label{eq:6.13}
+    W_0^{m,p}(\Omega) \to L^p(\Omega)
+  \end{equation}
+  is compact. If it is, then it will follow by Remark 6.4(4), Lemma 6.7,
+  and the second part of the proof in Paragraph 6.8 that the imbeddings
+  \begin{align*}
+    & W_0^{j+m,p}(\Omega) \to W^{j,q}(\Omega_k), \qquad
+      0< n-mp < k \leq n, \quad p\leq q < kp(n-mp), \\
+    & W_0^{j+m,p}(\Omega) \to W^{j,q}(\Omega_k), \qquad
+      n = mp, \quad 1\leq k\leq n, p \leq q < \infty
+  \end{align*}
+  are also compact. See Theorem 6.28 for the corresponding compactness of imbeddings
+  into continuous function spaces.
+
+  As was shown in Example 6.11, imbedding \eqref{eq:6.13} cannot be compact unless
+  $\Omega$ is quasibounded. In Theorem 6.16 we give a geometric condition on $\Omega$
+  that is sufficient to guarantee the compactness of \eqref{eq:6.13},
+  and in Theorem 6.19 we give an analytic condition that is necessary and sufficient
+  for the compactness of \eqref{eq:6.13}. Both theorems are from [A2].
+\end{para}
+
+
+\begin{para}
+  Let $\Omega_r$ denote the set $\{x\in\Omega: |x|\geq r\}$.
+  In the following discussion any cube $H$ referred to will have its edges parallel
+  to the coordinate axes. For a domain $\Omega$, a cube $H$, and an integer $\nu$
+  satisfying $1\leq\nu\leq n$, we define the quantity $\mu_{n-\nu}(H,\Omega)$
+  to be the maximum of the $(n-\nu)$-measure of $P(H-\Omega)$ taken over
+  all projections $P$ onto $(n-\nu)$-dimensional faces of $H$.
+\end{para}
+
+
+\begin{theorem}
+  Let $\nu$ be an integer such that $1\leq\nu\leq n$ and $mp>\nu$
+  (or $m=p=\nu=1$). Suppose that for every $\epsilon>0$ there exist
+  numbers $h$ and $r$ with $0<h\leq 1$ and $r\geq 0$ such that for every
+  cube $H\subset \mathbb{R}^n$ having side $h$ and nonempty intersection
+  with $\Omega_r$ we have
+  \[\frac{\mu_{n-\nu}(H,\Omega)}{h^{n-\nu}} \geq \frac{h^p}{\epsilon}.\]
+  Then imbedding \eqref{eq:6.13} is compact.
+\end{theorem}
