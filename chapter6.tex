@@ -441,3 +441,49 @@ raised in Paragraph 6.10 is always negative.
       boundary of $\Omega$ having dimension at least $n-\nu$ should bound a quasibounded domain.
   \end{enumerate}
 \end{remarks}
+
+
+\begin{para}[A Definition of Capacity]
+  Let $H$ be a cube of edge length $h$ in $\mathbb{R}^n$ and let $E$ be a closed subset of $H$.
+  Given $m$ and $p$ we define a functional $I_H^{m,p}$ on $C^\infty(H)$ by
+  \[ I_H^{m,p}(u) = \sum_{1\leq j\leq m} h^{jp} |u|_{j,p,H}^p
+     = \sum_{1\leq |\alpha|\leq m} h^{|\alpha|p} \int_H |D^\alpha u(x)|^p \d x. \]
+  Let $C^\infty(H,E)$ denote the set of all nontrivial functions $u\in C^\infty(H)$
+  that vanish identically in a neighborhood of $E$. We define the $(m,p)$-capacity
+  $Q^{m,p}(H,E)$ of $E$ in $H$ by
+  \[ Q^{m,p}(H,E) = \inf \biggl\{ \frac{I_H^{m,p}(u)}{\|u\|_{0,p,H}^p}
+     : u\in C^\infty(H,E)\biggr\}. \]
+  Clearly $Q^{m,p}(H,E) \leq Q^{m+1,p}(H,E)$ and, whenever $E\subset F\subset H$,
+  we have $Q^{m,p}(H,E) \leq Q^{m,p}$(H,F).
+\end{para}
+
+The following theorem characterizes those domains for which imbedding (13)
+is compact in terms of this capacity.
+
+
+\begin{theorem}
+  Imbedding (13) is compact if and only if $\Omega$ satisfies the following condition:
+  For every $\epsilon>0$ there exists $h\leq 1$ and $r>0$ such that the inequality
+  \[ Q^{m,p}(H,H-\Omega) \geq h^p/\epsilon \]
+  holds for every $n$-cube $H$ of edge length $h$ having nonempty intersection
+  with $\Omega_r$. (This condition clearly implies that $\Omega$ is quasibounded.)
+\end{theorem}
+
+Prior to proving this theorem we prepare the following lemma.
+
+
+\begin{lemma}
+  There exists a constant $K(m,p)$ such that for any $n$-cube $H$ of edge length $h$,
+  any measurable subset $A$ of $H$ with positive volume, and any $u\in C^1(H)$, we have
+  \[ \|u\|_{0,p,H}^p \leq \frac{2^{p-1}h^n}{\vol(A)} \|u\|_{0,p,A}^p
+      + K \frac{h^{n+p}}{\vol(A)} \|\nabla u\|_{0,p,H}^p. \]
+\end{lemma}
+
+
+\begin{proof}
+  Let $y\in A$ and $x=(\rho,\phi)\in H$, where $(\rho,\phi)$ denote spherical coordinates
+  centred at $y$, in terms of which the volume element is given by
+  $\d x = \omega(\phi) \rho^{n-1} \d\rho\d\phi$. Let $\partial H$ be specified by $\rho = f(\phi)$,
+  $\phi\in\Sigma$. Clearly $f(\phi) \leq\sqrt{n}h$. Since
+  \[ u(x) = u(y) + \int_0^\rho \frac{\d}{\d r} u(r,\phi) \d r, \]
+\end{proof}
