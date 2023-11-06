@@ -486,4 +486,43 @@ Prior to proving this theorem we prepare the following lemma.
   $\d x = \omega(\phi) \rho^{n-1} \d\rho\d\phi$. Let $\partial H$ be specified by $\rho = f(\phi)$,
   $\phi\in\Sigma$. Clearly $f(\phi) \leq\sqrt{n}h$. Since
   \[ u(x) = u(y) + \int_0^\rho \frac{\d}{\d r} u(r,\phi) \d r, \]
+  we have by Lemma~2.2 and H\"older's inequality
+  \begin{align*}
+    & \int_H |u(x)|^p \d x \\
+    & \leq 2^{p-1} h^n |u(y)|^p + 2^{p-1} \int_H \biggl|\int_0^\rho
+        \frac{\d}{\d r} u(r,\phi) \d r\biggr|^p \d x \\
+    & \leq 2^{p-1} h^n |u(y)|^p + 2^{p-1} \int_\Sigma \omega(\phi) \d\phi
+        \int_0^{f(\phi)} \rho^{n+p-2} \d\rho \int_0^\rho |\nabla u(r,\phi)|^p \d r \\
+    & \leq 2^{p-1} h^n |u(y)|^p + \frac{2^{p-1}}{n+p-1} (\sqrt{n}h)^{n+p-1}
+        \int_H \frac{|\nabla u(z)|^p}{|z-y|^{n-1}} \d z.
+  \end{align*}
+  Integrating $y$ over $A$ and using Lemma~4.64 we obtain
+  \[ \vol(A) \|u\|_{0,p,H}^p \leq 2^{p-1} h^n \|u\|_{0,p,A}^p
+      + K h^{n+p} \|\nabla u\|_{0,p,H}^p, \]
+  as required.
 \end{proof}
+
+
+\begin{para}[Proof of Theorem 6.19--Necessity]
+  Suppose that $\Omega$ does not satisfy the condition stated in the theorem.
+  Then there exists a finite constant $K_1 = 1/\epsilon$ such that for every $h$
+  with $0<h\leq 1$ there exists a sequence $\{H_j\}$ of mutually disjoint cubes of
+  edge length $h$ which intersect $\Omega$ and for which
+  \[ Q^{m,p}(H_j, H_j-\Omega) < K_1 h^p. \]
+  By the definition of capacity, for each such cube $H_j$ there exists a function
+  $u_j\in C^\infty(H_j,H_j-\Omega)$ such that $\|u_j\|_{0,p,H_j}^p = h^n$,
+  $\|\nabla u_j\|_{0,p,H_j}^p \leq K_1h^n$, and $\|u_j\|_{m,p,H_j}^p\leq K_2(h)$.
+  Let $A_j = \{x\in H_j: |u_j(x)|<\frac12\}$. By the previous Lemma we have
+  \[ h^n \leq \frac{2^{p-1}h^n}{\vol(A_j)} \cdot \frac{\vol(A_j)}{2^p} 
+      + \frac{KK_1}{\vol(A_j)} h^{2n+p} \]
+  from which it follows that $\vol(A_j) \leq K_3 h^{n+p}$.
+  Let us choose $h$ so small that $K_3 h^p\leq\frac13$, whence $\vol(A_j) \leq \frac13 \vol(H_j)$.
+  Choose functions $w_j\in C_0^\infty(H_j)$ such that $w_j(x)=1$ on a subset $S_j$ of $H_j$
+  having volume no less than $\frac23 \vol(H_j)$, and such that
+  \[ \sup_j \max_{|\alpha|\leq m} \sup_{x\in H_j} |D^\alpha w_j(x)| = K_4(h) < \infty. \]
+  Then $v_j = u_jw_j \in C_0^\infty(H_j\cap\Omega)\subset C_0^\infty(\Omega)$
+  and $|v_j(x)|\geq\frac12$ on $S_j\cap (H_j-A_j)$, a set of volume no less than
+  $h^n/3$. Hence $\|v_j\|_{0,p,H_j}^p \geq h^n/3 \cdot 2^p$. On the other hand
+  \[ \int_{H_j} |D^\alpha u_j(x)|^p \cdot |D^\beta w_j(x)|^p \d x
+      \leq K_4(h) K_2(h) \]
+\end{para}
