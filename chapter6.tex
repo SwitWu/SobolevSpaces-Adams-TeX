@@ -525,4 +525,57 @@ Prior to proving this theorem we prepare the following lemma.
   $h^n/3$. Hence $\|v_j\|_{0,p,H_j}^p \geq h^n/3 \cdot 2^p$. On the other hand
   \[ \int_{H_j} |D^\alpha u_j(x)|^p \cdot |D^\beta w_j(x)|^p \d x
       \leq K_4(h) K_2(h) \]
+  provided $|\alpha|,|\beta|\leq m$. Hence $\{v_j\}$ is a bounded sequence in $W_0^{m,p}(\Omega)$.
+  Since the supports of the functions $\{v_j\}$ are disjoint,
+  $\|v_i-v_j\|_{0,p,\Omega}^p \geq 2h^n/3 \cdot 2^p$ so the imbedding (13)
+  cannot be compact.
 \end{para}
+
+
+\begin{para}[Proof of Theorem 6.19--Sufficiency]
+  Suppose $\Omega$ satisfies the condition stated in the theorem.
+  Let $\epsilon>0$ be given and choose $r\geq 0$ and $h\leq 1$
+  such that for every cube $H$ of edge $h$ intersecting $\Omega_r$
+  we have $Q^{m,p}(H,H-\Omega)\geq h^p/\epsilon^p$. Then for every
+  $u\in C_0^\infty(\Omega)$ we obtain
+  \[ \|u\|_{0,p,H}^p \leq \frac{\epsilon^p}{h^p} I_H^{m,p}(u) \leq \epsilon^p \|u\|_{m,p,H}^p. \]
+  Since a neighborhood of $\Omega_r$ can be tessellated by such cubes $H$
+  we have by summation
+  \[ \|u\|_{0,p,\Omega_r} \leq \epsilon \|u\|_{m,p,\Omega}. \]
+  That any bounded set $S$ in $W_0^{m,p}(\Omega)$ is precompact in $L^p(\Omega)$
+  now follows from Theorem~2.33 and~6.3.
+\end{para}
+
+
+\begin{lemma}
+  There is a constant $K$ independent of $h$ such that for any cube $H$
+  in $\mathbb{R}^n$ having edge length $h$, for every $q$ satisfying $p\leq q\leq np/(n-mp)$
+  (or $p\leq q<\infty$ if $mp=n$, or $p\leq q\leq\infty$ if $mp>n$),
+  and for every $u\in C^\infty(H)$ we have
+  \[ \|u\|_{0,q,H} \leq K\biggl(\sum_{|\alpha|\leq m} h^{|\alpha|p-n+np/q}
+      \|D^\alpha u\|_{0,p,H}^p\biggr)^{1/p}. \]
+\end{lemma}
+
+
+\begin{proof}
+  We may suppose $H$ to be centred at the origin and let $\tilde{H}$ be the cube
+  of unit edge concentric with $H$ and having edges parallel to those of $H$.
+  The stated inequality holds for $\tilde{u}\in C^\infty(\tilde H)$ by the Sobolev
+  imbedding theorem. It then follows for $H$ via the dilation $u(x)=\tilde u(x/h)$.
+\end{proof}
+
+
+\begin{lemma}
+  If $mp>n$ (or $m=p=n=1$), there exists a constant $K=K(m,p,n)$ such that
+  for every cube $H$ of edge length $h$ in $\mathbb{R}^n$ and every $u\in C^\infty(H)$
+  that vanishes in a neighborhood of some point $y\in H$, we have
+  \[ \|u\|_{0,p,H}^p \leq K I_H^{m,p}(u). \]
+\end{lemma}
+
+\begin{proof}
+  Let $(\rho,\phi)$ be spherical coordinates centred at $y$. Then
+  \[ u(\rho,\phi)  = \int_0^\rho \frac{\d}{\d t} u(t,\phi) \d t. \]
+  If $n>(m-1)p$, then let $q = np/(n-mp+p)$, so that $q>n$.
+  Otherwise let $q>\max\{n,p\}$ be an arbitrary and finite. If $(\rho,\phi)\in H$,
+  then by H\"older's
+\end{proof}
