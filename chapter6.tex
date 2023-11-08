@@ -577,5 +577,48 @@ Prior to proving this theorem we prepare the following lemma.
   \[ u(\rho,\phi)  = \int_0^\rho \frac{\d}{\d t} u(t,\phi) \d t. \]
   If $n>(m-1)p$, then let $q = np/(n-mp+p)$, so that $q>n$.
   Otherwise let $q>\max\{n,p\}$ be an arbitrary and finite. If $(\rho,\phi)\in H$,
-  then by H\"older's
+  then by H\"older's inequality
+  \begin{align*}
+    |u(\rho,\phi)|^q \rho^{n-1}
+    & \leq \bigl(\sqrt n h\bigr)^{n-1} \int_0^\rho \biggl|\frac{\d}{\d t} u(t,\phi)\biggr|^q
+      t^{n-1} \d t \biggl(\int_0^{\sqrt n h} t^{-(n-1)/(q-1)} \d t\biggr)^{q-1} \\
+    & \leq K_1 h^{q-1} \int_0^\rho \biggl|\frac{\d}{\d t} u(t,\phi)\biggr|^q t^{n-1} \d t.
+  \end{align*}
+  It follows, using the previous lemma with $m-1$ in place of $m$, that
+  \begin{equation}\label{eq:6.14}
+    \begin{aligned}
+      \|u\|_{0,q,H}^q
+      & \leq K_2 h^q \int_H |\nabla u(x)|^q \d x \\
+      & \leq K_2 h^q \sum_{|\alpha|=1} \|D^\alpha u\|_{0,q,H}^q \\
+      & \leq K_3 h^q \sum_{|\alpha|=1} \biggl(\sum_{|\beta|\leq m-1}
+          h^{|\beta|p-n+n/q} \|D^{\alpha+\beta} u\|_{0,p,H}^p \biggr)^{q/p}.
+    \end{aligned}
+  \end{equation}
+  If $p>n$ (or $p=n=1$) the desired result follows directly from (14)
+  with $q=p$:
+  \[ \|u\|_{0,p,H}^p \leq K I_H^{1,p}(u) \leq K I_H^{m,p}(u). \]
+  Otherwise, a further application of H\"older's inequality yields
+  \begin{align*}
+    \|u\|_{0,p,H}^p
+    & \leq \|u\|_{0,q,H}^p (\vol(H))^{(q-p)/q} \\
+    & \leq K_2^{p/q} \sum_{1\leq |\gamma|\leq m} h^{|\gamma|p} \|D^\gamma u\|_{0,p,H}^p
+        = K I_H^{m,p(u)}. \qedhere
+  \end{align*}
 \end{proof}
+
+
+\begin{para}[Proof of Theorem 6.16]
+  Let $mp>\nu$ (or $m=p=\nu=1$) and let $H$ be a cube in $\mathbb{R}^n$ for which
+  $\mu_{n-\nu}(H,\Omega)\geq h^p/\epsilon$. Let $P$ be the maximal projection of
+  $H-\Omega$ onto an $(n-\nu)$-dimensional face of $H$ and let $E=P(H-\Omega)$.
+  Without loss of generality we may assume that the face $F$ of $H$ containing $E$
+  is parallel to the $x_{\nu+1},\ldots,x_n$ coordinate plane. For each point
+  $x=(x',x'')$ in $E$, where $x' = (x_1,\ldots,x_\nu)$ and $x'' = (x_{\nu+1},\ldots,x_n)$
+  let $H_{x''}$ be the $\nu$-dimensional cube of edge length $h$ in which $H$
+  intersects the $\nu$-plane through $x$ normal to $F$. By the definition of $P$
+  there exists $y\in H_{x''}-\Omega$. If $u\in C^\infty(H,H-\Omega)$,
+  then $u(\cdot,x'')\in C^\infty(H_{x''},y)$. Applying the previous lemma to $u(\cdot,x'')$
+  we obtain
+  \[ \int_{H_{x''}} |u(x',x'')|^p \d x' \leq K_1 \sum_{1\leq |\alpha|\leq m}
+      h^{|\alpha|p} \int_{H_{x''}} |D^\alpha u(x',x'')|^p \d x', \]
+\end{para}
