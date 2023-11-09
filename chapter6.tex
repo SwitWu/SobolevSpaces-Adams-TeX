@@ -621,4 +621,45 @@ Prior to proving this theorem we prepare the following lemma.
   we obtain
   \[ \int_{H_{x''}} |u(x',x'')|^p \d x' \leq K_1 \sum_{1\leq |\alpha|\leq m}
       h^{|\alpha|p} \int_{H_{x''}} |D^\alpha u(x',x'')|^p \d x', \]
+  where $K_1$ is independent of $H$, $x''$, and $u$. Integrating this inequality
+  over $E$ and denoting $H'=\{x':x=(x',x'')\in H\ \text{for some}\ x''\}$, we obtain
+  \[\|u\|_{0,p,H'\times E}^p \leq K_1 I_{H'\times E}^{m,p}(u)
+      \leq K_1 I_H^{m,p}(u).\]
+  Now we apply Lemma~6.20 with $A=H'\times E$ so that $\vol(A) = h^\nu \mu_{n-\nu}(H,\Omega)$.
+  This yields
+  \[\|u\|_{0,p,H}^p \leq K_2 \frac{h^{n-\nu}}{\mu_{n-\nu}(H,\Omega)} I_H^{m,p}(u),\]
+  where $K_2$ is independent of $H$. It follows that
+  \[Q^{m,p}(H,H-\Omega) \geq \frac{\mu_{n-\nu}(H,\Omega)}{K_2 h^{n-\nu}}
+    \geq \frac{h^p}{\epsilon K_2}.\]
+  Hence $\Omega$ satisfies the hypothesis of Theorem~6.19 if it satisfies
+  that of Theorem~6.16.
 \end{para}
+
+The following two interpolation lemmas enable us to extend Theorem~6.16
+to cover imbeddings into spaces of continuous functions.
+
+\begin{lemma}
+  Let $1\leq p<\infty$ and $0<\mu\leq 1$. There exists a constant $K=K(n,p,\mu)$
+  such that for every $u\in C_0^\infty(\mathbb{R}^n)$ we have
+  \begin{equation}\label{eq:6.15}
+    \sup_{x\in\mathbb{R}^n} |u(x)| \leq K \|u\|_{0,p,\mathbb{R}^n}^\lambda
+      \biggl(\sup_{\substack{x,y\in\mathbb{R}^n}\\ x\neq y}
+        \frac{|u(x)-u(y)|}{|x-y|^\mu}\biggr)^{1-\lambda},
+  \end{equation}
+  where $\lambda=p\mu/(n+p\mu)$.
+\end{lemma}
+
+\begin{proof}
+  We may assume
+  \[\sup_{x\in\mathbb{R}^n} |u(x)| = N > 0
+    \qquad \text{and} \qquad
+    \sup_{\substack{x,y\in\mathbb{R}^n}\\ x\neq y} \frac{|u(x)-u(y)|}{|x-y|^\mu} = M < \infty.\]
+  Let $\epsilon$ satisfy $0<\epsilon\leq N/2$. Then there exists a point
+  $x_0$ in $\mathbb{R}^n$ such that we have $|u(x_0)|\geq N-\epsilon\geq N/2$.
+  Now $|u(x_0)-u(x)|/|x_0-x|^\mu \leq M$ for all $x$, so
+  \[ |u(x)| \geq |u(x_0)| - M|x_0-x|^\mu \geq \frac12 |u(x_0)| \]
+  provided $|x-x_0|\leq (N/4M)^{1/\mu} = r$. Hence
+  \[ \int_{\mathbb{R}^n} |u(x)|^p \d x
+    \geq \int_{B_r(x_0)} \biggl(\frac{|u(x_0)|}{2}\biggr)^p \d x
+    \geq K_1 \biggl(\frac{N-\epsilon}{2}\biggr)^p \biggl(\frac{N}{4M}\biggr)^{n/\mu}. \]
+\end{proof}
