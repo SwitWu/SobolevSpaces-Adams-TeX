@@ -662,4 +662,60 @@ to cover imbeddings into spaces of continuous functions.
   \[ \int_{\mathbb{R}^n} |u(x)|^p \d x
     \geq \int_{B_r(x_0)} \biggl(\frac{|u(x_0)|}{2}\biggr)^p \d x
     \geq K_1 \biggl(\frac{N-\epsilon}{2}\biggr)^p \biggl(\frac{N}{4M}\biggr)^{n/\mu}. \]
+  Since this holds for arbitrarily small $\epsilon$ we have
+  \[ \|u\|_{0,p,\mathbb{R}^n} \geq \biggl(\frac{K_1^{1/p}}{2\cdot 4^{n/\mu p}}\biggr)
+      N^{1+(n/\mu p)} M^{-n/\mu p} \]
+  from which (15) follows at once.
+\end{proof}
+
+
+\begin{lemma}
+  Let $\Omega$ be an arbitrary domain in $\mathbb{R}^n$, and let
+  $0<\lambda<\mu\leq 1$. For every function $u\in C^{0,\mu}(\overline{\Omega})$
+  we have
+  \begin{equation}\label{eq:6.16}
+    \|u\|_{C^{0,\lambda}(\overline{\Omega})} \leq 3^{1-\lambda/\mu}
+    \|u\|_{C(\overline{\Omega})}^{1-\lambda/\mu} \|u\|_{C^{0,\mu}(\overline{\Omega})}^{\lambda/\mu}.
+  \end{equation}
+\end{lemma}
+
+
+\begin{proof}
+  Let $p = \mu/\lambda$ and $p'=p/(p-1)$. Let
+  \begin{align*}
+    & A_1 = \|u\|_{C(\overline{\Omega})}^{1/p}, \qquad
+      B_1 = \sup_{\substack{x,y\in\Omega\\ x\neq y}} \biggl(\frac{|u(x)-u(y)|}{|x-y|^\mu}\biggr)^{1/p}, \\
+    & A_2 = \|u\|_{C(\overline{\Omega})}^{1/p'}, \qquad
+    B_1 = \sup_{\substack{x,y\in\Omega\\ x\neq y}} |u(x)-u(y)|^{1/p'}.
+  \end{align*}
+  Clearly $A_1^p + B_1^p = \|u\|_{C^{0,\mu}(\overline{\Omega})}$ and
+  $B_2^{p'}\leq 2\|u\|_{C(\overline{\Omega})}$.
+  By H\"older's inequality for sums we have
+  \begin{align*}
+    \|u\|_{C^{0,\lambda}(\overline{\Omega})}
+    & = \|u\|_{C(\overline{\Omega})}
+        + \sup_{\substack{x,y\in\Omega\\ x\neq y}} \frac{|u(x)-u(y)|}{|x-y|^\lambda} \\
+    & \leq A_1A_2 + B_1B_2 \\
+    & \leq (A_1^p+B_1^p)^{1/p} (A_2^{p'} + B_2^{p'})^{1/p'} \\
+    & \leq \|u\|_{C^{0,\mu}(\overline{\Omega})}^{\lambda/\mu}
+        (3\|u\|_{C(\overline{\Omega})})^{1-\lambda/\mu}
+  \end{align*}
+  as required.
+\end{proof}
+
+
+\begin{theorem}
+  Let $\Omega$ satisfy the hypotheses of Theorem~6.16. Then the following imbeddings are compact:
+  \begin{alignat}{3}
+    W_0^{j+m,p}(\Omega) & \to C^j(\overline{\Omega})  &\qquad& \text{if} &\quad& mp>n \label{eq:6.17} \\
+    W_0^{j+m,p}(\Omega) & \to C^{j,\lambda}(\overline{\Omega}) && \text{if} && mp>n\geq (m-1)p\ \text{and} \notag \\
+    &&&&& 0<\lambda<m-(n/p). \label{eq:6.18}
+  \end{alignat}
+\end{theorem}
+
+\begin{proof}
+  It is sufficient to deal with the case $j=0$. If $mp>n$, let $j^*$ be the nonnegative integer
+  satisfying $(m-j^*)p>n\geq (m-j^*-1)p$. Then we have the chain of imbeddings
+  \[ W_0^{m,p}(\Omega) \to W_0^{m-j^*,p}(\Omega) \to C^{0,\mu}(\overline{\Omega})
+      \to C(\overline{\Omega}), \]
 \end{proof}
