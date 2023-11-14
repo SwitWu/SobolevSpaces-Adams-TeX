@@ -718,4 +718,48 @@ to cover imbeddings into spaces of continuous functions.
   satisfying $(m-j^*)p>n\geq (m-j^*-1)p$. Then we have the chain of imbeddings
   \[ W_0^{m,p}(\Omega) \to W_0^{m-j^*,p}(\Omega) \to C^{0,\mu}(\overline{\Omega})
       \to C(\overline{\Omega}), \]
+  where $0<\mu<m-j^*-(n/p)$. If $\{u_i\}$ is a bounded sequence in $W_0^{m,p}(\Omega)$,
+  then it is also bounded in $C^{0,\mu}(\overline{\Omega})$.
+  By Theorem~6.16, $\{u_i\}$ has a subsequence $\{u_i'\}$ converging in $L^p(\Omega)$.
+  By (15), which applies by completion to the functions $u_i$,
+  this subsequence is a Cauchy sequence in $C(\overline{\Omega})$ and so converges there.
+  Hence (17) is compact for $j=0$. Furthermore, if $mp>n\geq (m-1)p$
+  (that is, if $j^*=0$) and $0<\lambda<\mu$. then by (16) $\{u_i'\}$ is also a Cauchy sequence
+  in $C^{0,\lambda}(\overline{\Omega})$ whence (18) is also compact.
+\end{proof}
+
+
+\section{An Equivalent Norm for $W_0^{m,p}(\Omega)$}
+
+\begin{para}[Domains of Finite Width]
+  Consider the problem of determining for what domains $\Omega$ in $\mathbb{R}^n$ is
+  the seminorm
+  \[ |u|_{m,p,\Omega} = \biggl(\sum_{|\alpha|=m} \|D^\alpha u\|^p_{0,p,\Omega}\biggr)^{1/p} \]
+  actually a norm on $W_0^{m,p}(\Omega)$ equivalently to the standard norm
+  \[ \|u\|_{m,p,\Omega} = \biggl(\sum_{|\alpha|\leq m} \|D^\alpha u\|^p_{0,p,\Omega}\biggr)^{1/p}. \]
+  This problem is closely related to the problem of determining for which unbounded
+  domains $\Omega$ the imbedding $W_0^{m,p}(\Omega)\to L^p(\Omega)$ is compact
+  because both problems depend on estimates for the $L^p$ norm of a function in terms of
+  $L^p$ estimates for its derivatives.
+
+  We can easily show that the equivalence of the above seminorm and norm for a domain
+  of \emph{finite width}, that is, a domain in $\mathbb{R}^n$ that lies between two
+  parallel planes of dimension $(n-1)$. In particular, this is true for any bounded domain.
+\end{para}
+
+
+\begin{theorem}[Poincar\'e's Inequality]
+  If domain $\Omega\subset\mathbb{R}^n$ has finite width, then there exists a constant
+  $K=K(p)$ such that for all $\phi\in C_0^\infty(\Omega)$
+  \begin{equation}\label{eq:6.19}
+    \|\phi\|_{0,p,\Omega} \leq K |\phi|_{1,p,\Omega}.
+  \end{equation}
+  This inequality is known as \emph{Poincar\'e's Inequality}.
+\end{theorem}
+
+\begin{proof}
+  Without loss of generality we can assume that $\Omega$ lies between the hyperplanes
+  $x_n=0$ and $x_n=c>0$. Denoting $x=(x',x_n)$, where $x'=(x_1,\ldots,x_{n-1})$,
+  we have for any $\phi\in C_0^\infty(\Omega)$,
+  \[ \phi(x) = \int_0^{x_n} \frac{\d}{\d t} \phi(x',t) \d t \]
 \end{proof}
