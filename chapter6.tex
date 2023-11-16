@@ -762,4 +762,56 @@ to cover imbeddings into spaces of continuous functions.
   $x_n=0$ and $x_n=c>0$. Denoting $x=(x',x_n)$, where $x'=(x_1,\ldots,x_{n-1})$,
   we have for any $\phi\in C_0^\infty(\Omega)$,
   \[ \phi(x) = \int_0^{x_n} \frac{\d}{\d t} \phi(x',t) \d t \]
+  so that, by H\"older's inequality,
+  \begin{align*}
+    \|\phi\|_{0,p,\Omega}^p
+    & = \int_{\mathbb{R}^{n-1}} \d x' \int_0^c |\phi(x)|^p \d x_n \\
+    & \leq \int_{\mathbb{R}^{n-1}} \d x' \int_0^c x_n^{p-1} \d x_n \int_0^c
+        |D_n \phi(x',t)|^p \d t \\
+    & \leq \frac{c^p}{p} |\phi|_{1,p,\Omega}^p.
+  \end{align*}
+  Inequality (19) follows with $K = c/p^{1/p}$.
 \end{proof}
+
+
+\begin{corollary}
+  If $\Omega$ has finite width, $|\cdot|_{m,p,\Omega}$ is a norm on $W^{m,p}(\Omega)$
+  equivalent to the standard norm $\|\cdot\|_{m,p,\Omega}$.
+\end{corollary}
+
+\begin{proof}
+  If $\phi\in C_0^\infty(\Omega)$ then any derivative of $\phi$ also belongs to
+  $C_0^\infty(\Omega)$. Now (19) implies
+  \[ |\phi|_{1,p,\Omega}^p \leq \|\phi\|_{1,p,\Omega}^p
+      = \|\phi\|_{0,p,\Omega}^p + |\phi|_{1,p,\Omega}^p
+      \leq (1+K^p) |\phi|_{1,p,\Omega}^p, \]
+  and successive iterations of this inequality to derivatives $D^\alpha\phi$,
+  ($|\alpha|\leq m-1$) leads to
+  \[ |\phi|_{m,p,\Omega}^p \leq \|\phi\|_{m,p,\Omega}^p \leq K_1 |\phi|_{m,p,\Omega}^p. \]
+  By completion, this holds for all $u$ in $W_0^{m,p}(\Omega)$.
+\end{proof}
+
+
+\begin{para}[Quasicylindrical Domains]
+  An unbounded domain $\Omega$ in $\mathbb{R}^n$ is called \emph{Quasicylindrical} if
+  \[ \limsup_{x\in\Omega,\,|x|\to\infty} \dist(x,\partial\Omega) < \infty. \]
+  Every quasibounded domain is quasicylindrical, as is every (unbounded) domain of finite
+  width. The seminorm $|\cdot|_{m,p,\Omega}$ is not equivalent to the norm $\|\cdot\|_{m,p,\Omega}$
+  on $W_0^{m,p}(\Omega)$ for unbounded $\Omega$ if $\Omega$ is not quasicylindrical.
+  We leave it to the reader to construct a suitable counterexample.
+
+  The following theorem is clearly analogous to Theorem~6.16.
+\end{para}
+
+
+\begin{theorem}
+  Suppose there exist an integer $\nu$ and constants $K$, $R$, and $h$ such that
+  $1\leq\nu\leq n$, $0<K\leq 1$, $0\leq R<\infty$, and $0<h<\infty$.
+  Suppose also that either $\nu<p$ or $\nu=p=1$, and that for every cube $H$
+  in $\mathbb{R}^n$ having edge length $h$ and nonempty intersection with
+  $\Omega_R = \{x\in\Omega : |x|\geq R\}$ we have
+  \[ \frac{\mu_{n-\nu}(H,\Omega)}{h^{n-\nu}} \geq K, \]
+  where $\mu_{n-\nu}(H,\Omega)$ is as defined prior to the statement of Theorem~6.16.
+  Then $|\cdot|_{m,p,\Omega}$ is a norm on $W_0^{m,p}(\Omega)$
+  equivalent to the standard norm $\|\cdot\|_{m,p,\Omega}$.
+\end{theorem}
