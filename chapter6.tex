@@ -815,3 +815,38 @@ to cover imbeddings into spaces of continuous functions.
   Then $|\cdot|_{m,p,\Omega}$ is a norm on $W_0^{m,p}(\Omega)$
   equivalent to the standard norm $\|\cdot\|_{m,p,\Omega}$.
 \end{theorem}
+
+\begin{proof}
+  As observed in the previous Corollary, it is again sufficient to prove that
+  $\|u\|_{0,p,\Omega} \leq K_1 |u|_{1,p,\Omega}$ holds for all $u\in C_0^\infty(\Omega)$.
+  Let $H$ be a cube of edge length $h$ having nonempty intersection with $\Omega_R$.
+  Since $\nu<p$ (or $\nu=p=1$) the proof of Theorem~6.16 shows that
+  \[ Q^{1,p}(H,H-\Omega) \geq \frac{\mu_{n-\nu}(H,\Omega)}{K_2 h^{n-\nu}}
+      \geq \frac{K}{K_2} \]
+  for all $u\in C_0^\infty(\Omega)$, $K_2$ beging independent of $u$. Hence
+  \[ \|u\|_{0,p,H}^p \leq (K_2/K) I_H^{1,p} = K_3 |u|_{1,p,H}^p. \]
+  By summing this inequality over the cubes comprising a tessellation of some
+  neighborhood of $\Omega_R$, we obtain
+  \begin{equation}\label{eq:6.20}
+    \|u\|_{0,p,\Omega_R}^p \leq K_3 |u|_{1,p,\Omega}^p.
+  \end{equation}
+  It remains to be proven that
+  \[ \|u\|_{0,p,B_R}^p \leq K_3 |u|_{1,p,\Omega}^p, \]
+  where $B_R = \{x\in\mathbb{R}^n : |x|<R\}$. Let $(\rho,\phi)$ denote the spherical
+  coordinates of the point $x\in\mathbb{R}^n$ ($\rho>0$, $\phi\in\Sigma$)
+  so that $\d x = \rho^{n-1} \omega(\phi) \d\rho\d\phi$.
+  For any $u\in C^\infty(\mathbb{R}^n)$ we have
+  \[ u(\rho,\phi) = u(\rho+R,\phi) - \int_\rho^{R+\rho} \frac{\d}{\d t} u(t,\phi) \d t \]
+  so that (by Lemma~2.2)
+  \[ |u(\rho,\phi)|^p \leq 2^{p-1} |u(\rho+R,\phi)|^p + 2^{p-1}R^{p-1}\rho^{1-n}
+      \int_\rho^{R+\rho} |\nabla u(t,\phi)|^p t^{n-1} \d t. \]
+  Hence
+  \begin{align*}
+    \|u\|_{0,p,B_R}^p
+    & = \int_{\Sigma} \omega(\phi) \d\phi \int_0^R |u(\rho,\phi)|^p \rho^{n-1} \d\rho \\
+    & \leq 2^{p-1} \int_{\Sigma} \omega(\phi) \d\phi \int_0^R |u(\rho+R,\phi)|^p
+        (\rho+R)^{n-1} \d\rho \\
+    & \quad + 2^{p-1} R^p \int_{\Sigma} \omega(\phi) \d\phi \int_0^{2R}
+        |\nabla u(t,\phi)|^p t^{n-1} \d t.
+  \end{align*}
+\end{proof}
