@@ -849,4 +849,62 @@ to cover imbeddings into spaces of continuous functions.
     & \quad + 2^{p-1} R^p \int_{\Sigma} \omega(\phi) \d\phi \int_0^{2R}
         |\nabla u(t,\phi)|^p t^{n-1} \d t.
   \end{align*}
+  Therefore, we have for $u\in C_0^\infty(\Omega)$
+  \begin{align*}
+    \|u\|_{0,p,B_R}^p
+    & \leq 2^{p-1} \|u\|_{0,p,B_{2R}-B_R}^p + 2^{p-1} R^p |u|_{1,p,B_{2R}}^p \\
+    & \leq 2^{p-1} \|u\|_{0,p,\Omega_R}^p + 2^{p-1} R^p |u|_{1,p,\Omega}^p \leq K_4 |u|_{1,p,\Omega}^p
+  \end{align*}
+  by (20).
 \end{proof}
+
+
+\section{Unbounded domains---Decay at Infinity}
+
+\begin{para}
+  The fact that elements of $W_0^{m,p}(\Omega)$ vanish in a generalized sense on the
+  boundary of $\Omega$ played a critical role in our showing that the imbedding
+  \begin{equation}\label{eq:6.21}
+    W_0^{m,p}(\Omega) \to L^p(\Omega)
+  \end{equation}
+  is compact for certain unbounded domains $\Omega$. Since elements
+  of $W^{m,p}(\Omega)$ do not have this property, there remains a question of whether
+  an imbedding of the form
+  \begin{equation}\label{eq:6.22}
+    W^{m,p}(\Omega) \to L^p(\Omega)
+  \end{equation}
+  can ever be compact for unbounded $\Omega$, or even for bounded $\Omega$ which are
+  sufficiently irregular that no imbedding of the form
+  \begin{equation}\label{eq:6.23}
+    W^{m,p}(\Omega) \to L^q(\Omega)
+  \end{equation}
+  can exist for any $q>p$. Note that if $\Omega$ has finite volume, the existence
+  of imbedding~\eqref{eq:6.23} for some $q>p$ implies the compactness of imbedding~\eqref{eq:6.22}
+  by the method of the first part of the proof in Paragraph 6.8.
+  By Theorem~4.46 imbedding~\eqref{eq:6.23} cannot, however, exist if $q>p$ and $\Omega$
+  is unbounded but has finite volume.
+\end{para}
+
+
+\begin{example}
+  For $j=1,2,\dots$ let $B_j$ be an open ball in $\mathbb{R}^n$ having radius
+  $r_j$, and suppose that $\overline{B_j}\cap\overline{B_i}$ is empty whenever
+  $j\neq i$. Let $\Omega = \cup_{j=1}^\infty B_j$. Note that $\Omega$ may be
+  bounded or unbounded. The sequence $\{u_j\}$ defined by
+  \[ u_j(x) = \begin{cases}
+    (\vol(B_j))^{-1/p} & \text{if}\ x\in\overline{B_j} \\
+    0                  & \text{if}\ x\notin\overline{B_j}
+  \end{cases}\]
+  is bounded in $W^{m,p}(\Omega)$ for every integer $m\geq 0$, but is not
+  precompact in $L^p(\Omega)$ no matter how fast $r_j\to 0$ as $j\to\infty$.
+  (Of course, imbedding \eqref{eq:6.21} is compact by Theorem~6.16 provided
+  $\lim_{j\to\infty} r_j = 0$.) Even if $\Omega$ is bounded, imbedding~\eqref{eq:6.23}
+  cannot exist for any $q>p$.
+\end{example}
+
+
+\begin{para}
+  Let us state at once that there do exist unbounded domains $\Omega$
+  for which the imbedding~\eqref{eq:6.22} is compact. See Example~6.53.
+  An example of such a domain
+\end{para}
