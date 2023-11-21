@@ -906,5 +906,59 @@ to cover imbeddings into spaces of continuous functions.
 \begin{para}
   Let us state at once that there do exist unbounded domains $\Omega$
   for which the imbedding~\eqref{eq:6.22} is compact. See Example~6.53.
-  An example of such a domain
+  An example of such a domain was given by the authors in [AF2] and it provided
+  a basis for an investigation of the general problem in [AF3].
+  The approach of this latter paper is used in the following discussion.
+
+  First we concern ourselves with necessary conditions for the compactness
+  of~\eqref{eq:6.23} for $q\geq p$. These conditions involve rapid decay at
+  infinity for any unbounded domain (see Theorem~6.45). The techniques
+  involved in the proof also yield a strengthened version of Theorem~4.46,
+  namely, Theorem~6.41, and a converse of the assertion [see Remark~4.13(3)]
+  that $W^{m,p}(\Omega) \to L^q(\Omega)$ for $1\leq q<p$ if $\Omega$ has finite volume.
+
+  A sufficient condition for the compactness of \eqref{eq:6.22} is given in
+  Theorem~6.52. It applies to many domains, bounded and unbounded, to which
+  neither the Rellich-Kondrachov theorem nor any generalization of that theorem
+  obtained by the same methods can be applied. (e.g.~exponential cusps --- see Example~6.54).
 \end{para}
+
+
+\begin{para}[Tessellations and $\lambda$-fat Cubes]
+  Let $T$ be a tessellation of $\mathbb{R}^n$ by closed $n$-cubes of edge length $h$.
+  If $H$ is one of the cubes in $T$, let $N(H)$ denote the cube of edge length
+  $3h$ concentric with $H$ and therefore consisting of the $3^n$ elements
+  of $T$ that intersect $H$. We call $N(H)$ the \emph{neighborhood} of $H$.
+  By the \emph{fringe} of $H$ we shall mean the shell $F(H) = N(H)-H$.
+
+  Let $\Omega$ be a given domain in $\mathbb{R}^n$ and $T$ a give tessellation as above.
+  Let $\lambda>0$. A cube $H\in T$ will be called $\lambda$-\emph{fat} (with respect to $\Omega$) if
+  \[ \mu(H\cap\Omega) > \lambda \mu(F(H)\cap\Omega), \]
+  where $\mu$ denotes the $n$-dimensional Lebesgue measure in $\mathbb{R}^n$.
+  (We use $\mu$ instead of ``vol'' for notational simplicity in the following
+  discussion where the symbol must be used many times.)
+  If $H$ is not $\lambda$-fat then we will say it is $\lambda$-\emph{thin}.
+\end{para}
+
+
+\begin{theorem}
+  Suppose there exists a compact imbedding of the form
+  \[ W^{m,p}(\Omega) \to L^q(\Omega) \]
+  for some $q\geq p$. Then for every $\lambda>0$ and every tessellation 
+  $T$ of $\mathbb{R}^n$ by cubes of fixed size, $T$ can have only finitely
+  many $\lambda$-fat cubes.
+\end{theorem}
+
+\begin{proof}
+  Suppose, to the contrary, that for some $\lambda>0$ there exists a tessellation~$T$
+  of $\mathbb{R}^n$ by cubes of edge length~$h$ containing a sequence
+  $\{H_j\}_{j=1}^\infty$ of $\lambda$-fat cubes.
+  Passing to a subsequence if necessary we may assume that $N(H_j)\cap N(H_i)$
+  is empty whenever $j\neq i$. For each $j$ there exists $\phi_j\in C_0^\infty(N(H_j))$
+  such that
+  \begin{enumerate}[(i)]
+    \item $|\phi_j(x)|\leq 1$ for all $x\in \mathbb{R}^n$,
+    \item $\phi_j(x) = 1$ for $x\in H_j$, and
+    \item $D^\alpha \phi_j(x)|\leq M$ for all $j$, all $x\in \mathbb{R}^n$, and all $\alpha$ satisfying $0\leq |\alpha|\leq m$.
+  \end{enumerate}
+\end{proof}
