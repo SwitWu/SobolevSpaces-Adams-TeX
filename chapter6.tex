@@ -961,4 +961,58 @@ to cover imbeddings into spaces of continuous functions.
     \item $\phi_j(x) = 1$ for $x\in H_j$, and
     \item $D^\alpha \phi_j(x)|\leq M$ for all $j$, all $x\in \mathbb{R}^n$, and all $\alpha$ satisfying $0\leq |\alpha|\leq m$.
   \end{enumerate}
+  In fact, all the $\phi_j$ can be taken to be translates of one of them.
+  Let $\psi_j = c_j\phi_j$, where the positive constants $c_j$ are chosen so that
+  \[ \|\psi_j\|_{0,q,\Omega}^q \geq c_j^q \int_{H_j\cap\Omega} |\phi_j(x)|^q \d x
+      = c_j^q \mu(H_j\cap\Omega) = 1. \]
+  But then
+  \begin{align*}
+    \|\psi_j\|_{m,p,\Omega}^p
+    & = c_j^p \sum_{0\leq |\alpha|\leq m} \int_{N(H_j)\cap\Omega} |D^\alpha \phi_j(x)|^p \d x \\
+    & \leq M^p c_j^p \mu\bigl(N(H_j)\cap\Omega\bigr) \\
+    & < M^p c_j^p \mu(H_j\cap\Omega) \biggl(1+\frac{1}{\lambda}\biggr)
+      = M^p \biggl(1+\frac{1}{\lambda}\biggr) c_j^{p-q},
+  \end{align*}
+  since $H_j$ is $\lambda$-fat. Now $\mu(H_j\cap\Omega)\leq \mu(H_j) = h^n$
+  so $c_j\geq h^{-n/q}$. Since $p-q\leq 0$, $\{\psi_j\}$ is bounded in $W^{m,p}(\Omega)$.
+  But the functions $\psi_j$ have disjoint supports, so $\{\psi_j\}$ cannot be precompact
+  in $L^q(\Omega)$, contradicting the assumption that $W^{m,p}(\Omega)\to L^q(\Omega)$
+  is compact. Thus every $T$ can possess at most finitely many $\lambda$-fat cubes.
 \end{proof}
+
+
+\begin{corollary}
+  Suppose that $W^{m,p}(\Omega)\to L^q(\Omega)$ for some $q>p$.
+  If $T$ is a tessellation of $\mathbb{R}^n$ by cubes of fixed edge-length,
+  and if $\lambda>0$ is given, then there exists $\epsilon>0$ such that
+  $\mu(H\cap\Omega)\geq\epsilon$ for every $\lambda$-fat $H\in T$.
+\end{corollary}
+
+\begin{proof}
+  Suppose, to the contrary, that there exists a sequence $\{H_j\}$ of $\lambda$-fat
+  cubes with $\lim_{j\to\infty} \mu(H_j\cap\Omega)=0$.
+  If $c_j$ is defined as in the above proof, we have $\lim_{j\to\infty} c_j=\infty$.
+  But then $\lim_{j\to\infty} \|\psi_j\|_{m,p,\Omega}=0$ since $p<q$.
+  Since $\{\psi_j\}$ is bounded away from $0$ in $L^q(\Omega)$, we have contradicted
+  the continuity of the imbedding $W^{m,p}(\Omega) \to L^q(\Omega)$.
+\end{proof}
+
+
+\begin{remark}
+  It follows from the above corollary that if there exists an imbedding
+  \begin{equation}\label{eq:6.24}
+    W^{m,p}(\Omega) \to L^q(\Omega)
+  \end{equation}
+  for some $q>p$ then one of the following alternatives must hold:
+  \begin{enumerate}[(a)]
+    \item There exists $\epsilon>0$ and a tessellation $T$ of $\mathbb{R}^n$
+      consisting of cubes of fixed size such that $\mu(H\cap\Omega)\geq\epsilon$
+      for infinitely many cubes $H\in T$.
+    \item For every $\lambda>0$, every tessellation $T$ of $\mathbb{R}^n$
+      consisting of cubes of fixed size contains only finitely many $\lambda$-fat cubes.
+  \end{enumerate}
+  We will show in Theorem~6.42 that (b) implies that $\Omega$ has finite volume.
+  By Theorem~4.46, (b) is therefore inconsistent with the existence of (24)
+  for $q>p$. On the other hand, (a) implies that $\mu\bigl(\{x\in\Omega: N\leq |x|\leq N+1\}\bigr)$
+  does not
+\end{remark}
