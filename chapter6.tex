@@ -1014,5 +1014,56 @@ to cover imbeddings into spaces of continuous functions.
   We will show in Theorem~6.42 that (b) implies that $\Omega$ has finite volume.
   By Theorem~4.46, (b) is therefore inconsistent with the existence of (24)
   for $q>p$. On the other hand, (a) implies that $\mu\bigl(\{x\in\Omega: N\leq |x|\leq N+1\}\bigr)$
-  does not
+  does not approach zero as $N$ tends to infinity. We have therefore proved the following
+  strengthening of Theorem~4.46.
 \end{remark}
+
+
+\begin{theorem}
+  Let $\Omega$ be an unbounded domain in $\mathbb{R}^n$ satisfying
+  \[ \limsup_{N\to\infty} \vol(\{x\in\Omega: N\leq |x|\leq N+1\}) = 0. \]
+  Then there can be no imbedding of the form (24) for any $q>p$.
+\end{theorem}
+
+
+\begin{theorem}
+  Suppose that imbedding (24) is compact for some $q\geq p$.
+  Then $\Omega$ has finite volume.
+\end{theorem}
+
+\begin{proof}
+  Let $T$ be a tessellation of $\mathbb{R}^n$ by cubes of unit edge length,
+  and let $\lambda=1/[2(3^n-1)]$. Let $P$ be the union of the finitely many
+  $\lambda$-fat cubes in $T$. Clearly $\mu(P\cap\Omega)\leq\mu(P)<\infty$.
+
+  Let $H$ be a $\lambda$-thin cube in $T$. Let $H_1$ be one of the $3^n-1$
+  cubes in $T$ constituting the fringe of $H$ selected so that $\mu(H_1\cap\Omega)$
+  is maximal. Thus
+  \[ \mu(H\cap\Omega) \leq \lambda \mu\bigl(F(H)\cap\Omega\bigr) 
+      \leq \lambda (3^n-1) \mu(H_1\cap\Omega) = \frac12 \mu(H_1\cap\Omega). \]
+  If $H_1$ is also $\lambda$-thin, then we may select a cube $H_2\in T$ with
+  $H_2\subset F(H_1)$ such that $\mu(H_1\cap\Omega) \leq \frac12 \mu(H_2\cap\Omega)$.
+
+  Suppose an infinite chain $\{H_1,H_2,\ldots\}$ of $\lambda$-thin cubes can be
+  constructed in the above manner. Then
+  \[ \mu(H\cap\Omega) \leq \frac12 \mu(H_1\cap\Omega) \leq \cdots
+      \leq \frac{1}{2^j} \mu(H_j\cap\Omega) \leq \frac{1}{2^j} \]
+  for each $j$ since $\mu(H_j\cap\Omega)\leq\mu(H_j)=1$.
+  Hence $\mu(H\cap\Omega)=0$. Denoting by $P_\infty$ the union of $\lambda$-thin
+  cubes $H\in T$ for which such an infinite chain can be constructed,
+  we have $\mu(P_\infty\cap\Omega)=0$.
+
+  Let $P_j$ denote the union of $\lambda$-thin cubes $H\in T$ for which
+  some such chain ends on the $j$th step; that is, $H_j$ is $\lambda$-fat.
+  Any particular $\lambda$-fat cube $H'$ can occur as the end $H_j$ of a chain
+  beginning at $H$ only if $H$ is contained in the cube of edge $2j+1$
+  centred on $H'$. Hence there are at most $(2j+1)^n$ such cubes $H\subset P_j$
+  having $H'$ as chain endpoint. Thus
+  \begin{align*}
+    \mu(P_j\cap\Omega)
+    & = \sum_{H\subset P_j} \mu(H\cap\Omega) \\
+    & \leq \frac{1}{2^j} \sum_{H\subset P_j} \mu(H_j\cap\Omega) \\
+    & \leq \frac{(2j+1)^n}{2^j} \sum_{H'\subset P} \mu(H'\cap\Omega)
+      = \frac{(2j+1)^n}{2^j} \mu(P\cap\Omega),
+  \end{align*}
+\end{proof}
