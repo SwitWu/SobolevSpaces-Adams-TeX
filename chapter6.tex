@@ -1111,4 +1111,47 @@ We are now in a position to prove the converse.
     & < \frac12 M^p \biggl(1+\frac{1}{\lambda}\biggr) \sum_{j=1}^{j_1} \mu(H_j\cap\Omega)
       < 2M^p \biggl(1+\frac{1}{\lambda}\biggr).
   \end{align*}
+  On the other hand,
+  \[ \|\psi\|_{0,q,\Omega}^q \geq 2^{-q/p} \sum_{j=1}^{j_1} \mu(H_j\cap\Omega)
+      \geq 2^{1-(q/p)}. \]
+  Having so defined $j_1$ and $\psi_1$, we can now define $j_2$, $j_3$, $\ldots$
+  and $\psi_2$, $\psi_3$, $\ldots$ inductively so that
+  \[ 2^k \leq \sum_{j=j_{k-1}+1}^{j_k} \mu(H_j\cap\Omega) < 2^{k+1} \]
+  and
+  \[ \psi_k(x) = 2^{-k/p} k^{-2/p} \sum_{j=j_{k-1}+1}^{j_k} \phi_j(x). \]
+  As above, we have for $|\alpha|\leq m$,
+  \[ \|D^\alpha \psi_k\|_{0,p,\Omega}^p \leq \frac{2}{k^2} M^p 
+      \biggl(1+\frac{1}{\lambda}\biggr) \]
+  and
+  \[\|\psi_k\|_{0,q,\Omega}^q \geq 2^{k(1-q/p)} M^p \biggl(\frac{1}{k}\biggr)^{2q/p}. \]
+  Thus $\psi=\sum_{k=1}^\infty \psi_k$ belongs to $W^{m,p}(\Omega)$
+  but not to $L^q(\Omega)$ contradicting the imbedding $W^{m,p}(\Omega)\to L^q(\Omega)$.
+  Hence $\mu(P\cap\Omega)<\infty$ as required.
 \end{proof}
+
+
+\begin{para}
+  If there exists a compact imbedding of the form $W^{m,p}(\Omega)\to L^q(\Omega)$
+  for some $q\geq p$, then, as we have shown, $\Omega$ has finite volume.
+  In fact, considerably more is true; $\mu(\{x\in\Omega: |x|\geq R\})$
+  must approach zero very rapidly as $R\to\infty$, as we shown in Theorem~6.45 below.
+
+  If $Q$ is a union of cubes $H$ in some tessellation $T$ of $\mathbb{R}^n$
+  by cubes of fixed edge length, we extend the notions of neighborhood
+  and fringe to $Q$ in an obvious manner:
+  \[ N(Q) = \bigcup_{\substack{H\in T \\ H\subset Q}} N(H),
+      \qquad F(Q) = N(Q)-Q. \]
+  Given $\delta>0$, let $\lambda=\delta/[3^n(1+\delta)]$. If all the cubes
+  $H\in T$ satisfying $H\subset Q$ are $\lambda$-thin, then $Q$ is itself
+  $\delta$-thin in the sense that
+  \[ \mu(Q\cap\Omega) \leq \delta \mu\bigl(F(Q)\cap\Omega\bigr). \]
+  To see this note that as $H$ runs through the cubes comprising $Q$,
+  $F(H)$ covers $N(Q)$ at most $3^n$ times. Hence
+  \begin{align*}
+    \mu(Q\cap\Omega)
+    & = \sum_{H\subset Q} \mu(H\cap\Omega)
+      \leq \lambda\sum_{H\subset Q} \mu\bigl(F(H)\cap\Omega\bigr) \\
+    & \leq 3^n \lambda \mu\bigl(N(Q)\cap\Omega\bigr)
+      = 3^n \lambda \bigl[\mu(Q\cap\Omega) + \mu\bigl(F(Q)\cap\Omega\bigr)\bigr]
+  \end{align*}
+\end{para}
