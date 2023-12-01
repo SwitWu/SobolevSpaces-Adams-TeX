@@ -1209,4 +1209,58 @@ We are now in a position to prove the converse.
     & \leq \frac{\delta}{\epsilon} \mu(\{x\in\Omega: r\leq |x|\leq r+\epsilon\})
       = \frac{\delta}{\epsilon} \int_r^{r+\epsilon} A_s \d s \leq \delta A_r.
   \end{align*}
+  Since $\epsilon'$ and $\delta$ are arbitrary, (b) follows.
 \end{proof}
+
+
+\begin{corollary}
+  If there exists a compact imbedding of the form \eqref{eq:6.26}
+  for some $q\geq p$, then for every $k>0$ we have
+  \begin{equation}\label{eq:6.27}
+    \lim_{r\to\infty} e^{kr} \mu(\Omega_r) = 0.
+  \end{equation}
+\end{corollary}
+
+\begin{proof}
+  Fix $k$ and let $\delta=e^{-(k+1)}$. From conclusion (a) of Theorem~6.45
+  there exists $R$ such that $r\geq R$ implies $\mu(\Omega_{r+1})\leq\delta\mu(\Omega_r)$.
+  Thus if $j$ is a positive integer and $0\leq t<1$, we have
+  \begin{align*}
+    e^{k(R+j+t)} \mu(\Omega_{R+j+t})
+    & \leq e^{k(R+j+1)} \mu(\Omega_{R+j}) \\
+    & \leq e^{k(R+1)} e^{kj} \delta^j \mu(\Omega_R)
+      = e^{k(R+1)} \mu(\Omega_R) e^{-j}.
+  \end{align*}
+  The last term approaches zero as $j$ tends to infinity.
+\end{proof}
+
+
+\begin{remarks}
+  \begin{enumerate}[1.]
+    \item We work with Sobolev spaces defined intrinsically in domains.
+      If instead, we had defined $W^{m,p}(\Omega)$ to consist of all restrictions
+      to $\Omega$ of functions in $W^{m,p}(\mathbb{R}^n)$, then the outcome for
+      corollary~6.46 would have been different. With that definition,
+      it is shown in [BCs] that $W^{m,p}(\Omega)$ imbeds compactly
+      in $L^p(\Omega)$ if and only if the volume of the intersection of $\Omega$
+      with cubes of fixed edge-length tends to $0$ as the centres of those
+      cubes tends to $\infty$. There are many domains $\Omega$ satisfying
+      the latter condition but not satisfying \eqref{eq:6.27}. None of these
+      domains can have any Sobolev extension property.
+    \item The argument used in the proof of Theorem~6.45(a) works for any
+      norm $\rho$ on $\mathbb{R}^n$ in place of the usual Euclidean norm
+      $\rho(x) = |x|$. The same holds for Theorem~6.45(b) provided $A_r$
+      is well defined (with respect to the norm $\rho$) and provided
+      \[ \mu(\{x\in\Omega: r\leq \rho(x)\leq r+\epsilon\}) = \int_r^{r+\epsilon} A_s \d s. \]
+      This is true, for example, if $\rho(x) = \max_{1\leq i\leq n} |x_i|$.
+    \item For the proof of Theorem~6.45(b) it is sufficient that $A_r$
+      have an equivalent nonincreasing majorant, that is, there should
+      exist a positive, nonincreasing function $f(r)$ and a constant
+      $M>0$ such that for sufficiently large $r$
+      \[ A_r \leq f(r) \leq MA_r. \]
+    \item Theorem~6.38 is sharper than Theorem~6.45, because the conclusions
+      of the latter theorem are global whereas the compactness of \eqref{eq:6.26}
+      depends on local properties of $\Omega$. We illustrate this by means of
+      two examples.
+  \end{enumerate}
+\end{remarks}
