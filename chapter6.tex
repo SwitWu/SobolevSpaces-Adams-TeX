@@ -1264,3 +1264,72 @@ We are now in a position to prove the converse.
       two examples.
   \end{enumerate}
 \end{remarks}
+
+
+\begin{example}
+  Let $f\in C^1\bigl([0,\infty)\bigr)$ be positive and nonincreasing with
+  bounded derivative $f'$. We consider the planar domain (Figure~5)
+  \[ \Omega = \{(x,y)\in\mathbb{R}^2: x>0, 0<y<f(x)\}. \]
+  With respect to the supremum norm on $\mathbb{R}^2$, that is
+  $\rho(x,y) = \max\{|x|,|y|\}$, we have $A_s=f(s)$ for sufficiently large $s$.
+  Hence $\Omega$ satisfies conclusion (b) of Theorem~6.45 (and, since $f$ is monotonic,
+  conslusion (a) as well) if and only if
+  \begin{equation}\label{eq:6.28}
+    \lim_{s\to\infty} \frac{f(s+\epsilon)}{f(s)} = 0
+  \end{equation}
+  holds for every $\epsilon>0$. For example, $f(x) = \exp(-x^2)$ satisfies
+  this condition but $f(x) = \exp(-x)$ does not. We shall show in Example~6.53
+  that the imbedding
+  \begin{equation}\label{eq:6.29}
+    W^{m,p}(\Omega) \to L^p(\Omega)
+  \end{equation}
+  is compact if \eqref{eq:6.28} holds. Thus \eqref{eq:6.28} is necessary
+  and sufficient for compactness of the above imbedding for domains of this type.
+\end{example}
+
+
+\begin{example}
+  Let $f$ be as in the previous exmaple, and assume also that $f'(0)=0$.
+  Let $g$ be a positive, nonincreasing function in $C^1\bigl([0,\infty)\bigr)$
+  satisfying
+  \begin{enumerate}[(i)]
+    \item $g(0) = \frac12 f(0)$, and $g'(0)=0$,
+    \item $g(x)<f(x)$ for all $x\geq 0$,
+    \item $g(x)$ is constant on infinitely many disjoint intervals of unit length.
+  \end{enumerate}
+  Let $h(x)=f(x)-g(x)$ and consider the domain (Figure~6)
+  \[ \tilde{\Omega} = \{(x,y)\in\mathbb{R}^2: 0<y<g(x)\ \text{if}\ x\geq 0,\ 
+      0<y<h(-x)\ \text{if}\ x<0\}. \]
+  Again we have $A_s=f(s)$ for sufficiently large $s$, so $\tilde{\Omega}$
+  satisfies the conclusions of Theorem~6.45 if \eqref{eq:6.28} holds.
+
+  If, however, $T$ is a tessellation of $\mathbb{R}^2$ by squares of edge
+  length $\frac14$ having edges parallel to the coordinate axes, and if
+  one of the squares in $T$ has centre at the origin, then $T$ has infinitely
+  many $\frac13$-fat squares with centres on the position $x$-axis.
+  By Theorem~6.38 the imbedding \eqref{eq:6.29} cannot be compact
+  for the domain $\tilde{\Omega}$.
+\end{example}
+
+
+\section{Unbounded Domains---Compact Imbeddings of
+  \texorpdfstring{$W^{m,p}(\Omega)$}{W\textasciicircum\{m,p\}(Ω)}}
+
+\begin{para}[Flows]
+  The above examples suggest that any sufficient condition for the
+  compactness of the imbedding
+  \[ W^{m,p}(\Omega) \to L^p(\Omega) \]
+  for unbounded domains $\Omega$ must involve the rapid decay
+  of volume locally in each branch of $\Omega_r$ as $r$ tends to infinity.
+  A convenient way to express such local decay is in terms of flows on $\Omega$.
+
+  By a \emph{flow} on $\Omega$ we mean a continuously differentiable map
+  $\Phi: U \to \Omega$ where $U$ is an open set in $\Omega\times\mathbb{R}$
+  containing $\Omega \times \{0\}$, and where $\Phi(x,0)=x$ for every $x\in\Omega$.
+
+  For fixed $x\in\Omega$ the curve $t\to \Phi(x,t)$ is called a \emph{streamline}
+  of the flow. For fixed $t$ the map $\Phi_t: x\to \Phi(x,t)$ sends a subset
+  of $\Omega$ into $\Omega$. We shall be concerned with the Jacobian of this map:
+  \[ \det \Phi_t'(x) = \frac{\partial(\Phi_1,\ldots,\Phi_n)}{\partial(x_1,\ldots,x_n)}
+      \bigg|_{(x,t)}.\]
+\end{para}
