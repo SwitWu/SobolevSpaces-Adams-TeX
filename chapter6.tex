@@ -1332,4 +1332,24 @@ We are now in a position to prove the converse.
   of $\Omega$ into $\Omega$. We shall be concerned with the Jacobian of this map:
   \[ \det \Phi_t'(x) = \frac{\partial(\Phi_1,\ldots,\Phi_n)}{\partial(x_1,\ldots,x_n)}
       \bigg|_{(x,t)}.\]
+  It is sometimes required of a flow $\Phi$ that $\Phi_{s+t} = \Phi_s\circ\Phi_t$
+  but we do not need this property and so do not assume it.
 \end{para}
+
+
+\begin{example}
+  Let $\Omega$ be the domain of Example~6.48. Define the flow
+  \[ \Phi(x,y,t) = \biggl(x-t, \frac{f(x-t)}{f(x)}y\biggr), \qquad 0<t<x. \]
+  The direction of the flow is towards the line $x=0$ and the streamlines (some
+  of which are shown in Figure~7) diverges as the domain widens. $\Phi$ is a local
+  magnification for $t>0$:
+  \[ \det\Phi_t'(x,y) = \frac{f(x-t)}{f(x)}. \]
+  Note that $\lim_{x\to\infty} \det\Phi_t'(x,y) = \infty$ if $f$ satisfies~\eqref{eq:6.28}.
+
+  For $N=1,2,\ldots$ let $\Omega_N^* = \{(x,y)\in\Omega: 0<x<N\}$.
+  Since $\Omega_N^*$ is bounded and satisfies the cone condition, the imbedding
+  \[ W^{1,p}(\Omega_N^*) \to L^p(\Omega_N^*) \]
+  is compact. This compactness, together with properties of the flow $\Phi$
+  are sufficient to force the compactness of $W^{m,p}(\Omega)\to L^p(\Omega)$
+  as we now show.
+\end{example}
