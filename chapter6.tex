@@ -1353,3 +1353,59 @@ We are now in a position to prove the converse.
   are sufficient to force the compactness of $W^{m,p}(\Omega)\to L^p(\Omega)$
   as we now show.
 \end{example}
+
+
+\begin{theorem}
+  Let $\Omega$ be an open set in $\mathbb{R}^n$ having the following properties:
+  \begin{enumerate}[(a)]
+    \item There exists an infinite sequence $\{\Omega_N^*\}_{N=1}^\infty$ of open subsets
+      of $\Omega$ such that $\Omega_N^*\subset\Omega_{N+1}^*$ and such that for each
+      $N$ the imbedding
+      \[ W^{1,p}(\Omega_N^*) \to L^p(\Omega_N^*) \]
+      is compact.
+    \item There exists a flow $\Phi: U\to\Omega$ such that if $\Omega_N = \Omega - \Omega_N^*$,
+      then
+      \begin{enumerate}[(i)]
+        \item $\Omega_N \times [0,1] \subset U$ for each $N$,
+        \item $\Phi_t$ is one-to-one for all $t$,
+        \item $|(\partial/\partial t) \Phi(x,t)| \leq M$ (constant) for all $(x,t)\in U$.
+      \end{enumerate}
+    \item The fucntions $d_N(t) = \sup_{x\in\Omega_N} |\det\Phi_t'(x)|^{-1}$ satisfy
+      \begin{enumerate}[(i)]
+        \item $\lim_{N\to\infty} d_N(1) = 0$,
+        \item $\lim_{N\to\infty} \int_0^1 d_N(t) \d t = 0$.
+      \end{enumerate}
+  \end{enumerate}
+  Then the imbedding $W^{m,p}(\Omega)\to L^p(\Omega)$ is compact.
+\end{theorem}
+
+\begin{proof}
+  Since we have $W^{m,p}(\Omega) \to W^{1,p}(\Omega) \to L^p(\Omega)$
+  it is sufficient to prove that the latter imbedding is compact.
+  Let $u\in C^1(\Omega)$. For each $x\in\Omega_N$ we have
+  \[ u(x) = u\bigl(\Phi_1(x)\bigr)
+      - \int_0^1 \frac{\partial}{\partial t} u\bigl(\Phi_t(x)\bigr) \d t. \]
+  Now
+  \begin{align*}
+    \int_{\Omega_N} \bigl|u\bigl(\Phi_1(x)\bigr)\bigr| \d x
+    & \leq d_N(1) \int_{\Omega_N} \bigl|u\bigl(\Phi_1(x)\bigr)\bigr|
+        \bigl|\det\Phi_1'(x)\bigr| \d x \\
+    & = d_N(1) \int_{\Phi_1(\Omega_N)} |u(y)| \d y \\
+    & \leq d_N(1) \int_{\Omega} |u(y)| \d y.
+  \end{align*}
+  Also
+  \begin{align*}
+    \int_{\Omega_N} \biggl|\int_0^1 \frac{\partial}{\partial t} u\bigl(\Phi_t(x)\bigr) \d t \biggr| \d x
+    & \leq \int_{\Omega_N} \d x \int_0^1 \bigl|\nabla u\bigl(\Phi_t(x)\bigr)\bigr|
+        \biggl|\frac{\partial}{\partial t} \Phi_t(x)\biggr| \d t \\
+    & \leq M \int_0^1 d_N(t) \d t \int_{\Omega_N} \bigl|\nabla u\bigl(\Phi_t(x)\bigr)\bigr|
+        \bigl|\det\Phi_t'(x)\bigr| \d x \\
+    & \leq M\biggl(\int_0^1 d_N(t) \d t\biggr) \biggl(\int_{\Omega} |\nabla u(y)| \d y\biggr).
+  \end{align*}
+  Putting $\delta_N = \max\bigl\{d_N(1), M \int_0^1 d_N(t)\d t\bigr\}$, we have
+  \begin{equation}\label{eq:6.30}
+    \int_{\Omega_N} |u(x)| \d x
+    \leq \delta_N \int_{\Omega} \bigl(|u(y)| + |\nabla u(y)|\bigr) \d y
+    \leq \delta_N \|u\|_{1,1,\Omega}
+  \end{equation}
+\end{proof}
