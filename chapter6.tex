@@ -1408,4 +1408,43 @@ We are now in a position to prove the converse.
     \leq \delta_N \int_{\Omega} \bigl(|u(y)| + |\nabla u(y)|\bigr) \d y
     \leq \delta_N \|u\|_{1,1,\Omega}
   \end{equation}
+  and $\lim_{N\to\infty} \delta_N = 0$.
+
+  Now suppose $u$ is real-valued and belongs to $C^1(\Omega)\cap W^{1,p}(\Omega)$.
+  By H\"older's inequality, the distributional derivatives of $|u|^p$
+  \[ D_j |u|^p = p\cdot |u|^{p-1}\cdot \sgn u\cdot D_j u, \]
+  satisfy
+  \[ \int_{\Omega} \bigl|D_j u(x)|^p\bigr| \d x
+      \leq p\|D_ju\|_{0,p,\Omega} \|u\|_{0,p,\Omega}^{p-1} \leq p\|u\|_{1,p,\Omega}^p. \]
+  Thus $|u|^p\in W^{1,1}(\Omega)$ and by Theorem~3.17 there is a sequence $\{\phi_j\}$
+  of functions in $C^1(\Omega)\cap W^{1,1}(\Omega)$ such that
+  $\lim_{j\to\infty} \bigl\|\phi_j - |u|^p\bigr\|_{1,1,\Omega} = 0$. Thus, by (30)
+  \begin{align*}
+    \int_{\Omega_N} |u(x)|^p \d x
+    & = \lim_{j\to\infty} \int_{\Omega_N} \phi_j(x) \d x
+      \leq \limsup_{j\to\infty} \delta_N \|\phi_j\|_{1,1,\Omega} \\
+    & \leq \delta_N \bigl\| |u|^p \bigr\|_{1,1,\Omega}
+      \leq K \delta_N \|u\|_{1,p,\Omega}^p,
+  \end{align*}
+  where $K=K(n,p)$. This inequality holds for arbitrary complex-valued function
+  $u\in C^1(\Omega)\cap W^{1,p}(\Omega)$ by virtue of its separate applications
+  to the real and imaginary parts of $u$.
+
+  If $S$ is a bounded set in $W^{1,p}(\Omega)$ and $\epsilon>0$, we may,
+  by the above inequality, select $N$ so that for all $u\in S$
+  \[ \int_{\Omega_N} |u(x)|^p \d x < \epsilon. \]
+  Since $W^{1,p}(\Omega-\Omega_N) \to L^p(\Omega-\Omega_N)$ is compact,
+  the precompactness of $S$ in $L^p(\Omega)$ follows by Theorem~2.33.
+  Hence $W^{1,p}(\Omega)\to L^p(\Omega)$ is compact.
 \end{proof}
+
+
+\begin{example}
+  Consider again the domain of Examples~6.48 and 6.51 and the flow $\Phi$
+  given in the latter example. We have
+  \[ d_N(t) = \sup_{x\geq N} \frac{f(x)}{f(x-t)} \leq 1 \qquad \text{if}\ 0\leq t\leq 1 \]
+  and by \eqref{eq:6.28}
+  \[ \lim_{N\to\infty} d_N(t) = 0 \qquad \text{if}\ t>0. \]
+  Thus by dominated convergence
+  \[ \lim_{N\to\infty} \int_0^1 d_N(t) \d t = 0. \]
+\end{example}
