@@ -1447,4 +1447,49 @@ We are now in a position to prove the converse.
   \[ \lim_{N\to\infty} d_N(t) = 0 \qquad \text{if}\ t>0. \]
   Thus by dominated convergence
   \[ \lim_{N\to\infty} \int_0^1 d_N(t) \d t = 0. \]
+  The assumption that $f'$ is bounded guarantees that the speed
+  $|(\partial/\partial t)\Phi(x,y,t)|$ is bounded on $U$.
+  Thus $\Omega$ satisfies the hypotheses of Theorem~6.52 and the
+  imbedding $W^{m,p}(\Omega)\to L^p(\Omega)$ is compact for this domain.
 \end{example}
+
+
+\begin{example}
+  Theorem~6.52 can also be used to show the compactness of $W^{m,p}(\Omega)\to L^p(\Omega)$
+  for some bounded domains to which neither the Rellich-Kondrachov theorem
+  nor the techniques used in its proof can be applied. For example, we consider
+  \[ \Omega = \{(x,y)\in\mathbb{R}^2: 0<x<2, 0<y<f(x)\}, \]
+  where $f\in C^1([0,2])$ is positive, nondecreasing, has bounded derivative $f'$,
+  and satisfies $\lim_{x\to 0+}f(x)=0$. Let
+  \[ U = \{(x,y,t)\in\mathbb{R}^3: (x,y)\in\Omega, -x<t<2-x\} \]
+  and define the flow $\Phi: U\to\Omega$ by
+  \[ \Phi(x,y,t) = \biggl(x+t, \frac{f(x+t)}{f(x)}y\biggr). \]
+  Then $\det\Phi_t'(x,y) = f(x+t)/f(x)$. If $\Omega_N^* = \{(x,y)\in\Omega: x>1/N\}$, then
+  \[ d_N(t) = \sup_{0<x\leq 1/N} \biggl|\frac{f(x)}{f(x+t)}\biggr| \]
+  satisfies $d_N(t)\leq 1$ for $0\leq t\leq 1$, and $\lim_{N\to\infty} d_N(t) = 0$
+  if $t>0$. Hence also $\lim_{N\to\infty} \int_0^1 d_N(t) \d t=0$
+  by dominated convergence. Since $\Omega_N^*$ is bounded and satisfies
+  the cone condition, and since the boundedness of $\partial\Phi/\partial t$
+  is assured by that of $f'$, we have, by Theorem~6.52 the compactness of
+  \begin{equation}\label{eq:6.31}
+    W^{m,p}(\Omega) \to L^p(\Omega).
+  \end{equation}
+  However, suppose that $\lim_{x\to 0+} f(x)/x^k = 0$ for every $k$.
+  (For example, this is true if $f(x)=e^{-1/x}$.) Then $\Omega$ has an exponential
+  cusp at the origin and by Theorem~4.48 there exists no imbedding of the form
+  $W^{m,p}(\Omega)\to L^q(\Omega)$ for any $q>p$ so the method of proof of the
+  Rellich-Kondrachov theorem cannot be used to show the compactness of~\eqref{eq:6.31}.
+\end{example}
+
+
+\begin{remarks}
+  \begin{enumerate}[1.]
+    \item It is easy to imagine domains more general than those in the above examples
+      to which Theorem~6.52 applies, although it may be difficult to specify
+      an appropriate flow. A domain with many (perhaps infinitely many)
+      unbounded branches can, if connected, admit a suitable flow provided
+      volume decays sufficiently rapidly in each branch, a condition
+      not fulfilled by the domain $\tilde\Omega$ in Example~6.49.
+      For unbounded domains in which volume
+  \end{enumerate}
+\end{remarks}
