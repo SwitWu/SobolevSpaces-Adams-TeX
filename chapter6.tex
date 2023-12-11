@@ -1490,6 +1490,48 @@ We are now in a position to prove the converse.
       unbounded branches can, if connected, admit a suitable flow provided
       volume decays sufficiently rapidly in each branch, a condition
       not fulfilled by the domain $\tilde\Omega$ in Example~6.49.
-      For unbounded domains in which volume
+      For unbounded domains in which volume decays monotonically in each branch
+      Theorem~6.45 is essentially a converse of Theorem~6.52 in that the proof
+      of Theorem~6.45 can be applied separately to show that the volume decays
+      in each branch in the required way.
+    \item Since the only unbounded domains for which $W^{m,p}(\Omega)$ imbeds
+      into $L^p(\Omega)$ have finite volume there can be no extensions of Theorem~6.52
+      to give compact imbeddings into $L^q(\Omega)$ (where $q>p$), or $C_B(\Omega)$ etc.;
+      there do not exist such imbeddings.
   \end{enumerate}
 \end{remarks}
+
+
+\section{Hilbert-Schmidt Imbeddings}
+
+\begin{para}[Complete Orthonormal Systems]
+  A \emph{complete orthonormal system} in a separable Hilbert space $X$
+  is a sequence $\{e_i\}_{i=1}^\infty$ of elements of $X$ satisfying
+  \[ (e_i,e_j)_X = \begin{cases}
+    1 & \text{if}\ i=j \\
+    0 & \text{if}\ i\neq j,
+  \end{cases}\]
+  (where $(\cdot,\cdot)_X$ is the inner product on $X$), and such that for
+  each $x\in X$ we have
+  \begin{equation}\label{eq:6.32}
+    \lim_{k\to\infty} \biggl\| x - \sum_{i=1}^k (x,e_i)_X e_i \biggr\|_X = 0.
+  \end{equation}
+  Thus $x=\sum_{i=1}^\infty (x,e_i)e_i$, the series converging with respect to
+  the norm in $X$. It is well known that every separable Hilbert space possesses
+  such a complete orthonormal system. There follows from~\eqref{eq:6.32}
+  the Parseval identity
+  \[ \|x\|_X^2 = \sum_{i=1}^\infty |(x,e_i)_X|^2. \]
+\end{para}
+
+
+\begin{para}[Hilbert-Schmidt Operators]
+  Let $X$ and $Y$ be two separable Hilbert spaces and let $\{e_i\}_{i=1}^\infty$
+  and $\{f_i\}_{i=1}^\infty$ be given complete orthonormal systems in $X$
+  and $Y$ respectively. Let $A$ be a bounded linear operator with domain $X$
+  taking values in $Y$, and let $A^*$ be the adjoint of $A$ taking $Y$ into $X$
+  and defined by
+  \[ (x,A^*y)_X = (Ax,y)_Y, \qquad x\in X,\quad y\in Y. \]
+  Define
+  \[ \opnorm{A}^2 = \sum_{i=1}^\infty \|Ae_i\|_Y^2,
+      \qquad \opnorm{A^*}^2 = \sum_{i=1}^\infty \|A^* f_i\|_X^2. \]
+\end{para}
