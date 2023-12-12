@@ -1534,4 +1534,61 @@ We are now in a position to prove the converse.
   Define
   \[ \opnorm{A}^2 = \sum_{i=1}^\infty \|Ae_i\|_Y^2,
       \qquad \opnorm{A^*}^2 = \sum_{i=1}^\infty \|A^* f_i\|_X^2. \]
+  If $\opnorm{A}$ is finite, $A$ is called a \emph{Hilbert-Schmidt operator} and
+  we call $\opnorm{A}$ its \emph{Hilbert-Schmidt norm}. Recall that the
+  operator norm of $A$ is given by
+  \[ \|A\| = \sup\{\|Ax\|_Y: \|x\|_X\leq 1\}. \]
+  We must justify the definition of the Hilbert-Schmidt norm.
+\end{para}
+
+
+\begin{lemma}
+  The norms $\opnorm{A}$ and $\opnorm{A^*}$ are independent of the particular
+  orthonormal systems $\{e_i\}$ and $\{f_i\}$ used to define them. Moreover
+  \[ \opnorm{A} = \opnorm{A^*} \geq \|A\|. \]
+\end{lemma}
+
+\begin{proof}
+  By Parseval's identity
+  \begin{align*}
+    \opnorm{A}^2
+    & = \sum_{i=1}^\infty \|Ae_i\|_Y^2
+      = \sum_{i=1}^\infty \sum_{j=1}^\infty |(Ae_i,f_j)_Y|^2 \\
+    & = \sum_{j=1}^\infty \sum_{i=1}^\infty |(e_i,A^*f_j)_X|^2
+      = \sum_{j=1}^\infty \|A^*f_j\|_X^2 = \opnorm{A^*}^2.
+  \end{align*}
+  Hence each expression is independent of $\{e_i\}$ and $\{f_j\}$.
+  For any $x\in X$ we have
+  \begin{align*}
+    \|Ax\|_Y^2
+    & = \biggl\|\sum_{i=1}^\infty (x,e_i)_X Ae_i\biggr\|_Y^2
+      \leq \biggl(\sum_{i=1}^\infty |(x,e_i)_X \|Ae_i\|_Y\biggr)^2 \\
+    & \leq \biggl(\sum_{i=1}^\infty |(x,e_i)_X|^2\biggr)
+        \biggl(\sum_{j=1}^\infty \|Ae_j\|_Y^2\biggr)
+      = \|x\|_X^2 \opnorm{A}^2.
+  \end{align*}
+  Hence $\|A\|\leq \opnorm{A}$ as required.
+\end{proof}
+
+
+\begin{remark}
+  Consider the scalars $(Ae_i,f_j)$ for $1\leq i,j<\infty$; they are the entries
+  in an infinite matrix representing the operator $A$. The lemma above shows
+  that the Hilbert-Schmidt norm of $A$ is the sum of the squares of the absolute
+  values of the elements of this matrix. Similarly, the numbers $(A^*f_j,e_i)$
+  are the entries in a matrix representing $A^*$. Since these matrices are adjoint
+  of each other, the equality of the corresponding Hilbert-Schmidt norms of the
+  operators is assured.
+\end{remark}
+
+
+\begin{para}
+  We leave to the reader the task of verifying the following assertions.
+  \begin{enumerate}[(a)]
+    \item If $X$, $Y$, and $Z$ are separable Hilbert spaces and $A$ and $B$
+      are bounded linear operators from $X$ into $Y$ and $Y$ into $Z$, respectively,
+      then $B\circ A$, which maps $X$ into $Z$, is a Hilbert-Schmidt operator
+      if either $A$ or $B$ is. If $A$ is Hilbert-Schmidt,
+      then $\opnorm{B\circ A}\leq\|B\|\opnorm{A}$.
+  \end{enumerate}
 \end{para}
