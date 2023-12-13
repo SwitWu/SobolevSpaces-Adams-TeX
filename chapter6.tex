@@ -1590,5 +1590,47 @@ We are now in a position to prove the converse.
       then $B\circ A$, which maps $X$ into $Z$, is a Hilbert-Schmidt operator
       if either $A$ or $B$ is. If $A$ is Hilbert-Schmidt,
       then $\opnorm{B\circ A}\leq\|B\|\opnorm{A}$.
+    \item Every Hilbert-Schmidt operator is compact.
   \end{enumerate}
+  The following Theorem, due to Maurin [Mr] has far-reaching implications for
+  eigenfunction expansions corresponding to differential operators.
 \end{para}
+
+
+\begin{theorem}[Maurin's Theorem]
+  Let $\Omega$ be a bounded domain in $\mathbb{R}^n$ satisfying the cone condition.
+  Let $m$ and $k$ be nonnegative integers with $k>n/2$. Then the imbedding map
+  \begin{equation}\label{eq:6.33}
+    W^{m+k,2}(\Omega) \to W^{m,2}(\Omega)
+  \end{equation}
+  is a Hilbert-Schmidt operator. Similarly the imbedding map
+  \begin{equation}\label{eq:6.34}
+    W_0^{m+k,2}(\Omega) \to W_0^{m,2}(\Omega)
+  \end{equation}
+  is a Hilbert-Schmidt operator for any bounded domain $\Omega$.
+\end{theorem}
+
+\begin{proof}
+  Given $y\in\Omega$ and $\alpha$ with $|\alpha|\leq m$ we define a linear
+  functional $T_y^\alpha$ on $W^{m+k,2}(\Omega)$ by
+  \[ T_y^\alpha(u) = D^\alpha u(y). \]
+  Since $2k>m$, the Sobolev Imbedding Theorem~4.12 implies that $T_y^\alpha$
+  is bounded on $W^{m+k,2}(\Omega)$ and has norm bounded by a constant $K$
+  independent of $y$ and $\alpha$:
+  \[ |T_y^\alpha(u)| \leq \max_{0\leq|\alpha|\leq m} \sup_{x\in\Omega}
+      |D^\alpha u(x)| \leq K\|u\|_{m+k,2,\Omega}. \]
+  By the Reisz representation theorem for Hilbert spaces there
+  exists $v_y^\alpha\in W^{m+k,2}(\Omega)$ such that
+  \[ D^\alpha u(y) = T_y^\alpha(u) = \bigl(u, v_y^\alpha\bigr)_{m+k}, \]
+  where $(\cdot,\cdot)_{m+k}$ is the inner product on $W^{m+k,2}(\Omega)$.
+  Moreover
+  \[ \|v_y^\alpha\|_{m+k,2,\Omega}^2 = \|T_y^\alpha\|_{W^{m+k,2}(\Omega)'} \leq K. \]
+  If $\{e_i\}_{i=1}^\infty$ is a complete orthonormal system in $W^{m+k,2}(\Omega)$, then
+  \[ \|v_y^\alpha\|_{m+k,2,\Omega}^2
+      = \sum_{i=1}^\infty \bigl|(e_i, v_y^\alpha)_{m+k}\bigr|^2
+      = \sum_{i=1}^\infty |D^\alpha e_i(y)|^2. \]
+  Consequently,
+  \[ \sum_{i=1}^\infty \|e_i\|_{m,2,\Omega}^2
+      \leq \sum_{|\alpha|\leq m} \int_{\Omega} \|v_y^\alpha\|_{m+k,2,\Omega}^2 \d y
+      \leq \sum_{|\alpha|\leq m} K \vol(\Omega) < \infty. \]
+\end{proof}
