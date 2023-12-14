@@ -1633,4 +1633,63 @@ We are now in a position to prove the converse.
   \[ \sum_{i=1}^\infty \|e_i\|_{m,2,\Omega}^2
       \leq \sum_{|\alpha|\leq m} \int_{\Omega} \|v_y^\alpha\|_{m+k,2,\Omega}^2 \d y
       \leq \sum_{|\alpha|\leq m} K \vol(\Omega) < \infty. \]
+  Hence imbedding \eqref{eq:6.33} is Hilbert-Schmidt. The corresponding
+  imbedding~\eqref{eq:6.34} is also Hilbert-Schmidt without the cone-condition
+  requirement as it is not needed for the application of Theorem~4.12 in this case.
 \end{proof}
+
+The following generalization of Maurin's theorem is due to Clark [Ck].
+
+\begin{theorem}
+  Let $\mu$ be a nonnegative, measurable function defined on the domain $\Omega$
+  in $\mathbb{R}^n$. Let $W_0^{m,2;\mu}(\Omega)$ be the Hilbert space obtained
+  by completing $C_0^\infty(\Omega)$ with respect to the weighted norm
+  \[ \|u\|_{m,2;\mu} = \biggl(\sum_{|\alpha|\leq m} \int_{\Omega} 
+      |D^\alpha u(x)|^2 \mu(x) \d x\biggr)^{1/2}. \]
+  For $y\in\Omega$ let $\tau(y) = \dist(y,\partial\Omega)$. Suppose that
+  \begin{equation}\label{eq:6.35}
+    \int_{\Omega} \bigl(\tau(y)\bigr)^{2\nu} \mu(y) \d y < \infty
+  \end{equation}
+  for some nonnegative integer $\nu$. If $k>\nu+n/2$, then the imbedding
+  \begin{equation}\label{eq:6.36}
+    W_0^{m+k,2}(\Omega) \to W_0^{m,2;\mu}(\Omega)
+  \end{equation}
+  (exists and) is Hilbert-Schmidt.
+\end{theorem}
+
+\begin{proof}
+  The argument is parallel to that given in the proof of Maurin's theorem above.
+  Let $\{e_i\}$, $T_y^\alpha$, and $v_y^\alpha$ be defined as there. If $y\in\Omega$,
+  let $y_0$ be chosen in $\partial\Omega$ such that $\tau(y) = |y-y_0|$.
+  If $\nu$ is a positive integer and $u\in C_0^\infty(\Omega)$, we have by Taylor's
+  formula with remainder
+  \[ D^\alpha u(y) = \sum_{|\beta|=\nu} \frac{1}{\beta!} D^{\alpha+\beta}
+      u(y_{\beta}) (y-y_{\beta})^\beta \]
+  for some points $y_\beta$ satisfying $|y-y_\beta|\leq\tau(y)$.
+  If $|\alpha|\leq m$ and $k>\nu+n/2$, we obtain from Theorem~4.12
+  \[ |D^\alpha u(y)| \leq K\|u\|_{m+k,2,\Omega} \bigl(\tau(y)\bigr)^\nu. \]
+  By completion this inequality holds for any $u\in W_0^{m+k,2}(\Omega)$.
+  As in the proof of Maurin's theorem, it follows that
+  \[ \|v_y^\alpha\|_{m+k,2,\Omega} = \sup_{\|u\|_{m+k,2,\Omega}=1} |D^\alpha u(y)|
+      \leq K \bigl(\tau(y)\bigr)^\nu, \]
+  and hence also that
+  \begin{align*}
+    \sum_{i=1}^\infty \|e_i\|_{m,2;\mu}^2
+    & \leq \sum_{|\alpha|\leq m} \int_{\Omega} \|v_y^\alpha\|_{m+k,2,\Omega}^2 \mu(y) \d y \\
+    & \leq K^2 \sum_{|\alpha|\leq m} \int_{\Omega} \bigl(\tau(y)\bigr)^{2\nu} \mu(y) \d y<\infty
+  \end{align*}
+  by \eqref{eq:6.35}. Hence imbedding \eqref{eq:6.36} is Hilbert-Schmidt.
+\end{proof}
+
+
+\begin{remark}
+  Various choices of $\mu$ and $\nu$ lead to generalizations of Maurin's theorem
+  for imbeddings of the sort~\eqref{eq:6.34}. If $\mu(x)=1$ and $\nu=0$ we obtain
+  the obvious generalization to unbounded domains of finite volume. If $\mu(x)=1$
+  and $\nu>0$, $\Omega$ may be unbounded and even have finite volume, but it must
+  be quasibounded by~\eqref{eq:6.35}. Of course quasiboundedness may not be sufficient
+  to guarantee~\eqref{eq:6.35}. If $\mu$ is the characteristic function of a
+  bounded subdomain $\Omega_0$ of $\Omega$ and $\nu=0$, we obtain the Hilbert-Schmidt
+  imbedding
+  \[ W_0^{m+k,2}(\Omega) \to W^{m,2}(\Omega_0), \qquad k>n/2. \]
+\end{remark}
