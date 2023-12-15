@@ -1,0 +1,33 @@
+\chapter{Interpolation, Extension And Approximation Theorems}
+
+\section{Interpolation on Order of Smoothness}
+
+\begin{para}
+  We consider the problem of determining upper bounds for $L^p$ norms of
+  derivatives $D^\beta u$, $0<|\beta|<m$, of functions in $W^{m,p}(\Omega)$
+  in terms of the $L^p$ norms of $u$ and its partial derivatives of order $m$.
+  Such estimates are conveniently expressed in terms of the seminorms $|\cdot|_{j,p}$
+  defined in Paragraph~4.29. Theorem~5.2 below provides such an estimate for
+  the seminorm $|u|_{j,p}$ in terms of $|u|_{m,p}$ and $\|u\|_p$, as well as
+  some elementary consequences of this estimate. Such estimates arose
+  in the work of Ehrling [E], Nirenberg [Nr1, Nr2], Gagliardo [Ga1, Ga2],
+  and Browder [Br1, Br2], and were frequently proved under the assumption
+  that $\Omega$ satisfies the uniform cone condition, at least if $\Omega$
+  is unbounded. However, we will prove Theorem~5.2 assuming only the cone
+  condition. In fact, even the weak cone condition is sufficient for the proof,
+  as is shown in [AF1].
+\end{para}
+
+
+\begin{theorem}
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the cone condition.
+  For each $\epsilon_0>0$ there exist finite constants $K$ and $K'$, each
+  depending on $n$, $m$, $p$, $\epsilon_0$ and the dimensions of the cone $C$
+  providing the cone condition for $\Omega$ such that if $0<\epsilon\leq\epsilon_0$,
+  $0\leq j\leq m$, and $u\in W^{m,p}(\Omega)$, then
+  \begin{align}
+    |u|_{j,p} & \leq K\bigl(\epsilon |u|_{m,p} + \epsilon^{-j/(m-j)}\|u\|_p\bigr), \label{eq:5.1} \\
+    \|u\|_{j,p} & \leq K'\bigl(\epsilon\|u\|_{m,p} + \epsilon^{-j/(m-j)}\|u\|_p\bigr), \label{eq:5.2} \\
+    \|u\|_{j,p} & \leq 2K' \|u\|_{m,p}^{j/m} \|u\|_p^{(m-j)/m}. \label{eq:5.3}
+  \end{align}
+\end{theorem}
