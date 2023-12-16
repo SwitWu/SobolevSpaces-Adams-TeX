@@ -31,3 +31,57 @@
     \|u\|_{j,p} & \leq 2K' \|u\|_{m,p}^{j/m} \|u\|_p^{(m-j)/m}. \label{eq:5.3}
   \end{align}
 \end{theorem}
+
+
+\begin{para}
+  Inequality~\eqref{eq:5.2} follows from repeated applications of~\eqref{eq:5.1},
+  and~\eqref{eq:5.3} by setting $\epsilon_0=1$ in \eqref{eq:5.2} and choosing
+  $\epsilon$ in \eqref{eq:5.2} so that the two terms on the right side are equal.
+  Furthermore, \eqref{eq:5.1} holds when $\epsilon<\epsilon_0$ if it holds for
+  $\epsilon<\epsilon_1$ for any specific positive $\epsilon_1$; to see this just
+  replace $\epsilon$ by $\epsilon\epsilon_1/\epsilon_0$ and suitably adjust $K$.
+  Thus we need only prove \eqref{eq:5.1}, and that for just one value of $\epsilon_0$.
+
+  We carry out the proof in three lemmas. The first develops a one-dimensional
+  version for the case $m=2$, $j=1$. The second establishes \eqref{eq:5.1}
+  for $m=2$, $j=1$ for general $\Omega$ satisfying the cone condition. The third
+  shows that \eqref{eq:5.1} is valid for general $m\geq 2$ and $1\leq j\leq m-1$
+  whenever the case $m=2$, $j=1$ is known to hold.
+\end{para}
+
+
+\begin{lemma}
+  If $\rho>0$, $1\leq p<\infty$, $K_p=2^{p-1} 9^p$, and $g\in C^2([0,\rho])$, then
+  \begin{equation}\label{eq:5.4}
+    |g'(0)|^p \leq \frac{K_p}{\rho} \biggl(\rho^p \int_0^\rho |g''(t)|^p
+      \d t + \rho^{-p} \int_0^\rho |g(t)|^p \d t\biggr).
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  Let $f\in C^2([0,1])$, let $x\in [0,1/3]$, and let $y\in [2/3,1]$.
+  By the mean-value theorem there exists $z\in (x,y)$ such that
+  \[ |f'(z)| = \biggl|\frac{f(y)-f(x)}{y-x}\biggr| \leq 3|f(x)| + 3|f(y)|. \]
+  Thus
+  \begin{align*}
+    |f'(0)|
+    & = \biggl|f'(z) - \int_0^z f''(t) \d t\biggr| \\
+    & \leq 3|f(x)| + 3|f(y)| + \int_0^1 |f''(t)| \d t.
+  \end{align*}
+  Integration of $x$ over $[0,1/3]$ and $y$ over $[2/3,1]$ yields
+  \[ \frac19 |f'(0)| \leq \int_0^{1/3} |f(x)| \d x
+      + \int_{2/3}^1 |f(y)|\d y + \frac19 \int_0^1 |f''(t)| \d t. \]
+  For $p\geq 1$ we therefore have (using H\"older's inequality if $p>1$)
+  \[ |f'(0)|^p \leq K_p \biggl(\int_0^1 |f''(t)|^p \d t
+      + \int_0^1 |f(t)|^p \d t\biggr), \]
+  where $K_p = 2^{p-1}9^p$.
+
+  Inequality~\eqref{eq:5.4} now follows by substituting $f(t) = g(\rho t)$.
+\end{proof}
+
+
+\begin{lemma}
+  If $1\leq p<\infty$ and the domain $\Omega\subset\mathbb{R}^n$ satisfies
+  the cone condition, then there exists a constant $K$ depending on $n$, $p$,
+  and the height $\rho_0$ and
+\end{lemma}
