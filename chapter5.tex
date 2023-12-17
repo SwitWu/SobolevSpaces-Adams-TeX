@@ -83,5 +83,49 @@
 \begin{lemma}
   If $1\leq p<\infty$ and the domain $\Omega\subset\mathbb{R}^n$ satisfies
   the cone condition, then there exists a constant $K$ depending on $n$, $p$,
-  and the height $\rho_0$ and
+  and the height $\rho_0$ and aperture angle $\kappa$ of the cone $C$ providing
+  the cone condition for $\Omega$ such that for all $\epsilon$, $0<\epsilon\leq\rho_0$
+  and all $u\in W^{2,p}(\Omega)$ we have
+  \begin{equation}\label{eq:5.5}
+    |u|_{1,p} \leq K (\epsilon |u|_{2,p} + \epsilon^{-1} \|u\|_p).
+  \end{equation}
 \end{lemma}
+
+\begin{proof}
+  Let $\Sigma = \{\sigma\in \mathbb{R}^n : |\sigma|=1\}$ be the unit sphere
+  in $\mathbb{R}^n$ with volume element $\d\sigma$ and $(n-1)$-volume
+  $K_0 = K_0(n) = \int_\Sigma \d\sigma$. If $x\in\Omega$ let $\sigma_x$
+  be the unit vector in the direction of the axis of a cone $C_x\subset\Omega$
+  congruent to $C$ and having vertex at $x$, and let $\Sigma_x = \{\sigma\in\Sigma:
+  \angle (\sigma,\sigma_x)\leq\kappa/2\}$.
+
+  Let $u\in C^\infty(\Omega)$. If $x\in\Omega$, $\sigma\in\Sigma_x$,
+  and $0<\rho\leq\rho_0$, then
+  \[ |\sigma\cdot\nabla u(x)|^p \leq \frac{K_p}{\rho} I(\rho,p,u,x,\sigma), \]
+  where
+  \[ I(\rho,p,u,x,\sigma) = \rho^p \int_0^\rho |D_t^2 u(x+t\sigma)|^p \d t
+      + \rho^{-p} \int_0^\rho |u(x+t\sigma)|^p \d t. \]
+      There exists a constant $K_1=K_1(n,p,\kappa)$ such that
+  \[\int_\Sigma |\sigma\cdot\nabla u(x)|^p \d\sigma
+    \geq \int_{\Sigma_x} |\sigma\cdot\nabla u(x)|^p \d\sigma
+    \geq K_1 |\nabla u(x)|^p.\]
+  Accordingly,
+  \[ \int_\Omega |\nabla u(x)|^p \d x
+      \leq \frac{K_p}{K_1\rho} \int_\Sigma \d\sigma \int_\Omega I(\rho,p,u,x,\sigma) \d x. \]
+  In order to estimate the inner integral on the right, regard $u$
+  and its derivatives as extended to all of $\mathbb{R}^n$ so as to be
+  identically zero outside $\Omega$. For simplicity, we suppose
+  $\sigma = e_n = (0,\ldots,0,1)$ and write $x=(x',x_n)$ with $x'\in\mathbb{R}^{n-1}$.
+  We have
+  \begin{align*}
+    \int_\Omega & I(\rho,p,u,x,e_n) \d x \\
+    & = \int_{\mathbb{R}^{n-1}} \d x' \int_{-\infty}^\infty \d x_n
+        \int_0^\rho \bigl(\rho^p |D_n^2 u(x',x_n+t)|^p + \rho^{-p} |u(x',x_n+t)|^p\bigr) \d t \\
+    & = \int_{\mathbb{R}^{n-1}} \d x' \int_0^\rho \d t
+        \int_{-\infty}^\infty (\rho^p |D_n^2 u(x)|^p + \rho^{-p} |u(x)|^p) \d x_n \\
+    & \leq \rho \int_\Omega (\rho^p |D_n^2 u(x)|^p + \rho^{-p} |u(x)|^p) \d x.
+  \end{align*}
+  In general, for $\sigma\in\Sigma$
+  \[ \int_\Omega I(\rho,p,u,x,\sigma) \d x \leq \rho
+        \int_\Omega (\rho^p |u|_{2,p}^p + \rho^{-p}\|u\|_p^p) \d x, \]
+\end{proof}
