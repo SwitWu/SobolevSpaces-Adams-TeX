@@ -128,4 +128,58 @@
   In general, for $\sigma\in\Sigma$
   \[ \int_\Omega I(\rho,p,u,x,\sigma) \d x \leq \rho
         \int_\Omega (\rho^p |u|_{2,p}^p + \rho^{-p}\|u\|_p^p) \d x, \]
+  and since $|D_j(u)|\leq |\nabla u|$ and the measure of $\Sigma$ is $K_0$,
+  \[ |u|_{1,p}^p \leq \frac{nK_pK_0}{K_1} \bigl(\rho^p |u|_{2,p}^p + \rho^{-p} \|u\|_p^p\bigr). \]
+  Inequality~\eqref{eq:5.5} now follows by taking $p$th roots, replacing
+  $\rho$ with $\epsilon$, and noting that $C^\infty(\Omega)$ is dense in $W^{2,p}(\Omega)$.
+\end{proof}
+
+
+\begin{lemma}
+  Let $m\geq 2$, let $0<\delta_0<\infty$, and let
+  $\epsilon_0 = \min\{\delta_0,\delta_0^2,\ldots,\delta_0^{m-1}\}$.
+  Suppose that for given $p$, $1\leq p<\infty$, and given $\Omega\subset \mathbb{R}^n$
+  there exists a constant $K = K(\delta_0,p,\Omega)$ such that for every $\delta$
+  satisfying $0<\delta<\delta_0$ and every $u\in W^{2,p}(\Omega)$, we have
+  \begin{equation}\label{eq:5.6}
+    |u|_{1,p} \leq K\delta |u|_{2,p} + K\delta^{-1} |u|_{0,p}.
+  \end{equation}
+  Then there exists a constant $K = K(\epsilon_0,m,p,\Omega)$ such that
+  for every $\epsilon$ satisfying $0<\epsilon\leq\epsilon_0$, every integer $j$
+  satisfying $0\leq j\leq m-1$, and every $u\in W^{m,p}(\Omega)$, we have
+  \begin{equation}\label{eq:5.7}
+    |u|_{j,p} \leq K\epsilon |u|_{m,p} + K\epsilon^{-j/(m-j)} |u|_{0,p}.
+  \end{equation}
+\end{lemma}
+
+
+\begin{proof}
+  Since \eqref{eq:5.7} is trivial for $j=0$, we consider only the case $1\leq j\leq m-1$.
+  The proof is accomplished by a double induction on $m$ and $j$.
+  The constants $K_1$, $K_2$, $\ldots$ appearing in the argument may depend on $\delta_0$
+  (or $\epsilon_0$), $m$, $p$, and $\Omega$. First we prove \eqref{eq:5.7} for $j=m-1$
+  by induction on $m$, so that \eqref{eq:5.6} is the special case $m=2$. Assume, therefore,
+  that for some $k$, $2\leq k\leq m-1$,
+  \begin{equation}\label{eq:5.8}
+    |u|_{k-1,p} \leq K_1 \delta |u|_{k,p} + K_1 \delta^{-(k-1)} |u|_{0,p}
+  \end{equation}
+  holds for all $\delta$, $0<\delta\leq\delta_0$, and all $u\in W^{k,p}(\Omega)$.
+  If $u\in W^{k+1,p}(\Omega)$, we prove~\eqref{eq:5.8} with $k+1$ replacing $k$
+  (and a different constant $K_1$). If $|\alpha|=k-1$ we obtain from~\eqref{eq:5.6}
+  \[ |D^\alpha u|_{1,p} \leq K_2 \delta |D^\alpha u|_{2,p} + K_2 \delta^{-1} |D^\alpha u|_{0,p}. \]
+  Combining this inequality with~\eqref{eq:5.8} we obtain, for $0<\eta\leq\delta_0$,
+  \begin{align*}
+    |u|_{k,p}
+    & \leq K_3 \sum_{|\alpha|=k-1} |D^\alpha u|_{1,p} \\
+    & \leq K_4 \delta |u|_{k+1,p} + K_4 \delta^{-1} |u|_{k-1,p} \\
+    & \leq K_4 \delta |u|_{k+1,p} + K_4 K_1 \delta^{-1} \eta |u|_{k,p}
+      + K_4 K_1 \delta^{-1} \eta^{1-k} |u|_{0,p}.
+  \end{align*}
+  We may assume without prejudice that $2K_1K_4\geq 1$. Therefore,
+  we may take $\eta = \delta/(2K_1K_4)$ and so obtain
+  \begin{align*}
+    |u|_{k,p}
+    & \leq 2 K_4 \delta |u|_{k+1,p} + \bigl(\delta / (2K_1K_4)\bigr)^{-k} |u|_{0,p} \\
+    & \leq K_5 \delta |u|_{k+1,p} + K_5 \delta^{-k} |u|_{0,p}.
+  \end{align*}
 \end{proof}
