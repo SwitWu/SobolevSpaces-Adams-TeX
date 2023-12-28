@@ -182,4 +182,63 @@
     & \leq 2 K_4 \delta |u|_{k+1,p} + \bigl(\delta / (2K_1K_4)\bigr)^{-k} |u|_{0,p} \\
     & \leq K_5 \delta |u|_{k+1,p} + K_5 \delta^{-k} |u|_{0,p}.
   \end{align*}
+  This completes the induction establishing~\eqref{eq:5.8} for $0<\delta\leq\delta_0$
+  and hence~\eqref{eq:5.7} for $j=m-1$ and $0<\epsilon\leq\delta_0$.
+
+  We now prove by downward induction on $j$ that
+  \begin{equation}\label{eq:5.9}
+    |u|_{j,p} \leq K_6 \delta^{m-j} |u|_{m,p} + K_6 \delta^{-j} |u|_{0,p}
+  \end{equation}
+  holds for $1\leq j\leq m-1$ and $0<\delta\leq\delta_0$.
+  Note that~\eqref{eq:5.8} with $k=m$ is the special case $j=m-1$
+  of \eqref{eq:5.9}. Assume, therefore, that~\eqref{eq:5.9} holds for
+  some $j$, $2\leq j\leq m-1$. We prove that it also holds with $j$
+  replaced by $j-1$ (and a different constant $K_6$).
+  From~\eqref{eq:5.8} and~\eqref{eq:5.9} we obtain
+  \begin{align*}
+    |u|_{j-1,p}
+    & \leq K_7 \delta |u|_{j,p} + K_7 \delta^{1-j} |u|_{0,p} \\
+    & \leq K_7 \delta \bigl(K_6 \delta^{m-j}|u|_{m,p}
+      + K_6 \delta^{-j} |u|_{0,p}\bigr) + K_7 \delta^{1-j} |u|_{0,p} \\
+    & \leq K_8 \delta^{m-(j-1)} |u|_{m,p} + K_8 \delta^{1-j} |u|_{0,p}.
+  \end{align*}
+  Thus \eqref{eq:5.9} holds, and \eqref{eq:5.7} follows by setting
+  $\delta = \epsilon^{1/(m-j)}$ in~\eqref{eq:5.7} and noting that
+  $\epsilon\leq\epsilon_0$ if $\delta\leq\delta_0$.
 \end{proof}
+
+This completes the proof of Theorem~5.2
+
+\begin{remark}
+  Careful consideration of the proofs of the previous two lemmas
+  shows that if the height of the cone providing the cone condition
+  for $\Omega$ is infinite, then inequalities~\eqref{eq:5.5}
+  and~\eqref{eq:5.7} (and therefore~\eqref{eq:5.1} and~\eqref{eq:5.2})
+  hold for all $\epsilon>0$, the corresponding constants $K$
+  being independent of $\epsilon$. This is the case, for example,
+  if $\Omega=\mathbb{R}^n$ or a half-space like $\mathbb{R}^n_+$.
+\end{remark}
+
+
+\section{Interpolation on Degree of Summability}
+
+The following two interpolation theorems provide sharp estimates
+for $L^q$ norms of functions in $W^{m,p}(\Omega)$. Some of these
+estimates follow from Theorem~4.12 while others have traditionally
+been obtained for regular domains from inbeddings of Sobolev
+spaces of fractional order. (See Chapter~7.) We obtain them here
+assuming only that the domain satisfies the cone condition. Again,
+the weak cone condition would do as well; see [AF1].
+
+\begin{theorem}
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the cone
+  condition. If $mp>n$, let $p\leq q\leq\infty$; if $mp=n$,
+  let $p\leq q<\infty$; if $mp<n$, let $p\leq q\leq p^*=np/(n-mp)$.
+  Then there exists a constant $K$ depending on $m,n,p,q$ and the
+  dimensions of the cone $C$ providing the cone condition for $\Omega$,
+  such that for all $u\in W^{m,p}(\Omega)$,
+  \begin{equation}\label{eq:5.10}
+    \|u\|_q \leq K \|u\|_{m,p}^\theta \|u\|_p^{1-\theta},
+  \end{equation}
+  where $\theta = (n/mp) - (n/mq)$.
+\end{theorem}
