@@ -242,3 +242,52 @@ the weak cone condition would do as well; see [AF1].
   \end{equation}
   where $\theta = (n/mp) - (n/mq)$.
 \end{theorem}
+
+\begin{proof}
+  The case $mp<n$, $p\leq q\leq p^*$ follows directly from Theorems~2.11
+  and~4.12:
+  \[ \|u\|_q \leq \|u\|_{p^*}^\theta \|u\|_p^{1-\theta}
+      \leq K\|u\|_{m,p}^\theta \|u\|_p^{1-\theta}, \]
+  where $1/q = (\theta/p^*) + (1-\theta)/p$ from which it follows that
+  $\theta = (n/mp) - (n/mq)$. For the cases $mp=n$, $p\leq q<\infty$,
+  and $mp>n$, $p\leq q\leq\infty$ we use the local bound obtained in Lemma~4.15.
+  If $0<r\leq\rho$ (the height of the cone $C$), then
+  \begin{equation}\label{eq:5.11}
+    |u(x)| \leq K_1 \biggl(\sum_{|\alpha|\leq m-1} r^{|\alpha|-n} \chi_r * |D^\alpha u|(x)
+      + \sum_{|\alpha|=m} (\chi_r\omega_m)*|D^\alpha u|(x)\biggr),
+  \end{equation}
+  where $\chi_r$ is the characteristic function of the ball of radius $r$
+  centred at the origin in $\mathbb{R}^n$, and $\omega_m(x) = |x|^{m-n}$.
+  We estimate the $L^q$ norms of both terms on the right side of~\eqref{eq:5.11}
+  using Young's inequality from Corollary~2.25. If $(1/p)+(1/s) = 1+(1/q)$, then
+  \begin{align*}
+    \|\chi_r * |D^\alpha u|\|_q
+    & \leq \|\chi_r\|_s \|D^\alpha u\|_p = K_2 r^{n-(n/p)+(n/q)} \|D^\alpha u\|_p \\
+      \|(\chi_r\omega_m) * |D^\alpha u|\|_q
+    & \leq \|\chi_r\omega_m\|_s \|D^\alpha u\|_p = K_3 r^{m-(n/p)+(n/q)} \|D^\alpha u\|_p.
+  \end{align*}
+  (Note that $m-(n/p)+(n/q)>0$ if $q$ satisfies the above restrictions.) Hence
+  \[ \|u\|_q \leq K_4 \biggl(\sum_{j=0}^{m-1} r^{j-(n/p)+(n/q)} |u|_{j,p}
+      + r^{m-(n/p)+(n/q)} |u|_{m,p}\biggr). \]
+  By Theorem~5.2,
+  \[ |u|_{j,p} \leq K_5 (r^{m-j} |u|_{m,p} + r^{-j} \|u\|_p), \]
+  so
+  \[ \|u\|_q \leq K_6 \bigl(r^{m-(n/p)+(n/q)} \|u\|_{m,p}
+      + r^{-(n/p+(n/q))} \|u\|_p\bigr). \]
+  Adjusting $K_6$ if necessary, we can assume this inequality holds for all $r\leq 1$.
+  Choosing $r$ to make the two terms on the right side equal, we obtain~\eqref{eq:5.10}.
+\end{proof}
+
+A special case of the above Theorem asserts that if $mp>n$, then
+\begin{equation}\label{eq:5.12}
+  \|u\|_\infty \leq K \|u\|_{m,p}^{n/mp} \|u\|_p^{1-(n/mp)}.
+\end{equation}
+A similar inequality with $\|u\|_p$ replaced by a more general $\|u\|_q$
+is sometimes useful.
+
+\begin{theorem}
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the cone condition.
+  Let $p>1$ and $mp>n$. Suppose that either $1\leq q\leq p$ or both $q>p$
+  and $mp-p<n$. Then there exists a constant $K$ depending on $m$, $n$, $p$,
+  $q$ and the
+\end{theorem}
