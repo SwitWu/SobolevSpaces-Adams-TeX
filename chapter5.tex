@@ -289,5 +289,51 @@ is sometimes useful.
   Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the cone condition.
   Let $p>1$ and $mp>n$. Suppose that either $1\leq q\leq p$ or both $q>p$
   and $mp-p<n$. Then there exists a constant $K$ depending on $m$, $n$, $p$,
-  $q$ and the
+  $q$ and the dimensions of the cone $C$ providing the cone condition for
+  $\Omega$, such that for all $u\in W^{m,p}(\Omega)$,
+  \[ \|u\|_\infty \leq K\|u\|_{m,p}^\theta \|u\|_q^{1-\theta}, \]
+  where $\theta = np/[np+(mp-n)q]$.
 \end{theorem}
+
+\begin{proof}
+  It is sufficient to show that the inequality
+  \begin{equation}\label{eq:5.13}
+    |u(x)|\leq K\|u\|_{m,p}^\theta \|u\|_q^{1-\theta},
+      \qquad \theta = np/[np+(mp-q)q]
+  \end{equation}
+  holds for all $x\in\Omega$ and all $u\in W^{m,p}(\Omega)\cap C^\infty(\Omega)$.
+
+  First we observe that~\eqref{eq:5.13} is a straightforward consequence
+  of Theorems~5.8 and~2.11 if $1\leq q\leq p$; since~\eqref{eq:5.12} holds
+  we can substitute
+  \[ \|u\|_p \leq \|u\|_q^{q/p} \|u\|_{\infty}^{1-(q/p)} \]
+  and obtain~\eqref{eq:5.13} by cancellation.
+
+  Now suppose $q>p$. and, for the moment, that $m=1$ and $p>n$. We reuse
+  the local bound~\eqref{eq:5.11}; in this case it says
+  \[ |u(x)| \leq K_1 \biggl( r^{-n} \chi_r * |u|(x) 
+      + \sum_{|\alpha|=1} (\chi_r\omega_1) * |D^\alpha u|(x)\biggr), \]
+  for $0<r\leq\rho$, the height of the cone $C$. By H\"older's inequality,
+  \[ \chi_r * |u|(x) \leq K_2 r^{n-(n/q)} \|u\|_q, \]
+  and, for $|\alpha|=1$,
+  \begin{equation}\label{eq:5.14}
+    (\chi_r\omega_1) * |D^\alpha u|(x) \leq K_3 r^{1-(n/p)} \|D^\alpha u\|_p.
+  \end{equation}
+  Since $\|u\|_q \leq K_5 \|u\|_{1,p}$ (by Part I Case A of Theorem~4.12),
+  and since inequality~\eqref{eq:5.14} may be assumed to hold for all $r$
+  such that $0<r^{1-(n/p)+(n/q)}\leq K_5$ provided $K_4$ is suitably adjusted,
+  we can choose $r$ to make the two upper bounds above equal. This choice yields~\eqref{eq:5.13}
+  with $m=1$.
+
+  For general $m$, we have $W^{m,p}(\Omega) \to W^{1,r}(\Omega)$, where
+  $r = np/(n-mp+p)$ satisfies $n<r<\infty$ since $(m-1)p<n<mp$. Hence,
+  if $u\in W^{m,p}(\Omega)\cap C^\infty(\Omega)$, we have
+  \[ |u(x)| \leq K_6 \|u\|_{1,r}^\theta \|u\|_q^{1-\theta} 
+      \leq K_7 \|u\|_{m,p}^\theta \|u\|_q^{1-\theta}, \]
+  where $\theta = nr/[nr+(r-n)q] = np/[np+(mp-n)q]$.
+\end{proof}
+
+
+The following theorem makes use of the above result to provide an alternate
+direct proof of Part I Case C of the Sobolev imbedding theorem~4.12 as well
+as a hybrid
