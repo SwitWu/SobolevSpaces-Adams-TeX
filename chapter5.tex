@@ -336,4 +336,52 @@ is sometimes useful.
 
 The following theorem makes use of the above result to provide an alternate
 direct proof of Part I Case C of the Sobolev imbedding theorem~4.12 as well
-as a hybrid
+as a hybrid imbedding inequality that will prove useful for establishing
+compactness of some of these imbeddings in the next chapter.
+
+\begin{theorem}
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the cone condition.
+  Let $m$ and $k$ be positive integers and let $p>1$. Suppose that $mp<n$
+  and $n-mp<k\leq n$. Let $\nu$ be the largest integer less than $mp$, so
+  that $n-\nu\leq k$. Let $\Omega_k$ be the intersection of $\Omega$ with
+  a $k$-dimensional plane in $\mathbb{R}^n$. Then there exists a constant
+  $K$ such that the inequality
+  \begin{equation}\label{eq:5.15}
+    \|u\|_{0,kq/n,\Omega_k} \leq K \|u\|_{0,q,\Omega}^{1-\theta}
+      \|u\|_{m,p,\Omega}^\theta
+  \end{equation}
+  holds for all $u\in W^{m,p}(\Omega)$, where
+  \[ q = p^* = \frac{np}{n-mp} \quad \text{and} \quad
+      \theta = \frac{\nu p}{\nu p + (mp-\nu)q}. \]
+  Note that $0<\theta<1$.
+\end{theorem}
+
+\begin{proof}
+  Again it is sufficient to establish the inequality for functions
+  in $W^{m,p}(\Omega)\cap C^\infty(\Omega)$. Without loss of generality
+  we may assume that $H$ is a coordinate $k$-plane $\mathbb{R}^k$ in
+  $\mathbb{R}^n$, and, as we did in Lemma~4.24, that $\omega$ is a union
+  of coordinate cubes of fixed edge length, say 2.
+
+  Let $\mu = \binom{k}{n-\nu}$, and let $E^i$, $1\leq i\leq\mu$, denote
+  the various coordinate planes in $\mathbb{R}^k$ having dimension $n-\nu$.
+  Let $\Omega^i$ be the projection of $\Omega_k$ onto $E^i$, and for each
+  $x\in\Omega^i$ let $\Omega_x^i$ denote the intersection of $\Omega$
+  with the $\nu$-dimensional plane through $x$ perpendicular to $E^i$.
+  Then $\Omega_x^i$ contains a $\nu$ dimensional cube of unit edge length
+  having a vertex at $x$, so it satisfies a cone condition with parameters
+  independent of $i$ and $x$. By Theorem~5.9
+  \[ \|u\|_{0,\infty,\Omega_x^i} \leq K \|u\|_{0,q,\Omega_x^i}^{1-\theta}
+      \|u\|_{m,p,\Omega_x^i}^\theta. \]
+  Let $s = (n-\nu)p/(n-mp)$, and let $\d x^i$ and $\d x_*^i$ denote the volume
+  elements in $E^i$ and its orthogonal complement (in $\mathbb{R}^n$) respectively.
+  Since
+  \[ s(1-\theta) = \frac{q(mp-\nu)}{mp} \quad \text{and} \quad s\theta = \frac{\nu}{m}, \]
+  we have
+  \begin{align*}
+    & \int_{\Omega^i} \sup_{y\in\Omega_x^i} |u(u)|^s \d x^i \\
+    & \leq K_1 \int_{\Omega^i} \biggl[\int_{\Omega_x^i} |u(x)|^q \d x_*^i\biggr]^{(mp-\nu)/mp}
+      \Biggl[\int_{\Omega_x^i} \sum_{|\alpha|\leq m} |D^\alpha u(x)|^p \d x_*^i\Biggr]^{\nu/mp} \\
+    & \leq K_1 \|u\|_{0,q,\Omega}^{s(1-\theta)} \|u\|_{m,p,\Omega}^{s\theta},
+  \end{align*}
+\end{proof}
