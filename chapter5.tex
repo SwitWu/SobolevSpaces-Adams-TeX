@@ -384,4 +384,56 @@ compactness of some of these imbeddings in the next chapter.
       \Biggl[\int_{\Omega_x^i} \sum_{|\alpha|\leq m} |D^\alpha u(x)|^p \d x_*^i\Biggr]^{\nu/mp} \\
     & \leq K_1 \|u\|_{0,q,\Omega}^{s(1-\theta)} \|u\|_{m,p,\Omega}^{s\theta},
   \end{align*}
+  the last line beging an application of H\"older's inequality.
+
+  Let $\d x^k$ denote the $k$-dimensional volume element in $H$.
+  We apply the averaging Lemma~4.23 to the family of $\mu$ subspaces $E^i$
+  of $\mathbb{R}^k$. The parameter $\lambda$ for this application of the lemma
+  is $\lambda = \binom{k-1}{n-\nu-1} = (n-\nu)\mu/k$. Since $(kq/n)(\lambda/\mu)=s$,
+  we obtain
+  \begin{align*}
+    \|u\|_{0,kq/n,\Omega_k}^{kq/n}
+    & \leq K_2 \int_{\Omega_k} \prod_{i=1}^\mu \sup_{y\in \Omega_x^i} |u(y)|^{kq/\nu n} \d x^k \\
+    & \leq K_2 \prod_{i=1}^\mu \Biggl[\int_{\Omega^i} \sup_{y\in\Omega_x^i} |u(y)|^s \d x^i\Biggr]^{1/\lambda} \\
+    & \leq K_3 \prod_{i=1}^\mu \|u\|_{0,q,\Omega}^{kq(1-\theta)/\nu n} \|u\|_{m,p,\Omega}^{kq\theta/\nu n},
+  \end{align*}
+  so that
+  \[ \|u\|_{0,kq/n,\Omega_k} \leq K \|u\|_{0,q,\Omega}^{1-\theta} \|u\|_{m,p,\Omega}^\theta \]
+  as required.
 \end{proof}
+
+
+\begin{remark}
+  If we take $k=n$ in equality~\eqref{eq:5.15}, then the imbedding $W^{m,p}(\Omega)\to L^q(\Omega)$
+  follows for $q = np/(n-mp)$ by cancellation. The corresponding imbedding inequality
+  $\|u\|_{0,q,\Omega} \leq K\|u\|_{m,p,\Omega}$ can then be used to further
+  estimate the right side of~\eqref{eq:5.15}, yielding the trace imbedding
+  $W^{m,p}(\Omega) \to L^r(\Omega_k)$ for $r = kp/(n-mp)$.
+\end{remark}
+
+
+\section{Interpolation Involving Compact Subdomains}
+
+Sometimes it is useful to have bounds for intermediate derivatives $D^\beta u$,
+of a function $u\in W^{m,p}(\Omega)$, where $1\leq |\beta|\leq m-1$,
+in terms of the seminorm $|u|_{m,p,\Omega}$ and the $L^p$-norm of $u$
+over a compact subdomain $\Omega'\subset\subset\Omega$. Such inequalities
+are typically not possible unless $\Omega$ is bounded, but for bounded $\Omega$
+they can be estimated under the assumption that $\Omega$ satisfies either the
+segment condition or the cone condition. (A bounded domain $\Omega$
+satisfying the cone condition can be decomposed into a finite union of
+subdomains each of which satisfies the strong local Lipschitz condition,
+and therefore the segment condition. See Lemma~4.22.) We will prove the
+following hybrid interpolation theorem. (See Agmon [Ag].)
+
+\begin{theorem}
+  Let $\Omega$ be a bounded domain in $\mathbb{R}^n$ satisfying the segment
+  condition. Let $0<\epsilon_0<\infty$, let $1\leq p<\infty$, and let $j$
+  and $m$ be integers with $0\leq j\leq m-1$. There exists a constant
+  $K = K(\epsilon_0,m,p,\Omega)$ and for each $\epsilon$ satisfying
+  $0<\epsilon\leq\epsilon_0$ a domain $\Omega_\epsilon\subset\subset\Omega$
+  such that for every $u\in W^{m,p}(\Omega)$
+  \begin{equation}\label{eq:5.16}
+    |u|_{j,p,\Omega} \leq K\epsilon |u|_{m,p,\Omega} + K\epsilon^{-j/(m-j)} \|u|_{p,\Omega_\epsilon}.
+  \end{equation}
+\end{theorem}
