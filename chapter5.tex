@@ -480,3 +480,63 @@ As in the proof of Theorem~5.12, we begin with a one-dimensional inequality.
   \end{align*}
   which is the desired inequality~\eqref{eq:5.17}.
 \end{proof}
+
+
+\begin{lemma}
+  Let $\Omega$ be a bounded domain in $\mathbb{R}^n$ that satisfies the segment
+  condition. Then there exists a constant $K=K(p,\Omega)$ and, for any positive
+  number $\epsilon$, a domain $\Omega_{\epsilon}\subset\subset\Omega$, such that
+  \begin{equation}\label{eq:5.18}
+    |u|_{0,p,\Omega} \leq K\epsilon |u|_{1,p,\Omega} + K |u|_{0,p,\Omega_{\epsilon}}
+  \end{equation}
+  holds for every $u\in W^{1,p}(\Omega)$.
+\end{lemma}
+
+\begin{proof}
+  Since $\Omega$ is bounded, and its boundary is therefore compact, the open
+  cover $\{U_j\}$ of $\partial\Omega$ and corresponding set $\{y_j\}$ of
+  nonzero vectors referred to in the definition of the segment condition
+  (Paragraph~3.21) are both finite sets. Therefore open sets $V_j\subset\subset U_j$
+  can be found such that $\partial\Omega\subset\bigcup_j V_j$ and even,
+  for sufficiently small $\delta$, $\Omega_\delta = \{x\in\Omega : \dist(x,\partial\Omega)<\delta\}
+  \subset \bigcup_j V_j$. Thus $\Omega = \bigcup_j (V_j\cap\Omega)\cup\tilde{\Omega}$,
+  where $\tilde{\Omega}\subset\subset\Omega$. It is thus sufficient
+  to prove that for each $j$
+  \[ |u|_{0,p,V_j\cap\Omega^p} \leq K_1 \epsilon^p |u|_{1,p,\Omega}^p
+      + K_1 |u|_{0,p,\Omega_{\epsilon,j}} \]
+  for some $\Omega_{\epsilon,j}\subset\subset\Omega$. For simplicity,
+  we now drop the subscripts $j$.
+
+  Consider the sets $Q$, $Q_\eta$, $0\leq\eta\leq 1$, defined by
+  \begin{align*}
+    Q & = \{x+ty : x\in U\cup\Omega, 0<t<1\}, \\
+    Q_\eta & = \{x+ty : x\in V\cap\Omega, \eta<t<1\}.
+  \end{align*}
+  If $\eta>0$, then $Q_\eta\subset\subset Q$, and by the segment condition,
+  $Q\subset\Omega$. Any line $\ell$ parallel to $y$ and passing through
+  a point in $V\cap\Omega$ intersects $Q_0$ in one or more intervals
+  each having length between $|y|$ and the $\diam\Omega$. By~\eqref{eq:5.13}
+  there exists $\eta>0$ and a constant $K_1$ such that for every $u\in C^\infty(\Omega)$
+  and any such line $\ell$
+  \[ \int_{\ell\cap\Omega_0} |u(x)|^p \d s
+      \leq K_1 \epsilon^p \int_{\ell\cap\Omega_0} |D_y u(x)|^p \d s
+      + K_1 \int_{\ell\cap\Omega_\eta} |u(x)|^p \d s, \]
+  $D_y$ denoting differentiation in the direction of $y$ and $\d s$ being the
+  length element in that direction. We integrate this inequality over the
+  projection of $Q_0$ on a hyperplane perpendicular to $y$ and so obtain
+  \begin{align*}
+    |u|_{0,p,V\cap\Omega}^p \leq |u|_{0,p,Q_0}^p
+    & \leq K_1 \epsilon^p |u|_{1,p,Q_0}^p + K_1 |u|_{0,p,Q_\eta}^p \\
+    & \leq K_1 \epsilon^p |u|_{1,p,\Omega}^p + K_1 |u|_{0,p,Q_\epsilon}^p,
+  \end{align*}
+  where $\Omega_\epsilon = \Omega_\eta \subset\subset\Omega$.
+  By density, this inequality holds for every $u\in W^{1,p}(\Omega)$.
+\end{proof}
+
+
+\begin{para}[Completion of the Proof of Theorem 5.12]
+  We apply Lemma~5.14 to derivatives $D^\beta u$, $|\beta|=m-1$ to obtain
+  \begin{equation}\label{eq:5.19}
+    |u|_{m-1,p,\Omega} \leq K\epsilon |u|_{m,p,\Omega} + K_1 |u|_{m-1,p,\Omega_\epsilon},
+  \end{equation}
+\end{para}
