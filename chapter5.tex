@@ -539,4 +539,57 @@ As in the proof of Theorem~5.12, we begin with a one-dimensional inequality.
   \begin{equation}\label{eq:5.19}
     |u|_{m-1,p,\Omega} \leq K\epsilon |u|_{m,p,\Omega} + K_1 |u|_{m-1,p,\Omega_\epsilon},
   \end{equation}
+  where $\Omega_{\epsilon}\subset\subset\Omega$. Since $\overline{\Omega_{\epsilon}}$
+  is a compact subset of $\Omega$, there exists a constant $\delta>0$ such that
+  $\dist(\overline{\Omega_{\epsilon}}, \partial\Omega) > \delta$. The union $\Omega'$
+  of open balls of radius $\delta$ about points in $\overline{\Omega_{\epsilon}}$
+  clearly satisfies the cone condition and also $\Omega'\subset\subset\Omega$. We can
+  use $\Omega'$ in place of $\Omega_{\epsilon}$ in~\eqref{eq:5.19}, and so we can
+  assume $\Omega_{\epsilon}$ satisfies the cone condition. By Theorem~5.2, for given
+  $\epsilon_0>0$ the inequality
+  \[ |u|_{m-1,p,\Omega_{\epsilon}} \leq K_2 \epsilon |u|_{m,p,\Omega_{\epsilon}}
+      + K_2 \epsilon^{-(m-1)} |u|_{0,p,\Omega_{\epsilon}}. \]
+  Combining this with inequality~\eqref{eq:5.19} we obtain the case $j=m-1$
+  of~\eqref{eq:5.16}.
+
+  The rest of the proof is by downward induction on $j$. Assuming that~\eqref{eq:5.16}
+  holds for some $j$ satisfying $1\leq j\leq m-1$, and replacing $\epsilon$
+  with $\epsilon^{m-j}$ (with consequent alternations to $K$ and $\Omega_\epsilon$),
+  we obtain
+  \[ |u|_{j,p,\Omega} \leq K_3 \epsilon^{m-j} |u|_{m,p,\Omega} 
+      + K_3 \epsilon^{-j} |u|_{0,p,\Omega_{\epsilon,1}}. \]
+  Also, by the case already proved,
+  \[ |u|_{j-1,p,\Omega} \leq K_4 \epsilon |u|_{j,p,\Omega}
+      + K_4 \epsilon^{-(j-1)} |u|_{0,p,\Omega_{\epsilon,2}}. \]
+  Combining these we get
+  \[ |u|_{j-1,p,\Omega} \leq K_5 \epsilon^{m-(j-1)} |u|_{m,p,\Omega}
+      + K_5 \epsilon^{-(j-1)} |u|_{0,p,\Omega_{\epsilon}}, \]
+  where $K_5 = K_4(K_3+1)$ and $\Omega_{\epsilon} = \Omega_{\epsilon,1} \cup \Omega_{\epsilon,2}$.
+  Replacing $\epsilon$ by $\epsilon^{1/(m-j+1)}$ we complete the induction.
+\end{para}
+
+
+\begin{remark}
+  The conclusion of Theorem~5.12 is also valid for bounded domains satisfying
+  the cone condition. Although the cone condition does not imply the segment
+  condition, the decomposition of a domain $\Omega$ satisfying the cone condition
+  into a finite union of subdomains each of which is a union of parallel
+  translates of a parallelepiped (see Lemma~4.22) can be refined, for bounded
+  $\Omega$, so that each of the subdomains satisfies a strong local Lipschitz
+  condition and therefore also the segment condition.
+\end{remark}
+
+
+\section{Extension Theorems}
+
+\begin{para}[Extension Operators]
+  Let $\Omega$ be a domain in $\mathbb{R}^n$. For given $m$ and $p$ a linear
+  operator $E$ mapping $W^{m,p}(\Omega)$ into $W^{m,p}(\mathbb{R}^n)$ is called
+  a \emph{simple $(m,p)$-extension operator for $\Omega$} if there exists a
+  constant $K=K(m,p)$ such that for every $u\in W^{m,p}(\Omega)$ the following
+  conditions hold:
+  \begin{enumerate}[(i)]
+    \item $Eu(x) = u(x)$ a.e.~in $\Omega$,
+    \item $\|Eu\|_{m,p,R^n} \leq K \|u\|_{m,p,\Omega}$.
+  \end{enumerate}
 \end{para}
