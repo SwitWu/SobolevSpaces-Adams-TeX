@@ -592,4 +592,60 @@ As in the proof of Theorem~5.12, we begin with a one-dimensional inequality.
     \item $Eu(x) = u(x)$ a.e.~in $\Omega$,
     \item $\|Eu\|_{m,p,R^n} \leq K \|u\|_{m,p,\Omega}$.
   \end{enumerate}
+  $E$ is called a \emph{strong $m$-extension operator for $\Omega$} if $E$
+  is a linear operator mapping functions defined a.e.~in $\Omega$ to functions
+  defined a.e.~in $\mathbb{R}^n$ and if, for every $p$, $1\leq p<\infty$,
+  and every integer $k$, $0\leq k\leq m$, the restriction of $E$ to
+  $W^{k,p}(\Omega)$ is a simple $(k,p)$-extension operator for $\Omega$.
+
+  Finally, $E$ is called a \emph{total extension operator for $\Omega$}
+  if $E$ is a strong $m$-extension operator for $\Omega$ for every $m$.
+  Such a total extension operator necessarily extends functions in
+  $C^m(\overline{\Omega})$ to lie in $C^m(\mathbb{R}^n)$.
+\end{para}
+
+
+\begin{para}
+  The existence of even a simple $(m,p)$-extension operator for $\Omega$
+  guarantees that $W^{m,p}(\Omega)$ inherits many properties possessed by
+  $W^{m,p}(\mathbb{R}^n)$. For instance, if an imbedding $W^{m,p}(\mathbb{R}^n)
+  \to L^q(\mathbb{R}^n)$ is known to hold, so that
+  \[ \|u\|_{q,\mathbb{R}^n} \leq K_1 \|u\|_{m,p,\mathbb{R}^n}, \]
+  then the imbedding $W^{m,p}(\Omega)\to L^q(\Omega)$ must also hold,
+  for if $u\in W^{m,p}(\Omega)$, then
+  \[ \|u\|_{0,q,\Omega} \leq \|Eu\|_{0,q,\mathbb{R}^n} \leq K_1 \|Eu\|_{m,p, \mathbb{R}^n}
+      \leq K_1 K \|u\|_{m,p,\Omega}. \]
+  The reason we did not use this technique to prove the Sobolev imbedding
+  theorem~4.12 is that extension theorems cannot be obtained for some domains
+  satisfying such weak conditions as the cone condition or even the weak cone
+  condition.
+
+  We will construct extension operators of each of the three types defined above.
+  First we will use successive reflections in smooth boundaries to construct
+  strong and total extension operators for half spaces, and strong extension
+  operators for domains with suitably smooth boundaries. The method is attributed
+  to Whitney [W] and later Hestenes [He] and Seeley [Se]. Stein [St] obtained
+  a total extension operator under the minimal assumption that $\Omega$
+  satisfies the strong local Lipschitz condition. He used integral averaging instead
+  of reflections. We will give only an outline of his proof here, leaving the
+  interested reader to consult [St] for the details. See also [Ry]. The third
+  construction, due to Calder\'on [Ca1] involves the use of the Calder\'on-Zygmund
+  theory of singular integrals. It is less transparent than the reflection or
+  averaging methods, and only works when $1<p<\infty$, but requires only that the
+  domain $\Omega$ satisfies the uniform cone condition. Unlike the other methods,
+  it has the property that if the trivial extension $\tilde u$ belongs to
+  $W^{m,p}(\mathbb{R}^n)$, then $\tilde u$ is the extension produced by the method.
+  By Theorem~5.29 below, this happens if and only if $u\in W_0^{m,p}(\Omega)$.
+  The paper [Jn] provides an extension method that works under a geometric hypothesis
+  that is necessary and sufficient in $\mathbb{R}^2$, and is nearly optimal in
+  higher dimensions.
+
+  Except for very simple domains all of our constructions require the use of
+  partitions of unity subordinate to open covers of $\partial\Omega$ chosen
+  in such a way that the functions in the partition have uniformly bounded
+  derivatives.
+
+  To illustrate the reflection technique we begin by constructing a strong
+  $m$-extension operator and a total extension operator for a half-space.
+  Then we extend these to 
 \end{para}
