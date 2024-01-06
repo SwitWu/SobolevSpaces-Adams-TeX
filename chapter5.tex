@@ -647,5 +647,49 @@ As in the proof of Theorem~5.12, we begin with a one-dimensional inequality.
 
   To illustrate the reflection technique we begin by constructing a strong
   $m$-extension operator and a total extension operator for a half-space.
-  Then we extend these to 
+  Then we extend these to apply to domains that satisfy the uniform $C^m$-regularity
+  condition and also have a bounded boundary.
 \end{para}
+
+\begin{theorem}
+  Let $\Omega$ be the half-space $\mathbb{R}^n_+ = \{x\in \mathbb{R}^n: x_n>0\}$.
+  Then there exists a strong $m$-extension operator $E$ for $\Omega$.
+  Moreover, for every multiindex $\alpha$ satisfying $|\alpha|\leq m$ there exists
+  a strong $(m-|\alpha|)$-extension operator $E_\alpha$ for $\Omega$, such that
+  \[ D^\alpha Eu(x) = E_\alpha D^\alpha u(x). \]
+\end{theorem}
+
+\begin{proof}
+  For functions $u$ defined a.e.~on $\mathbb{R}^n_+$ we define $Eu$ and $E_\alpha u$,
+  $|\alpha|\leq m$ a.e.\ on $rn$ via
+  \begin{align*}
+    Eu(x) & = \begin{cases}
+                u(x) & \text{if}\ x_n>0 \\
+                \sum_{j=1}^[m+1] \lambda_j u(x_1,\ldots,x_{n-1},-jx_n) & \text{if}\ x_n<0,
+              \end{cases} \\
+    E_\alpha u(x)
+          & = \begin{cases}
+                u(x) & \text{if}\ x_n>0 \\
+                \sum_{j=1}^{m+1} (-j)^{\alpha_n} \lambda_j u(x_1,\ldots,x_{n-1},-jx_n) & \text{if}\ x_n<0,
+              \end{cases}
+  \end{align*}
+  where the coefficients $\lambda_1,\ldots,\lambda_{m+1}$ are the unique solutions
+  of the $(m+1)\times (m+1)$ system of linear equations
+  \[ \sum_{j=1}^{m+1} (-j)^k \lambda_j = 1, \qquad k = 0,\ldots,m. \]
+  If $u\in C^m(\overline{\mathbb{R}^n_+})$, it is readily checked that
+  $Eu\in C^m(\mathbb{R}^n)$ and
+  \[ D^\alpha Eu(x) = E_\alpha D^\alpha u(x), \qquad |\alpha|\leq m. \]
+  Thus
+  \begin{align*}
+    & \int_{\mathbb{R}^n} |D^\alpha Eu(x)|^p \d x \\
+    & = \int_{\mathbb{R}^n_+} |D^\alpha u(x)|^p \d x
+        + \int_{\mathbb{R}^n_-} \Biggl|\sum_{j=1}^{m+1} (-j)^{\alpha_n} \lambda_j
+          u(x_1,\ldots,x_{n-1},-jx_n)\Biggr|^p \d x \\
+    & \leq K(m,p,\alpha) \int_{\mathbb{R}^n_+} |D^\alpha u(x)|^p \d x.
+  \end{align*}
+  By Theorem~3.22, the above inequality extends to functions
+  $u\in W^{k,p}(\mathbb{R}^n_+)$, $m\geq k\geq |\alpha|$. Hence,
+  $E$ is a strong $m$-extension operator for $\mathbb{R}^n_+$.
+  Since $D^\beta E_\alpha u(x) = E_{\alpha+\beta}u(x)$, a similar
+  calculation shows that $E_\alpha$ is a strong $(m-|\alpha|)$-extension.
+\end{proof}
