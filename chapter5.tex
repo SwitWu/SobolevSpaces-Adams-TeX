@@ -693,3 +693,50 @@ As in the proof of Theorem~5.12, we begin with a one-dimensional inequality.
   Since $D^\beta E_\alpha u(x) = E_{\alpha+\beta}u(x)$, a similar
   calculation shows that $E_\alpha$ is a strong $(m-|\alpha|)$-extension.
 \end{proof}
+
+The reflection technique used in the above proof can be modified to yield
+a total extension operator. The proof, due to Seeley [Se], is based on the 
+following lemma.
+
+\begin{lemma}
+  There exists a sequence $\{a_k\}_{k=0}^\infty$ such that for every
+  nonnegative integer $n$ we have
+  \begin{equation}\label{eq:5.20}
+    \sum_{k=0}^\infty 2^{nk} a_k = (-1)^n,
+  \end{equation}
+  and
+  \begin{equation}\label{eq:5.21}
+    \sum_{k=0}^\infty 2^{nk} |a_k| < \infty.
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  For fixed $N$, let $a_{k,N}$, $k=0,1,\ldots,N$ be the solution of
+  the system of linear equations
+  \begin{equation}\label{eq:5.22}
+    \sum_{k=0}^N 2^{nk} a_{k,N} = (-1)^n, \qquad n=0,1,\ldots,N.
+  \end{equation}
+  In terms of the Vandermonde determinant
+  \[ V(x_0,x_1,\ldots,x_N) = 
+     \begin{vmatrix}
+      1      & 1      & \cdots & 1      \\
+      x_0    & x_1    & \cdots & x_N    \\
+      x_0^2  & x_1^2  & \cdots & x_N^2  \\
+      \vdots & \vdots &        & \vdots \\
+      x_0^N  & x_1^N  & \cdots & x_N^N  \\
+     \end{vmatrix}
+     = \prod_{\substack{i,j=0 \\ i<j}}^N (x_j - x_i), \]
+  $a_{k,N}$ as given by Cramer's rule is
+  \begin{align*}
+    a_{k,N}
+    & = \frac{V(1,2,\ldots,2^{k-1},-1,2^{k+1},\ldots,2^N)}{V(1,2,\ldots,2^N)} \\
+    & = \left[\prod_{\substack{i,j=0 \\ i,j\neq k \\ i<j}} (2^j-2^i)
+               \prod_{i=0}^{k-1} (-1-2^i)
+               \prod_{j=k+1}^N (2^j+1)\right] \cdot
+        \left[\prod_{\substack{i,j=0 \\ i<j}}^N (2^j-2^i)\right]^{-1} \\
+    & = A_k B_{k,N}
+  \end{align*}
+  where
+  \[ A_K = \prod_{i=1}^{k-1} \frac{1+2^i}{2^i-2^k}, \qquad 
+     B_{k,N} = \prod_{j=k+1}^N \frac{1+2^j}{2^j-2^k}, \]
+\end{proof}
