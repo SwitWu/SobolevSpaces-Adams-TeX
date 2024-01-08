@@ -739,4 +739,53 @@ following lemma.
   where
   \[ A_K = \prod_{i=1}^{k-1} \frac{1+2^i}{2^i-2^k}, \qquad 
      B_{k,N} = \prod_{j=k+1}^N \frac{1+2^j}{2^j-2^k}, \]
+  it being understood that $\prod_{i=1}^m P_i = 1$ if $l>m$. Now
+  \[ |A_k| \leq \prod_{i=1}^{k-1} \frac{2^{i+1}}{2^{k-1}} \leq 2^{(5k-k^2)/2}. \]
+  Also
+  \begin{align*}
+    \log B_{k,N}
+    & = \sum_{j=k+1}^N \log \biggl(1 + \frac{1+2^k}{2^j-2^k}\biggr) \\
+    & < \sum_{j=k+1}^N \frac{1+2^k}{2^j-2^k}
+      < (1+2^k) \sum_{j=k+1}^N \frac{1}{2^{j-1}} < 4,
+  \end{align*}
+  where we have used the inequality $\log(1+x) < x$ valid for $x>0$.
+  It follows that the increasing sequence $\{B_{k,N}\}_{N=0}^\infty$
+  converges to a limit $B_k\leq e^4$. Let $a_k = A_k B_k$, so that
+  \[ |a_k| \leq e^4 \cdot 2^{(5k-k^2)/2}. \]
+  Then for any $n$
+  \[ \sum_{k=0}^\infty 2^{nk} |a_k| \leq e^4 \sum_{k=0}^\infty 2^{(2nk+5k-k^2)/2} < \infty. \]
+  Letting $n\to\infty$ in \eqref{eq:5.22} completes the proof.
+\end{proof}
+
+
+\begin{theorem}
+  Let $\Omega$ be a half-space in $\mathbb{R}^n$. Then there exists a total
+  extension operator $E$ for $\Omega$.
+\end{theorem}
+
+\begin{proof}
+  The restrictions to $\mathbb{R}^n_+$ of functions $\phi\in C_0^\infty(\mathbb{R}^n)$
+  being dense in $W^{m,p}(\mathbb{R}^n_+)$ for any $m$ and $p$, we need only
+  define the extension operator for such functions. Let $f$ be a real-valued
+  function, infinitely differentiable on $[0,\infty)$ and satisfying
+  $f(t)=1$ if $0\leq t\leq 1/2$ and $f(t)=0$ if $t\geq 1$.
+  If $\phi\in C_0^\infty(\mathbb{R}^n)$, let
+  \[ E\phi(x) = E\phi(x',x_n) = 
+      \begin{cases}
+        \phi(x), & \text{if}\ x_n\geq 0, \\
+        \sum_{k=0}^\infty a_k f(-2^k x_n) \phi(x',-2^k x_n) & \text{if}\ x_n<0,
+      \end{cases}\]
+  where $\{a_k\}$ is the sequence constructed in the previous lemma.
+  $E\phi$ is well-defined on $\mathbb{R}^n$ since the sum above has only
+  finitely many nonvanishing terms for any particular
+  $x\in \mathbb{R}^n_- = \{x\in \mathbb{R}^n : x_n<0\}$.
+  Moreover, $E\phi$ has compact support and belongs to
+  $C^\infty(\overline{\mathbb{R}^n_+}) \cap C^\infty(\overline{\mathbb{R}^n_-})$.
+  If $x\in \mathbb{R}^n_-$, we have
+  \begin{align*}
+    D^\alpha E\phi(x)
+    & = \sum_{k=0}^\infty \sum_{j=0}^{\alpha_n} \binom{\alpha_n}{j}
+        (-2^k)^{\alpha_n} f^{(\alpha_n-j)}(-2^k x_n) D_n^j D^{\alpha'} \phi(x',-2^kx_n) \\
+    & = \sum_{k=0}^\infty \psi_k(x).
+  \end{align*}
 \end{proof}
