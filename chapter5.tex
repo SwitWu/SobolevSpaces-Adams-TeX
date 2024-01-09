@@ -788,4 +788,48 @@ following lemma.
         (-2^k)^{\alpha_n} f^{(\alpha_n-j)}(-2^k x_n) D_n^j D^{\alpha'} \phi(x',-2^kx_n) \\
     & = \sum_{k=0}^\infty \psi_k(x).
   \end{align*}
+  Since $\psi_k(x)=0$ when $-x_n > 1/2^{k-1}$ it follows from \eqref{eq:5.21}
+  that the above series converges absolutely and uniformly as $x_n\to 0-$.
+  Hence by~\eqref{eq:5.20}
+  \begin{align*}
+    \lim_{x_n\to 0-} D^\alpha E\phi(x)
+    & = \sum_{k=0}^{\infty} (-2^k)^{\alpha_n} a_k D^\alpha \phi(x',0+) \\
+    & = D^\alpha \phi(x',0+) = \lim_{x_n\to 0+} D^\alpha E\phi(x) = D^\alpha E\phi(0).
+  \end{align*}
+  Thus $E\phi \in C_0^\infty(\mathbb{R}^n)$. Moreover, if $|\alpha|\leq m$,
+  \[ |\psi_k(x)|^p \leq K_1^p |a_k|^p 2^{kmp}
+      \sum_{|\beta|\leq m} |D^\beta \phi(x', -2^k x_n)|^p, \]
+  where $K_1$ depends only on $m$, $p$, $n$, and $f$. Thus
+  \begin{align*}
+    \|psi_k\|_{0,p,\mathbb{R}^n_-}
+    & \leq K_1 |a_k| 2^{km} \Biggl(\sum_{|\beta|\leq m} \int_{\mathbb{R}^n_-}
+        |D^\beta \phi(x',-2^k x_n)|^p \d x\Biggr)^{1/p} \\
+    & = K_1 |a_k| 2^{km} \Biggl(\frac{1}{2^k} \sum_{|\beta|\leq m}
+        \int_{\mathbb{R}^n_+} |D^\beta \phi(y)|^p \d y\Biggr)^{1/p} \\
+    & \leq K_1 |a_k| 2^{km} \|\phi\|_{m,p,\mathbb{R}^n_+}.
+  \end{align*}
+  It follows from~\eqref{eq:5.21} that
+  \[ \|D^\alpha E\phi(x)\|_{0,p,\mathbb{R}^n_-}
+      \leq K_1 \|\phi\|_{m,p,\mathbb{R}^n_+} \sum_{k=0}^\infty 2^{km} |a_k|
+      \leq K_2 \|\phi\|_{m,p,\mathbb{R}^n_+}. \]
+  Combining this with a similar (trivial) estimate 
+  for $\|D^\alpha E\phi\|_{0,p,\mathbb{R}^n_+}$,
+  we obtain
+  \[ \|E\phi\|_{m,p,\mathbb{R}^n} \leq K_3 \|\phi\|_{m,p,\mathbb{R}^n_+} \]
+  where $K_3 = K_3(m,p,n)$. This completes the proof.
 \end{proof}
+
+
+\begin{theorem}
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the uniform
+  $C^m$-regularity condition and having a bounded boundary. Then there
+  exists a strong $m$-extension operator $E$ for $\Omega$. MOreover,
+  if $\alpha$ and $\gamma$ are multi-indices with $|\gamma|\leq |\alpha|\leq m$,
+  then there exists a linear operator $E_{\alpha\gamma}$ continuous
+  from $W^{j,p}(\Omega)$ into $W^{j,p}(\mathbb{R}^n)$ for
+  $1\leq j\leq m-|\alpha|$, $1\leq p<\infty$, such that if
+  $u\in W^{|\alpha|,p}(\Omega)$, then
+  \begin{equation}\label{eq:5.23}
+    D^\alpha (Eu)(x) = \sum_{|\gamma|\leq |\alpha|} E_{\alpha\gamma} D^\gamma u(x).
+  \end{equation}
+\end{theorem}
