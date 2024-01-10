@@ -833,3 +833,55 @@ following lemma.
     D^\alpha (Eu)(x) = \sum_{|\gamma|\leq |\alpha|} E_{\alpha\gamma} D^\gamma u(x).
   \end{equation}
 \end{theorem}
+
+\begin{proof}
+  Since $\Omega$ is uniformly $C^m$-regular and has a bounded boundary
+  the open cover $\{U_j\}$ of $\partial\Omega$ and the corresponding
+  $m$-smooth maps $\Phi_j$ from $U_j$ onto $B$ referred to in Paragraph~4.10
+  are finite collections, say $1\leq j\leq N$. Let
+  $Q = \{y=(y',y_n)\in\mathbb{R}^n : |y'|<1/2, |y_n| < \sqrt3/2\}$. Then
+  \[ \{y\in\mathbb{R}^n : |y|<1/2\} \subset Q \subset
+      B = \{y\in\mathbb{R}^n : |y|<1\}. \]
+  By condition (ii) of Paragraph 4.10 the open sets $V_j = \Psi_j(Q)$,
+  $1\leq j\leq N$, form an open cover of $\Omega_{\delta} = \{x\in\Omega:
+  \dist(x,\partial\Omega) < \delta\}$ for some $\delta>0$. There exists
+  an open set $V_0\subset\Omega$, bounded away from $\partial\Omega$,
+  such that $\Omega\subset\bigcup_{j=0}^N V_j$. By Theorem~3.15 we can
+  find infinitely differentiable functions $\omega_0$, $\omega_1$, $\cdots$,
+  $\omega_N$ such that the support of $\omega_j$ is a subset of $V_j$
+  and $\sum_{j=0}^N \omega_j(x)=1$ for all $x\in\Omega$. (Note that the
+  support of $\omega_0$ need not be compact if $\Omega$ is unbounded.)
+
+  Since $\Omega$ is uniformly $C^m$-regular it satisfies the segment
+  condition and so restrictions to $\Omega$ of functions in
+  $C_0^\infty(\mathbb{R}^n)$ are dense in $W^{k,p}(\Omega)$.
+  If $\phi\in C_0^\infty(\mathbb{R}^n)$, then for $x\in\Omega$,
+  $\phi(x) = \sum_{j=0}^N \phi_j(x)$, where $\phi_j = \omega_j\cdot\phi$.
+
+  For $j\geq 1$ and $y\in B$ let $\psi_j(y) = \phi_j\bigl(\Psi_j(y)\bigr)$.
+  Then $\psi_j\in C_0^\infty(Q)$. We extend $\psi_j$ to be identically
+  zero outside $Q$. With $E$ and $E_\alpha$ defined as in Theorem~5.19,
+  we have $E\psi_j\in C_0^m(Q)$, $E\psi_j = \psi_j$ on $Q_+ = \{y\in Q: y_n>0\}$, and
+  \[ \|E\psi\|_{k,p,Q} \leq K_1 \|\psi_j\|_{k,p,Q_+}, \qquad 0\leq k\leq m, \]
+  where $K_1$ depends on $k$, $m$, and $p$. If $\theta_j(x) = E\psi_j\bigl(\Phi_j(x)\bigr)$,
+  then $\theta_j \in C_0^\infty(V_j)$ and $\theta_j(x) = \phi_j(x)$ if $x\in\Omega$.
+  It may be checked by induction that if $|\alpha|\leq m$, then
+  \[ D^\alpha \theta_j(x) = \sum_{|\beta|\leq |\alpha|} \sum_{|\gamma|\leq |\alpha|}
+      a_{j;\alpha\beta}(x) \bigl[E_{\beta} \bigl(b_{j;\beta\gamma} \cdot
+      (D^\gamma \phi_j \circ \Psi_j)\bigr)\bigr] \bigl(\Phi_j(x)\bigr), \]
+  where $a_{j;\alpha\beta} \in C^{m-|\alpha|} (\overline{U_j})$ and
+  $b_{j;\beta\gamma} \in C^{m-|\beta|}(\overline{B})$ depend on the
+  transformations $\Phi_j$ and $\Psi_j = \Phi_j^{-1}$ and satisfy
+  \[ \sum_{|\beta|\leq |\alpha|} a_{j;\alpha\beta}(x)
+      b_{j;\beta\gamma}\bigl(\Phi_j(x)\bigr)
+      = \begin{cases}
+        1 & \text{if}\ \gamma = \alpha \\
+        0 & \text{otherwise}.
+      \end{cases} \]
+  By Theorem~3.41 we have for $k\leq m$,
+  \[ \|\theta_j\|_{k,p,\mathbb{R}^n} \leq K_2 \|E\psi_j\|_{k,p,Q}
+      \leq K_1K_2 \|\psi_j\|_{k,p,Q_+} \leq K_3 \|\psi_j\|_{k,p,\Omega}, \]
+  where $K_3$ may be chosen to be independent of $j$. The operator $\tilde E$
+  defined by
+  \[ \tilde E \phi(x) = \phi_0(x) + \sum_{j=1}^N \theta_j(x) \]
+\end{proof}
