@@ -884,4 +884,52 @@ following lemma.
   where $K_3$ may be chosen to be independent of $j$. The operator $\tilde E$
   defined by
   \[ \tilde E \phi(x) = \phi_0(x) + \sum_{j=1}^N \theta_j(x) \]
+  clearly satisfies $\tilde E \phi(x) = \phi(x)$ if $x\in\Omega$, and
+  \begin{equation}\label{eq:5.24}
+    \bigl\|\tilde E \phi\bigr\|_{k,p,\mathbb{R}^n}
+    \leq \|\phi_0\|_{k,p,\Omega} + K_3 \sum_{j=1}^N \|\phi_j\|_{k,p,\Omega}
+    \leq K_4 (1 + NK_3) \|\phi\|_{k,p,\Omega},
+  \end{equation}
+  where
+  \[ K_4 = \max_{0\leq j\leq N} \max_{|\alpha|\leq m} \sup |D^{\alpha} \omega_j(x)| < \infty. \]
+  Thus $\tilde E$ is a strong $m$-extension operator for $\Omega$. Also
+  \[ D^{\alpha} \tilde{E} \phi(x) 
+      = \sum_{|\gamma|\leq |\alpha|} (E_{\alpha\gamma}) D^{\gamma} \phi(x), \]
+  where
+  \[ E_{\alpha\gamma} v(x) = \sum_{j=1}^N \sum_{|\beta|\leq |\alpha|}
+      a_{j;\alpha\beta}(x) \bigl[E_{\beta} \bigl(b_{j;\beta\gamma}
+      \cdot (v\cdot\omega_j) \circ \Psi_j\bigr)\bigr] \bigl(\Phi_j(x)\bigr) \]
+  if $\alpha\neq\gamma$, and
+  \[ E_{\alpha\alpha} v(x) = (v\cdot \omega_0)(x)
+      + \sum_{j=1}^N \sum_{|\beta|\leq |\alpha|}
+      a_{j;\alpha\beta}(x) \bigl[E_{\beta} \bigl(b_{j;\beta\gamma}
+      \cdot (v\cdot\omega_j) \circ \Psi_j\bigr)\bigr] \bigl(\Phi_j(x)\bigr). \]
+  We note that if $x\in\Omega$, then $E_{\alpha\gamma} v(x) = 0$
+  for $\alpha\neq\gamma$ and $E_{\alpha\alpha} v(x) = v(x)$.
+  Clearly $E_{\alpha\gamma}$ is a linear operator. By the differentiable
+  property of $a_{j;\alpha\beta}$ and $b_{j;\beta\gamma}$, $E_{\alpha\gamma}$
+  is continuous on $W^{j,p}(\Omega)$ into $W^{j,p}(\mathbb{R}^n)$
+  for $1\leq j\leq m-|\alpha|$. This completes the proof.
 \end{proof}
+
+
+\begin{remarks}
+  \begin{enumerate}
+    \item If $\Omega$ is uniformly $C^m$-regular for all $m$, and has a
+      bounded boundary, then we can use the total extension operator of
+      Theorem~5.21 in place of that of Theorem~5.19 in the above proof
+      to obtain a total extension operator for $\Omega$.
+    \item The restrition that $\partial\Omega$ be bounded was imposed in
+      Theorem~5.22 so that the open cover $\{V_j\}$ would be finite. This
+      finiteness was used in two places in the proof, first in asserting
+      the existence of the constant $K_4$, and secondly in obtaining the
+      last inequality in~\eqref{eq:5.24}. This latter use is, however, not
+      essential for the proof because~\eqref{eq:5.24} could still be
+      obtained from the finite intersection property (condition (i) in
+      Paragraph~4.10) even if the cover $\{V_j\}$ were not finite.
+      Theorem~5.22 extends to any suitably regular domain for which there
+      exists a partition of unity $\{\omega_j\}$ subordinate to $\{V_j\}$
+      with $D^{\alpha} \omega_j$ bounded on $\mathbb{R}^n$ uniformly in $j$
+      for any given $\alpha$. The reader may find it
+  \end{enumerate}
+\end{remarks}
