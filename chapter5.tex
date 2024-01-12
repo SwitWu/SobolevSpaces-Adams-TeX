@@ -930,6 +930,52 @@ following lemma.
       Theorem~5.22 extends to any suitably regular domain for which there
       exists a partition of unity $\{\omega_j\}$ subordinate to $\{V_j\}$
       with $D^{\alpha} \omega_j$ bounded on $\mathbb{R}^n$ uniformly in $j$
-      for any given $\alpha$. The reader may find it
+      for any given $\alpha$. The reader may find it interesting to construct,
+      by the above techniques, extension operators for domains not covered
+      by the above theorems, for example, quadrants, strips, rectangular boxes,
+      and smooth images of these.
+    \item The previous remark also applies to the Calder\'on Extension Theorem~5.28
+      given below. Although it is proved by methods quite different from the
+      reflection methods used above, the proof still makes use of a partition
+      of unity in the same way as does that of Theorem~5.22. Accordingly,
+      the above considerations also apply to it. The theorem is proved under
+      a strengthened uniform cone condition that reduces to the uniform cone
+      condition of Paragraph~4.8 if $\Omega$ has a bounded boundary.
   \end{enumerate}
 \end{remarks}
+
+Clearly subsuming the extension theorems obtained above is the following
+theorem of Stein [St].
+
+\begin{theorem}[The Stein Extension THeorem]
+  If $\Omega$ is a domain in $\mathbb{R}^n$ satisfying the strong
+  local Lipschitz condition, then there exists a total extension operator
+  for $\Omega$.
+\end{theorem}
+
+We will provide here only an outline of the proof. The details can be found
+in Chapter~6 of [St].
+
+\begin{para}[Outline of the Proof of the Stein Extension Theorem]
+  \begin{enumerate}
+    \item Let $\Omega_e = \mathbb{R}^n - \overline{\Omega}$ be the open
+      operator of $\Omega$. The function $\delta(x) = \dist(x, \overline{\Omega})$
+      is Lipschitz continuous on $\Omega_e$ since
+      \[ |\delta(x) - \delta(y)| \leq |x-y| \quad \text{for} \ x,y\in\Omega_e, \]
+      but might not be smooth there. However, there exists a function
+      $\Delta$ in $C^{\infty}(\Omega_e)$ and positive constants $c_1$, $c_2$,
+      and $C_{\alpha}$ for all multiindices $\alpha$ such that for all $x\in\Omega_e$,
+      \begin{align*}
+        & c_1 \delta(x) \leq \Delta(x) \leq c_2 \delta(x), \qquad \text{and} \\
+        & |D^{\alpha} \Delta(x)| \leq C_{\alpha} \bigl(\delta(x)\bigr)^{1-|\alpha|}.
+      \end{align*}
+    \item There exists a continuous function $\phi$ on $[1,\infty)$ for which
+      \begin{enumerate}[(a)]
+        \item $\lim_{t\to\infty} t^k \phi(t) = 0$ for $k=0,1,2,\ldots$,
+        \item $\int_1^{\infty} \phi(t) \d t = 1$,
+        \item $\int_1^{\infty} t^k \phi(t) = 0$ for $k=1,2,\ldots$.
+      \end{enumerate}
+      In fact, $\phi(t) = \frac{e}{\pi t} \Im\bigl(e^{-w(t-1)^{1/4}}\bigr)$,
+      where $w = e^{-i\pi/4}$, is such a function.
+  \end{enumerate}
+\end{para}
