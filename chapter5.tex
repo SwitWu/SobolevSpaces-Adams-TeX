@@ -977,5 +977,58 @@ in Chapter~6 of [St].
       \end{enumerate}
       In fact, $\phi(t) = \frac{e}{\pi t} \Im\bigl(e^{-w(t-1)^{1/4}}\bigr)$,
       where $w = e^{-i\pi/4}$, is such a function.
+    \item For the special case $\Omega = \{(x,y) : x\in\mathbb{R}^{n-1}, y\in\mathbb{R},
+      y > f(x)\}$ where $f$ satisfies a Lipschitz condition
+      $|\phi(x) - \phi(x')|\leq M|x-x'|$, there exists a constant $c$
+      such that if $(x,y)\in\Omega_e$, then $\phi(x)-y \leq c\Delta(x,y)$.
+    \item For $\Omega$ as specified in 3, $\Delta^*(x,y) = 2c\Delta(x,y)$,
+      and $u\in C_0^\infty(\mathbb{R}^n)$, the operator $E$ defined by
+      \[E(u)(x,y) = 
+        \begin{cases}
+          u(x,y) & \text{if}\ y>f(x) \\
+          \int_1^\infty u\bigl(x, y+t\Delta^*(x,y)\bigr) \phi(t) \d t & \text{if}\ y<f(x)
+        \end{cases}\]
+      satisfies, for every $m\geq 0$ and $1\leq p\leq\infty$,
+      \begin{equation}\label{eq:5.25}
+        \|E(u)\|_{m,p,\mathbb{R}^n} \leq K \|u\|_{m,p,\Omega}, 
+      \end{equation}
+      where $K = K(m,p,n,M)$. Since $\Omega$ satisfies the strong local
+      Lipschitz condition it also satisfies the segment condition and so,
+      by Theorem~3.22 the restrictions to $\Omega$ of functions in $C_0^\infty(\mathbb{R}^n)$
+      are dense in $W^{m,p}(\Omega)$ and so~\eqref{eq:5.25} holds for all
+      $u\in W^{m,p}(\Omega)$. Thus Stein's theorem holds for this $\Omega$.
+    \item The case of general $\Omega$ satisfying the strong local Lipschitz
+      condition now follows via a partition of unity subordinate to an open
+      cover of $\partial\Omega$ by open sets in each of which (a rotated version
+      of) the special case 4 can be applied.
   \end{enumerate}
 \end{para}
+
+
+\begin{para}
+  The proof of the Calder\'on extension theorem is based on a special case,
+  suitable for our purposes, of a well-known inequality of Calder\'on and
+  Zygmund [CZ] for convolutions involving kernels with nonintegrable
+  singularities. The proof of this inequality is rather lengthy and can be found
+  in many sources (e.g.~Stein and Weiss [SW]). It will be omitted here.
+  Neither the inequality nor the extension theorem itself will be required
+  hereafter in this monograph.
+
+  Let $B_R = \{x\in\mathbb{R}^n : |x|\leq R\}$,
+  let $\Sigma_R = \{x\in\mathbb{R}^n : |x|=R\}$, and let $\d\sigma_R$ be the area
+  element (Lebesgue $(n-1)$-volume element) on $\Sigma_R$. A function $g$
+  is said to be \emph{homogeneous of degree $\mu$} on $B_R - \{0\}$
+  if $g(tx) = t^\nu g(t)$ for all $x\in B_R - \{0\}$ and $0<t\leq 1$.
+\end{para}
+
+
+\begin{theorem}[The Calder\'on Zygmund Inequality]
+  Let
+  \[ g(x) = G(x) |x|^{-n}, \]
+  where
+  \begin{enumerate}[(i)]
+    \item $G$ is bounded on $\mathbb{R}^n-\{0\}$ and has compact support,
+    \item $G$ is homogeneous of degree 0 on $B_R-\{0\}$ for some $R>0$, and
+    \item $\int_{\Sigma_R} G(x) \d\sigma_R = 0$.
+  \end{enumerate}
+\end{theorem}
