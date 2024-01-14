@@ -1031,4 +1031,52 @@ in Chapter~6 of [St].
     \item $G$ is homogeneous of degree 0 on $B_R-\{0\}$ for some $R>0$, and
     \item $\int_{\Sigma_R} G(x) \d\sigma_R = 0$.
   \end{enumerate}
+  If $1<p<\infty$ and $u\in L^p(\mathbb{R}^n)$, then the principal-value
+  convolution integral
+  \[ u*g(x) = \lim_{\epsilon\to 0+} \int_{\mathbb{R}^n - B_{\epsilon}}
+      u(x-y) g(y) \d y \]
+  exists for almost all $x\in\mathbb{R}^n$, and there exists a constant
+  $K=K(G,p)$ such that for all such $u$
+  \[ \|u*g\|_p \leq K\|u\|_p. \]
+  Conversely, if $G$ satisfies (i) and (ii) and if $u*g$ exists for all
+  $u\in C_0^{\infty}(\mathbb{R}^n)$, then $G$ satisfies (iii).
 \end{theorem}
+
+
+\begin{theorem}[The Calder\'on Extension Theorem]
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the uniform cone
+  condition (Paragraph 4.8) modified as follows:
+  \begin{enumerate}[(i)]
+    \item the open cover $\{U_j\}$ of $\partial\Omega$ is required to be finite, and
+    \item the sets $\{U_j\}$ are not required to be bounded.
+  \end{enumerate}
+  Then for any $m\in\{1,2,\ldots\}$ and any $p$ satisfying $1<p<\infty$,
+  there exists a simple $(m,p)$-extension operator $E=E(m,p)$ for $\Omega$.
+\end{theorem}
+
+\begin{proof}
+  Let $\{U_1,\ldots,U_N\}$ be the open cover of $\partial\Omega$
+  given by the uniform cone condition, and let $U_0$ be an open subset
+  of $\Omega$ bounded away from $\partial\Omega$ such that
+  $\Omega\subset\bigcup_{j=0}^N U_j$. (Such a $U_0$ exists by condition (ii)
+  of Paragraph 4.8.) Let $\omega_0$, $\omega_1$, $\ldots$, $\omega_N$
+  be a $C^{\infty}$ partition of unity for $\Omega$ with $\supp(\omega)_j\subset U_j$.
+  For $1\leq j\leq N$ we shall define operators $E_j$ so that if
+  $u\in W^{m,p}(\Omega)$, then $E_j u\in W^{m,p}(\mathbb{R}^n)$ and satisfies
+  \begin{align*}
+    & E_j u = u \qquad \text{in}\ U_j\cap\Omega, \\
+    & \|E_j u\|_{m,p,\mathbb{R}^n} \leq K_{m,p,j} \|u\|_{m,p,\Omega}.
+  \end{align*}
+  The desired extension operator is then clearly given by
+  \[ Eu = \omega_0 u + \sum_{j=1}^N \omega_j E_j u. \]
+  We shall write $x\in \mathbb{R}^n$ in the polar coordinate form
+  $x = \rho\sigma$ where $\rho\geq 0$ and $\sigma$ is a unit vector.
+  Let $C_j$, the cone associated with $U_j$ in the description of the
+  uniform cone condition. have vertex at 0. Let $\phi_j$ be a nontrivial
+  function defined in $\mathbb{R}^n - \{0\}$ satisfying
+  \begin{enumerate}[(i)]
+    \item $\phi_j(x)\geq 0$ for all $x\neq 0$,
+    \item $\supp(\phi_j) \subset -C_j\cup\{0\}$,
+    \item $\phi_j\in C^{\infty}(\mathbb{R}^n - \{0\})$, and
+  \end{enumerate}
+\end{proof}
