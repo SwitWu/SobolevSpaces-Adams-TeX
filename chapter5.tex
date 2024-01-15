@@ -1078,5 +1078,59 @@ in Chapter~6 of [St].
     \item $\phi_j(x)\geq 0$ for all $x\neq 0$,
     \item $\supp(\phi_j) \subset -C_j\cup\{0\}$,
     \item $\phi_j\in C^{\infty}(\mathbb{R}^n - \{0\})$, and
+    \item for some $\epsilon>0$, $\phi_j$ is homogeneous of degree $m-n$ in $B_{\epsilon}-\{0\}$.
   \end{enumerate}
+  Now $\rho^{n-1} \phi_j$ is homogeneous of degree $m-1\geq 0$
+  on $B_{\epsilon}-\{0\}$ and so the function $\psi_j(x) = 
+  (\partial/\partial\rho)^m \bigl(\rho^{n-1} \phi_j(x)\bigr)$
+  vanishes on $B_{\epsilon} - \{0\}$. Hence $\psi_j$, extended to be
+  zero at $x=0$, belongs to $C_0^\infty(-C_j)$. Define
+  \begin{equation}\label{eq:5.26}
+    \begin{aligned}
+      E_j u(y) ={}
+      & K_j \biggl((-1)^m \int_{\Sigma} \int_0^{\infty} \phi_j(\rho\sigma)
+        \rho^{n-1} \biggl(\frac{\partial}{\partial\rho}\biggr)^m
+        \tilde{u}(y-\rho\sigma) \d\rho\d\sigma \\
+      & - \int_{\Sigma} \int_0^{\infty} \psi_j(\rho\sigma)
+        \tilde{u}(y-\rho\sigma) \d\rho\d\sigma\biggr)
+    \end{aligned}
+  \end{equation}
+  where $\tilde{u}$ is the zero extension of $u$ outside $\Omega$
+  and where the constant $K_j$ will be determined shortly.
+  If $y\in U_j\cap\Omega$, then, assuming for the moment that
+  $u\in C^{\infty}(\Omega)$, we have, for $\rho\sigma\in\supp(\phi_j)$,
+  by condition (iii) of Paragraph~4.8, that $\tilde{u}(y-\rho\sigma) = u(y-\rho\sigma)$
+  is infinitely differentiable. Now integration by parts $m$ times yields
+  \begin{align*}
+    (-1)^m
+    & \int_0^\infty \rho^{n-1} \phi_j(\rho\sigma) \biggl(\frac{\partial}{\partial\rho}\biggr)
+      u(y-\rho\sigma) \d\rho \\
+    & = \sum_{k=0}^{m-1} (-1)^{m-k} \biggl(\frac{\partial}{\partial\rho}\biggr)^k
+      \bigl(\rho^{n-1} \phi_j(\rho\sigma)\bigr)
+      \biggl(\frac{\partial}{\partial\rho}\biggr)^{m-k-1} u(y-\rho\sigma)
+      \bigg|_{\rho=0}^{\rho=\infty} \\
+    & \quad + \int_0^\infty \biggl(\frac{\partial}{\partial\rho}\biggr)^m
+      \bigl(\rho^{n-1} \phi_j(\rho\sigma)\bigr) u(y-\rho\sigma) \d\rho \\
+    & = \biggl(\frac{\partial}{\partial\rho}\biggr)^{m-1}
+      \bigl(\rho^{n-1} \phi_j(\rho\sigma)\bigr)\Big|_{\rho=0} u(y)
+      + \int_0^\infty \psi_j(\rho\sigma) u(y-\rho\sigma) \d\rho.
+  \end{align*}
+  Hence
+  \[ E_j u(y) = K_j u(y) \int_{\Sigma} \biggl(\frac{\partial}{\partial\rho}\biggr)^{m-1}
+      \bigl(\rho^{n-1} \phi_j(\rho\sigma)\bigr)\Big|_{\rho=0} \d\sigma. \]
+  Since $(\partial/\partial\rho)^{m-1} \bigl(\rho^{n-1} \phi_j(\rho\sigma)\bigr)$
+  is homogeneous of degree zero near 0, the above integral does not vanish
+  if $\phi_j$ is not identically zero. Hence $K_j$ can be chosen
+  so that $E_j u(y) = u(y)$ for $y\in U_j\cap\Omega$ and all $u\in C^\infty(\Omega)$.
+  Since $C^\infty(\Omega)$ is dense in $W^{m,p}(\Omega)$ we have
+  $E_j u(y) = u(y)$ a.e.~in $U_j\cap\Omega$ for every $u\in W^{m,p}(\Omega)$.
+  The same argument shows that if $\tilde{u}\in W^{m,p}(\mathbb{R}^n)$,
+  then $E_j u(y) = \tilde{u}(y)$ a.e.~in $\mathbb{R}^n$.
+
+  It remains, therefore, to show that
+  \[ \|D^\alpha E_j u\|_{0,p,\mathbb{R}^n} \leq K_{\alpha} \|u\|_{m,p,\Omega} \]
+  holds for any $\alpha$ with $|\alpha|\leq m$ and all
+  $u\in C^\infty(\Omega)\cap W^{m,p}(\Omega)$. The last integral in~\eqref{eq:5.26}
+  is of the form $\theta_j * \tilde u(y)$, where $\theta_j(x) = \psi_j(x)|x|^{1-n}$.
+  Since $\theta_j\in L^1(\mathbb{R}^n)$ and
 \end{proof}
