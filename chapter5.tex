@@ -1132,5 +1132,57 @@ in Chapter~6 of [St].
   holds for any $\alpha$ with $|\alpha|\leq m$ and all
   $u\in C^\infty(\Omega)\cap W^{m,p}(\Omega)$. The last integral in~\eqref{eq:5.26}
   is of the form $\theta_j * \tilde u(y)$, where $\theta_j(x) = \psi_j(x)|x|^{1-n}$.
-  Since $\theta_j\in L^1(\mathbb{R}^n)$ and
+  Since $\theta_j\in L^1(\mathbb{R}^n)$ and has compact support, we obtain via
+  Young's inequality for convolution (Corollary~2.25),
+  \[ \|D^{\alpha} (\theta_j * \tilde u)\|_{0,p,\mathbb{R}^n}
+      = \|\theta_j * \widetilde{D^{\alpha} u} \|_{0,p,\mathbb{R}^n}
+      \leq \|\theta_j\|_{0,1,\mathbb{R}^n} \|D^{\alpha} u\|_{0,p,\Omega}. \]
+  It now remains to be shown that the first integral in~\eqref{eq:5.26}
+  defines a bounded map from $W^{m,p}(\Omega)$ into $W^{m,p}(\mathbb{R}^n)$.
+  Since $(\partial/\partial\rho)^m = \sum_{|\alpha|=m} (m!/\alpha!)\sigma^{\alpha} D^{\alpha}$
+  we obtain
+  \begin{align*}
+    \int_{\Sigma} \int_0^\infty
+    & \phi_j (\rho\sigma) \rho^{n-1} \biggl(\frac{\partial}{\partial\rho}\biggr)^m
+      \tilde{u}(y-\rho\sigma) \d\rho \d\sigma \\
+    & = \sum_{|\alpha|=m} \frac{m!}{\alpha!} \int_{\mathbb{R}^n}
+      \phi_j(x) \widetilde{D_x^{\alpha}} u(y-x) \sigma^{\alpha} \d x \\
+    & = \sum_{|\alpha|=m} \xi_{\alpha} * \widetilde{D^{\alpha} u},
+  \end{align*}
+  where $\xi_{\alpha} = (-1)^{|\alpha|} (m!/\alpha!)\sigma^{\alpha} \phi_j$
+  is homogeneous of degree $m-n$ in $B_{\epsilon} - \{0\}$ and belongs
+  to $C^{\infty}(\mathbb{R}^n - \{0\})$. It is now clearly sufficient
+  to show that for any $\beta$ satisfying $|\beta|\leq m$
+  \begin{equation}\label{eq:5.27}
+    \|D^{\beta} (\xi_{\alpha} * v)\|_{0,p,\mathbb{R}^n}
+    \leq K_{\alpha,\beta} \|v\|_{0,p,\mathbb{R}^n}.
+  \end{equation}
+  If $|\beta|\leq m-1$, then $D^{\beta} \xi_{\alpha}$ is homogeneous
+  of degree not exceeding $1-n$ in $B_{\epsilon} - \{0\}$ and so belongs
+  to $L^1(\mathbb{R}^n)$. Inequality~\eqref{eq:5.27} now follows by
+  Young's inequality for convolution. Thus we need consider only the case
+  $|\beta|=m$, in which we write $D^{\beta} = (\partial/\partial x_i) D^{\gamma}$
+  for some $i$, $1\leq i\leq n$, and some $\gamma$ with $|\gamma|=m-1$.
+  Suppose, for the moment, that $v\in C_0^{\infty}(\mathbb{R}^n)$.
+  Then we may write
+  \begin{align*}
+    D^{\beta} (\xi_{\alpha} * v)(x)
+    & = (D^{\gamma} \xi_{\alpha}) * \biggl[\biggl(\frac{\partial}{\partial x_i}\biggr)v\biggr](x)
+      = \int_{\mathbb{R}^n} D_i v(x-y) D^{\gamma} \xi_{\alpha}(y) \d y \\
+    & = \lim_{\delta\to 0+} \int_{\mathbb{R}^n - B_{\delta}} D_i v(x-y)
+        D^{\gamma} \xi_{\alpha}(y) \d y.
+  \end{align*}
+  We now integrate by parts in the last integral to free $v$ and obtain
+  $D^{\beta} \xi_{\alpha}$ under the integral. The integrated term is a
+  surface integral over the spherical boundary $\Sigma_\delta$ of $B_\delta$
+  of the product of $v(x-\cdot)$ and a function homogeneous of degree $1-n$
+  near zero. This surface integral must therefore tend to $Kv(x)$
+  as $\delta\to 0+$, for some constant $K$. Noting that
+  $D_i v(x-y) = -(\partial/\partial y_i) v(x-y)$, we now have
+  \[ D^{\beta} (\xi_{\alpha} * v)(x)
+      = \lim_{\delta\to 0+} \int_{\mathbb{R}^n} v(x-y) D^{\beta} \xi_{\alpha}(y) \d y
+      + Kv(x). \]
+  Now $D^\beta \xi_\alpha$ is homogeneous of degree $-n$ near the origin and so,
+  by the last assertion of Theorem~5.27, $D^\beta \xi_\alpha$ satisfies all
+  the conditions for the singular kernel
 \end{proof}
