@@ -1247,5 +1247,66 @@ shows that in this case $u$ must belong to $W_0^{m,p}(\Omega)$.
 
 \begin{para}[The Approximation Property]
   The following question is involved in the matter of interpolation of
-  Sobolev spaces on order of smoothness that will play
+  Sobolev spaces on order of smoothness that will play a central role
+  in the development of Besov spaces and Sobolev spaces of fractional
+  order in Chapter~7.
+
+  \begin{quotation}
+    If $0<k<m$ does there exist a constant $C$ such that for every
+    $u\in W^{k,p}(\Omega)$ and every sufficiently small $\epsilon$
+    there exists $u_{\epsilon}\in W^{m,p}(\Omega)$ satisfying
+    \[ \|u-u_{\epsilon}\|_p \leq C\epsilon^k \|u\|_{k,p},
+        \qquad \text{and} \qquad
+        \|u_{\epsilon}\|_{m,p} \leq C\epsilon^{k-m} \|u\|_{k,p}? \]
+  \end{quotation}
+  If the answer is ``yes'', we will say that the domain $\Omega$
+  has the \emph{approximation property}. Combined with the interpolation
+  Theorem~5.2, this property will show that $W^{k,p}(\Omega)$ is suitably
+  intermediate between $L^p(\Omega)$ and $W^{m,p}(\Omega)$ for purposes
+  of interpolation. In Theorem~5.33 we prove that $\mathbb{R}^n$ itself
+  has the approximation property. It will therefore follow that any
+  domain $\Omega$ admitting a total extension operator will have the
+  approximation property for any choice of $k$ and $m$ with conditions
+  has the approximation property.
+
+  There are domains with the approximation property that do not satisfy
+  the strong local Lipschitz condition. The approximation property does
+  not prevent a domain from lying on both sides of a boundary hypersurface.
+  In [AF4] the authors obtain the property under the assumption that
+  $\Omega$ satisfies the ``smooth cone condition'', which is essentially
+  a cone condition with the added restriction that the cone must
+  vary smoothly from point to point. Our proof of Theorem~5.33 is a
+  simplified version of the proof in [AF4].
+
+  We begin by stating an elementary lemma.
 \end{para}
+
+
+\begin{lemma}
+  If $u\in L^p(\mathbb{R}^n)$ and $B_{\epsilon}(x)$ is the ball
+  of radius $\epsilon$ about $x$, then
+  \[ \int_{\mathbb{R}^n} \biggl(\int_{B_{\epsilon}(x)} |u(y)| \d y\biggr)^p \d x
+      \leq K_n^p \epsilon^{np} \|u\|_{p,\mathbb{R}^n}^p, \]
+  where $K_n$ is the volume of the unit ball $B_1(0)$.
+\end{lemma}
+
+\begin{proof}
+  The proof is immediate using H\"older's inequality and a change or
+  order of integration.
+\end{proof}
+
+
+\begin{theorem}[An Approximation Theorem for $\mathbb{R}^n$]
+  If $0<k<m$, there exists a constant $C$ such that for $u\in W^{k,p}(\mathbb{R}^n)$
+  and $0<\epsilon\leq 1$ there exists $u_{\epsilon}$ in $C^{\infty}(\mathbb{R}^n)$
+  such that the following seminorm inequalities hold:
+  \begin{align*}
+    & \|u-u_{\epsilon}\|_p \leq C\epsilon^k |u|_{k,p}, \qquad\text{and} \\
+    & |u_{\epsilon}|_{j,p} \leq
+      \begin{cases}
+        C \|u\|_{k,p} & \text{if } j\leq k-1 \\
+        C \epsilon^{k-j} |u|_{k,p} & \text{if } j\geq k.
+      \end{cases}
+  \end{align*}
+  In particular, $\mathbb{R}^n$ has the approximation property.
+\end{theorem}
