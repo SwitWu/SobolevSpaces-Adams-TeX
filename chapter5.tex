@@ -1310,3 +1310,47 @@ shows that in this case $u$ must belong to $W_0^{m,p}(\Omega)$.
   \end{align*}
   In particular, $\mathbb{R}^n$ has the approximation property.
 \end{theorem}
+
+\begin{proof}
+  It is sufficient to establish the inequalities for $u\in C_0^\infty(\mathbb{R}^n)$
+  which is dense in $W^{k,p}(\mathbb{R}^n)$. We apply Taylor's formula
+  \[ f(1) = \sum_{j=0}^{k-1} \frac{1}{j!} f^{(j)}(0)
+      + \frac{1}{(k-1)!} \int_0^1 (1-t)^{k-1} f^{(k)}(t) \d t \]
+  to the function $f(t) = u\bigl(tx+(1-t)y\bigr)$ to obtain
+  \begin{align*}
+    u(x) ={}
+    & \sum_{|\alpha|\leq k-1} \frac{1}{\alpha!} D^\alpha u(y) (x-y)^\alpha \\
+    & + \sum_{|\alpha|=k} \frac{k}{\alpha!} (x-y)^\alpha
+        \int_0^1 (1-t)^{k-1} D^\alpha u\bigl(tx+(1-t)y\bigr) \d t.
+  \end{align*}
+  Now let $\phi\in C_0^\infty(B_1(0))$ satisfy $0\leq\phi(x)\leq K_0$
+  for all $x$ and $\int_{\mathbb{R}^n} \phi(x) \d x=1$. We multiply
+  the above Taylor formula by $\epsilon^{-n} \phi\bigl((x-y)/\epsilon\bigr)$
+  and integrate $y$ over $\mathbb{R}^n$ to obtain $u(x) = u_{\epsilon}(x) + R(x)$
+  where
+  \begin{align*}
+    u_{\epsilon}(x)
+    & = \epsilon^{-n} \sum_{|\alpha|\leq k-1} \frac{1}{\alpha!}
+        \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr) (x-y)^\alpha
+          D^\alpha u(y) \d y \\
+    R(x)
+    & = \epsilon^{-n} \sum_{|\alpha|=k} \frac{k}{\alpha!}
+        \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr) (x-y)^\alpha \d y \\
+    &   \qquad \times \int_0^1 (1-t)^{k-1} D^\alpha u\bigl(tx+(1-t)y\bigr) \d t.
+  \end{align*}
+  We can estimate $|u(x)-u_{\epsilon}(x)| = |R(x)|$ by reversing the order
+  of the double integral, substituting $z = tx+(1-t)y$ (so that $z-x = (1-t)(y-x)$
+  and $\d z = (1-t)^n \d y$), and reversing the order of integration again:
+  \begin{align*}
+    |u(x) - u_{\epsilon}(x)|
+    & \leq K_0 \sum_{|\alpha|=k} \frac{k}{\alpha!} \epsilon^{-n}
+        \int_0^1 (1-t)^{-1-n} \d t \int_{B_{\epsilon(1-t)}(x)} |x-z|^k |D^\alpha u(z)| \d z \\
+    & \leq K_0 \sum_{|\alpha|=k} \frac{k}{\alpha!} \epsilon^{-n}
+        \int_{B_{\epsilon}(x)} |x-z|^k |D^\alpha u(z)| \d z
+        \int_0^{1-|z-x|/\epsilon} (1-t)^{-n-1} \d t \\
+    & < K_0 \sum_{|\alpha|=k} \frac{k}{\alpha!} \epsilon^{-n}
+        \int_{B_{\epsilon}(x)} |x-z|^k |D^\alpha u(z)| \d z \\
+    & \leq K_0 \sum_{|\alpha|=k} \frac{k}{\alpha!} \epsilon^{k-n}
+        \int_{B_{\epsilon}(x)} |D^\alpha u(z)| \d z.
+  \end{align*}
+\end{proof}
