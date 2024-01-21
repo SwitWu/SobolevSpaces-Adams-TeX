@@ -1353,4 +1353,56 @@ shows that in this case $u$ must belong to $W_0^{m,p}(\Omega)$.
     & \leq K_0 \sum_{|\alpha|=k} \frac{k}{\alpha!} \epsilon^{k-n}
         \int_{B_{\epsilon}(x)} |D^\alpha u(z)| \d z.
   \end{align*}
+  Estimating the $L^p$-norm of the last integral above by the previous lemma,
+  we obtain
+  \[ \|u(x)-u_{\epsilon}(x)\|_p
+      \leq K_0 \sum_{|\alpha|=k} \frac{k}{\alpha!} \epsilon^k \|D^\alpha u\|_p
+      \leq C \epsilon^k |u|_{k,p}. \]
+  On the other hand, we have
+  \[ u_{\epsilon}(x) = \epsilon^{-n} \int_{\mathbb{R}^n}
+      \phi\biggl(\frac{x-y}{\epsilon}\biggr) P_{k-1}(u;x,y) \d y, \]
+  where
+  \begin{align*}
+    P_j(u;x;y) & = \sum_{i=0}^j T_i(u;x,y), \\
+    T_j(u;x,y) & = \sum_{|\alpha|=j} \frac{1}{\alpha!} D^\alpha u(y) (x-y)^\alpha.
+  \end{align*}
+  It is readily verified that
+  \begin{align*}
+    \frac{\partial}{\partial x_i} T_j(u;x,y)
+    & = \begin{cases}
+          T_{j-1}(D_i u;x,y) & \text{if } j>0 \\
+          0 & \text{if } j=0
+        \end{cases} \\
+    \frac{\partial}{\partial x_i} P_j(u;x,y)
+    & = \begin{cases}
+          P_{j-1}(D_i u;x,y) & \text{if } j>0 \\
+          0 & \text{if } j=0
+        \end{cases} \\
+    \frac{\partial}{\partial y_i} P_j(u;x,y)
+    & = T_j(D_i u;x,y) \qquad \text{for } j\geq 0.
+  \end{align*}
+  Since $\frac{\partial}{\partial x_i}\phi\bigl(\frac{x-y}{\epsilon}\bigr)
+  = - \frac{\partial}{\partial y_i}\phi\bigl(\frac{x-y}{\epsilon}\bigr)$,
+  integration by parts gives
+  \begin{align*}
+    D_i u_{\epsilon}(x) ={}
+    & \epsilon^{-n} \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr)
+      P_{k-2}(D_i u;x,y) \d y \\
+    & + \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr)
+        T_{k-1}(D_i u;x,y) \d y.
+  \end{align*}
+  By induction, if $|\beta|=j\leq k$,
+  \begin{align*}
+    D^\beta u_\epsilon(x) ={}
+    & \epsilon^{-n} \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr)
+      P_{k-1-j}(D^\beta u;x,y) \d y \\
+    & + j \epsilon^{-n} \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr)
+        T_{k-j}(D^\beta u;x,y) \d y.
+  \end{align*}
+  When $j=k$ the sums $P_{k-1-j}$ are empty, leaving only the second
+  line above, which becomes
+  \[ k\epsilon^{-n} \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr)
+      T_0(D^\beta u;x,y) \d y
+      = k\epsilon^{-n} \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr)
+        D^\beta u(y) \d y. \]
 \end{proof}
