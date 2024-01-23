@@ -1405,4 +1405,55 @@ shows that in this case $u$ must belong to $W_0^{m,p}(\Omega)$.
       T_0(D^\beta u;x,y) \d y
       = k\epsilon^{-n} \int_{\mathbb{R}^n} \phi\biggl(\frac{x-y}{\epsilon}\biggr)
         D^\beta u(y) \d y. \]
+  Write any multi-index $\gamma$ with $|\gamma|>k$ in the form $\beta+\delta$
+  with $|\beta|=k$ to get that
+  \[ D^{\gamma} u_{\epsilon}(x) = k\epsilon^{-n-|\delta|}
+      \int_{\mathbb{R}^n} D^{\delta} \phi\biggl(\frac{x-y}{\epsilon}\biggr)
+      D^{\beta} u(y) \d y \]
+  in these cases. Apply the previous lemma to the various terms above to get that
+  \[ |u_{\epsilon}|_{j,p} \leq
+      \begin{cases}
+        C \|u\|_p & \text{if } j\leq k-1 \\
+        C \epsilon^{k-j} |u|_{k,p} & \text{if } j\geq k.
+      \end{cases}\]
+  In deriving this when $j<k$, expand the (nonempty) sums $P_{k-1-j}$
+  to see that
+  \[ |D^{\beta} u_{\epsilon}(x) \leq K_0 \epsilon^{-n}
+      \int_{B_{\epsilon}(x)} \Biggl[\sum_{i=0}^{k-1-j} |T_i(D^\beta u;x,y)
+        + j |T_{k-j}(D^\beta u;x,y)|\Biggr] \d y. \]
+  This completes the proof.
 \end{proof}
+
+
+\section{Boundary Traces}
+
+\begin{para}
+  Of importance in the study of boundary value problems for differential
+  operators defined on a domain $\Omega$ is the determination of spaces
+  of functions defined on the boundary of $\Omega$ that contain the
+  traces $u|_{\partial\Omega}$ of functions $u$ in $W^{m,p}(\Omega)$.
+  For example, if $W^{m,p}(\Omega) \to C^0(\overline{\Omega})$, then
+  clearly $u|_{\partial\Omega}$ belongs to $C(\partial\Omega)$. We outline
+  below an $L^q$-imbedding result for such traces which can be obtained
+  for domains with suitably smooth boundaries as a corollary of Theorem~4.12
+  via the use of an extension operator.
+
+  The more interesting problem of characterizing the image of $W^{m,p}(\Omega)$
+  under the mapping $u \mapsto u|_{\partial\Omega}$ will be dealt with in
+  Chapter~7. See, in particular, Theorem~7.39. The characterization is
+  in terms of Besov spaces which are generalized Sobolev spaces of fractional
+  order.
+\end{para}
+
+\begin{para}
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the uniform $C^m$-regularity
+  condition of Paragraph~4.10. Thus there exists a locally finite open cover
+  $\{U_j\}$ of $\partial\Omega$, and corresponding $m$-smooth transformations
+  $\Psi_j$ mapping $B = \{y\in \mathbb{R}^n : |y|<1\}$ onto $U_j$ such that
+  $U_j\cap \partial\Omega = \Psi_j(B_0)$, where $B_0 = \{y\in B : y_n = 0\}$.
+  If $f$ is a function having support in $U_j$, we may define the integral
+  of $f$ over $\partial\Omega$ via
+  \[ \int_{\partial\Omega} f(x) \d\sigma
+      = \int_{U_j\cap\partial\Omega} f(x) \d\sigma
+      = \int_{B_0} f\circ \Psi_j(y',0) J_j(y') \d y', \]
+\end{para}
