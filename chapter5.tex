@@ -1456,4 +1456,53 @@ shows that in this case $u$ must belong to $W_0^{m,p}(\Omega)$.
   \[ \int_{\partial\Omega} f(x) \d\sigma
       = \int_{U_j\cap\partial\Omega} f(x) \d\sigma
       = \int_{B_0} f\circ \Psi_j(y',0) J_j(y') \d y', \]
+  where $\d\sigma$ is the $(n-1)$-volume element on $\partial\Omega$,
+  $y' = (y_1,\ldots,y_{n-1})$, and, if $x = \Psi_j(y)$, then
+  \[ J_j(y') = \Biggl[\sum_{k=1}^n \biggl(
+    \frac{\partial(x_1,\ldots,\hat{x}_k,\ldots,x_n)}{\partial(y_1,\ldots,y_{n-1})}
+    \biggr)^2\Biggr]^{1/2} \Bigg|_{y_n = 0}. \]
+  If $f$ is an arbitrary function defined on $\mathbb{R}^n$, we may set
+  \[ \int_{\partial\Omega} f(x) \d\sigma = \sum_j \int_{\partial\Omega}
+      f(x) v_j(x) \d\sigma, \]
+  where $\{v_j\}$ is a partition of unity for $\partial\Omega$
+  subordinate to $\{U_j\}$.
 \end{para}
+
+
+\begin{theorem}[A Boundary Trace Imbedding Theorem]
+  Let $\Omega$ be a domain in $\mathbb{R}^n$ satisfying the uniform
+  $C^m$-regularity condition, and suppose there exists a simple
+  $(m,p)$-extension operator $E$ for $\Omega$. Also suppose that $mp<n$
+  and $p\leq q\leq p^* = (n-1)p/(n-mp)$. Then
+  \begin{equation}\label{eq:5.28}
+    W^{m,p}(\Omega) \to L^q(\partial\Omega).
+  \end{equation}
+  If $mp=n$, then imbedding~\eqref{eq:5.28} holds for $p\leq q<\infty$.
+\end{theorem}
+
+\begin{proof}
+  Imbedding \eqref{eq:5.28} should be interpreted in the following sense.
+  If $u\in W^{m,p}(\Omega)$, then $Eu$ has a trace on $\partial\Omega$
+  in the sense described in Paragraph~4.2, and $\|Eu\|_{0,q,\partial\Omega}
+  \leq K \|u\|_{m,p,\Omega}$ with $K$ independent of $u$. Note that
+  since $C_0(\mathbb{R}^n)$ is dense in $W^{m,p}(\Omega)$,
+  $\|Eu\|_{0,q,\partial\Omega}$ is independent of the particular extension
+  operator $E$ used.
+
+  We prove the special case $mp<n$, $q=p^* = (n-1)p/(n-mp)$ of the theroem;
+  the other cases are similar. We use the notations of the previous Paragraph.
+
+  There is a constant $K_1$ such that for every $u\in W^{m,p}(\Omega)$,
+  \[ \|Eu\|_{m,p,\mathbb{R}^n} \leq K_1 \|u\|_{m,p,\Omega}. \]
+  By the uniform $C^m$-regularity condition (see Paragraph~4.10)
+  there exists a constant $K_2$ such that for each $j$ and every $y\in B$
+  we have $x = \Psi_j(y) \in U_j$,
+  \[ |J_j(y')| \leq K_2, \qquad \text{and} \qquad
+      \biggl|\frac{\partial(y_1,\ldots,y_n)}{\partial(x_1,\ldots,x_n)}\biggr| \leq K_2. \]
+  Noting that $0\leq v_j(x) \leq 1$ on $\mathbb{R}^n$, and using
+  imbedding (4) of Theorem~4.12 applied over $B$, we have, for $u\in W^{m,p}(\Omega)$,
+  \begin{align*}
+    \int_{\partial\Omega} |Eu(x)|^q \d\sigma
+    & \leq \sum_j \int_{U_j \cap \partial\Omega} |Eu(x)|^q \d\sigma
+  \end{align*}
+\end{proof}
