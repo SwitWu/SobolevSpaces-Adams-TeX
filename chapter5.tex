@@ -1503,6 +1503,60 @@ shows that in this case $u$ must belong to $W_0^{m,p}(\Omega)$.
   imbedding (4) of Theorem~4.12 applied over $B$, we have, for $u\in W^{m,p}(\Omega)$,
   \begin{align*}
     \int_{\partial\Omega} |Eu(x)|^q \d\sigma
-    & \leq \sum_j \int_{U_j \cap \partial\Omega} |Eu(x)|^q \d\sigma
+    & \leq \sum_j \int_{U_j \cap \partial\Omega} |Eu(x)|^q \d\sigma \\
+    & \leq K_2 \sum_j \|Eu\circ \Psi_j\|_{0,q,B_0}^q \\
+    & \leq K_3 \sum_j \Bigl(\|Eu\circ \Psi_j\|_{m,p,B}^p\Bigr)^{q/p} \\
+    & \leq K_4 \biggl(\sum_j \|Eu\|_{m,p,U_j}^p\biggr)^{q/p} \\
+    & \leq K_4 R \|Eu\|_{m,p,\mathbb{R}^n}^q \\
+    & \leq K_5 \|u\|_{m,p,\Omega}^q.
   \end{align*}
+  The second last inequality above makes use of the finite intersection
+  property possessed by the cover $\{U_j\}$. The constant $K_4$
+  is independent of $j$ because $|D^\alpha \Psi_{j,i}(y)|\leq \text{const}$
+  for all $i,j$, where $\Psi_j = (\Psi_{j,1},\ldots, \Psi_{j,n})$.
+  This completes the proof.
+\end{proof}
+
+Finally, we show that functions in $W^{m,p}(\Omega)$ belong to
+$W_0^{m,p}(\Omega)$ if and only if they have suitably trivial boundary traces.
+
+
+\begin{theorem}[Trivial Traces]
+  Under the same hypotheses as Theorem~5.36, a function $u$ in $W^{m,p}(\Omega)$
+  belongs to $W_0^{m,p}(\Omega)$ if and only if the boundary traces
+  of its derivatives of order less than $m$ all coincide with the 0-function.
+\end{theorem}
+
+\begin{proof}
+  Every function in $C_0^\infty(\Omega)$ has trivial boundary trace,
+  and so do all derivative of such functions. Since the trace mapping
+  is a continuous linear operator from $W^{m,p}(\Omega)$ to
+  $W^{m-1,p}(\partial\Omega)$, all functions in $W^{m,p}_0(\Omega)$
+  have trivial boundary traces, and so do their derivatives of order
+  less than $m$.
+
+  To prove the converse, we suppose that $u\in W^{m,p}(\Omega)$
+  and that $u$ and its derivatives of order less than $m$ have trivial
+  boundary traces. Localization and a suitable change of variables
+  reduces matters to the case where $\Omega$ is the half-space
+  $\{x\in\mathbb{R}^n : x_n>0\}$. We then show that the zero-extension
+  $\tilde{u}$ must belong to $W^{m,p}(\mathbb{R}^n)$, forcing $u$
+  to belong to $W_0^{m,p}(\Omega)$ by Theorem~5.29.
+
+  In fact, we claim that if $u\in W^{m,p}(\Omega)$ has trivial
+  boundary traces for $u$ and its derivatives of order less than $m$,
+  then the distributional derivatives $D^\alpha \tilde{u}$
+  of order at most $m$ coincide with the zero-extensions
+  $\widetilde{D^\alpha u}$. To verify this, approximate the integrals
+  \begin{equation}\label{eq:5.29}
+    \int_{\mathbb{R}^n} \tilde{u}(x) D^\alpha \phi(x) \d x
+    \qquad \text{and} \qquad
+    (-1)^{|\alpha|} \int_{\mathbb{R}^n} \widetilde{D^\alpha u} (x) \phi(x) \d x
+  \end{equation}
+  by approximating $u$ with functions $v_j$ in $C^\infty(\overline{\Omega})$,
+  without requiring that these approximations have trivial traces.
+
+  Let $e_n$ be the unit vector $(0,\ldots,0,1)$. Since $v_j\in C^\infty(\overline{\Omega})$,
+  integrating by parts with respect to the other variables and then
+  with respect to $x_n$ shows that the
 \end{proof}
