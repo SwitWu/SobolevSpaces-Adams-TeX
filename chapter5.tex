@@ -1558,5 +1558,24 @@ $W_0^{m,p}(\Omega)$ if and only if they have suitably trivial boundary traces.
 
   Let $e_n$ be the unit vector $(0,\ldots,0,1)$. Since $v_j\in C^\infty(\overline{\Omega})$,
   integrating by parts with respect to the other variables and then
-  with respect to $x_n$ shows that the
+  with respect to $x_n$ shows that the difference between the integrals
+  \[ \int_{\mathbb{R}^n} \tilde{v}_j(x) D^\alpha \phi(x) \d x
+      \qquad \text{and} \qquad
+      (-1)^{|\alpha|} \int_{\mathbb{R}^n} \widetilde{D^\alpha v_j}(x) \phi(x) \d x\]
+  is a finite alternating sum of integrals of the form
+  \begin{equation}\label{eq:5.30}
+    \int_{\mathbb{R}^{n-1}} D^{\alpha - ke_n} v_j(x_1,\ldots,x_{n-1},0)
+      D^{k-1}_n \phi(x_1,\ldots,x_{n-1},0) \d x_1 \cdots \d x_{n-1}
+  \end{equation}
+  with $k>0$. Choose the sequence $\{v_j\}$ to converge to $u$
+  in $W^{m,p}(\Omega)$. For each multi-index $\beta$ with $\beta<\alpha$,
+  the trace of $D^\beta v_j$ will converge in $L^p(\mathbb{R}^{n-1})$
+  to the trace of $D^\beta u$, this is to 0 in that space. Since the
+  restriction of $D^{k-1}_n \phi$ to $\mathbb{R}^{n-1}$ belongs to
+  $L^{p'}(\mathbb{R}^{n-1})$, each of the integrals in~\eqref{eq:5.30}
+  tends to 0 as $j\to\infty$.
+
+  It follows that the two integrals in~\eqref{eq:5.29} are equal,
+  and that $\tilde{u}\in W^{m,p}(\mathbb{R}^n)$.
+  This completes the proof.
 \end{proof}
